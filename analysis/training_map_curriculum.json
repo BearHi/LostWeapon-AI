@@ -1,0 +1,265 @@
+{
+  "scope": "candidate curriculum from LMF layout and editor sprite identity",
+  "warning": "No lesson behavior or clearability is certified until the original Client/native oracle runs the exact file.",
+  "maps": [
+    {
+      "map": "훈1.LMF",
+      "size": [
+        30,
+        18
+      ],
+      "lesson_candidate": "평지 이동 기준선",
+      "layout_evidence": "걷기·방향 전환·목표 접촉의 기준 trajectory",
+      "static_structure": "PASS",
+      "native_runtime": "PASS: native-built LMF exactly matched captured hun1 for seven 12-tick action traces"
+    },
+    {
+      "map": "훈2.LMF",
+      "size": [
+        30,
+        18
+      ],
+      "lesson_candidate": "짧은 틈 통과",
+      "layout_evidence": "3칸 바닥 공백을 점프/구르기로 통과",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈3.LMF",
+      "size": [
+        32,
+        20
+      ],
+      "lesson_candidate": "연속 단차와 중앙 장애물",
+      "layout_evidence": "낮은 발판 두 개와 위쪽 중앙 발판을 조합한 기본 이동",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈4.LMF",
+      "size": [
+        30,
+        18
+      ],
+      "lesson_candidate": "역방향 짧은 틈",
+      "layout_evidence": "훈2의 좌우 반전으로 방향 비대칭 검사",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈5.LMF",
+      "size": [
+        40,
+        23
+      ],
+      "lesson_candidate": "장거리 낙하·공중 이동",
+      "layout_evidence": "왼쪽 상단 시작에서 오른쪽 하단 목표까지 공중 조작",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈6.LMF",
+      "size": [
+        24,
+        18
+      ],
+      "lesson_candidate": "JUMP/PARA 표식 구간",
+      "layout_evidence": "JUMP·PARA 그림 타일과 짧은 발판을 순서대로 통과",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈6.5.LMF",
+      "size": [
+        24,
+        18
+      ],
+      "lesson_candidate": "JUMP/PARA 조합 난도 증가",
+      "layout_evidence": "훈6보다 긴 공백과 PARA 표식 하나 추가",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈7.LMF",
+      "size": [
+        26,
+        22
+      ],
+      "lesson_candidate": "사다리 진입",
+      "layout_evidence": "바닥에서 세로 사다리로 올라가 우측 상단 목표 도달",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈7.5.LMF",
+      "size": [
+        26,
+        22
+      ],
+      "lesson_candidate": "사다리 상단 이탈",
+      "layout_evidence": "훈7과 상단 한 칸 배치가 달라 이탈 경계 비교",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈8.LMF",
+      "size": [
+        24,
+        22
+      ],
+      "lesson_candidate": "수직 도달 기준선",
+      "layout_evidence": "스프링 없는 높은 발판 배치",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈8.5.LMF",
+      "size": [
+        24,
+        22
+      ],
+      "lesson_candidate": "스프링 수직 상승",
+      "layout_evidence": "동일 계열 배치에 스프링 한 개를 추가한 비교군",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈9.LMF",
+      "size": [
+        30,
+        22
+      ],
+      "lesson_candidate": "오른쪽 발사대/PARA",
+      "layout_evidence": "오른쪽 방향 발사대 그림과 PARA 표식 세 개",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈10.LMF",
+      "size": [
+        30,
+        22
+      ],
+      "lesson_candidate": "왼쪽 발사대/PARA",
+      "layout_evidence": "훈9의 반대 방향 발사대와 역방향 진행",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈11.LMF",
+      "size": [
+        26,
+        20
+      ],
+      "lesson_candidate": "JUMP 표식 계단",
+      "layout_evidence": "JUMP 그림 타일로 만든 상승 계단과 용암 접경",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈12.LMF",
+      "size": [
+        26,
+        22
+      ],
+      "lesson_candidate": "물 후보 타일",
+      "layout_evidence": "물보라 그림 타일 150개로 채운 통로",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈13.LMF",
+      "size": [
+        24,
+        24
+      ],
+      "lesson_candidate": "선풍기/낙하산 상승",
+      "layout_evidence": "세로 선풍기 열을 따라 상단 목표 도달",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈14.LMF",
+      "size": [
+        34,
+        20
+      ],
+      "lesson_candidate": "자석 54 단일 배치",
+      "layout_evidence": "시작점 오른쪽의 단일 자석과 지형 상호작용",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈15.LMF",
+      "size": [
+        34,
+        20
+      ],
+      "lesson_candidate": "자석 55 단일 배치",
+      "layout_evidence": "훈14 반대 방향 계열 자석과 역방향 진행",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈16.LMF",
+      "size": [
+        22,
+        22
+      ],
+      "lesson_candidate": "자석 53 수직 배치",
+      "layout_evidence": "발판 위 자석과 높은 목표의 수직 상호작용",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈17.LMF",
+      "size": [
+        22,
+        22
+      ],
+      "lesson_candidate": "자석 52 다중 배치",
+      "layout_evidence": "2×2 자석 묶음의 합성 효과",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈18.LMF",
+      "size": [
+        25,
+        19
+      ],
+      "lesson_candidate": "오르막 얼음 경사",
+      "layout_evidence": "오르막 얼음 한 개와 왼쪽 목표",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈19.LMF",
+      "size": [
+        25,
+        19
+      ],
+      "lesson_candidate": "내리막 얼음 경사",
+      "layout_evidence": "내리막 얼음 한 개와 오른쪽 목표",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    },
+    {
+      "map": "훈20.LMF",
+      "size": [
+        20,
+        18
+      ],
+      "lesson_candidate": "아래 화살표 타일",
+      "layout_evidence": "시작점 바로 아래의 녹색 아래 화살표 그림 타일",
+      "static_structure": "PASS",
+      "native_runtime": "PASS smoke: original x86 map builder plus one world-chain tick; normal-Client parity unverified"
+    }
+  ],
+  "runtime_plan": [
+    "bind an exact LMF SHA-256 to a Client-loaded capture",
+    "record deterministic NOOP and lesson-specific input fixtures",
+    "compare normal Client and offline oracle state tick by tick",
+    "only then expose reset/step/reward for training"
+  ]
+}

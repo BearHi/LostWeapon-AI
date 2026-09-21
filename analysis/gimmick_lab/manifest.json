@@ -1,0 +1,136 @@
+{
+  "name": "물리측정_기믹통합02",
+  "width": 160,
+  "height": 600,
+  "rooms": [
+    {
+      "number": 1,
+      "title": "평지 기준",
+      "kind": "flat",
+      "floor_y": 576,
+      "lmf_id": null,
+      "editor_hex": null,
+      "object_xy": null
+    },
+    {
+      "number": 2,
+      "title": "가로 자석 · 에디터 36",
+      "kind": "magnet",
+      "floor_y": 512,
+      "lmf_id": 54,
+      "editor_hex": "36",
+      "object_xy": [
+        72,
+        511
+      ]
+    },
+    {
+      "number": 3,
+      "title": "가로 자석 · 에디터 37",
+      "kind": "magnet",
+      "floor_y": 448,
+      "lmf_id": 55,
+      "editor_hex": "37",
+      "object_xy": [
+        72,
+        447
+      ]
+    },
+    {
+      "number": 4,
+      "title": "평면 얼음 · 에디터 13",
+      "kind": "ice",
+      "floor_y": 384,
+      "lmf_id": 19,
+      "editor_hex": "13",
+      "object_xy": null
+    },
+    {
+      "number": 5,
+      "title": "일반 내리막 · 에디터 20",
+      "kind": "slope",
+      "floor_y": 320,
+      "lmf_id": 32,
+      "editor_hex": "20",
+      "object_xy": null
+    },
+    {
+      "number": 6,
+      "title": "삼각 얼음 내리막 · 에디터 25",
+      "kind": "slope",
+      "floor_y": 256,
+      "lmf_id": 37,
+      "editor_hex": "25",
+      "object_xy": null
+    },
+    {
+      "number": 7,
+      "title": "세로 자석 · 에디터 34",
+      "kind": "magnet",
+      "floor_y": 192,
+      "lmf_id": 52,
+      "editor_hex": "34",
+      "object_xy": [
+        72,
+        191
+      ]
+    },
+    {
+      "number": 8,
+      "title": "세로 자석 · 에디터 35",
+      "kind": "magnet",
+      "floor_y": 128,
+      "lmf_id": 53,
+      "editor_hex": "35",
+      "object_xy": [
+        72,
+        127
+      ]
+    },
+    {
+      "number": 9,
+      "title": "선풍기 · 에디터 33",
+      "kind": "fan",
+      "floor_y": 64,
+      "lmf_id": 51,
+      "editor_hex": "33",
+      "object_xy": [
+        72,
+        63
+      ]
+    }
+  ],
+  "tile_numbering": "editor HEX / LMF integer decimal",
+  "checks": {
+    "bounds": true,
+    "continuous_access_ladder": true,
+    "supported_room_floors": true,
+    "launch_region_45_cells_clear": true,
+    "game_tested": false,
+    "gimmick_physics_calibrated": false,
+    "magnet_field_isolation_verified": false,
+    "binary_roundtrip": true,
+    "records": 12785,
+    "sha256": "f6166dcc1d072ccbf3aa63be5b7f087492b2ebc3ea23970303b1d07b1e41dc27"
+  },
+  "physics_status": "measurement_fixture_only",
+  "magnet_note": "64-cell spacing is not proof of field isolation. Compare room 1 with pure lab and return baseline.",
+  "hypotheses": [
+    "jump launch velocity changes",
+    "effective gravity changes",
+    "contact/sliding preserves or converts velocity",
+    "hidden state persists after leaving"
+  ],
+  "measure": [
+    "actual input frame",
+    "character-side raw coordinates",
+    "takeoff and apex",
+    "ascent duration",
+    "early vertical speed",
+    "descent speed",
+    "horizontal displacement",
+    "standing/crouched posture",
+    "contact duration",
+    "leave-and-retest behavior"
+  ]
+}

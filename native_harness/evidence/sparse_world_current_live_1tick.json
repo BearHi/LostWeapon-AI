@@ -1,0 +1,81 @@
+{
+  "scope": "world-chain footprint sparse mapping",
+  "tests": {
+    "noop": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    },
+    "right": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    },
+    "jump": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    },
+    "front_roll": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    },
+    "back_roll": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    },
+    "jump_backroll": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    },
+    "backroll_chute": {
+      "status": "BLOCKED",
+      "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+      "fault": {
+        "eip": "0xe8ed8a",
+        "address": "0x16ecae74",
+        "access": 20,
+        "size": 2
+      }
+    }
+  },
+  "sparse": {
+    "selected_pages": 722,
+    "selected_bytes": 2957312,
+    "original_regions": 1822,
+    "original_bytes": 548798464
+  }
+}

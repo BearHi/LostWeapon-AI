@@ -1,0 +1,91 @@
+{
+  "scope": "original x86 dual-view; geometric starting distance, not universal weapon reach",
+  "preflight_damage": {
+    "0": 0.0,
+    "1": 0.0
+  },
+  "rows": [
+    {
+      "weapon": 2,
+      "start_dx": 80,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 16,
+          "attacker_frame": 0,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 16,
+          "attacker_frame": 1,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 16,
+          "attacker_frame": 1,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 16,
+          "attacker_frame": 2,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 16,
+          "attacker_frame": 2,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 16,
+          "attacker_frame": 3,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 16,
+          "attacker_frame": 3,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 16,
+          "attacker_frame": 4,
+          "attacker_weapon": 2,
+          "attacker_x": 700.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        }
+      ]
+    }
+  ]
+}

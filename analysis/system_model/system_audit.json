@@ -1,0 +1,167 @@
+{
+  "references": [
+    {
+      "path": "C:\\Users\\microsoft\\Downloads\\NewLostweapon\\Map\\암벽수정1.LMF",
+      "sha256": "cf7cae1336ccf53047d28da151c4979cebd40be7533c8e9871cba768f5fe06aa",
+      "size": 20272,
+      "width": 31,
+      "height": 240,
+      "records": 2530,
+      "trailing_bytes": 0,
+      "tile_counts_decimal": {
+        "8": 2526,
+        "100": 1,
+        "119": 3
+      },
+      "overlapping_positions": 0,
+      "spawns": [
+        [
+          15,
+          237
+        ]
+      ],
+      "out_of_bounds_records": [],
+      "clear_status": "user_confirmed_clear",
+      "engine_model_verifies_clear": false,
+      "expected_sha256": "cf7cae1336ccf53047d28da151c4979cebd40be7533c8e9871cba768f5fe06aa",
+      "matches_cleared_bytes": true,
+      "legacy_path_count": 0,
+      "legacy_reachable_surfaces": 1,
+      "legacy_graph_reaches_goal": false,
+      "legacy_false_negative_against_user_clear": true,
+      "legacy_pass_is_not_engine_proof": true,
+      "start_diagnostics": [
+        {
+          "surface": {
+            "index": 158,
+            "x1": 1,
+            "x2": 27,
+            "y": 239,
+            "width": 27,
+            "center": 14.5
+          },
+          "nearest_higher_surface_y": 230,
+          "minimum_rise_cells": 9,
+          "surfaces_inside_vertical_cap": 0,
+          "initial_spawn_pose_and_velocity_modeled": false
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\암벽_신설안_v8_암반윤곽형.LMF",
+      "sha256": "242eec0f2cae677322563f34ba7b89295b8211da3534a83f24d9f5364df7e4fc",
+      "size": 28080,
+      "width": 31,
+      "height": 240,
+      "records": 3506,
+      "trailing_bytes": 0,
+      "tile_counts_decimal": {
+        "8": 3505,
+        "100": 1
+      },
+      "overlapping_positions": 0,
+      "spawns": [
+        [
+          15,
+          237
+        ]
+      ],
+      "out_of_bounds_records": [],
+      "clear_status": "user_confirmed_clear",
+      "engine_model_verifies_clear": false,
+      "expected_sha256": "242eec0f2cae677322563f34ba7b89295b8211da3534a83f24d9f5364df7e4fc",
+      "matches_cleared_bytes": true,
+      "legacy_path_count": 1,
+      "legacy_reachable_surfaces": 59,
+      "legacy_graph_reaches_goal": true,
+      "legacy_false_negative_against_user_clear": false,
+      "legacy_pass_is_not_engine_proof": true,
+      "start_diagnostics": [
+        {
+          "surface": {
+            "index": 131,
+            "x1": 15,
+            "x2": 15,
+            "y": 239,
+            "width": 1,
+            "center": 15.5
+          },
+          "nearest_higher_surface_y": 237,
+          "minimum_rise_cells": 2,
+          "surfaces_inside_vertical_cap": 6,
+          "initial_spawn_pose_and_velocity_modeled": false
+        }
+      ]
+    }
+  ],
+  "legacy_arc_counterexample": {
+    "configured_peak_cells": 8.25,
+    "target_rise_cells": 8.0,
+    "actual_peak_cells": 9.191176470588236,
+    "excess_cells": 0.9411764705882355
+  },
+  "stale_example_jump_backroll_max_up": 13,
+  "gimmick_systems": [
+    {
+      "system": "기본 이동·점프·공중 구르기",
+      "known": "일반 점프 약 5.8칸 관측, 점프+뒷굴 약 8칸 초과 사용자 확인",
+      "missing": "좌우 입력별 속도, 구르기 발동 시점, 수평/수직 속도 갱신 순서",
+      "priority": 1
+    },
+    {
+      "system": "캐릭터·벽·모서리 충돌",
+      "known": "사용자 설명: 9칸 기둥은 불가, 밑이 빈 한 줄 발판은 아래에서 올라설 수 있으나 넘어가지는 못함",
+      "missing": "얇은 발판 진입/올라섬/넘어감의 별도 판정, 자세별 크기, 모서리 보정, 프레임 처리 순서",
+      "priority": 1
+    },
+    {
+      "system": "경사 보행·삼각 얼음",
+      "known": "얼음 이후 점프 높이가 시도별로 다름; 평지에서도 높게 뛴 사례",
+      "missing": "얼음 미끄럼 상태에서 좁은 틈 진입 판정; 일반 경사만으로 대체 불가; 힘의 저장·초기화 조건",
+      "priority": 2
+    },
+    {
+      "system": "방향별 자석",
+      "known": "사용자 설명: 위치/거리/자세/입력에 따라 효과 달라짐; 종합04의 가로 자석 5·6번 배치는 영향이 닿지 않음",
+      "missing": "힘의 범위와 수식, 자세별 누적 상태, 영향권 이탈 뒤 지속 여부",
+      "priority": 2
+    },
+    {
+      "system": "낙하산·선풍기",
+      "known": "사용자 설명: 종합04 선풍기에서 구르기 없이 왼쪽 발판에 아슬하게 도달 가능",
+      "missing": "개방 지연, 종단 하강속도, 조향, 선풍기 유효 범위와 힘",
+      "priority": 3
+    },
+    {
+      "system": "스프링·사다리·수영",
+      "known": "사용자 설명: 종합04 왼쪽 스프링은 못 밟고 오른쪽은 밟힘; LMF82는 장식이므로 수영 실험 무효",
+      "missing": "진입/이탈 조건, 속도 갱신, 입력 우선순위",
+      "priority": 4
+    },
+    {
+      "system": "가시·지뢰·용암·사라지는 블록",
+      "known": "피해/즉시 복귀/주기성의 사용자 설명; LMF122는 기지로 정정, 사라지는 블록 ID 미확인",
+      "missing": "정확한 충돌 범위, 타이머, 자세별 접촉, 체력과 재도전 경로",
+      "priority": 4
+    }
+  ],
+  "required_future_state": [
+    "x",
+    "y",
+    "vx",
+    "vy",
+    "facing",
+    "pose",
+    "contact_surface",
+    "air_roll_available",
+    "parachute_state",
+    "force_history_state_unknown",
+    "health",
+    "hazard_timers",
+    "respawn_position"
+  ],
+  "legacy_validator_sha256": "8526a17764075207b23752bf3f8d60a1bdb98df99178b2af52391b31fe5d6598",
+  "collision_kernel_status": "synthetic_rectangle_geometry_only",
+  "engine_model_ready_for_marginal_landings": false,
+  "map_certification_policy": "unsupported_or_uncalibrated_mechanics_remain_unverified"
+}

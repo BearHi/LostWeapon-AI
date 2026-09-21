@@ -1,0 +1,13 @@
+{
+  "solid_ids": [7, 8],
+  "slope_ids": [16],
+  "minimum_walkable_clearance": 2,
+  "minimum_surface_width": 1,
+  "jump_backroll_max_up": 13,
+  "jump_backroll_max_horizontal": 11,
+  "parachute_max_up": 9,
+  "parachute_max_horizontal": 20,
+  "body_width": 0.8,
+  "body_height": 1.8,
+  "clearance_margin": 0.25
+}

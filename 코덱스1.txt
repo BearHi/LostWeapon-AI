@@ -1,0 +1,851 @@
+# Add terrain-aware LostWeapon helper
+
+> `NEXT_SESSION_HANDOFF_2026-09-17.md`  부터이어서해주고
+>
+> 로스트웨폰 헬퍼로 만들어서 상대를 조지겠다 - 이기능은 끌수도있꼬
+> 맵 지형지물 파악해서 움직이게하겠다 - 9X9에서 점점 늘려가고 (첨에 9X9아니어도됨)
+> 그리고 맵 이미 파악한곳은 알아야하고 어디가 되는지안되는지
+
+<details><summary>8 previous messages</summary>
+
+> 먼저 인계 문서와 현재 헬퍼 코드를 확인하겠습니다. 그다음 대전 기능의 켜기/끄기와, 확인한 지형을 기억하며 탐색 범위를 넓히는 이동 기능을 이어서 구현하겠습니다.
+>
+> <details><summary>Explored a file, ran 5 commands</summary>
+>
+> <details><summary>Explored a file</summary>
+>
+> - Read `./NEXT_SESSION_HANDOFF_2026-09-17.md`
+>
+> </details>
+>
+> - Ran `rg --files -g 'AGENTS.md' -g '*helper*' -g '*Helper*' -g '*.py' -g '*.md' | Select-Object -First 120`
+>
+> - Ran `rg -n "NEXT_SESSION_HANDOFF|헬퍼|helper|9X9|9x9" C:\Users\microsoft\.codex\memories\MEMORY.md`
+>
+> - Ran `Get-Content native_harness\native_env.py | Select-String -Pattern 'navigation_view|adaptive_navigation_view' -Context 8,35; Get-Content native_harness\run_physics_first.py`
+>
+> - Ran `Get-Content native_harness\discovered_map.py; Get-Content native_harness\physics_first_planner.py`
+>
+> - Ran `Get-Content native_harness\LOCAL_TRAINING_PLAN.md; Get-Content native_harness\COMBAT_NATIVE_PLAN.md | Select-Object -First 100; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'run_overnight_candidate|train_local_dqn|train_route_helper|run_physics_first' } | Select-Object ProcessId,CommandLine`
+>
+> </details>
+>
+> 인계 문서와 코드를 대조했습니다. 현재 이동기는 훈1에서 고정 후보를 검증하는 단계이고, 발견한 칸도 실행 사이에 저장하지 않습니다. 먼저 지형 기억과 실제 이동 성공·실패 기록을 헬퍼의 기반으로 만들고, 전투는 기본 꺼짐 옵션으로 연결하겠습니다.
+>
+> <details><summary>Edited 3 files, ran 4 commands</summary>
+>
+> - Ran `Get-Content native_harness\train_route_helper_hun1.py; Get-Content native_harness\route_helper_train_hun1.bat; Get-Content native_harness\tests\adaptive_sparse_world.py`
+> - Ran `Get-Content native_harness\watch_combat_ai.py | Select-Object -First 150; Get-Content native_harness\run_combat_curriculum.py | Select-Object -First 120; Get-Content native_harness\native_env.py | Select-Object -First 130`
+> - Ran `rg -n "class .*Builder|def .*builder|spawn|start.*position|goal|snapshot" native_harness\lmf_injector.py native_harness\tests\probe_native_lmf_builder.py native_harness\native_playground.py | Select-Object -First 110; git status --short`
+> - Ran `rg -n "COMBAT_ACTIONS|def step\(|valid_action_indices" native_harness\combat_env.py; Get-Content native_harness\combat_env.py | Select-Object -First 90; Get-Content native_harness\watch_combat_ai.py | Select-Object -Last 32; Get-Content native_harness\tests\probe_native_lmf_builder.py | Select-Object -First 115`
+> - Wrote `./native_harness/discovered_map.py` (+26 -0)
+> - Wrote `./native_harness/run_physics_first.py` (+17 -2)
+> - Wrote `./native_harness/watch_combat_ai.py` (+13 -4)
+>
+> </details>
+>
+> 지형 기억에는 `open / blocked / unknown`과 별도로, 원본 x86 실행에서 실제로 이동에 성공한 전이를 기록하도록 넣었습니다. 대전 시연기에는 공격 입력을 끄고 다시 켜는 옵션을 추가했습니다. 이제 문법 검사와 훈1 오프라인 재생으로 연결 상태를 확인하겠습니다.
+>
+> <details><summary>Edited 3 files, ran 3 commands</summary>
+>
+> - Ran `python -m py_compile native_harness\discovered_map.py native_harness\run_physics_first.py native_harness\watch_combat_ai.py`
+> - Ran `python -u native_harness\run_physics_first.py --max-steps 65 --output native_harness\evidence\route_helper_훈1_memory.svg`
+> - Wrote `./native_harness/run_physics_first.py` (+1 -1)
+> - Wrote `./native_harness/physics_first_planner.py` (+5 -3)
+> - Ran `python -u native_harness\run_physics_first.py --max-steps 65 --output native_harness\evidence\route_helper_훈1_memory.svg`
+> - Wrote `./native_harness/discovered_map.py` (+5 -2)
+>
+> </details>
+>
+> 훈1 재생은 원본 x86 오프라인 실행에서 53번 결정 후 깃발 접촉까지 확인됐습니다. 로그를 보니 같은 칸 안에서 움직인 경우까지 실패로 세는 문제가 있어 바로 고쳤습니다. 이 분류만 짧게 다시 확인하겠습니다.
+>
+> <details><summary>Ran 2 commands</summary>
+>
+> - Ran `python -m py_compile native_harness\discovered_map.py native_harness\physics_first_planner.py native_harness\run_physics_first.py native_harness\watch_combat_ai.py`
+> - Ran `python -c "import sys; sys.path.insert(0, 'native_harness'); from discovered_map import DiscoveredMap; m=DiscoveredMap(4,4); a={'x':32.0,'y':32.0}; b={'x':40.0,'y':32.0}; c={'x':40.0,'y':32.0}; assert m.record_transition(a,2,b)['outcome']=='success'; assert m.record_transition(b,2,c)['outcome']=='failure'; assert m.classify(0,0)=='unknown'; assert m.classify(-1,0)=='boundary'; print(m.summary())"`
+>
+> </details>
+</details>
+
+인계 문서부터 이어서 **헬퍼의 지형 기억과 전투 스위치**를 구현했습니다.
+
+- 이동 헬퍼가 본 칸을 `open / blocked / unknown`으로 기억하고, 원본 x86 실행에서 실제 이동에 성공했는지 별도로 기록합니다. 후보 경로를 시험하는 동안에도 이 기억을 공유합니다.
+- 시야는 처음 9×9에서 시작하고, 이미 확인한 구간은 3×3으로 줄이며 앞이 막히거나 불확실하면 넓혀 읽습니다.
+- 오프라인 [전투 시연기](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/watch_combat_ai.py)에 `--combat-off` 시작 옵션과 `T` 공격 켜기/끄기를 추가했습니다.
+
+훈1은 수정한 헬퍼로 **오프라인 원본 x86 재생에서 53번 결정 후 깃발 접촉**을 확인했습니다. 지형 기억의 이동 성공·실패 분류는 추가 검사도 통과했습니다.
+
+현재 결과는 훈1 경로 검증입니다. 지형 기억을 다음 실행까지 저장하는 기능, 미지의 맵에서 스스로 우회로를 찾는 훈련, 실제 온라인 Client 제어는 아직 완성되지 않았습니다.
+
+> 훈련은 내가한다 넌 설계만해&#x20;
+> 토큰아끼는방향으로 추진
+
+알겠습니다. **훈련 실행은 사용자가 하고, 저는 설계와 결과 해석만 맡겠습니다.** 추가 실행이나 코드 수정 없이, 토큰을 적게 쓰는 방식으로 진행하겠습니다.
+
+헬퍼 설계는 다음 순서로 잡겠습니다.
+
+1. 현재 위치 주변 9×9를 읽고, 이미 본 칸은 `open / blocked / unknown`으로 기억합니다.
+2. 막힘·발판 끝·미확인 착지 지점이 있을 때만 시야를 넓힙니다. 빈칸과 **실제로 이동에 성공한 경로**는 구분합니다.
+3. 이동과 대전은 별도 기능으로 두고, 대전은 켜고 끌 수 있게 합니다.
+4. 사용자가 훈련한 뒤에는 전체 로그 대신 **성공률, 실패 원인 상위 몇 개, 대표 경로 1개**만 받아 다음 설계를 조정합니다.
+
+앞서 확인한 훈1의 53결정 성공은 오프라인 원본 x86 재생 결과이며, 범용 헬퍼 훈련 성과로 취급하지 않겠습니다.
+
+> ㅇㅇ 깃발방향으로 우선 최우선으로 가는데 최단루트 대충 슭 훝고
+> 9 9 칸 범위내에서 그 방향으로 갈수있는방향&#x20;
+> 필요하다면 1234 칼도 사용
+> 상대 공격 우선 / 안함&#x20;
+> 이렇게
+
+헬퍼 판단 순서를 이렇게 설계하겠습니다. 훈련 실행은 하지 않겠습니다.
+
+1. **깃발 방향을 최우선 목표**로 잡습니다. 현재까지 기억한 지형에서 깃발로 향하는 대략적인 짧은 경로를 훑습니다.
+2. 매 결정마다 주변 **9×9칸**에서 그 경로에 이어질 수 있는 이동 방향을 고릅니다. 직선이 벽이나 낭떠러지에 막히면 9×9 안의 우회 방향을 찾고, 판단에 필요한 부분만 더 봅니다.
+3. 이미 본 칸은 계속 기억합니다. `빈칸`, `막힌 칸`, `아직 모르는 칸`과 **실제로 지나간 적 있는 경로**를 구분합니다. 빈칸이라는 이유만으로 갈 수 있다고 판단하지 않습니다.
+4. 필요하면 **1·2·3·4번 칼**을 행동 후보에 넣습니다. 칼 선택과 공격이 이동에 어떤 도움이 되는지는 실제 결과로 판단합니다.
+5. **상대 공격: 우선 / 안 함** 스위치를 둡니다. `우선`이면 공격 가능한 상대를 먼저 처리한 뒤 깃발 경로로 돌아가고, `안 함`이면 상대를 공격하지 않고 깃발 이동을 계속합니다.
+
+핵심은 깃발을 향해 계속 가되, 막힌 직선 방향에 매달리지 않고 **기억한 지형과 실제 이동 결과로 다음 방향을 다시 고르는 것**입니다.
+
+> 하면안되는 키입력은 이미 넣어놨고 (예를들어 사다리에서 >만 누르기 C만누르기 등)
+>
+> 핵심은 깃발이 목표야 보상은 자해주고
+> 상대 공격해서 맞추면 보상 조금씩주고  (켜졌을떄)
+> 진행할수록 보상주고&#x20;
+> 여튼
+
+네. **기존 금지 키입력 규칙은 그대로 사용**하고, 목표와 보상은 이렇게 잡겠습니다.
+
+- **깃발 접촉:** 가장 큰 보상. 다른 보상을 모아도 깃발에 도착하는 것보다 유리해지지 않게 합니다.
+- **경로 진행:** 발견한 지형을 기준으로 깃발까지의 예상 경로가 짧아졌을 때 보상합니다. 같은 구간을 왕복하며 보상을 반복해서 받지 않도록 합니다.
+- **새 통로 발견:** 깃발로 갈 가능성이 있는 새 길을 확인하면 소량 보상합니다. 미확인 칸은 통과 가능한 길로 확정하지 않습니다.
+- **상대 명중:** `상대 공격 우선`을 켰을 때만, 실제 명중이 확인되면 작은 보상을 줍니다. 공격 보상 때문에 깃발을 외면하지 않도록 상한을 둡니다.
+- **정체·사망·시간:** 막힌 자리에서 같은 행동을 반복하거나 죽으면 감점하고, 매 결정에 작은 시간 비용을 둡니다.
+
+판단은 매번 **9×9 지형 → 기억한 경로 → 깃발 쪽 다음 이동** 순서입니다. 필요할 때 시야를 넓히고, 공격을 켜면 상대를 맞힐 기회도 고려하되 최종 목표는 항상 깃발로 유지하겠습니다.
+
+> 그리고 상대공격 회피하면도 보상주고  9 X 9 지형이 너무 어려우면 4X4 머 이렇게해도돼 이건 너판단
+> 그리고 그걸로 안된다싶으면 계속 늘리는거야 1칸씩
+> 그럼물리법칙으로 아 저긴 갈수있겟다 알수있잖아&#x20;
+>
+> 물리법칙은 다 학습시켜 미리 어떻게하면된다 이런것들&#x20;
+
+좋습니다. 시작 시야는 제가 **5×5**로 잡겠습니다. 플레이어를 가운데 두기 편하고, 판단이 안 되면 **7×7 → 9×9 → 11×11**처럼 테두리를 한 칸씩 늘립니다. 기억한 지형은 시야가 줄어도 유지합니다.
+
+보상에는 **공격 회피**도 넣겠습니다. 실제로 위협이 가까이 왔고 피격 없이 벗어난 경우에만 소량 지급합니다. 같은 상대 앞에서 회피만 반복해 보상을 쌓지 못하게 하고, 깃발 도착 보상은 계속 가장 크게 둡니다. 공격 명중 보상은 공격을 켰을 때만 적용합니다.
+
+물리는 이동 전에 익히는 **기초 과정**으로 설계하겠습니다. 걷기·점프·구르기·낙하산·사다리·착지·벽·틈 등을 작은 상황별로 경험시키고, 각 행동이 어느 물리 상태에서 어디까지 갔는지 저장합니다. 헬퍼는 이를 보고 “저쪽에 닿을 가능성이 있다”는 후보를 고른 뒤, 실제 이동 결과로 가능한 경로인지 확인합니다. 아직 경험하지 않은 기믹까지 안다고 가정하지는 않겠습니다.
+
+이 설계대로 훈련은 사용자가 실행하고, 저는 필요한 설정과 결과 판단 기준을 간결하게 정리하겠습니다.
+
+> 응 훈련은 내가할거니까 설계랑 구조 잘짜와바 지금까지 대화내역도 참고햇을거아냐
+
+<details><summary>2 previous messages</summary>
+
+> 지금까지 대화와 인계 문서를 기준으로, 사용자가 직접 훈련할 수 있는 헬퍼 구조를 설계 문서로 정리하겠습니다. 보상 우선순위, 시야 확장, 물리 선행 학습, 전투 스위치, 검증 기준을 한 문서에 담고 훈련은 실행하지 않겠습니다.
+>
+> <details><summary>Created a file, ran 2 commands</summary>
+>
+> - Ran `Get-Content native_harness\LEARNING_SYSTEM.md | Select-Object -First 125`
+> - Ran `Get-Content native_harness\LOCAL_TRAINING_PLAN.md | Select-Object -First 100; Get-Content native_harness\discovered_map.py; Get-Content native_harness\run_physics_first.py | Select-Object -First 45`
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+69 -0)
+>
+> </details>
+</details>
+
+지금까지 대화와 인계 문서를 반영해 [깃발 우선 헬퍼 설계](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md)를 작성했습니다.
+
+핵심은 **5×5에서 시작해 필요할 때 반경을 한 칸씩 넓히고**, 본 지형과 실제로 통과한 경로를 구분해 깃발 쪽 경로를 계속 다시 고르는 구조입니다. 물리 기술은 작은 상황에서 미리 익히되, 새 지형에서는 성공을 재확인하도록 했습니다. 공격 모드는 `OFF / 우선`으로 분리하고, 명중·회피 보상은 깃발 보상을 앞서지 못하게 설계했습니다.
+
+기존 금지 키 규칙과 체크포인트를 유지하는 연결 지점, 사용자가 직접 훈련할 순서와 성공 판정 기준도 문서에 넣었습니다. **이번에는 설계 문서만 작성했고 훈련은 실행하지 않았습니다.**
+
+> 응 그리고 도중에 내가 조작하기도 할거임 너무 답답하거나하면&#x20;
+> 그런것도 참고만하고
+>
+> 그리고 미니맵도 보면서 상대 위치 파악할수있음좋겠어 9X9에 꼭 상대는없지만 위에서 갑자기 떨어질수도있단말야&#x20;
+> 여튼 가장 학습이 잘될거같은방향으로 너의 판단으로 구조짜봐 내가한것도 우선순위두고
+
+<details><summary>2 previous messages</summary>
+
+> 직접 조작은 헬퍼가 넘겨받는 신호로 기록하되, 정답 행동으로 그대로 학습하지 않도록 설계하겠습니다. 미니맵의 상대 위치는 지형 시야와 별도 관측으로 다뤄서, 9×9 밖이나 위쪽에서 접근하는 상대에도 대비하도록 문서를 보완하겠습니다.
+>
+> <details><summary>Edited a file, ran 2 commands</summary>
+>
+> - Ran `Get-Content native_harness\ROUTE_HELPER_DESIGN_2026-09-17.md | Select-Object -First 95`
+> - Ran `rg -n "minimap|mini.map|미니맵|opponent|enemy|remote|human|manual|override|input" native_harness\human_play_recorder.py native_harness\live_state.py native_harness\combat_env.py native_harness\native_playground.py | Select-Object -First 140`
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+23 -6)
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+1 -0)
+>
+> </details>
+</details>
+
+설계를 보완했습니다: [깃발 우선 헬퍼 설계](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md).
+
+제가 잡은 구조는 **물리 기술 학습 → 국소 이동 후보 선택 → 깃발 경로와 상대 위험 판단**의 3층입니다. 지형 시야는 작게 시작해 필요할 때만 넓히고, 미니맵의 상대 위치는 별도로 추적합니다. 그래서 상대가 9×9 밖에 있거나 위에서 떨어질 가능성도 판단에 넣습니다. 오래된 상대 위치는 확정 정보로 쓰지 않습니다.
+
+사용자가 조작하면 헬퍼 입력을 내려놓고, 조작이 끝난 현재 상태에서 다시 경로를 고릅니다. 그 구간은 막힌 이유를 찾는 **참고 기록**으로만 남기며, 헬퍼 단독 성공률과 분리합니다. 공격 모드가 꺼져 있어도 생존을 위한 회피는 허용합니다.
+
+이번에도 설계 문서만 수정했습니다. 훈련이나 평가 실행은 하지 않았습니다.
+
+> 이거하면 수학적으로 무조건판단
+> 이상한학습말고 진짜 스타크래프트 그냥 일반 봇있잖아
+> 그런것처럼 제발
+>
+> 일반 런앤건 게임에서 예를들어 메탈슬러그
+>
+> 모덴군 AI짤떄 이렇게 어렵진않잖아 기본 물리법칙주고 어떻게 행동하라 지시하고
+
+맞습니다. 제가 학습 구조를 너무 크게 잡았습니다. 말씀하신 일반 게임 봇처럼 **물리 규칙, 지형 기억, 명확한 행동 우선순위로 매번 판단하는 구조**로 바꾸겠습니다. 보상과 훈련은 기본 동작에서 빼고, 설계 문서도 그 기준으로 다시 쓰겠습니다.
+
+> 보상훈련은왜뺴?
+
+<details><summary>2 previous messages</summary>
+
+> 제가 잘못 이해했습니다. **보상과 훈련은 유지합니다.** 기본 행동은 게임 봇처럼 물리 규칙과 우선순위로 판단하고, 훈련은 그 봇이 여러 가능한 행동 중 더 잘되는 쪽을 고르도록 개선하는 역할로 두겠습니다. 문서도 이 구조로 바로잡겠습니다.
+>
+> <details><summary>Edited a file</summary>
+>
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+7 -1)
+>
+> </details>
+</details>
+
+제가 말을 잘못했습니다. **보상과 훈련은 뺄 이유가 없습니다.** 말씀하신 건 헬퍼가 판단까지 전부 학습에 맡기지 말고, 일반 게임 봇처럼 물리 규칙과 행동 우선순위로 움직이게 하라는 뜻이었습니다.
+
+설계 문서를 그 기준으로 고쳤습니다. 기본 봇은 지형과 물리 상태를 보고 행동을 결정합니다. 보상과 훈련은 깃발 진행, 명중, 회피 경험을 통해 **가능한 행동 중 더 나은 선택**을 하도록 개선하는 데 사용합니다. 훈련 전에도 기본 봇은 움직일 수 있어야 합니다.
+
+[수정한 설계 문서](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md)
+
+> 리스폰 그래 이거 이용하는건 일단 봇이 아니야 이건 뺴자 용암 지옥문은 그냥 벌점으로 하자 (정말 특이한경우아니면 대부분 리스크임 이건)
+>
+> 여튼 구조짜봐 확실하게
+
+리스폰을 경로 수단으로 쓰지 않도록 설계에서 제외하겠습니다. 용암·지옥문은 위험 지형으로 처리하고, 접촉이나 리스폰에는 벌점을 주겠습니다. 예외가 필요한 특수 맵은 별도로 확인하기 전까지 허용하지 않는 기준으로 구조를 정리하겠습니다.
+
+> 아 잠깐 접촉시 ㄴㄴ 용암맵은 그거 구르기로 피해서 앞으로 전진해야해 한마디로 접촉도 해야한단말야
+> 처음 지역으로 갔을떄 벌점을줘 (밟고 처음으로갔을경우)
+
+<details><summary>2 previous messages</summary>
+
+> 정정하겠습니다. **용암 접촉 자체에는 벌점을 주지 않습니다.** 구르기로 통과하며 앞으로 나아가는 동작이 필요하군요. 벌점은 밟은 결과로 처음 지역으로 되돌아갔을 때만 주고, 일반적인 후퇴나 우회와는 구분하도록 설계에 반영하겠습니다.
+>
+> <details><summary>Edited a file</summary>
+>
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+8 -1)
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+10 -0)
+>
+> </details>
+</details>
+
+맞습니다. **용암 접촉에는 벌점을 주지 않습니다.** 구르기로 용암 구간을 통과해 전진하는 경로를 허용합니다. 벌점은 밟은 결과 **처음 지역으로 되돌아가 진행을 잃었을 때**만 줍니다. 단순히 시작 좌표 근처를 지났다는 이유로 벌점을 주지 않도록 판정도 구분했습니다.
+
+[설계 문서](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md)에 봇의 판단 순서를 명시했습니다: **유효 키 확인 → 깃발 쪽 경로 선택 → 짧은 행동의 물리 결과와 복귀 위험 비교 → 한 행동 실행 → 실제 결과를 보고 재판단**. 보상과 훈련은 이 판단의 성공률과 우선순위를 개선하는 데 유지합니다. 리스폰을 일부러 경로로 이용하는 행동은 기본 후보에서 제외했습니다.
+
+훈련은 실행하지 않았습니다.
+
+> 내가 훈련돌릴수있게 만들어줘 그럼&#x20;
+> 이게 되나? 근데?
+
+<details><summary>6 previous messages</summary>
+
+> 가능합니다. 다만 지금 코드의 `train_route_helper_hun1.py`는 이름과 달리 훈1 경로를 한 번 검증하는 실행기입니다. 실제로 경험을 저장하고 중단·재개할 수 있는 로컬 훈련 진입점을 만들겠습니다. 먼저 기존 native 환경과 체크포인트 방식을 확인한 뒤, 사용자가 CMD에서 직접 돌릴 수 있게 연결하겠습니다.
+>
+> <details><summary>Ran 4 commands</summary>
+>
+> - Ran `Get-Content native_harness\train_local_dqn.py | Select-Object -First 180; Get-Content native_harness\train_route_helper_hun1.py; Get-Content native_harness\route_helper_train_hun1.bat`
+> - Ran `rg --files native_harness | rg 'train|helper|eval|stop|learning'; Get-Content native_harness\ROUTE_HELPER_DESIGN_2026-09-17.md | Select-Object -First 65`
+> - Ran `Get-Content native_harness\native_env.py | Select-Object -Skip 145 -First 170; Get-Content native_harness\snapshot_selector.py | Select-Object -First 130; rg -n "def reset|def step|done|respawn|reward" native_harness\native_env.py`
+> - Ran `Get-Content native_harness\native_env.py | Select-Object -Skip 335 -First 100; Get-Content native_harness\training_archive.py | Select-Object -First 130; Get-Content native_harness\human_play_recorder.py | Select-Object -First 40`
+>
+> </details>
+>
+> 현재 native 환경은 깃발 접촉과 이동 결과를 원본 x86로 확인할 수 있습니다. 그래서 **규칙 기반 이동 봇에 경험 점수를 누적하는 훈련기**는 만들 수 있습니다. 다만 이 환경은 단일 플레이어여서 상대 명중·회피 학습까지 같은 실행에서 검증할 수는 없습니다. 우선 깃발 이동 훈련을 실행 가능하게 만들고, 전투는 별도 원본 캡처 경로로 남겨 두겠습니다.
+>
+> <details><summary>Created 5 files, edited a file, ran a command</summary>
+>
+> - Wrote `./native_harness/train_rule_helper.py` (+238 -0)
+> - Ran `rg -n "용암|지옥문|lava|hell|raw[0-9]+.*용암|raw[0-9]+.*지옥" native_harness NEXT_SESSION_HANDOFF_2026-09-15.md -g '*.md' -g '*.py' | Select-Object -First 100`
+> - Wrote `./native_harness/train_rule_helper.py` (+11 -1)
+> - Wrote `./native_harness/train_rule_helper.py` (+7 -0)
+> - Wrote `./native_harness/깃발헬퍼_재개.bat` (+7 -0)
+> - Wrote `./native_harness/깃발헬퍼_중지.bat` (+6 -0)
+> - Wrote `./native_harness/깃발헬퍼_훈련.bat` (+6 -0)
+> - Wrote `./native_harness/깃발헬퍼_훈련_사용법.md` (+16 -0)
+>
+> </details>
+>
+> 훈련 진입점과 중지·재개 배치파일을 만들었습니다. 상황별 행동값은 별도 JSON 체크포인트에 쌓이고, 용암 접촉만으로 벌점을 주지 않도록 했습니다. 이제 문법과 실행 옵션을 확인하고, 배치파일 줄바꿈을 Windows CMD 형식으로 맞추겠습니다. 실제 훈련 에피소드는 실행하지 않겠습니다.
+>
+> <details><summary>Edited a file, ran 5 commands</summary>
+>
+> - Ran `python -c "from pathlib import Path; root=Path('native_harness'); names=['깃발헬퍼_훈련.bat','깃발헬퍼_중지.bat','깃발헬퍼_재개.bat']; [(root/n).write_bytes((root/n).read_text(encoding='utf-8').replace('\\r\\n','\\n').replace('\\n','\\r\\n').encode('utf-8')) for n in names]; print('CRLF:', *names)"`
+> - Ran `python -m py_compile native_harness\train_rule_helper.py; python native_harness\train_rule_helper.py --help`
+> - Ran `python -c "import sys; sys.path.insert(0,'native_harness'); from train_rule_helper import return_to_start, rule_score; s={'x':0,'y':0}; b={'x':128,'y':0}; a={'x':0,'y':0}; assert return_to_start(s,b,a,128); assert not return_to_start(s,b,{'x':120,'y':0},128); assert rule_score(2,('R','level','open','blocked','normal'))>rule_score(1,('R','level','open','blocked','normal')); print('rule smoke PASS')"`
+> - Ran `Test-Path native_harness\checkpoints\route_rule_helper.stop; Test-Path native_harness\checkpoints\route_rule_helper.json`
+> - Ran `python -c "import sys; from pathlib import Path; sys.path.insert(0,'native_harness'); from native_env import LostWeaponEnv; from snapshot_selector import snapshot_for_map; from train_rule_helper import scan,context,candidates; from discovered_map import DiscoveredMap; root=Path('native_harness'); lmf=Path('훈련용맵/훈1.LMF'); env=LostWeaponEnv(snapshot_for_map(root,lmf),lmf,action_repeat=2,max_steps=2); _,info=env.reset(); m=DiscoveredMap(env.width,env.height); v=scan(env,m,info['state']); print({'view':v['size'],'context':context(env,m,info['state']),'candidates':len(candidates(env,info['state']))})"`
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+1 -0)
+>
+> </details>
+</details>
+
+**돌릴 수 있는 첫 버전은 만들었습니다.** [깃발헬퍼_훈련.bat](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_훈련.bat>)을 더블클릭하면 훈1에서 로컬 훈련을 시작합니다. 에피소드마다 결과가 CMD에 표시되고, 상황별 행동값과 행동 기록이 별도 체크포인트에 저장됩니다. [중지](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_중지.bat>)와 [재개](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_재개.bat>)도 추가했습니다.
+
+기본 규칙 봇이 유효 키와 주변 지형을 보고 행동하며, 훈련은 상황별 행동 선택값을 누적합니다. **용암 접촉 자체는 감점하지 않고**, 용암을 밟은 뒤 처음 지역으로 돌아가 진행을 잃은 경우에만 감점합니다.
+
+문법, 실행 옵션, 원본 x86 환경에서의 초기 지형 관측과 행동 후보 생성을 확인했습니다. **훈련 에피소드는 실행하지 않았습니다.** 현재 버전은 오프라인 단일 플레이어 **깃발 이동 훈련기**입니다. 미니맵 상대 추적·공격/회피 훈련·사용자 조작 인계는 아직 연결되지 않았고, `--combat priority`는 잘못된 결과를 만들지 않도록 거부합니다. 실행 옵션은 [사용법](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/깃발헬퍼_훈련_사용법.md)에 적었습니다.
+
+> 이렇게됐는데 왜케짧음
+>
+> User context
+>
+> Attachments:
+> - {"phase": "start", "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈1.LMF…: `~/.codex/attachments/4ffa9e95-e7d1-4473-8ac7-6b86972848d4/pasted-text.txt`
+
+<details><summary>2 previous messages</summary>
+
+> 붙여주신 실행 로그를 확인하겠습니다. 실제로 몇 에피소드가 돌았는지, 중지 표식이나 설정 때문에 일찍 끝났는지부터 보겠습니다.
+>
+> <details><summary>Explored a file, ran 2 commands</summary>
+>
+> <details><summary>Explored a file</summary>
+>
+> - Read `~/.codex/attachments/4ffa9e95-e7d1-4473-8ac7-6b86972848d4/pasted-text.txt`
+>
+> </details>
+>
+> - Ran `Get-Item native_harness\checkpoints\route_rule_helper* -ErrorAction SilentlyContinue | Select-Object Name,Length,LastWriteTime; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'train_rule_helper.py' } | Select-Object ProcessId,CommandLine`
+>
+> - Ran `python -c "import json,statistics; from pathlib import Path; p=Path('native_harness/checkpoints/route_rule_helper.episodes.jsonl'); rows=[json.loads(x) for x in p.read_text(encoding='utf-8').splitlines()]; print({'episodes':len(rows),'wins':sum(r['done'] for r in rows),'avg_steps_all':round(statistics.mean(r['steps'] for r in rows),1),'first20_wins':sum(r['done'] for r in rows[:20]),'last20_wins':sum(r['done'] for r in rows[-20:]),'first20_avg_steps':round(statistics.mean(r['steps'] for r in rows[:20]),1),'last20_avg_steps':round(statistics.mean(r['steps'] for r in rows[-20:]),1)})"`
+>
+> </details>
+</details>
+
+짧게 끝난 이유는 **설정한 100에피소드를 모두 마쳤기 때문**입니다. 로그 마지막에 `completed_episodes: 100`이 있고, 중간 종료는 아닙니다. 화면 없이 원본 x86을 오프라인으로 실행하므로 빠르게 돌아갑니다.
+
+결과는 훈1 **96/100회 깃발 접촉**입니다. 처음 20회 평균 155.5결정에서 마지막 20회 평균 98결정으로 줄었습니다. 다만 **같은 훈1만 반복한 결과**이고, 시야도 전부 5×5에서 해결됐습니다. 이 수치로 다른 맵에서도 잘 움직인다고 판단할 수는 없습니다.
+
+그래서 지금 훈1 횟수만 늘리기보다 **서로 다른 지형의 맵으로 훈련 범위를 넓히는 것**이 다음 단계입니다.
+
+> 머야 훈1~~20까지한줄알았네 훈1 \~ ~~20 이랑 그거 잘되면 혼1\~20도 할수있게 세팅해줘
+> 우선 훈1\~20
+
+<details><summary>9 previous messages</summary>
+
+> 제가 훈1 한 맵만 도는 기본값으로 만들어 둔 탓입니다. 훈1~20의 실제 파일과 native snapshot 대응을 확인한 뒤, 여러 맵을 순서대로 돌면서 경험을 공유하고 중단·재개할 수 있게 바꾸겠습니다. 혼1~20은 훈 맵 결과가 기준을 통과한 뒤 실행하도록 설정하겠습니다.
+>
+> <details><summary>Explored a file, ran 3 commands</summary>
+>
+> - Ran `Get-ChildItem -LiteralPath '훈련용맵' -File -Filter '*.LMF' | Select-Object -ExpandProperty Name; Get-ChildItem -LiteralPath 'native_harness\private_snapshots' -File -Filter '*.zip' | Select-Object -ExpandProperty Name`
+>
+> - Ran `Get-Content native_harness\tests\test_native_lmf_all_training_maps.py | Select-Object -First 160; Get-Content native_harness\snapshot_selector.py`
+>
+> <details><summary>Explored a file</summary>
+>
+> - Read `./native_harness/train_rule_helper.py`
+>
+> </details>
+>
+> - Ran `Get-ChildItem -LiteralPath '훈련용맵' -File | Where-Object { $_.Name -match '^혼' } | Select-Object -First 50 -ExpandProperty Name; rg --files | rg '혼[0-9]+(\.[0-9]+)?\.LMF$' | Select-Object -First 40`
+>
+> </details>
+>
+> 확인 결과 훈1~20은 중간 번호 맵(훈6.5·7.5·8.5)까지 **23개**이고, 혼 맵도 별도 폴더에 있습니다. 훈1에서 쌓인 행동값을 다음 맵으로 넘기되 맵별 결과는 따로 보존하겠습니다. 혼 단계는 훈 맵 성적을 확인한 뒤 사용자가 선택해 시작하도록 만들겠습니다.
+>
+> <details><summary>Created 3 files, edited 4 files, deleted a file</summary>
+>
+> - Wrote `./native_harness/train_rule_helper.py` (+10 -0)
+> - Wrote `./native_harness/train_route_curriculum.py` (+144 -0)
+> - Wrote `./native_harness/train_route_curriculum.py` (+11 -0)
+> - Wrote `./native_harness/깃발헬퍼_재개.bat` (+1 -1)
+> - Wrote `./native_harness/깃발헬퍼_혼련용.bat` (+6 -0)
+> - Wrote `./native_harness/깃발헬퍼_훈련.bat` (+1 -1)
+> - Deleted `./native_harness/깃발헬퍼_훈련_사용법.md` (+0 -16)
+> - Wrote `./native_harness/깃발헬퍼_훈련_사용법.md` (+31 -0)
+>
+> </details>
+>
+> 23개 훈 맵을 순서대로 도는 실행기와 맵별 체크포인트를 연결했습니다. 훈1의 기존 100회 기록은 보존하고, 이후 맵은 앞 맵의 행동값을 받아 시작합니다. 혼 실행기는 훈 맵의 최근 성공률 기준을 확인하도록 넣었습니다. 훈련은 시작하지 않고 맵 목록, 문법, 배치파일 형식만 확인하겠습니다.
+>
+> <details><summary>Ran 5 commands</summary>
+>
+> - Ran `python -c "from pathlib import Path; root=Path('native_harness'); names=['깃발헬퍼_훈련.bat','깃발헬퍼_중지.bat','깃발헬퍼_재개.bat','깃발헬퍼_혼련용.bat']; [(root/n).write_bytes((root/n).read_text(encoding='utf-8').replace('\\r\\n','\\n').replace('\\n','\\r\\n').encode('utf-8')) for n in names]; print([(n,(root/n).read_bytes().count(b'\\r\\n')) for n in names])"`
+> - Ran `python -m py_compile native_harness\train_rule_helper.py native_harness\train_route_curriculum.py; python native_harness\train_route_curriculum.py --list; python native_harness\train_route_curriculum.py --stage hon --list`
+> - Ran `python -c "import sys; sys.path.insert(0,'native_harness'); from train_route_curriculum import maps_for,checkpoint,score; m=maps_for('hun'); assert len(m)==23; assert checkpoint(m[0]).name=='route_rule_helper.json'; assert score(m[0],5)['episodes']==100; print('curriculum smoke PASS',len(m),score(m[0],5))"`
+> - Ran `Format-Hex -LiteralPath 'native_harness\깃발헬퍼_훈련.bat' | Select-Object -First 5`
+> - Ran `python -c "from pathlib import Path; root=Path('native_harness'); names=['깃발헬퍼_훈련.bat','깃발헬퍼_중지.bat','깃발헬퍼_재개.bat','깃발헬퍼_혼련용.bat']; [(root/n).write_bytes((root/n).read_bytes().replace(bytes([13]),b'').replace(bytes([10]),bytes([13,10]))) for n in names]; print([(n,(root/n).read_bytes().count(bytes([13,10]))) for n in names])"`
+>
+> </details>
+>
+> 목록 검사에서는 훈·혼 각각 23개 맵이 잡혔고, 기존 훈1의 100회 기록도 새 실행기가 인식합니다. 이제 훈 맵들이 실제 native 환경에서 열리는지만 확인하겠습니다. 에피소드나 학습은 돌리지 않습니다.
+>
+> 훈1부터 훈10까지는 중간 번호 맵을 포함해 native 환경 초기화와 시작 상태 읽기가 통과했습니다. 나머지 맵도 같은 방식으로 확인 중입니다. 이 검사는 맵을 열 수 있는지 보는 것이며, 깃발 클리어나 학습 성능 검사는 아닙니다.
+>
+> <details><summary>Edited a file, ran 2 commands</summary>
+>
+> - Ran `python -u -c "import sys,gc; sys.path.insert(0,'native_harness'); from train_route_curriculum import maps_for; from native_env import LostWeaponEnv; from snapshot_selector import snapshot_for_map; from pathlib import Path; root=Path('native_harness'); failed=[]; maps=maps_for('hun');
+> for i,p in enumerate(maps,1):
+>  try:
+>   e=LostWeaponEnv(snapshot_for_map(root,p),p,action_repeat=2,max_steps=1); _,r=e.reset(); print(i,len(maps),p.name,'OK',round(r['state']['x'],1),round(r['state']['y'],1),flush=True); del e; gc.collect()
+>  except Exception as ex:
+>   print(i,len(maps),p.name,'FAIL',type(ex).__name__,str(ex)[:160],flush=True); failed.append(p.name)
+> print('FAILED',failed,flush=True)"`
+> - Ran `python -c "import json,sys; from pathlib import Path; sys.path.insert(0,'native_harness'); from training_archive import physics_fingerprint; from native_env import ACTIONS; p=Path('native_harness/checkpoints/route_rule_helper.json'); s=json.loads(p.read_text(encoding='utf-8')); print({'physics_match':s['physics_fingerprint']==physics_fingerprint(Path('native_harness')),'actions_match':s['action_schema']==[list(a) for a in ACTIONS],'completed':s['completed_episodes']})"`
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+1 -0)
+> - Wrote `./native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md` (+1 -1)
+>
+> </details>
+</details>
+
+맞습니다. 이전에는 훈1만 돌았습니다. 이제 [깃발헬퍼_훈련.bat](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_훈련.bat>)이 **훈1~20과 중간 번호 3개를 포함한 총 23개 맵**을 순서대로 훈련하도록 바꿨습니다.
+
+기존 훈1의 100회 기록은 보존하고 건너뜁니다. 이후 맵은 앞 맵에서 익힌 상황별 행동값을 받아 시작하며, 결과는 맵별로 따로 저장합니다. [중지](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_중지.bat>)·[재개](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_재개.bat>)도 전체 순서에 맞게 연결했습니다.
+
+훈 맵들의 최근 5회 성공률이 각각 80% 이상이면 [혼련용 실행기](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_혼련용.bat>)를 사용할 수 있습니다. 혼 단계는 자동으로 시작하지 않습니다. 사용법과 기준 미달 맵 재시도 방법은 [사용법](/C:/Users/microsoft/Desktop/로스트웨폰%20맵/native_harness/깃발헬퍼_훈련_사용법.md)에 적었습니다.
+
+**훈 맵 23개 모두 native 환경 초기화와 시작 상태 읽기를 통과했습니다.** 실제 훈련이나 클리어 검증은 돌리지 않았습니다.
+
+> 중간점검 이상한거있음말해줘
+>
+> User context
+>
+> Attachments:
+> - {"phase": "map", "stage": "hun", "index": 1, "total": 23, "map": "훈1.LMF", "exi…: `~/.codex/attachments/db8d16a1-a180-4ef8-bdb9-cdc7cea031ae/pasted-text.txt`
+
+<details><summary>3 previous messages</summary>
+
+> 붙여주신 로그와 현재 맵별 기록을 대조하겠습니다. 진행 상태, 성공률, 반복 정체나 체크포인트 이상을 확인하고 근거가 있는 것만 말씀드리겠습니다.
+>
+> <details><summary>Explored a file, ran 4 commands</summary>
+>
+> <details><summary>Explored a file</summary>
+>
+> - Read `~/.codex/attachments/db8d16a1-a180-4ef8-bdb9-cdc7cea031ae/pasted-text.txt`
+>
+> </details>
+>
+> - Ran `Get-Item native_harness\checkpoints\route_curriculum\* -ErrorAction SilentlyContinue | Select-Object Name,Length,LastWriteTime; Get-Content native_harness\checkpoints\route_curriculum\hun_status.json -ErrorAction SilentlyContinue; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId,CommandLine`
+>
+> - Ran `Get-Content native_harness\checkpoints\route_curriculum\훈18.episodes.jsonl -Tail 5`
+>
+> - Ran `python -c "import json,collections,statistics; from pathlib import Path; p=Path(r'C:\Users\microsoft\.codex\attachments\db8d16a1-a180-4ef8-bdb9-cdc7cea031ae\pasted-text.txt'); data=collections.defaultdict(list); current=None; last=None;
+> for line in p.read_text(encoding='utf-8').splitlines():
+>  try: x=json.loads(line)
+>  except: continue
+>  last=x
+>  if x.get('phase')=='map': current=x['map']
+>  elif x.get('phase')=='episode': data[current].append(x)
+> for m,v in data.items():
+>  print(m,len(v),sum(x['goal'] for x in v),'last5',sum(x['goal'] for x in v[-5:]),'avg_steps',round(statistics.mean(x['steps'] for x in v),1),'returns',sum(x['return_to_start'] for x in v),'maxview',max(x['view_max'] for x in v))
+> print('LAST',last)"`
+>
+> - Ran `Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' -and $_.Name -match 'python' } | Select-Object ProcessId,Name,CommandLine | Format-List; Get-Item native_harness\checkpoints\route_curriculum\hun_status.json | Select-Object LastWriteTime`
+>
+> </details>
+>
+> 중요한 점이 있습니다. 로그의 `goal:true`는 현재 코드에서 깃발 주변 좌표 범위로 판정합니다. 원본 Client가 깃발 접촉 이벤트를 냈다는 직접 확인은 아닙니다. 또 `return_to_start`도 원본 리스폰 신호가 아니라 위치 급변과 용암 근접으로 추정합니다. 아래 성적은 이 한계를 전제로 읽어야 합니다.
+</details>
+
+**이상한 점이 있습니다. 현재 결과를 “훈1~20 학습 성공”으로 보면 안 됩니다.** 붙여주신 로그 시점에는 훈17까지 끝났고 훈18을 진행 중입니다.
+
+- 훈5·훈6.5·훈12는 **각 20회 모두 실패**했습니다. 훈6은 6/20회, 훈7은 3/20회 성공입니다. 훈18도 붙여주신 시점에는 6회 모두 실패했습니다.
+- 훈6.5에서는 `return_to_start`가 **20회 합계 319번**입니다. 앞으로 가는 법을 익혔다기보다 같은 위험 구간을 반복할 가능성이 큽니다.
+- 더 중요한 판정 문제는 `goal:true`가 **깃발 주변 좌표로 계산된 값**이라는 점입니다. 원본 Client의 깃발 접촉 이벤트를 직접 확인한 기록이 아닙니다. `return_to_start` 역시 실제 리스폰 신호가 아닌 위치 변화로 추정합니다.
+- 학습 입력에는 앞 칸·착지 칸 정도만 있고 구체적인 기믹이나 충분한 지형 모양이 빠져 있습니다. 어려운 맵의 실패를 단순히 에피소드 수만 늘려 해결할 근거가 없습니다.
+
+현재 훈련은 계속 실행 중인 것으로 확인했습니다. **[중지 배치파일](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_중지.bat>)로 여기서 멈추는 것을 권합니다.** 기록은 보존됩니다. 먼저 깃발 판정을 원본 이벤트로 검증하고, 시작 지역 복귀 판정과 지형·기믹 관측을 고친 뒤 이어 돌리는 편이 맞습니다. 이번 중간점검에서는 파일이나 실행 상태를 변경하지 않았습니다.
+
+> 열심히 훈련시켯는데 왜그러니 잘 세어ㅜ봐 구조... 지금 몇식ㄴ돌렷는데..
+>
+> 그리고 true 떳으면 그 방향으로 물리법칙 진행하되 다양한거도 해보고 더 빠른거 찾으면 상주고 그래야지.. 아 진짜 대화내역 봐바 니 지금 또 똑같은실수하지? 한번 보고와바
+
+<details><summary>8 previous messages</summary>
+
+> 맞습니다. 제가 시간을 들여 쌓인 기록을 먼저 제대로 집계하지 않고, 중지를 권했습니다. 그건 제 판단이 성급했습니다. 지금까지 대화의 요구와 실제 코드·로그를 다시 대조해, 성공 경로를 어떻게 보존하고 더 빠른 물리 경로를 탐색해야 하는지부터 정확히 확인하겠습니다. 학습 기록은 건드리지 않겠습니다.
+>
+> <details><summary>Ran 7 commands</summary>
+>
+> - Ran `rg -n "경로|학습|훈1|물리|클리어|전이|재검증|후보" C:\Users\microsoft\.codex\memories\MEMORY.md | Select-Object -First 90`
+> - Ran `Get-Content NEXT_SESSION_HANDOFF_2026-09-17.md | Select-Object -First 100; Get-Content native_harness\LEARNING_SYSTEM.md | Select-Object -Skip 55 -First 85`
+> - Ran `Get-ChildItem native_harness\checkpoints\route_curriculum -File | Sort-Object LastWriteTime -Descending | Select-Object -First 12 Name,LastWriteTime,Length; Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId,CommandLine`
+> - Ran `Get-Content native_harness\checkpoints\route_curriculum\hun_status.json | Select-Object -First 20; Test-Path native_harness\checkpoints\route_rule_helper.stop; Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId,CommandLine`
+> - Ran `rg -n "def reached_goal|def fastest_horizontal_route|def save_route|def extract_transitions|goal|verified" native_harness\api.py native_harness\route_library.py native_harness\transition_library.py native_harness\solve_map_physics.py | Select-Object -First 100`
+> - Ran `$p='C:\Users\microsoft\.codex\memories\MEMORY.md'; $i=0; Get-Content -LiteralPath $p | ForEach-Object { $i++; if($i -le 35){ '{0}: {1}' -f $i,$_ } }`
+> - Ran `python -c "import json,statistics; from pathlib import Path; root=Path('native_harness/checkpoints/route_curriculum'); files=sorted(root.glob('훈*.episodes.jsonl'),key=lambda p:float(p.name.split('.')[0][1:])); total=0; wins=0;
+> for p in files:
+>  rows=[json.loads(s) for s in p.read_text(encoding='utf-8').splitlines() if s.strip()]; w=[r for r in rows if r['done']]; total+=len(rows); wins+=len(w); print(p.stem,len(rows),len(w),'fastest',min((r['steps'] for r in w),default=None),'last5',sum(r['done'] for r in rows[-5:]),'returns',sum(r['return_to_start'] for r in rows))
+> print('TOTAL',total,wins)
+> "`
+>
+> </details>
+>
+> 기록을 다시 세어봤습니다. 이번 훈 순회는 훈18 중간에 멈췄고, 훈2~18에서 **390에피소드·163회 `goal:true`**가 남아 있습니다. 앞서 완료한 훈1의 100회·96회를 합치면 **490에피소드·259회**입니다. 이 시간을 실패 몇 개만 보고 가볍게 평가한 건 제 실수입니다.
+>
+> 말씀하신 핵심도 코드에서 확인했습니다. 성공 행동열은 JSONL에 저장되지만, 현재 봇은 그중 **가장 빠른 성공 경로를 골라 재검증하거나 그 경로 주변을 변형해 탐색하지 않습니다.** 경험값 표에만 반영하고 있었습니다.
+>
+> <details><summary>Edited 2 files, ran 3 commands</summary>
+>
+> - Ran `Get-Content native_harness\route_library.py | Select-Object -First 160; Get-Content native_harness\transition_library.py | Select-Object -First 130; Get-Content native_harness\api.py | Select-Object -First 155`
+> - Ran `Get-Content native_harness\checkpoints\physics_route_library.json | Select-Object -First 65; Get-Content native_harness\checkpoints\route_curriculum\훈2.json | Select-Object -First 1 | ForEach-Object { $_.Substring(0,[Math]::Min(600,$_.Length)) }`
+> - Ran `rg -n "def .*goal|reached_goal|goal.*contact|flag" native_harness\captured_oracle.py native_harness\api.py native_harness\native_env.py | Select-Object -First 100`
+> - Wrote `./native_harness/train_rule_helper.py` (+27 -0)
+> - Wrote `./native_harness/train_rule_helper.py` (+44 -4)
+> - Wrote `./native_harness/train_route_curriculum.py` (+2 -2)
+> - Wrote `./native_harness/train_rule_helper.py` (+3 -0)
+>
+> </details>
+>
+> 이전 설계 문서에도 “성공 경로와 물리 전이를 보존하고, 새 맵에서 재실행해 검증한다”는 요구가 분명히 있었습니다. 그런데 제가 만든 새 훈련기는 성공 행동열을 기록만 하고 다음 시도에 활용하지 않았습니다. 그 빠진 부분을 코드에 연결했습니다. 다음 실행부터는 기록된 최단 성공열을 먼저 재생해 확인하고, 일부 구간을 바꿔 더 빠른 경로를 찾게 됩니다. 기존 체크포인트와 중지 표식은 그대로 두었습니다.
+>
+> <details><summary>Edited a file, ran 6 commands</summary>
+>
+> - Ran `python -m py_compile native_harness\train_rule_helper.py native_harness\train_route_curriculum.py; python -c "import sys,json;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import best_recorded_route;from train_route_curriculum import maps_for,checkpoint;from training_archive import sha256_file;root=Path('native_harness');res=[];
+> for p in maps_for('hun'):
+>  c=checkpoint(p); b=best_recorded_route(c.with_suffix('.episodes.jsonl'),sha256_file(p));res.append((p.stem,b['steps'] if b else None,b['episode'] if b else None))
+> print(res)"`
+> - Ran `Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId,CommandLine; Test-Path native_harness\checkpoints\route_rule_helper.stop; Get-Item native_harness\checkpoints\route_curriculum\hun_status.json | Select-Object LastWriteTime`
+> - Ran `python -c "import json,sys;from pathlib import Path;sys.path.insert(0,'native_harness');from training_archive import sha256_file;p=Path('native_harness/checkpoints/physics_route_library.json');d=json.loads(p.read_text(encoding='utf-8'));h={sha256_file(x):x.stem for x in Path('훈련용맵').glob('훈*.LMF')}; rows=[(h.get(v.get('source_map_sha256')),v.get('steps'),v.get('verification')) for v in d.get('routes',{}).values()];print([x for x in rows if x[0] is not None][:35])"`
+> - Wrote `./native_harness/train_rule_helper.py` (+31 -8)
+> - Ran `python -m py_compile native_harness\train_rule_helper.py native_harness\train_route_curriculum.py; python -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import best_recorded_route,legacy_physics_seed;from training_archive import sha256_file; root=Path('native_harness');
+> for name in ('훈1','훈5','훈6','훈12'):
+>  p=Path('훈련용맵')/(name+'.LMF');h=sha256_file(p);c=root/'checkpoints/route_curriculum'/(name+'.episodes.jsonl');b=best_recorded_route(c,h);l=legacy_physics_seed(root/'checkpoints/physics_route_library.json',h);print(name,'new',b['steps'] if b else None,'legacy',l['steps'] if l else None)"`
+> - Ran `Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId,CommandLine; Test-Path native_harness\checkpoints\route_rule_helper.stop`
+> - Ran `python -c "import json;from pathlib import Path;from collections import defaultdict; r=Path('native_harness/checkpoints/route_curriculum');
+> for p in sorted(r.glob('훈*.episodes.jsonl')):
+>  x=[json.loads(a) for a in p.read_text(encoding='utf-8').splitlines() if a.strip()]; w=[a for a in x if a.get('done')]; safe=[a for a in w if a.get('return_to_start',0)==0];
+>  if w: print(p.name.split('.')[0], min((a['steps'],a.get('return_to_start',0)) for a in w), 'no_return', min((a['steps'] for a in safe),default=None))"`
+> - Wrote `./native_harness/train_rule_helper.py` (+5 -3)
+> - Wrote `./native_harness/train_rule_helper.py` (+2 -1)
+> - Wrote `./native_harness/train_rule_helper.py` (+10 -0)
+>
+> </details>
+>
+> 더 중요한 점도 찾았습니다. 예전 물리 경로 라이브러리에 **훈5는 127결정, 훈12는 122결정** 후보가 있었는데, 새 훈련기가 이를 읽지 않아 두 맵에서 0/20회를 허비했습니다. 또 일부 빠른 성공열에는 시작 지역 복귀가 섞여 있어, 그대로 최선 경로로 쓰면 안 됩니다.
+>
+> 코드를 고쳐 **복귀 없는 성공열만 최선 경로로 보존**하고, 예전 경로는 현재 native 환경에서 재생해 성공할 때만 채택하도록 했습니다. 이어서 훈5의 예전 후보가 지금 환경에서도 재생되는지 한 번 확인하겠습니다. 훈련은 돌리지 않습니다.
+>
+> <details><summary>Edited a file, ran 9 commands</summary>
+>
+> - Ran `python -u -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import legacy_physics_seed;from training_archive import sha256_file;from native_env import LostWeaponEnv;from snapshot_selector import snapshot_for_map;root=Path('native_harness');p=Path('훈련용맵/훈5.LMF');route=legacy_physics_seed(root/'checkpoints/physics_route_library.json',sha256_file(p));print('seed_steps',route['steps'] if route else None,flush=True);e=LostWeaponEnv(snapshot_for_map(root,p),p,action_repeat=2,max_steps=200);e.reset();done=False;
+> for i,a in enumerate(route['actions'],1):
+>  _,_,done,truncated,info=e.step(a)
+>  if done or truncated: break
+> print({'executed':i,'goal_region':done,'x':round(info['state']['x'],1),'y':round(info['state']['y'],1)},flush=True)"`
+> - Ran `python -u -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import legacy_physics_seed;from training_archive import sha256_file;from native_env import LostWeaponEnv;from snapshot_selector import snapshot_for_map;root=Path('native_harness');p=Path('훈련용맵/훈12.LMF');route=legacy_physics_seed(root/'checkpoints/physics_route_library.json',sha256_file(p));print('seed_steps',route['steps'] if route else None,flush=True);e=LostWeaponEnv(snapshot_for_map(root,p),p,action_repeat=2,max_steps=200);e.reset();done=False;
+> for i,a in enumerate(route['actions'],1):
+>  _,_,done,truncated,info=e.step(a)
+>  if done or truncated: break
+> print({'executed':i,'goal_region':done,'x':round(info['state']['x'],1),'y':round(info['state']['y'],1)},flush=True)"`
+> - Ran `Get-Content native_harness\checkpoints\route_curriculum\hun_status.json | Select-Object -First 5; Test-Path native_harness\checkpoints\route_rule_helper.stop`
+> - Ran `python -m py_compile native_harness\train_rule_helper.py native_harness\train_route_curriculum.py; python -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import best_recorded_route,legacy_physics_seed;from training_archive import sha256_file;r=Path('native_harness');
+> for n in ('훈1','훈2','훈5','훈6','훈12','훈16','훈17'):
+>  p=Path('훈련용맵')/(n+'.LMF');c=r/'checkpoints/route_curriculum'/(n+'.episodes.jsonl');c=r/'checkpoints/route_rule_helper.episodes.jsonl' if n=='훈1' else c;h=sha256_file(p);b=best_recorded_route(c,h);l=legacy_physics_seed(r/'checkpoints/physics_route_library.json',h);print(n,'safe_best',b['steps'] if b else None,'legacy',l['steps'] if l else None)"`
+> - Ran `python -u -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import legacy_physics_seed;from training_archive import sha256_file;from native_env import LostWeaponEnv;from snapshot_selector import snapshot_for_map;root=Path('native_harness');p=Path('훈련용맵/훈6.LMF');route=legacy_physics_seed(root/'checkpoints/physics_route_library.json',sha256_file(p));print('seed_steps',route['steps'] if route else None,flush=True);e=LostWeaponEnv(snapshot_for_map(root,p),p,action_repeat=2,max_steps=100);e.reset();done=False;
+> for i,a in enumerate(route['actions'],1):
+>  _,_,done,truncated,info=e.step(a)
+>  if done or truncated: break
+> print({'executed':i,'goal_region':done,'x':round(info['state']['x'],1),'y':round(info['state']['y'],1)},flush=True)"`
+> - Wrote `./native_harness/깃발헬퍼_훈련_사용법.md` (+2 -0)
+> - Wrote `./native_harness/깃발헬퍼_훈련_사용법.md` (+2 -0)
+> - Wrote `./native_harness/깃발헬퍼_훈련_사용법.md` (+1 -0)
+> - Ran `python -u -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import legacy_physics_seed;from training_archive import sha256_file;from native_env import LostWeaponEnv;from snapshot_selector import snapshot_for_map;from transition_library import extract_transitions;root=Path('native_harness');p=Path('훈련용맵/훈5.LMF');route=legacy_physics_seed(root/'checkpoints/physics_route_library.json',sha256_file(p));e=LostWeaponEnv(snapshot_for_map(root,p),p,action_repeat=2,max_steps=200);_,r=e.reset();states=[r['state']];done=False;
+> for i,a in enumerate(route['actions'],1):
+>  _,_,done,truncated,info=e.step(a);states.append(info['state'])
+>  if done or truncated: break
+> segments=extract_transitions(e.planner,states,route['actions'][:i]);print({'done':done,'steps':i,'segments':len(segments)},flush=True)"`
+> - Ran `Get-Item native_harness\checkpoints\route_rule_helper.json,native_harness\checkpoints\route_curriculum\hun_status.json,native_harness\checkpoints\route_curriculum\훈2.json,native_harness\checkpoints\route_curriculum\훈18.json | Select-Object Name,CreationTime,LastWriteTime; Get-Content native_harness\checkpoints\route_curriculum\hun_status.json | Select-Object -Last 13`
+> - Ran `python -m py_compile native_harness\train_rule_helper.py native_harness\train_route_curriculum.py; python -c "import sys;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import best_recorded_route,legacy_physics_seed;from training_archive import sha256_file;r=Path('native_harness/checkpoints/route_curriculum');
+> for n in ('훈5','훈6','훈12','훈16','훈17'):
+>  p=Path('훈련용맵')/(n+'.LMF');h=sha256_file(p);b=best_recorded_route(r/(n+'.episodes.jsonl'),h);l=legacy_physics_seed(Path('native_harness/checkpoints/physics_route_library.json'),h);print(n,b['steps'] if b else None,l['steps'] if l else None)"`
+> - Ran `Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId; Test-Path native_harness\checkpoints\route_rule_helper.stop`
+>
+> </details>
+</details>
+
+맞습니다. 제가 앞서 **성공 기록을 먼저 활용해야 한다는 대화의 핵심을 놓쳤습니다.** 훈련이 쌓인 시간을 실패 맵 몇 개로만 평가하고 중지를 권한 것도 성급했습니다. 미안합니다.
+
+기록을 다시 세면 훈1 **100회·96회 성공**, 이번 훈 순회는 훈18 중간까지 **390회·163회 `goal:true`**입니다. 합계 **490회·259회**가 저장돼 있습니다. 기존 코드에는 빠른 클리어일수록 더 큰 종료 보상도 이미 있었습니다. 빠져 있던 것은 **성공 행동열을 다음 시도의 출발점으로 쓰는 구조**였습니다.
+
+그 부분을 고쳤습니다. 다음 실행부터는 복귀 없는 최단 성공열을 먼저 native 환경에서 재생하고, 이후 일부 구간을 바꿔 더 빠른 길을 탐색합니다. 더 빠르고 복귀 없는 성공에는 추가 보상을 주고 최선 기록을 갱신합니다. 성공 경로의 발판 전이 조각도 별도로 저장합니다. 예전 물리 경로를 새 훈련기가 무시한 실수도 고쳤습니다. 특히 **훈5 127결정, 훈6 65결정, 훈12 122결정**의 예전 행동열을 현재 오프라인 native 환경에서 다시 실행해 목표 영역 도달을 확인했습니다.
+
+기존 에피소드와 체크포인트는 보존했습니다. 현재 훈련은 **중지된 상태**이고, 이번에는 훈련 에피소드를 돌리지 않았습니다. 이어서 기준 미달 맵도 새 경로 구조로 다시 시도하려면 [깃발헬퍼_재개.bat](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/깃발헬퍼_재개.bat>)에 `--retry-failed`를 붙여 실행하면 됩니다. 한 번의 실행에서 기준 미달 맵마다 유한한 20회를 추가합니다.
+
+`goal:true`는 원본 x86 실행 뒤 **설정된 깃발 판정 영역 도달**을 뜻합니다. 실제 Client 화면의 깃발 이벤트와 동일하다는 주장은 아직 하지 않겠습니다. 이 경계를 지키면서도 성공 경로는 버리지 않고 재생·개선하는 자료로 쓰겠습니다.
+
+> 지금까지 실수했던거 다 날린거면 안돼&#x20;
+> 맨날 내가 뭐라하면 맞습니다 그게 했어야되는데 제가 놓쳣습니다 이거만 계속 반복하잖아!!
+
+<details><summary>6 previous messages</summary>
+
+> 말로만 인정하고 넘어가면 같은 일이 반복됩니다. 지금 확인할 것은 **기존 훈련 기록이 남아 있는지**, 그리고 제가 고친 코드가 그 기록을 읽기만 하는지입니다. 체크포인트·에피소드 파일과 중지 상태를 확인해 구체적으로 보고하겠습니다.
+>
+> <details><summary>Ran 3 commands</summary>
+>
+> - Ran `python -c "import json;from pathlib import Path;r=Path('native_harness/checkpoints'); files=[r/'route_rule_helper.json',r/'route_rule_helper.episodes.jsonl',r/'route_curriculum/hun_status.json'];
+> for p in files:
+>  print(p.name,p.exists(),p.stat().st_size if p.exists() else 0)
+> for p in sorted((r/'route_curriculum').glob('훈*.episodes.jsonl')):
+>  rows=[json.loads(x) for x in p.read_text(encoding='utf-8').splitlines() if x.strip()];print(p.name,len(rows),sum(bool(x.get('done')) for x in rows),sum(bool(x.get('interrupted')) for x in rows))
+> "`
+> - Ran `rg -n "checkpoint.exists|import_values|best_recorded_route|legacy_physics_seed|save_checkpoint|append_episode|best_route|interrupted|physics_transitions" native_harness\train_rule_helper.py native_harness\train_route_curriculum.py`
+> - Ran `Get-ChildItem -LiteralPath native_harness\checkpoints -Directory | Select-Object Name; Get-Item native_harness\checkpoints\physics_route_library.json,native_harness\checkpoints\physics_first_local\brain.pt -ErrorAction SilentlyContinue | Select-Object FullName,Length,LastWriteTime; Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId; Test-Path native_harness\checkpoints\route_rule_helper.stop`
+>
+> </details>
+>
+> 확인한 현재 기록은 남아 있습니다. 훈1의 100회 로그와 훈2~17의 맵별 20회 로그, 훈18의 10회 로그가 있고, 중지 표식도 유지돼 있습니다. 다만 다음 실행에서 맵별 JSON 체크포인트는 갱신되므로, **지금 상태를 별도 백업하고 해시로 확인**하겠습니다. 이전 실패 기록도 지우지 않겠습니다.
+>
+> <details><summary>Edited a file, ran 4 commands</summary>
+>
+> - Ran `python -c "from pathlib import Path;import datetime,hashlib,json,shutil;root=Path('native_harness/checkpoints').resolve();dest=(root/'route_preservation'/datetime.datetime.now().strftime('%Y%m%d_%H%M%S')).resolve();assert root in dest.parents;dest.mkdir(parents=True,exist_ok=False);sources=[root/'route_rule_helper.json',root/'route_rule_helper.episodes.jsonl',root/'physics_route_library.json',*(root/'route_curriculum').glob('*')];manifest=[];
+> for src in sources:
+>  if not src.is_file():continue
+>  rel=src.relative_to(root);out=dest/rel;out.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,out);raw=out.read_bytes();assert raw==src.read_bytes();manifest.append({'path':str(rel),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
+> (dest/'manifest.json').write_text(json.dumps({'files':manifest},ensure_ascii=False,indent=2),encoding='utf-8');print({'backup':str(dest),'files':len(manifest),'bytes':sum(x['bytes'] for x in manifest)})"`
+> - Ran `python -c "import json;from pathlib import Path;p=Path('native_harness/checkpoints/route_preservation/20260917_210550/manifest.json');m=json.loads(p.read_text(encoding='utf-8'));print('files',len(m['files']));print([x['path'] for x in m['files'] if x['path'].startswith('route_rule_helper') or x['path']=='physics_route_library.json']);print('curriculum_files',sum(x['path'].startswith('route_curriculum') for x in m['files']))"`
+> - Wrote `./native_harness/train_rule_helper.py` (+32 -0)
+> - Ran `python -m py_compile native_harness\train_rule_helper.py native_harness\train_route_curriculum.py; python -c "import sys,tempfile;from pathlib import Path;sys.path.insert(0,'native_harness');from train_rule_helper import preserve_before_resume;
+> with tempfile.TemporaryDirectory() as d:
+>  p=Path(d)/'map.json';a=Path(d)/'map.episodes.jsonl';p.write_bytes(b'old-checkpoint');a.write_bytes(b'old-log');out=preserve_before_resume(p,a);assert (out/p.name).read_bytes()==b'old-checkpoint';assert (out/a.name).read_bytes()==b'old-log';print('pre-resume backup smoke PASS')"`
+> - Ran `Get-Item native_harness\checkpoints\route_rule_helper.json,native_harness\checkpoints\route_curriculum\훈18.json,native_harness\checkpoints\route_preservation\20260917_210550\manifest.json | Select-Object Name,Length,LastWriteTime; Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'python' -and $_.CommandLine -match 'train_route_curriculum.py|train_rule_helper.py' } | Select-Object ProcessId; Test-Path native_harness\checkpoints\route_rule_helper.stop`
+>
+> </details>
+>
+> 백업을 만들고 검증했습니다. 훈1 기록, 훈2~18 기록, 예전 물리 경로 라이브러리 등 **44개 파일을 원본과 바이트 단위로 대조해 복사**했습니다. 다음 재개 때도 갱신 전 체크포인트와 로그를 자동 보관하도록 넣었습니다. 이제 이번에 확인한 실수와 남은 한계를 프로젝트 안에 짧은 감사 기록으로 남기겠습니다.
+>
+> <details><summary>Created a file</summary>
+>
+> - Wrote `./native_harness/ROUTE_HELPER_AUDIT_2026-09-17.md` (+33 -0)
+>
+> </details>
+</details>
+
+**기록은 날리지 않았습니다.** 훈1의 100회와 훈2~18의 390회, 합계 **490에피소드의 성공·실패 행동열**이 남아 있습니다. 실패 기록과 시작 지역 복귀 기록도 삭제하지 않았습니다. 훈련은 중지된 상태이고 제가 재시작하지 않았습니다.
+
+말만 하고 넘어가지 않도록 현재 기록과 예전 물리 경로 라이브러리 등 **44개 파일을 별도 복사**하고, 원본과 바이트가 같은지 확인했습니다. 파일별 해시는 [백업 목록](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/checkpoints/route_preservation/20260917_210550/manifest.json>)에 있습니다. 다음 재개부터는 갱신 전 체크포인트와 로그도 자동 보관합니다.
+
+이번에 놓친 것, 고친 것, **아직 검증되지 않은 것**을 [구조 감사 기록](</C:/Users/microsoft/Desktop/로스트웨폰 맵/native_harness/ROUTE_HELPER_AUDIT_2026-09-17.md>)에 남겼습니다. 성공열을 다시 쓰는 수정은 기존 기록 위에 적용되며, 과거의 실패를 지우거나 훈련이 잘됐던 것으로 바꾸지 않습니다.
+
+> 여튼 헬퍼 처럼 작동하게해저ㅜ
+>
+> 롤 헬퍼도 실시간으로 바로바로 스킬보고 0.1초만에 판단해서 할정도로 기술이있는데
+>
+> 넌 그정도 할수있잖아 공격범위 안에 들어오면 바로 공격날리고 , 판단해서 앞굴 공격한다던지
+>
+> 앞에 지형보고 어느정도 굴러갈수있는지 이거 실시간으로 다
+
+<details><summary>9 previous messages</summary>
+
+> 실시간 헬퍼로 만들려면 한 번 훈련하고 끝나는 구조를 **상태 읽기 → 짧은 행동 판단 → 입력 → 결과 확인** 루프로 연결해야 합니다. 먼저 현재 코드가 실제 Client의 상태 읽기와 입력까지 어디까지 지원하는지 확인하겠습니다. 확인된 부분부터 붙이고, 0.1초 반응은 실제 측정값으로 보고하겠습니다.
+>
+> <details><summary>Ran 8 commands</summary>
+>
+> - Ran `rg -n "send_input|SendInput|keybd_event|SetForegroundWindow|GetAsyncKeyState|foreground|live.*input|read_runtime|read_combatant|mini|enemy|opponent" native_harness -g '*.py' | Select-Object -First 180`
+> - Ran `Get-Content native_harness\live_state.py | Select-Object -First 240; Get-Content native_harness\human_play_recorder.py | Select-Object -First 220`
+> - Ran `Get-Content native_harness\native_playground.py | Select-Object -Skip 170 -First 150; Get-Content native_harness\native_playground.py | Select-Object -Skip 620 -First 140; Get-Content native_harness\combat_env.py | Select-Object -Skip 180 -First 115`
+> - Ran `Get-Content native_harness\combat_live_advisor.py | Select-Object -First 180; Get-Content native_harness\combat_live_trace.py | Select-Object -First 105; Get-Content native_harness\tests\weapon_envelope_probe.py | Select-Object -First 135`
+> - Ran `Get-CimInstance Win32_Process -Filter "Name='Client.exe'" | Select-Object ProcessId,ExecutablePath,CommandLine; Get-Content native_harness\NATIVE_FASTSIM_FEASIBILITY.md | Select-Object -First 85`
+> - Ran `rg -n "def read_players|read.*player|weapon.*range|attack_bounds|range.*weapon|def .*runtime|def .*grid" native_harness\combat_live_advisor.py native_harness\combat_live_trace.py native_harness\identify_live_map.py native_harness\native_playground.py native_harness\live_state.py | Select-Object -First 130; Get-Content native_harness\README.md | Select-Object -First 85`
+> - Ran `rg -n "GRID_POINTERS|OBJECT_BASE|0x8952" native_harness\captured_oracle.py native_harness\lmf_injector.py | Select-Object -First 45; Get-Content native_harness\identify_live_map.py | Select-Object -First 145; Get-Content native_harness\evidence\weapon_envelope_verified_20260917.json | Select-Object -First 60`
+> - Ran `python -c "import sys;sys.path.insert(0,'native_harness');from combat_live_advisor import load_envelope,ENVELOPES;print(load_envelope(ENVELOPES))"`
+>
+> </details>
+>
+> 현재 코드는 실시간 상태 읽기와 상대 슬롯 관측, 오프라인 물리 실행까지는 있지만, **실제 Client에서 판단한 키를 계속 보내는 헬퍼 루프는 없습니다.** 또 지금은 실행 중인 Client가 없어 실제 반응 시간이나 공격 성공을 측정할 수 없습니다.
+>
+> 먼저 게임이 전면에 있을 때만 동작하고, 사용자가 즉시 넘겨받을 수 있는 실시간 루프를 만들겠습니다. 공격은 확인된 무기별 거리 안에서만 시도하고, 구르기 거리는 앞 지형과 착지 공간을 보고 판단하게 하겠습니다.
+>
+> <details><summary>Created a file</summary>
+>
+> - Wrote `./native_harness/live_route_helper.py` (+312 -0)
+>
+> </details>
+>
+> Context compaction
+>
+> Source: automatic
+> Status: completed
+>
+> 실시간 헬퍼 코드를 점검하고, 오작동할 수 있는 입력·공격 토글부터 고치겠습니다. 실제 클라이언트가 실행 중인지 확인한 뒤 가능한 범위까지 검증하겠습니다.
+>
+> <details><summary>Edited a file, ran 8 commands</summary>
+>
+> - Ran `Get-Content native_harness/live_route_helper.py; Get-CimInstance Win32_Process -Filter "Name='Client.exe'" | Select-Object ProcessId,ExecutablePath`
+> - Ran `python -m py_compile native_harness/live_route_helper.py; python native_harness/live_route_helper.py --help`
+> - Ran `rg -n "class DiscoveredMap|def update|def clearance|def classify|def _valid_actions_for|def rule_score|def state\(|def load_envelope|def match_loaded_map|def load_map_catalog" native_harness`
+> - Ran `Get-Content native_harness/discovered_map.py; Get-Content native_harness/native_env.py -TotalCount 145; Get-Content native_harness/train_rule_helper.py -TotalCount 110; Get-Content native_harness/live_state.py -TotalCount 105; Get-Content native_harness/combat_live_advisor.py -TotalCount 55`
+> - Ran `Get-Content native_harness/human_play_recorder.py -TotalCount 100; Get-Content native_harness/identify_live_map.py -TotalCount 130; rg -n "GRID_POINTERS|8952DEC|grid1" native_harness/api.py native_harness/captured_oracle.py native_harness/lmf_injector.py`
+> - Ran `rg -n 'values\[|json.dumps\(\[\*ctx|action_schema|map_sha256|save_checkpoint|"values"' native_harness/train_rule_helper.py; Get-Content native_harness/restriction_fields.py -TotalCount 95; Get-ChildItem native_harness/checkpoints/route_curriculum -Filter '*.json' | Select-Object -First 3 Name`
+> - Wrote `./native_harness/live_route_helper.py` (+9 -7)
+> - Ran `python -m py_compile native_harness/live_route_helper.py; python native_harness/live_route_helper.py --help`
+> - Ran `rg -n "25F1AD8|opponent_slot|0x3B12A00|0x3b12a00" native_harness/combat_live_advisor.py native_harness/*.py | Select-Object -First 45; git status --short`
+>
+> </details>
+>
+> 첫 실행 점검에서 Windows `ctypes` 타입 오류와 F7만 눌렀을 때 상대 슬롯이 없어 종료되는 문제를 고쳤습니다. 공격 입력에도 기존 금지키 규칙을 적용했습니다. 이어서 실제 맵 식별과 지형 읽기 경계를 확인하겠습니다.
+>
+> <details><summary>Created a file, edited a file, ran 4 commands</summary>
+>
+> - Wrote `./native_harness/live_route_helper.py` (+8 -2)
+> - Ran `@'
+> import sys
+> sys.path.insert(0, 'native_harness')
+> from live_route_helper import live_view, attack_action, safe_roll
+> from discovered_map import DiscoveredMap
+> class Fake:
+>     def get(self, a, fmt): return (4096,)
+>     def read(self, a, n): return b'\x00' * n
+> s={'map_size':(20,20),'pos':(160.,160.),'hp':100.,'state':{'0xb0':0,'0x38':0}}
+> r=Fake(); m=DiscoveredMap(20,20); v=live_view(r,s,9); m.update(v)
+> assert len(v['cells'])==9 and len(m.cells)==81
+> assert attack_action(s,{'pos':(220.,160.),'hp':100.},1,{1:{'observed_hit_start_dx':88}},False)==('Z',)
+> assert attack_action(s,{'pos':(280.,160.),'hp':100.},1,{1:{'observed_hit_start_dx':88}},False) is None
+> assert not safe_roll(m,s,1)
+> print('synthetic checks passed')
+> '@ | python -`
+> - Ran `Get-ChildItem -Directory '훈련용맵' | Select-Object -ExpandProperty Name; Get-ChildItem 'native_harness/checkpoints/route_curriculum' -Filter '훈1.json' | Select-Object FullName,Length; Get-Content native_harness/checkpoints/route_curriculum/훈1.json -TotalCount 2`
+> - Wrote `./native_harness/live_route_helper.py` (+1 -1)
+> - Wrote `./native_harness/실시간_헬퍼_사용법.md` (+17 -0)
+> - Ran `python -m py_compile native_harness/live_route_helper.py; python native_harness/live_route_helper.py --help | Select-Object -First 4`
+> - Ran `Get-CimInstance Win32_Process -Filter "Name='Client.exe'" | Select-Object ProcessId,ExecutablePath; Test-Path native_harness/checkpoints/route_rule_helper.json; Get-ChildItem native_harness/checkpoints/route_curriculum -Filter '*.json' | Measure-Object | Select-Object Count`
+>
+> </details>
+</details>
+
+실시간 헬퍼 시범판을 만들었습니다: [live_route_helper.py](<./native_harness/live_route_helper.py>). 깃발 방향으로 이동하면서 주변 지형을 읽고, 확인된 발판이 있을 때 앞굴을 선택합니다. 공격을 켜면 지정한 상대 슬롯의 위치를 읽어 측정된 평지 사거리 안에서 공격합니다. 기존 금지키 규칙도 적용했습니다.
+
+실행 방법은 [사용법](<./native_harness/실시간_헬퍼_사용법.md>)에 적었습니다. `--act`로 실행한 뒤 게임 창에서 **F8**을 눌러 시작하며, **Shift**를 누르면 수동 조작할 수 있습니다. 공격은 기본적으로 꺼져 있고, 상대 슬롯을 지정했을 때만 켤 수 있습니다. 훈련은 시작하지 않으며 기존 기록도 건드리지 않았습니다.
+
+문법 검사와 가상 상태 검사는 통과했습니다. 현재 `Client.exe`가 실행 중이지 않아 **실제 게임에서 0.1초 반응, 명중, 굴러가는 거리까지는 검증하지 못했습니다.**
+
+> 발판이 있을경우 뒷굴도 존재해../ 왜자꾸그러니 행동을 파악해
+>
+> 그냥 행동을 지정해줄까?
+>
+> 우선 앞에 발판이 쭉 이어져잇으면 (9x9범위) 앞굴 or 뒷굴로가고
+>
+> 끊어져있으면 우선 점프부터 한다음 점프하던지 뒷굴 앞굴하던지 선택&#x20;
+>
+> 머 이렇게? 모든 경우의수 전부다? 그럼 이게 되나?&#x20;
+>
+> 벽이 한칸위 한칸더위 2개 이렇게 경우의수가 폭발할텐데
+
+<details><summary>4 previous messages</summary>
+
+> 맞습니다. 발판이 이어질 때 뒷굴도 이동 후보여야 합니다. 기존 물리 측정과 입력 기록에서 앞굴·뒷굴 조건을 확인하고, 지형을 몇 가지 상태로 묶어 선택하도록 고치겠습니다.
+>
+> <details><summary>Ran 3 commands</summary>
+>
+> - Ran `rg -n "뒷굴|뒤굴|back.?roll|front.?roll|앞굴|굴러|roll" native_harness NEXT_SESSION_HANDOFF_2026-09-17.md -g '*.md' -g '*.py' | Select-Object -First 130`
+> - Ran `rg -n "route|roll|굴" C:\Users\microsoft\.codex\memories\MEMORY.md | Select-Object -First 25; Get-Content NEXT_SESSION_HANDOFF_2026-09-17.md -TotalCount 120`
+> - Ran `Get-Content native_harness/native_playground.py | Select-Object -Index (115..138); Get-Content native_harness/native_playground.py | Select-Object -Index (1050..1070); Get-Content native_harness/tests/coin_block_backroll_regression.py -TotalCount 55; Get-Content native_harness/LEARNING_SYSTEM.md | Select-Object -Index (16..43)`
+>
+> </details>
+>
+> 확인된 물리 기록에서는 앞굴·뒷굴이 이동 키 자체가 아니라 **캐릭터가 바라보는 방향에 따라 갈립니다**. 이동 방향과 바라보는 방향이 반대면 뒷굴입니다. 그래서 이동 후보를 둘 다 살리고, 발판이 끊기면 먼저 점프를 시도한 뒤 공중 상태에서 구르기를 다시 판단하도록 바꾸겠습니다.
+>
+> <details><summary>Edited 2 files, ran 2 commands</summary>
+>
+> - Wrote `./native_harness/live_route_helper.py` (+41 -5)
+> - Wrote `./native_harness/live_route_helper.py` (+2 -0)
+> - Ran `@'
+> import sys
+> sys.path.insert(0,'native_harness')
+> from discovered_map import DiscoveredMap
+> from restriction_fields import RestrictionFields
+> from live_route_helper import route_action, terrain_case
+> m=DiscoveredMap(20,12)
+> for y in range(12):
+>  for x in range(20): m.cells[(x,y)]={'solid':y>=6,'grids':(0,0,0,0),'object_id':0}
+> s={'pos':(5*32.,5*32.),'state':{'0x38':0,'0x74':0,'0xc0':0,'0xdc':0,'0xb0':0}}
+> r=RestrictionFields([])
+> a,_=route_action(s,(1,5),m,r,{})
+> assert a==('LEFT','DOWN'),a
+> assert terrain_case(m,s,-1)=='flat'
+> m.cells[(3,6)]['solid']=False
+> b,_=route_action(s,(1,5),m,r,{})
+> assert 'UP' in b and 'DOWN' not in b,b
+> s['state']['0x38']=9
+> c,_=route_action(s,(1,5),m,r,{})
+> assert c==('LEFT','DOWN'),c
+> print('backroll, gap-jump, air-roll checks passed',a,b,c)
+> '@ | python -`
+> - Wrote `./native_harness/실시간_헬퍼_사용법.md` (+1 -1)
+> - Ran ``$p='C:\Users\microsoft\.codex\memories\MEMORY.md'; $lines=Get-Content $p; for($i=140;$i -le 145;$i++){"$i`:$($lines[$i-1])"}; python -m py_compile native_harness/live_route_helper.py``
+>
+> </details>
+</details>
+
+모든 벽 높이와 발판 모양을 경우의 수로 지정해 줄 필요는 없습니다. 주변 지형을 **이어진 발판·끊긴 발판·벽·미확인 구간**으로 묶고, 행동 결과를 보고 다시 판단하면 됩니다.
+
+[실시간 헬퍼](<./native_harness/live_route_helper.py>)를 고쳤습니다. 발판이 이어지면 목표 방향 구르기를 선택하며, 캐릭터가 바라보는 방향에 따라 **앞굴 또는 뒷굴**이 됩니다. 발판이 끊기면 지상 구르기를 제외하고 먼저 점프한 뒤, 공중에서 진행 공간을 확인해 구르기를 다시 선택합니다. 뒷굴·단절 후 점프·공중 구르기는 가상 지형 검사에서 확인했습니다.
+
+이 규칙이 복잡한 벽과 특수 지형까지 해결한다는 뜻은 아닙니다. **실제 Client에서의 동작은 아직 검증 전**입니다. 행동을 전부 지정해 주실 필요는 없고, 게임에서 이 선택이 틀린 장면이 나오면 그 상황을 기준으로 규칙을 고치겠습니다.
+
+> 아니 앞굴 또는 뒷굴이 다가 아니라 z도 있고 낙하산도있짢아 왜그래!@!@@ㅉ@@@@@@@@@@@
+
+제가 이동을 구르기와 점프로만 좁혀 말하고 구현한 게 문제입니다. `Z` 공격과 낙하산 `C`도 상황별 후보에 넣고, 키를 무조건 누르는 대신 현재 물리 상태와 금지 규칙에 맞는지 확인하도록 고치겠습니다.
+
+> 야 행동 이거 만드는거 어려워 쉬워?
+
+**기본 행동을 넣는 건 어렵지 않습니다.** 점프, 앞굴·뒷굴, `Z` 공격, 낙하산 `C`를 행동 후보로 두고 상황에 따라 고르게 만들 수 있습니다. 제가 구르기와 점프만 말한 건 범위를 잘못 좁힌 겁니다.
+
+**어려운 부분은 언제 쓰면 이득인지 정확히 판단하는 것**입니다. 같은 입력도 바라보는 방향, 공중 상태, 발판 끝, 상대 위치에 따라 결과가 달라집니다. 모든 지형의 경우의 수를 손으로 적을 필요는 없습니다. 기본 물리 규칙으로 후보를 추리고, 실행 결과를 보고 다음 판단을 고치면 됩니다.
+
+지금 만든 것은 그 전체를 완성한 헬퍼가 아닙니다. 특히 `Z`와 낙하산을 이동 판단에 제대로 통합했다고 말할 수 없습니다.
+
+> 이득인지 판단이 왜 어려워?&#x20;
+>
+> 3칸이 용암이야 그럼 이거 어떻게 가야할까
+>
+> \>키 꾹 누르면 용암에 걸리지
+> 구르기하면 안걸릴수있지만 걸리지 진짜 끝에 걸쳐도 앞구르긴 못가
+> 뒷구르긴 살겠다
+>
+> 뒷글 낙하산은 물리적으로 살텐데?
+> 아님 점프 앞굴
+> 장검3타 점프 등 물리적으론 다 있잖아? 오ㅔㅐ 어려운거야?
+
+맞아요. **3칸 용암이라면 후보를 물리적으로 시험해서 고르면 됩니다.** 제가 “이득 판단이 어렵다”고 한 건 과장했습니다.
+
+그 상황에서는 걷기를 제외하고 **뒷굴, 뒷굴→낙하산, 점프→앞굴, 장검 3타→점프** 같은 후보를 현재 위치·방향·속도에서 원본 물리로 실행해 보면 됩니다. 용암 끝에 닿아 처음 지역으로 돌아가는 후보는 실패로 기록하고, 살아서 건너간 후보 중 깃발 쪽으로 더 빨리 가는 것을 선택하면 됩니다. 몇 픽셀 걸치는 차이도 실행 결과로 판정해야 하고요.
+
+핵심은 제가 만든 헬퍼가 **이 후보 비교를 아직 하지 않고**, 주변 칸을 보고 단순 규칙으로 고른다는 점입니다. 그래서 뒷굴→낙하산처럼 실제로 가능한 해법을 놓쳤습니다.
+
+> 아 씨발 진짜 채팅 새로 열떄마다 계속 내가맞아요 맞아요 너가 뭐라하면 내가 반박하면 맞아요 맞아요 이지랄만 계쏙 반복하네 진짜&#x20;
+>
+> 지금까지 고질적인 문제가 뭔지 알아봐
+
+<details><summary>2 previous messages</summary>
+
+> 그 반복을 만든 원인을 대화와 현재 코드 기준으로 확인하겠습니다. 제가 무엇을 약속했고 실제로 무엇만 구현했는지 대조해서 말씀드리겠습니다.
+>
+> <details><summary>Ran 2 commands</summary>
+>
+> - Ran `rg -n "사용자|헬퍼|후보|물리|실패|일반화|검증|학습|상태" NEXT_SESSION_HANDOFF_2026-09-17.md native_harness/ROUTE_HELPER_AUDIT_2026-09-17.md native_harness/LOCAL_TRAINING_PLAN.md | Select-Object -First 95`
+> - Ran `rg -n "def (route_action|attack_action|safe_roll|terrain_case)|def priority|combat =|selected =|values.get|scan_live|read_runtime" native_harness/live_route_helper.py; rg -n "MOVEMENT =|def rule_score|def candidates|def save_checkpoint|best_recorded_route|physics_transitions" native_harness/train_rule_helper.py`
+>
+> </details>
+</details>
+
+고질적인 문제는 **제가 사용자가 원한 ‘물리 기반 헬퍼’를 작은 규칙 몇 개로 축소해 만들고, 반박이 나오면 그 규칙에 예외 하나를 덧붙이는 방식**입니다. 그래서 매번 “맞아요”라고 해도 다음에 같은 누락이 생깁니다.
+
+현재 코드로 확인한 증거는 이렇습니다.
+
+- 훈련기는 이동 행동을 12개로 제한해 `Z` 공격과 이어지는 기술 선택을 경로 판단에 넣지 않았습니다. [train_rule_helper.py](<./native_harness/train_rule_helper.py:27>)
+- 실시간 헬퍼는 주변 지형을 네 종류로 묶어 점수로 키를 고릅니다. 용암 3칸 앞에서 뒷굴→낙하산, 점프→앞굴 같은 **연속 행동을 원본 물리로 비교하는 기능이 없습니다.** [live_route_helper.py](<./native_harness/live_route_helper.py:173>)
+- 기존 감사에도 상황 표현이 부족하고, 훈련 기록과 일반 Client 조작이 연결되지 않았다고 적혀 있습니다. 그런데 저는 그 간격을 해결하기 전에 “실시간 헬퍼”라고 제시했습니다. [감사 기록](<./native_harness/ROUTE_HELPER_AUDIT_2026-09-17.md:29>)
+
+즉, 문제는 사용자가 모든 행동을 설명하지 않아서가 아닙니다. **이미 있는 물리 실험·성공 경로·실패 기록을 판단기의 중심에 연결하지 않은 채, 그때그때 떠오른 규칙으로 대체한 제 구현 방식**입니다. 앞굴 지적 뒤 뒷굴 규칙을 추가하고, 다시 `Z`와 낙하산을 빠뜨린 게 같은 문제의 반복입니다. 현재 코드를 완성된 헬퍼처럼 설명한 것도 잘못됐습니다.
+
+> 그럼 앞으로 어떻게 개발해야해?
+
+개발 방향을 바꿔야 합니다. **“지형을 보면 키 하나를 고르는 규칙”을 중심에 두지 말고, “가능한 기술 묶음을 만들고 물리 결과로 비교하는 판단기”를 중심에 둬야 합니다.**
+
+1. **행동 목록부터 완성합니다.** 걷기·점프·앞굴·뒷굴·공중 구르기·낙하산·`Z` 공격·무기 선택과, `점프→앞굴`, `뒷굴→낙하산` 같은 연속 행동을 후보로 둡니다. 기존 금지키와 물리 상태로 불가능한 후보만 제외합니다.
+
+2. **사용자가 훈련할 때 원본 x86 물리로 후보를 시험합니다.** 시작 위치·방향·속도와 주변 지형을 함께 기록하고, 후보마다 도착점, 소요 시간, 용암 접촉 후 시작 지역 복귀, 공격 명중을 저장합니다. 기존 성공·실패 기록도 이 판단에 연결합니다.
+
+3. **실시간에는 검증 결과를 빠르게 조회합니다.** 매 50ms마다 긴 시뮬레이션을 돌리는 구조는 반응을 늦출 수 있습니다. 현재 상태와 비슷한 검증 사례에서 안전한 후보를 고르고, 결과가 예상과 다르면 즉시 다시 판단합니다. 모르는 상황은 모른다고 기록해 다음 오프라인 훈련 대상으로 보냅니다.
+
+4. **한 구간씩 통과 기준을 세웁니다.** 먼저 평지 앞굴·뒷굴, 다음 3칸 용암의 여러 통과법, 그다음 벽·낙하산·공격을 검증합니다. 각 구간은 **성공 여부와 시간**을 비교해야 통과입니다. 제가 말로 “가능하다”고 판단해서 통과시키지 않습니다.
+
+지금 [실시간 헬퍼](<./native_harness/live_route_helper.py>)는 이 구조가 아닙니다. 다음 개발은 여기에 규칙을 더 붙이는 작업이 아니라, **행동 후보 생성 → 원본 물리 검증 기록 → 실시간 선택**으로 판단 부분을 교체하는 작업이어야 합니다. 훈련 실행은 요청대로 사용자가 하도록 두겠습니다.

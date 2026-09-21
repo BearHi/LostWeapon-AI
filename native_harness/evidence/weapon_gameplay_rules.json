@@ -1,0 +1,10 @@
+{
+  "status": "USER_RULE_CONFIRMED_NATIVE_OUTCOMES_LEARNED_BY_SELFPLAY",
+  "weapons": {
+    "1": {"name": "dagger", "properties": ["attacks while advancing", "fast"]},
+    "2": {"name": "bat", "properties": ["slow", "does not knock down", "can chain hits with timing"]},
+    "3": {"name": "axe", "properties": ["wide range", "slow", "always knocks down on hit"]},
+    "4": {"name": "long_sword", "properties": ["hits 1 and 2 accumulate knockdown threshold", "hit 3 always knocks down"]}
+  },
+  "learning_rule": "do not script weapon choice; observe selected weapon and learn from original-x86 damage, hit state, spacing and follow-up opportunity"
+}

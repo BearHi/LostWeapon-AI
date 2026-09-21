@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "source": "훈3.LMF",
+  "mutation": "raw140 goal shifted left by one tile",
+  "evaluation": "greedy shared DQN, no archived exact-map guide",
+  "max_steps": 948,
+  "success": false,
+  "final": [
+    132.0,
+    512.0
+  ],
+  "conclusion": "current policy does not generalize this one-tile edit"
+}

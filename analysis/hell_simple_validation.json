@@ -1,0 +1,19 @@
+{
+  "file": "지옥4_간단.LMF",
+  "width": 80,
+  "height": 60,
+  "blocks": 547,
+  "rooms": [
+    "spring rise",
+    "water stepping",
+    "ice and retracting spikes",
+    "final climb"
+  ],
+  "checks": [
+    "binary roundtrip",
+    "bounds",
+    "unique coordinates",
+    "10 spawn markers"
+  ],
+  "limitation": "Actual route clearability needs in-game testing."
+}

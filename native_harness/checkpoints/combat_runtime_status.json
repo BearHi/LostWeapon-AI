@@ -1,0 +1,1 @@
+{"episode": 6, "steps": 256, "reward0": -0.256, "reward1": -0.256, "epsilon": 0.993, "spawn_gap": 64.0, "spawn_dy": 0.0, "map": "Map\\문어\\칼4.lmf", "hp": [100.0, 100.0], "state": "episode_complete", "tick": 256, "max_steps": 256, "progress_percent": 100.0, "updated_at": 1789623665.430099}

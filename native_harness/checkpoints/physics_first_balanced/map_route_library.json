@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "routes": {
+    "9ac06ecd59a09d8dc0b9ec5d673f6873b2e8ce3f29934e8a739c716449b2da5f": {
+      "actions_rle": [
+        [
+          9,
+          53
+        ]
+      ],
+      "steps": 53,
+      "action_repeat": 2,
+      "source_map_sha256": "19c13a8902ad234feaab3f04af5f5a1cabb2abe260af5599f3c112a320a44435",
+      "source_episode": 0,
+      "verification": "must_replay_current_native_world"
+    },
+    "80bbf413acc27bd7ab4c6f892c0ed082e2bb38554794edd0f8cdd095a29c50f3": {
+      "actions_rle": [
+        [
+          7,
+          4
+        ],
+        [
+          9,
+          50
+        ]
+      ],
+      "steps": 54,
+      "action_repeat": 2,
+      "source_map_sha256": "9312d1e4b50c03dafa45c1654837bdfa4e91956251865e48044da1312dda6553",
+      "source_episode": 1,
+      "verification": "must_replay_current_native_world"
+    }
+  }
+}

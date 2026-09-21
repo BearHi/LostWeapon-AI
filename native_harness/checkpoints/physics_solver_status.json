@@ -1,0 +1,1 @@
+{"state": "complete", "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\혼련용\\혼2.LMF", "scope": "offline original-x86 native simulation", "goal": [[24, 13]], "surfaces": 11, "solved": true, "mode": "air_traverse", "trials": [{"hypothesis": "remembered_route", "clean_replay": {"verified": true, "steps": 122}}], "route_steps": 122}

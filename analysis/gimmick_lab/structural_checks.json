@@ -1,0 +1,12 @@
+{
+  "bounds": true,
+  "continuous_access_ladder": true,
+  "supported_room_floors": true,
+  "launch_region_45_cells_clear": true,
+  "game_tested": false,
+  "gimmick_physics_calibrated": false,
+  "magnet_field_isolation_verified": false,
+  "binary_roundtrip": true,
+  "records": 12785,
+  "sha256": "f6166dcc1d072ccbf3aa63be5b7f087492b2ebc3ea23970303b1d07b1e41dc27"
+}

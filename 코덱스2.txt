@@ -1,0 +1,848 @@
+# 설계 지형 인식 LostWeapon 헬퍼
+
+> 자. 아스트라 켰다
+>
+> 지금까지 로웨 ai 만들다가 자꾸 실패해서 그냥 아스트라로 해볼련다
+> 이 채팅들 보고 뭐가 문젠지 파악부터하고 어떻게 설계할지 구조짜줘
+> 지금 물리법칙은 다 만들었는데 자꾸 이상하게 학습에서 막혀서&#x20;
+>
+> 일단넌 개발하지말고 두뇌가 되어줘
+> 뭐가 문제고 앞으로 어떻게해야하고
+>
+> 솔직히 현실적으로 사람처럼만드는게 어려워서
+> 9x9칸 보는걸로 했는데 이것도 어려워보여 뭐가 맞아보여 넌?
+>
+> User context
+>
+> Attachments:
+> - # Add terrain-aware LostWeapon helper > `NEXT_SESSION_HANDOFF_2026-09-17.md` 부터…: `~/.codex/attachments/6a88aa7b-94fb-4648-bcd0-824042d0c996/pasted-text.txt`
+> - # Add terrain-aware LostWeapon helper > `NEXT_SESSION_HANDOFF_2026-09-17.md` 부터…: `~/.codex/attachments/199f4e54-080f-4ee5-b098-39319d8e70ef/pasted-text.txt`
+
+<details><summary>4 previous messages</summary>
+
+> 붙여준 두 채팅과 인계 문서부터 읽고, 물리 구현과 학습이 어디서 어긋나는지 살펴볼게. 코드는 수정하지 않고, 지금 방식의 문제와 현실적인 설계 방향을 정리하겠어.
+>
+> <details><summary>Ran 6 commands</summary>
+>
+> - Ran `Get-Content -LiteralPath 'C:\Users\microsoft\.codex\attachments\6a88aa7b-94fb-4648-bcd0-824042d0c996\pasted-text.txt' -Raw; Get-Content -LiteralPath 'C:\Users\microsoft\.codex\attachments\199f4e54-080f-4ee5-b098-39319d8e70ef\pasted-text.txt' -Raw`
+> - Ran `rg -n "native|학습|terrain|handoff|transition" 'C:\Users\microsoft\.codex\memories\MEMORY.md'; rg --files -g '*HANDOFF*' -g 'AGENTS.md'`
+> - Ran `Get-Content NEXT_SESSION_HANDOFF_2026-09-17.md; Get-Content native_harness/ROUTE_HELPER_AUDIT_2026-09-17.md; Get-Content native_harness/ROUTE_HELPER_DESIGN_2026-09-17.md`
+> - Ran `$paths=@('C:\Users\microsoft\.codex\attachments\6a88aa7b-94fb-4648-bcd0-824042d0c996\pasted-text.txt','C:\Users\microsoft\.codex\attachments\199f4e54-080f-4ee5-b098-39319d8e70ef\pasted-text.txt'); foreach($p in $paths){Get-Item -LiteralPath $p | Select-Object FullName,Length; Select-String -LiteralPath $p -Pattern '^> [^ >]|실패|성공률|학습률|Q.table|학습.*안|0/|20/|100%' | Select-Object -First 130}`
+> - Ran `rg -n "^def |MOVEMENT|values|state_key|reward|epsilon|gamma|navigation|candidate" native_harness/train_rule_helper.py; Get-Content native_harness/live_route_helper.py | Select-Object -Skip 110 -First 160; Get-Content native_harness/train_rule_helper.py | Select-Object -First 235`
+> - Ran `rg -n '^> [^ >]|성공률|100%|0/20|학습.*안|원인|고질' 'C:\Users\microsoft\.codex\attachments\6a88aa7b-94fb-4648-bcd0-824042d0c996\pasted-text.txt' 'C:\Users\microsoft\.codex\attachments\199f4e54-080f-4ee5-b098-39319d8e70ef\pasted-text.txt'`
+>
+> </details>
+>
+> 핵심 문제가 하나 확인됐어. 현재 훈련기는 주변을 넓게 읽어도, 학습에는 ‘목표 좌우·목표 높이·앞칸·착지칸·동작 모드’ 다섯 항목만 넘겨. 속도, 바라보는 방향, 발판 끝까지의 거리처럼 해법을 바꾸는 정보가 빠져 있어서, 서로 다른 상황을 같은 상황으로 배우고 있어. 9×9가 너무 어려운 것과는 다른 문제야.
+>
+> <details><summary>Ran 3 commands, searched the web</summary>
+>
+> - Ran `Get-Content native_harness/train_rule_helper.py | Select-Object -Skip 265 -First 105; Get-Content native_harness/native_env.py | Select-Object -First 108; rg -n 'clone|restore|snapshot|action_repeat|def step|def _valid' native_harness/native_env.py; rg -n 'parity|검증|미검증|완료|TODO|속도|tick' NEXT_SESSION_HANDOFF_2026-09-15.md`
+>
+> - Ran `$paths=@('C:\Users\microsoft\.codex\attachments\6a88aa7b-94fb-4648-bcd0-824042d0c996\pasted-text.txt','C:\Users\microsoft\.codex\attachments\199f4e54-080f-4ee5-b098-39319d8e70ef\pasted-text.txt'); foreach($p in $paths){ Write-Output $p; $lines=Get-Content -LiteralPath $p; $skip=$false; foreach($line in $lines){if($line -match '^>*\s*<details>'){$skip=$true}; if(-not $skip){Write-Output $line}; if($line -match '^>*\s*</details>'){$skip=$false}} }`
+>
+> Searched the web for `site.incompleteideas.net Sutton Precup Singh 1999 between MDPs semi MDPs temporal abstraction options pdf ...`
+>
+> - Ran `Get-Content -LiteralPath 'C:\Users\microsoft\.codex\attachments\6a88aa7b-94fb-4648-bcd0-824042d0c996\pasted-text.txt' | Select-Object -Skip 290 -First 230`
+>
+> </details>
+</details>
+
+내 판단은 **지금 막힌 주원인은 9×9가 어렵거나 훈련량이 부족해서가 아니라, 이미 만든 물리를 행동 선택에 제대로 활용하지 않는 구조**야.
+
+붙여준 두 채팅과 인계·감사 문서, 현재 훈련기와 실시간 헬퍼 코드를 대조했어. 코드 수정과 훈련 실행은 하지 않았어.
+
+**1. 지금 무엇이 문제인가**
+
+가장 큰 문제는 **읽은 정보와 실제 판단에 쓰는 정보가 다르다**는 거야.
+
+현재 [훈련기의 상황 표현](<./native_harness/train_rule_helper.py:50>)은 사실상 이 다섯 개야.
+
+> 목표가 좌/우인가 · 목표가 위/아래인가 · 바로 앞 공간 · 두 칸 앞 바닥 · 일반/사다리/물/낙하산 상태
+
+여기에는 속도, 바라보는 방향, 칸 안에서의 정확한 위치, 구르기 진행 상태, 무기, 용암 폭 같은 정보가 없어.
+
+그러면 **발판 중앙에서 오른쪽으로 움직이는 상황과, 발판 끝에서 반대쪽을 보며 떨어지는 상황을 같은 상황으로 배울 수 있어.** 한쪽에서는 성공한 입력이 다른 쪽에서는 실패하니, 계속 훈련해도 행동값이 뒤섞여.
+
+추가로 확인한 문제는 이래.
+
+| 문제 | 실제 영향 |
+|---|---|
+| 이동 후보가 행동 번호 0~11로 제한됨 | C는 포함되지만 Z·무기 선택은 제외돼. 장검을 이용한 이동 해법을 발견할 수 없어. |
+| 짧은 키 입력을 고르고, 연속 기술을 미리 비교하지 않음 | 뒷굴→낙하산의 최종 착지 결과를 보고 뒷굴을 선택하는 구조가 없어. |
+| 깃발 방향 가산점과 거리 개선에 의존 | 먼저 반대로 가야 하는 우회로를 선택하기 불리해. |
+| 실시간 헬퍼가 별도의 지형 규칙을 추가함 | 훈련에서 얻은 선택과 실제 플레이의 선택이 달라질 수 있어. |
+| 성공 경로 재생과 독립 판단의 성적이 섞임 | 기록을 잘 재생하는 것과 새로운 상황을 해결하는 것을 구분하기 어려워. |
+
+또 현재 학습은 과거 결과를 평균내는 방식이야. **서로 다른 상황을 같은 항목으로 합쳐 놓고 평균을 더 정확히 계산해도, 필요한 구분은 생기지 않아.**
+
+대화에서 반복된 개발상의 문제도 분명해. 요구 전체를 고정한 뒤 연결 여부를 검사하지 않고, “뒷굴이 빠졌네 → 뒷굴 추가”, “Z가 빠졌네 → Z 추가”로 대응했어. 그래서 네가 매번 빠진 요구를 다시 찾아줘야 했던 거야.
+
+**2. 9×9는 유지해도 된다. 다만 두뇌 전체를 9×9에 가두면 안 돼**
+
+나는 **9×9를 기본 근거리 관측으로 유지**하는 쪽이 맞다고 봐. 지금 4×4로 줄일 이유는 없어. 필요한 착지점과 장애물이 더 안 보일 수 있으니까.
+
+대신 정보를 이렇게 나눠야 해.
+
+- **주변 9×9:** 당장 부딪힐 벽, 발판 끝, 용암, 기술을 시작할 공간.
+- **발견한 지도 전체:** 깃발까지 어느 발판·사다리·통로를 거칠지.
+- **캐릭터 상태:** 정확한 위치·속도·방향·동작 단계·무기·입력 유지 상태.
+- **상대 정보:** 미니맵 위치, 마지막 관측 시각, 접근 가능 방향.
+
+그리고 시야 확대 기준은 “학습이 안 되면 한 칸 확대”보다 **“시험하려는 기술의 궤적과 착지점이 시야 밖이면 그쪽을 확인”**하는 게 좋아.
+
+9×9 밖에 착지하는 기술을 평가하는데 끝까지 9×9만 보면, 정보가 없어서 판단할 수 없는 상황이 생겨. 이건 지능이나 훈련량으로 해결되지 않아.
+
+**3. 내가 잡을 구조는 ‘길 선택 → 기술 비교 → 실행 → 결과 확인’이야**
+
+| 부분 | 맡길 일 |
+|---|---|
+| 상태·지도 관리 | 현재 물리 상태와 발견 지형을 보존한다. 모르는 곳은 모르는 상태로 둔다. |
+| 큰 경로 계획 | 깃발까지 거칠 발판·통로를 정하고, 다음 중간 목표를 준다. |
+| 기술 후보 생성 | 걷기·점프·앞굴·뒷굴·C·Z·무기 전환을 상태에 맞게 조합한다. |
+| 물리 예측 | 현재 상태에서 후보를 시험해 궤적·착지·시간·복귀 여부를 비교한다. |
+| 실행 제어 | 선택한 기술을 수행하되 예상에서 벗어나면 수정한다. 수동 조작에는 즉시 양보한다. |
+| 학습 | 유망한 후보와 타이밍을 먼저 찾도록 개선하고, 성공·실패 경험을 재사용한다. |
+
+여기서 **기술은 고정된 키 배열만을 뜻하면 안 돼.**
+
+예를 들어 `뒷굴 → 낙하산`은 “몇 프레임 뒤 무조건 C”가 아니라, **뒷굴을 시작하고, 원본 상태가 낙하산을 펼칠 수 있는 상태가 됐을 때 C를 입력하는 동작**이어야 해. 시작 조건·진행 중 판단·종료 조건이 있어야 다른 위치에서도 재사용할 수 있어. 이런 시간에 걸친 행동을 학습 단위로 삼는 접근은 기존 연구에도 있어. [기술 단위 행동 연구](https://www.sciencedirect.com/science/article/pii/S0004370299000521)
+
+네가 말한 3칸 용암이면 판단은 이렇게 해야 해.
+
+> 건너편 착지 구간 지정
+> → 현재 방향·속도에서 가능한 기술 조합 생성
+> → 뒷굴, 뒷굴→C, 점프→앞굴, 장검 연계 등의 실제 결과 비교
+> → 시작 지역 복귀 없이 착지하고 다음 이동까지 이어지는 후보 선택
+
+**“용암이면 점프” 같은 지형별 정답 규칙을 계속 늘릴 필요는 없어.** 기술의 실행 조건과 물리 결과를 이용해 조합해야 해.
+
+다만 “물리를 알면 무조건 즉시 정답”까지는 아니야. 모든 입력과 타이밍을 끝없이 조합하면 계산량이 커져. 그래서 **기존 성공 기술부터 시험하고, 유망한 후보만 더 이어 보며, 짧게 실행한 뒤 다시 판단**해야 해. 이 재계획 방식은 모델 예측 제어와 같은 방향이야. [MIT 설명](https://underactuated.mit.edu/trajopt.html)
+
+**4. 보상과 학습은 유지하되, 맡길 문제를 바꿔야 해**
+
+이미 원본 물리로 결과를 계산할 수 있다면, 걷기부터 무작위로 다시 발견시키는 데 훈련 대부분을 쓸 이유는 적어.
+
+학습에는 이런 일을 맡기겠어.
+
+- 이 상태에서 **어느 기술을 먼저 시험하면 좋은지**.
+- 기술 시작 위치와 입력 타이밍을 어떻게 바꾸면 더 안정적이고 빠른지.
+- 기존 성공 구간을 지금 상황에 재사용할 수 있는지.
+- 짧은 예측 끝에서 어느 상태가 이후 깃발 도달에 유리한지.
+
+보상은 깃발 도달·시간 단축을 중심으로 유지하고, 용암 접촉 자체는 실패로 취급하지 않아. 네 요구대로 **위험 접촉 때문에 처음으로 돌아가 진행을 잃은 결과**를 구분해야 해. 명중·회피는 전투를 연결한 뒤 보조 목표로 넣고.
+
+기존 성공·실패 기록도 쓸모가 있어. 성공열은 기술 후보와 개선 출발점으로, 실패열은 적용 조건을 찾는 자료로 써야 해. 다만 **현재의 정보가 부족한 행동값 표를 그대로 새 두뇌의 정답으로 삼는 건 피해야 해.**
+
+**5. 앞으로는 이 순서로 진행하는 게 맞아**
+
+1. **기존 물리를 판단기에 쓸 수 있는지 연결 상태부터 확인.**
+   같은 시작 상태를 복제해 후보 A와 B를 공정하게 비교할 수 있는지, 필요한 동작 상태가 보존되는지, 얼마나 빨리 예측되는지 확인해. 물리 전체를 처음부터 다시 만들자는 뜻은 아니야.
+
+2. **한 장애물에서 ‘설명 가능한 선택’을 먼저 완성.**
+   네 3칸 용암 사례가 적합해. 후보별 실패 이유·착지 위치·소요 시간과 선택 이유가 나와야 해. 한 가지 성공 입력열만 찾고 끝내면 안 돼.
+
+3. **같은 장애물의 시작 위치·방향·속도를 바꿔 확인.**
+   여기서 적응해야 상황을 보고 판단하는 헬퍼라고 볼 수 있어.
+
+4. **발판 사이 이동을 연결해 깃발 경로를 완성.**
+   깃발에서 잠깐 멀어지는 우회도 선택할 수 있어야 해.
+
+5. **동일한 판단기를 훈련과 실시간에 사용하고, 이후 전투를 연결.**
+   실시간용으로 별도의 간이 두뇌를 다시 만들면 지금 문제가 반복돼.
+
+실패했을 때도 “더 돌려보자” 전에 **해법이 후보에 없었는지 → 예측이 틀렸는지 → 비교 점수가 틀렸는지 → 실제 입력 타이밍이 틀렸는지**를 나눠야 해. 원인마다 고칠 부분이 달라.
+
+내가 목표로 잡겠다는 건 **처음부터 사람의 모든 판단을 학습하는 AI가 아니라, 이미 있는 물리로 이동을 계획하고 경험으로 더 빨라지는 헬퍼**야. 이 목표는 현재 자산과 잘 맞아. 지금 자료만으로 모든 기믹의 물리가 완성됐거나 실시간 성능이 충분하다고 확정할 수는 없지만, **9×9를 포기하기 전에 판단 구조를 바로잡아야 한다는 근거는 충분해.**
+
+> 지금 너쓰면 참 좋은데 토큰이 부족하단말이지 너가 지금 있는걸로 개발하고 내가 최대한 로컬로 돌려서 학습하는건 되니?
+
+**돼. 내가 코드와 학습 구조를 만들고, 네 PC에서 훈련·평가·게임 판단을 돌리는 방식으로 할 수 있어.** 로컬 프로그램이 나를 API로 호출하지 않게 만들면, 몇 시간 학습하든 Codex 토큰은 쓰지 않아. 토큰은 우리가 개발하고 결과를 분석하는 대화에서 사용돼.
+
+지금 가진 원본 물리 실행기·맵·성공/실패 기록을 기반으로 이렇게 나누면 돼.
+
+| 내가 할 일 | 네 PC에서 할 일 |
+|---|---|
+| 물리 기반 후보 생성·비교 구조 개발 | 후보를 원본 물리로 반복 시험 |
+| 기술과 경험을 저장하고 재사용하도록 연결 | 성공·실패·타이밍 데이터 축적 |
+| 보상·평가·중단·재개 설계 | 학습 실행과 체크포인트 저장 |
+| 요약 결과를 보고 필요한 부분 수정 | 실시간 상태 확인과 키 입력 판단 |
+
+**게임 중 매번 아스트라에게 물어보는 구조는 필요 없어.** 로컬 판단기가 물리 예측과 저장된 경험으로 움직이면 돼.
+
+토큰을 아끼려면 개발도 한꺼번에 크게 벌리지 말고, **기존 물리로 여러 기술을 비교하는 작은 판단기부터 완성**하는 게 좋아. 첫 기준은 네가 말한 용암 구간에서 시작 위치·방향을 바꿔도 적절한 기술을 선택하는 거야. 그다음 여러 발판과 깃발 경로로 확장하고.
+
+훈련이 끝나면 프로그램이 다음 내용만 짧게 뽑도록 만들면 돼.
+
+- 기존 대비 성공률·통과 시간
+- 처음 보는 조건에서의 성적
+- 실패 원인 상위 3개와 대표 사례
+- 다음에 시험할 조건
+
+너는 그 요약만 가져오고, 나는 문제 있는 부분만 고치면 돼. **학습에 걸리는 시간과 실시간 예측 속도는 현재 실행기로 측정해야 하지만, 이 역할 분담 자체는 가능해.**
+
+앞서 개발하지 말라고 했으니 이번에도 코드는 건드리지 않았어.
+
+> 로컬에서 돌릴수있게 그럼 만들어줘봐 훈1\~20 돌릴수있게 시간 오래걸리더라도 로컬에서 많이 돌리고싶어
+
+<details><summary>7 previous messages</summary>
+
+> 기존 물리 실행기와 훈련 기록을 살려서, 훈1~20을 로컬에서 반복 실행하고 중단·재개할 수 있게 만들게. 먼저 현재 코드를 확인해 물리 후보 비교와 경험 저장을 연결하고, 짧은 동작 검사까지 하겠어. 장시간 훈련은 네가 실행할 수 있도록 배치파일로 제공할게.
+>
+> <details><summary>Ran 5 commands</summary>
+>
+> - Ran `rg --files -g AGENTS.md; Get-Content native_harness/api.py; Get-Content native_harness/train_route_curriculum.py; Get-Content native_harness/physics_first_planner.py`
+> - Ran `Get-Content native_harness/global_planner.py | Select-Object -First 245; Get-Content native_harness/native_env.py | Select-Object -Skip 340 -First 105; Get-Content native_harness/training_archive.py; Get-Content native_harness/snapshot_selector.py; Get-Content native_harness/깃발헬퍼_훈련.bat; rg -n 'def read_player_state|def save_branch_snapshot|def restore_branch_snapshot' native_harness/captured_oracle.py`
+> - Ran `rg -n 'native|transition' 'C:\Users\microsoft\.codex\memories\MEMORY.md' | Select-Object -First 12; git status --short; Get-Content native_harness/discovered_map.py | Select-Object -First 110; Get-ChildItem native_harness/tests -Filter '*branch*'`
+> - Ran `Get-Content native_harness/captured_oracle.py | Select-Object -Skip 165 -First 68; rg -n 'def reached_goal|def navigation_view' native_harness/native_env.py; Get-Content native_harness/native_env.py | Select-Object -Skip 225 -First 105; Get-Content native_harness/solve_map_physics.py | Select-Object -First 120; Get-ChildItem native_harness/private_snapshots -Filter '*.zip' | Select-Object Name,Length; python -c "import numpy,unicorn;print('native dependencies OK')"`
+> - Ran `Get-Command python -All | Select-Object Source; Get-ChildItem -Force -Directory; rg -n 'python.exe|venv|site-packages|PYTHONPATH' native_harness -g '*.bat' -g '*requirements*' -g '*.md' | Select-Object -First 40; Get-Content native_harness/native_env.py | Select-Object -Skip 173 -First 42; Get-Content native_harness/captured_oracle.py -TotalCount 28`
+>
+> </details>
+>
+> 기존 실행기는 성공 기록을 재생·변형하는 기능은 있지만, 같은 상태에서 여러 연속 기술을 물리로 비교하는 기능이 부족해. 새 실행기는 그 비교를 중심으로 만들고, 막힌 구간으로 돌아가 다른 기술을 시험한 경험도 저장하도록 하겠어. 훈1~20과 중간 번호 맵을 순회하며 기록을 이어가고, 기존 체크포인트는 별도로 보존할게.
+>
+> <details><summary>Created a file, ran 2 commands</summary>
+>
+> - Ran `Get-ChildItem -Force -Directory | ForEach-Object FullName; Get-ChildItem -LiteralPath 'C:\Users\microsoft\AppData\Local\Programs\Python' -Directory | ForEach-Object FullName; rg --files -g '*requirements*' -g 'pyvenv.cfg' -g '*python*.bat' -g '*train*.bat' | Select-Object -First 35; Get-Content native_harness/oracle.py -TotalCount 25`
+> - Wrote `./native_harness/local_physics_train.py` (+559 -0)
+> - Ran `python -m py_compile native_harness/local_physics_train.py; python native_harness/local_physics_train.py --list; python native_harness/local_physics_train.py --maps 훈1 --rounds 1 --trials-per-map 2 --candidates 2 --horizon 12 --max-steps 160 --minutes-per-map 1 --out native_harness/evidence/local_physics_smoke`
+>
+> </details>
+>
+> 새 실행기에 같은 시작 상태에서 걷기·점프·구르기·낙하산·Z·무기 연계를 비교하고, 도달한 상태와 실패 이유를 저장하는 기능을 넣었어. 지금 훈1에서 원본 x86로 짧게 검사 중이야. 결과는 실제 Client 클리어와 혼동하지 않도록 ‘오프라인 목표 영역 도달’로 표시하고 있어.
+>
+> <details><summary>Ran a command</summary>
+>
+> - Ran `Get-Content native_harness/headless.py -TotalCount 30; Get-Content native_harness/native_env.py | Select-Object -Skip 100 -First 73; Get-ChildItem native_harness/evidence/local_physics_smoke | Select-Object Name,Length`
+>
+> </details>
+>
+> System error
+>
+> You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 11:53 PM.
+</details>
+
+> 계속해 아스트라야
+> 최대한 효율적으로 하는방법 생각해줘
+>
+> 어차피 사람처럼 ai만드는건 이 토큰으론 불가능하고
+>
+> 이건 그냥 내생각이고 더  최적화할거있음 판단해서 개발해줘
+> 9x9 범위내에서 값 계속 읽어가면서 갈곳 판단하고
+>
+> 예를들어 용암은 그냥 가면 리스폰되지만 굴러서가거나 피격당해 누워서가면 지나갈수있어
+> 이럴떄 굴러서갈지 피격당해서갈지 머 판단은 그떄따라 다를거아냐
+> 최적의 상황을 항상 선택했으면해
+
+<details><summary>6 previous messages</summary>
+
+> 계속할게. 용암이라는 이유로 후보를 막지 않고, 현재 구르기·피격 상태에서 실제로 통과하는지와 이후 이동까지 비교하도록 할게.
+>
+> 효율을 위해 이미 도달한 상태는 메모리에 잠시 보관하고, 같은 조건에서 검증한 결과를 우선 재사용하겠어. 다만 ‘항상 전역 최적’을 보장할 수는 없어. 제한된 후보 중 더 안전하고 빠른 결과를 찾고, 로컬 탐색을 계속 돌리면서 개선하는 방식으로 만들고 있어.
+>
+> <details><summary>Created 5 files, edited a file, ran 2 commands</summary>
+>
+> - Wrote `./native_harness/local_physics_train.py` (+89 -7)
+> - Wrote `./native_harness/로컬물리_결과보기.bat` (+6 -0)
+> - Wrote `./native_harness/로컬물리_사용법.md` (+86 -0)
+> - Wrote `./native_harness/로컬물리_훈련시작.bat` (+10 -0)
+> - Wrote `./native_harness/로컬물리_훈련중지.bat` (+7 -0)
+> - Wrote `./native_harness/tests/test_local_physics_train.py` (+153 -0)
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p test_local_physics_train.py -v`
+> - Ran `$env:PYTHONUTF8='1'; python -m py_compile native_harness/local_physics_train.py; python native_harness/local_physics_train.py --preflight --out native_harness/evidence/local_physics_preflight --minutes-per-map 1`
+> - Wrote `./native_harness/local_physics_train.py` (+8 -1)
+>
+> </details>
+>
+> 23개 맵의 로딩·상태 복원 검사를 진행 중이고, 중단·저장·후보 제한 등 9개 기능 검사는 통과했어. 훈1에서는 기존 성공 경로를 새 실행기로 다시 재생해 확인했어.
+>
+> 기본 실행은 맵마다 후보 80개 또는 약 20분을 시험한 뒤 다음 맵으로 넘어가게 했어. 한 맵에서 시간을 다 쓰지 않으면서, 100순회 동안 경험을 누적하는 설정이야. 이제 실제 저장·재개와 용암 맵의 후보 실행을 마저 확인할게.
+>
+> <details><summary>Edited a file, ran 4 commands</summary>
+>
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p test_local_physics_train.py -v; python native_harness/local_physics_train.py --maps 훈1 훈6.5 --rounds 1 --trials-per-map 8 --candidates 4 --horizon 32 --max-steps 160 --minutes-per-map 2 --out native_harness/evidence/local_physics_integration`
+> - Wrote `./native_harness/local_physics_train.py` (+22 -0)
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p test_local_physics_train.py -q; python native_harness/local_physics_train.py --stop --out native_harness/evidence/local_physics_integration; python native_harness/local_physics_train.py --resume --maps 훈1 --rounds 1 --trials-per-map 4 --candidates 2 --horizon 24 --max-steps 160 --minutes-per-map 1 --out native_harness/evidence/local_physics_integration`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> import json, os, subprocess, sys
+> from pathlib import Path
+> root=Path('native_harness').resolve()
+> out=root/'evidence/local_physics_integration'
+> cmd=[sys.executable,'-u',str(root/'local_physics_train.py'),'--resume','--maps','훈6.5','--rounds','1','--trials-per-map','40','--minutes-per-map','1','--out',str(out)]
+> p=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8')
+> stopped=False
+> for line in p.stdout:
+>     print(line,end='',flush=True)
+>     try: row=json.loads(line)
+>     except ValueError: continue
+>     if row.get('phase')=='candidate' and not stopped:
+>         duplicate=subprocess.run(cmd,capture_output=True,text=True,encoding='utf-8',timeout=15)
+>         assert duplicate.returncode==2, duplicate.stdout+duplicate.stderr
+>         assert 'already running' in duplicate.stderr
+>         (out/'STOP').touch()
+>         stopped=True
+> assert p.wait(timeout=20)==0
+> assert stopped
+> status=json.loads((out/'curriculum.json').read_text(encoding='utf-8'))
+> assert status['state']=='stopped',status
+> print('ACTIVE STOP AND DUPLICATE LOCK PASS')
+> for name in ['로컬물리_훈련시작.bat','로컬물리_훈련중지.bat','로컬물리_결과보기.bat']:
+>     path=root/name
+>     path.write_bytes(path.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))
+> preflight=list((root/'evidence/local_physics_preflight').glob('*.summary.json'))
+> assert len(preflight)==23
+> assert all(json.loads(p.read_text(encoding='utf-8'))['state']=='preflight_pass' for p in preflight)
+> print('23 MAP PREFLIGHT PASS; BATCH CRLF OK')
+> '@ | python -`
+> - Wrote `./native_harness/local_physics_train.py` (+2 -2)
+> - Ran `$env:PYTHONUTF8='1'; python native_harness/local_physics_train.py --stop --out native_harness/evidence/local_physics_integration; Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*local_physics_train.py*' } | Select-Object ProcessId,CommandLine`
+>
+> </details>
+>
+> 23개 맵 모두 원본 물리 로딩과 상태 복원 검사를 통과했어. 짧은 훈6.5 검사에서는 용암 구간의 시작 지역 복귀를 실패로 기록했고, 훈1은 저장된 경험을 유지한 채 추가 탐색하는 재개 검사까지 통과했어.
+>
+> 마지막 중복 실행 검사에서 Windows 파일 잠금 처리 오류를 발견해 고쳤어. 중복 실행 차단과 실행 중 안전 중지를 다시 확인하고 마무리할게.
+>
+> <details><summary>Created a file, ran 2 commands</summary>
+>
+> - Ran `$env:PYTHONUTF8='1'; @'
+> import json, subprocess, sys
+> from pathlib import Path
+> root=Path('native_harness').resolve()
+> out=root/'evidence/local_physics_integration'
+> cmd=[sys.executable,'-u',str(root/'local_physics_train.py'),'--resume','--maps','훈6.5','--rounds','1','--trials-per-map','40','--minutes-per-map','1','--out',str(out)]
+> p=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8')
+> stopped=False
+> try:
+>     for line in p.stdout:
+>         print(line,end='',flush=True)
+>         try: row=json.loads(line)
+>         except ValueError: continue
+>         if row.get('phase')=='candidate' and not stopped:
+>             duplicate=subprocess.run(cmd,capture_output=True,text=True,encoding='utf-8',timeout=15)
+>             assert duplicate.returncode==2,duplicate.stdout+duplicate.stderr
+>             assert 'already running' in duplicate.stderr
+>             (out/'STOP').touch()
+>             stopped=True
+>     assert p.wait(timeout=20)==0
+>     assert stopped
+> finally:
+>     (out/'STOP').touch()
+>     p.wait(timeout=30)
+> status=json.loads((out/'curriculum.json').read_text(encoding='utf-8'))
+> assert status['state']=='stopped',status
+> print('ACTIVE STOP AND DUPLICATE LOCK PASS')
+> for name in ['로컬물리_훈련시작.bat','로컬물리_훈련중지.bat','로컬물리_결과보기.bat']:
+>     path=root/name
+>     path.write_bytes(path.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))
+> preflight=list((root/'evidence/local_physics_preflight').glob('*.summary.json'))
+> assert len(preflight)==23
+> assert all(json.loads(p.read_text(encoding='utf-8'))['state']=='preflight_pass' for p in preflight)
+> print('23 MAP PREFLIGHT PASS; BATCH CRLF OK')
+> '@ | python -`
+> - Wrote `./native_harness/LOCAL_PHYSICS_VERIFICATION_2026-09-18.md` (+19 -0)
+> - Ran `Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*local_physics_train.py*' } | Select-Object ProcessId,CommandLine; Get-ChildItem -LiteralPath native_harness/checkpoints/local_physics_v1 -Force | Select-Object Name,Length`
+>
+> </details>
+</details>
+
+**로컬에서 오래 돌릴 수 있게 만들었어.** 아래 시작 파일을 더블클릭하면 돼.
+
+- [훈련 시작·재개](<./native_harness/로컬물리_훈련시작.bat>)
+- [안전 중지](<./native_harness/로컬물리_훈련중지.bat>)
+- [사용법·훈련량 설정](<./native_harness/로컬물리_사용법.md>)
+
+기본은 **훈1~20과 중간 번호 포함 23개 맵 × 100순회**야. 맵마다 후보 80개 또는 약 20분을 시험하고 다음으로 넘어가. API 호출 없이 PC에서 실행하며, 기존 기록은 그대로 보존해.
+
+9×9 지형과 현재 물리 상태를 기록하면서 **구르기·낙하산·Z·무기 연계**를 같은 출발 상태에서 비교해. 용암 접촉이나 피격 자체는 금지하지 않고, 실제 이동 결과를 평가해. 기존 성공 경로를 활용하고 더 짧은 경로도 탐색해.
+
+**23개 맵 로딩·상태 복원, 저장·재개·안전 중지 검사를 통과했어.** 장시간 훈련은 아직 시작하지 않았어.
+
+현재 완성한 범위는 **오프라인 물리 탐색·경험 축적기**야. 실제 게임의 실시간 헬퍼나 항상 최적인 판단까지 완성됐다는 뜻은 아니야. 돌린 뒤 생성되는 `SUMMARY.md`만 가져오면 결과를 짧게 점검할 수 있어.
+
+> 하고잇는데 밤새서돌릴만한지
+> 계속내둬도되면 짧게대답만해주고 아니면 봐줘
+>
+> User context
+>
+> Attachments:
+> - l":113} {"best":35,"family":"RIGHT_turn_roll","map":"훈11","new_states":2,"phase…: `~/.codex/attachments/5fbaf8a6-adc3-44e0-8c50-db3c8b5c2e34/pasted-text.txt`
+
+<details><summary>2 previous messages</summary>
+
+> 로그에서 진행 여부와 오류·반복 정체만 빠르게 확인할게.
+>
+> <details><summary>Ran 2 commands</summary>
+>
+> - Ran `Get-Content -LiteralPath 'C:\Users\microsoft\.codex\attachments\5fbaf8a6-adc3-44e0-8c50-db3c8b5c2e34\pasted-text.txt' -Tail 100; Get-Content -LiteralPath 'native_harness/checkpoints/local_physics_v1/curriculum.json'; Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*local_physics_train.py*' } | Select-Object ProcessId,CommandLine`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> import json
+> from pathlib import Path
+> p=Path(r'C:\Users\microsoft\.codex\attachments\5fbaf8a6-adc3-44e0-8c50-db3c8b5c2e34\pasted-text.txt')
+> rows=[]
+> for line in p.read_text(encoding='utf-8').splitlines():
+>  try: rows.append(json.loads(line))
+>  except ValueError: pass
+> best=[r for r in rows if r.get('phase')=='new_best']
+> print('new_best_events',len(best),'last',best[-8:])
+> summaries=[json.loads(p.read_text(encoding='utf-8')) for p in Path('native_harness/checkpoints/local_physics_v1').glob('*.summary.json')]
+> print('maps',len(summaries),'errors',[r['map'] for r in summaries if r['state']=='error'],'archive_full',[r['map'] for r in summaries if r['archive_states']>=4000])
+> print('log_errors',[r for r in rows if r.get('phase')=='error'])
+> '@ | python -`
+>
+> </details>
+</details>
+
+**응, 지금은 밤새 계속 돌려도 돼.** 오류 없이 5번째 순회 중이고, 새로운 상태도 계속 발견하고 있어. 훈6.5는 통과 기록이 **89→75→74결정**으로 실제 단축돼서, 더 돌릴 가치가 있어.
+
+> 지금은어떄 엄청오래돌렷는데
+
+<details><summary>2 previous messages</summary>
+
+> 현재까지 쌓인 기록에서 경로가 얼마나 개선됐는지, 최근에도 진전이 있는지 확인할게.
+>
+> <details><summary>Ran a command</summary>
+>
+> - Ran `Get-Content native_harness/checkpoints/local_physics_v1/curriculum.json; Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*local_physics_train.py*' } | Select-Object ProcessId,CommandLine; $env:PYTHONUTF8='1'; @'
+> import sqlite3,json,time
+> from pathlib import Path
+> root=Path('native_harness/checkpoints/local_physics_v1')
+> for p in sorted(root.glob('*.sqlite3'),key=lambda p:float(p.stem[1:])):
+>  c=sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True,timeout=5)
+>  rows=c.execute("select id,time,reason,result from trials where mode='search' order by id").fetchall()
+>  recent=rows[-160:]
+>  improvements=[(i,t,json.loads(r)) for i,t,why,r in rows if json.loads(r).get('improved')]
+>  best=c.execute("select value from meta where key='best'").fetchone()
+>  best=json.loads(best[0]) if best else None
+>  nodes=c.execute('select count(*) from nodes').fetchone()[0]
+>  print(json.dumps(dict(map=p.stem,trials=len(rows),nodes=nodes,best=sum(n for a,n in best['actions']) if best else None,recent_n=len(recent),recent_new_states=sum(json.loads(r).get('new_states',0) for _,_,_,r in recent),recent_goals=sum(why=='goal_region' for _,_,why,_ in recent),improvements=len(improvements),trials_since_improvement=sum(t>improvements[-1][1] for _,t,_,_ in rows) if improvements else None,last_improved_hours_ago=round((time.time()-improvements[-1][1])/3600,2) if improvements else None,last_trial_minutes_ago=round((time.time()-rows[-1][1])/60,1) if rows else None,recent_reasons={why:sum(w==why for _,_,w,_ in recent) for why in set(w for _,_,w,_ in recent)}),ensure_ascii=False))
+>  c.close()
+> '@ | python -`
+>
+> </details>
+</details>
+
+**성과는 있어. 다만 이제는 개선 속도가 줄어드는 단계야.**
+
+- **15번째 순회**, 후보 약 **2만 6,500개** 시험.
+- **23개 맵 모두 오프라인 목표 영역 도달 경로가 저장돼 있어.**
+- 지난 점검보다 훈6.5는 **74→69**, 훈7은 **98→97**, 훈7.5는 **68→59결정**으로 단축됐어.
+- 훈15·18 등은 최근에도 최선 기록을 갱신했어.
+- 반면 일부 맵은 **700~1,200번 추가 시험에도 기록이 그대로**야.
+
+내 판단은 **헛돌린 건 아니고, 충분히 유용한 기록이 쌓였어. 이제 같은 설정으로 100순회까지 무작정 돌리기보다, 저장 경로를 실제 게임과 시작 조건 변화에서 검증할 시점**이야. 현재 성과는 경로 탐색 결과이며 범용 판단력 검증은 아직 아니야.
+
+실행이나 파일은 건드리지 않았어.
+
+> ㅇㅇ 이거언제까지 돌려 ㅇ니면 수정해서 다시줄래? 또 돌려놓을게
+
+<details><summary>2 previous messages</summary>
+
+> 지금 실행기는 멈추고 기록을 보존한 다음, 오래 개선이 없는 맵은 덜 돌리고 아직 개선되는 맵에 시간을 더 주도록 수정할게. 다시 켜면 기존 결과에서 이어가게 만들고, 권장 실행 시간도 정해줄게.
+>
+> <details><summary>Edited 4 files, ran 4 commands</summary>
+>
+> - Ran `$env:PYTHONUTF8='1'; python native_harness/local_physics_train.py --stop; Get-Content native_harness/local_physics_train.py | Select-Object -Skip 525 -First 150`
+> - Ran `Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*local_physics_train.py*' } | Select-Object ProcessId; Get-Content native_harness/local_physics_train.py | Select-Object -Skip 375 -First 80`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> import sqlite3,shutil,datetime,json
+> root=Path('native_harness'); out=root/'checkpoints/local_physics_v1'
+> backup=root/'checkpoints/local_physics_backups'/datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+> backup.mkdir(parents=True)
+> for p in out.glob('*.sqlite3'):
+>  with sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True) as source:
+>   with sqlite3.connect(backup/p.name) as target: source.backup(target)
+> for p in [root/'local_physics_train.py',root/'로컬물리_훈련시작.bat',out/'curriculum.json']:
+>  shutil.copy2(p,backup/p.name)
+> print('BACKUP',backup,'databases',len(list(backup.glob('*.sqlite3'))))
+> '@ | python -`
+> - Wrote `./native_harness/local_physics_train.py` (+81 -5)
+> - Wrote `./native_harness/로컬물리_사용법.md` (+5 -2)
+> - Wrote `./native_harness/로컬물리_훈련시작.bat` (+1 -1)
+> - Wrote `./native_harness/local_physics_train.py` (+2 -2)
+> - Wrote `./native_harness/tests/test_local_physics_train.py` (+23 -1)
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p test_local_physics_train.py -q; @'
+> import sqlite3
+> from pathlib import Path
+> root=Path('native_harness'); target=root/'evidence/adaptive_resume_check'; target.mkdir(exist_ok=True)
+> with sqlite3.connect((root/'checkpoints/local_physics_v1/훈1.sqlite3').resolve().as_uri()+'?mode=ro',uri=True) as src:
+>  with sqlite3.connect(target/'훈1.sqlite3') as dst: src.backup(dst)
+> p=root/'로컬물리_훈련시작.bat';p.write_bytes(p.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))
+> '@ | python -
+> python native_harness/local_physics_train.py --out native_harness/evidence/adaptive_resume_check --maps 훈1 --adaptive --rounds 2 --patience-rounds 1 --trials-per-map 4 --candidates 4 --hours 0.05`
+>
+> </details>
+</details>
+
+**수정했어. 다시 [훈련 시작·재개](<./native_harness/로컬물리_훈련시작.bat>)를 켜면 돼.**
+
+- **최대 4시간**, 2순회 연속 기록 개선이 없으면 자동 종료.
+- 정체된 맵은 적게, 개선 중인 맵은 더 많이 시험.
+- 성공 경로 일부를 바꾸거나 줄여서 더 빠른 길 탐색.
+- 기존 23개 맵 기록은 백업했고 그대로 이어서 사용.
+
+12개 검사와 기존 기록 재개·자동 종료 검사를 통과했어. 이전 실행은 안전하게 중지했어. **이번엔 자동으로 끝날 때까지만 두면 돼.**
+
+> 벌써끝났네 한번봐주고 스스로판단해서 이걸 학습가능하게 구조짜줘 내가원하는건 대화내역에있을건야
+
+<details><summary>6 previous messages</summary>
+
+> 왜 빨리 끝났는지 실제 기록부터 확인하고, 네가 원한 “지형과 물리 상태를 보고 기술을 선택하고 경험으로 좋아지는 헬퍼”에 맞춰 구조를 다시 점검할게. 경로 기록만 줄이는 방식에 갇혀 있다면 그 부분을 바꾸겠어.
+>
+> <details><summary>Ran 3 commands</summary>
+>
+> - Ran `Get-Content native_harness/checkpoints/local_physics_v1/curriculum.json; Get-Content native_harness/local_physics_train.py | Select-Object -First 210; Get-Content native_harness/LOCAL_TRAINING_PLAN.md -TotalCount 110; rg -n 'native|transition' 'C:\Users\microsoft\.codex\memories\MEMORY.md' | Select-Object -First 8`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> import sqlite3,json
+> from pathlib import Path
+> root=Path('native_harness/checkpoints/local_physics_v1')
+> total=entries=single=contexts=0
+> for p in sorted(root.glob('*.sqlite3')):
+>  c=sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True)
+>  n,one,repeat=c.execute('select count(*),sum(n=1),max(n) from skills').fetchone()
+>  trials=c.execute("select count(*) from trials where mode='search'").fetchone()[0]
+>  contexts+=c.execute('select count(*) from contexts').fetchone()[0];total+=trials;entries+=n;single+=one
+>  print(p.stem,trials,'skills',n,'single',one,'max_repeat',repeat)
+>  c.close()
+> print('TOTAL',total,'skills',entries,'single_pct',round(single/entries*100,1),'contexts',contexts)
+> '@ | python -
+> Get-Content native_harness/train_local_dqn.py -TotalCount 85; Get-Content native_harness/local_physics_train.py | Select-Object -Skip 290 -First 80; Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*local_physics_train.py*' } | Select-Object ProcessId,CommandLine`
+> - Ran `$env:PYTHONUTF8='1'; python -c "import torch; print(torch.__version__); print('cuda',torch.cuda.is_available())"; Get-Content native_harness/local_physics_train.py | Select-Object -Skip 390 -First 130; Get-Content native_harness/LEARNING_SYSTEM.md | Select-Object -First 48`
+>
+> </details>
+>
+> 빨리 끝난 건 오류가 아니라, 내가 넣은 “2순회 연속 최단 기록 개선 없음” 조건 때문이야. 그런데 기록을 더 보니 그 기준보다 큰 문제가 있어. 약 3만 번 시험했지만, 상황별 학습 항목의 **93.7%가 딱 한 번만 관측된 항목**이야. 상황을 너무 세밀한 고유 키로 나누고 맵별로 따로 저장해서, 비슷한 경험끼리 거의 배우지 못하고 있어.
+>
+> 이번에는 23개 맵의 경험을 함께 쓰는 작은 로컬 모델을 만들고, ‘이 기술을 쓰면 어디로 가고 복귀할 위험이 있는가’를 배우게 하겠어. 원본 물리는 계속 판정자로 두고, 학습 종료 기준도 최단 기록 하나가 아니라 보지 않은 데이터의 예측 성능으로 분리할게.
+>
+> <details><summary>Created a file, edited 2 files, ran 2 commands</summary>
+>
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> import sqlite3, json
+> root=Path('native_harness/checkpoints/local_physics_v1')
+> total=short=0; hazards=0
+> for p in root.glob('*.sqlite3'):
+>  c=sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True)
+>  for raw, in c.execute("select result from trials where mode='search'"):
+>   r=json.loads(raw)
+>   if 'context' not in r: continue
+>   n=sum(v for a,v in r['actions']); total+=1
+>   if 0<n<=64: short+=1;hazards+=r['reason'] in ('reset_suspected','out_of_bounds')
+>  c.close()
+> print(dict(with_context=total,usable_short=short,hazards=hazards))
+> '@ | python -`
+> - Wrote `./native_harness/shared_physics_model.py` (+304 -0)
+> - Wrote `./native_harness/local_physics_train.py` (+21 -0)
+> - Ran `$env:PYTHONUTF8='1'; python -m py_compile native_harness/shared_physics_model.py native_harness/local_physics_train.py; python native_harness/shared_physics_model.py --out native_harness/evidence/shared_model_smoke --epochs 4`
+> - Wrote `./native_harness/local_physics_train.py` (+2 -0)
+> - Wrote `./native_harness/shared_physics_model.py` (+5 -1)
+>
+> </details>
+>
+> 기존 기록 약 3만 건을 공유 모델에 넣어 짧게 학습해봤어. 보지 않은 상황의 도착 위치 예측 오차가 1번째 학습의 약 56px에서 4번째에 45px로 줄었고, 학습에서 제외한 4개 맵에서도 단순 평균 예측보다 나았어. 아직 실제 주행 성공률을 뜻하진 않지만, 이번에는 맵별 기록표가 아니라 공통 모델의 예측력이 좋아지는 걸 확인했어.
+>
+> 이제 “물리로 경험 수집 → 공유 모델 학습 → 별도 데이터 검증 → 검증된 모델로 다음 후보 순서 개선”을 로컬에서 반복하도록 연결하고 있어.
+>
+> <details><summary>Created 5 files, edited 3 files, ran 4 commands</summary>
+>
+> - Wrote `./native_harness/SHARED_LEARNING_DESIGN_2026-09-18.md` (+70 -0)
+> - Wrote `./native_harness/run_shared_learning.py` (+113 -0)
+> - Wrote `./native_harness/공유두뇌_학습시작.bat` (+10 -0)
+> - Wrote `./native_harness/tests/test_shared_physics_model.py` (+49 -0)
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p test_shared_physics_model.py -q; python -m unittest discover -s native_harness/tests -p test_local_physics_train.py -q; @'
+> import sqlite3
+> from pathlib import Path
+> root=Path('native_harness'); out=root/'evidence/shared_guide_native';out.mkdir(exist_ok=True)
+> with sqlite3.connect((root/'checkpoints/local_physics_v1/훈1.sqlite3').resolve().as_uri()+'?mode=ro',uri=True) as src:
+>  with sqlite3.connect(out/'훈1.sqlite3') as dest: src.backup(dest)
+> p=root/'공유두뇌_학습시작.bat';p.write_bytes(p.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))
+> '@ | python -
+> python native_harness/local_physics_train.py --out native_harness/evidence/shared_guide_native --maps 훈1 --rounds 1 --trials-per-map 8 --candidates 4 --guide-model native_harness/evidence/shared_model_smoke/active.pt --hours 0.05`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> import shutil
+> root=Path('native_harness'); source=root/'evidence/shared_model_smoke';dest=root/'checkpoints/shared_physics_v1';dest.mkdir(exist_ok=True)
+> for name in ['latest.pt','active.pt','model_report.json','MODEL_SUMMARY.md']:
+>  if not (dest/name).exists():shutil.copy2(source/name,dest/name)
+> '@ | python -
+> python native_harness/run_shared_learning.py --fit-only --epochs 1 --hours 0.05`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> import sqlite3,json
+> from pathlib import Path
+> p=Path('native_harness/evidence/shared_guide_native/훈1.sqlite3')
+> c=sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True)
+> rows=[json.loads(r) for r, in c.execute("select result from trials where mode='search' order by id desc limit 8")]
+> assert all('planned_phases' in r and 'plan_budget' in r for r in rows)
+> print('NEW_PLAN_RECORDS',len(rows),'GUIDED_CANDIDATES',sum(r['guide_score'] is not None for r in rows))
+> c.close()
+> '@ | python -`
+> - Wrote `./native_harness/SHARED_LEARNING_DESIGN_2026-09-18.md` (+2 -1)
+> - Wrote `./native_harness/SHARED_LEARNING_VERIFICATION_2026-09-18.md` (+17 -0)
+> - Wrote `./native_harness/로컬물리_사용법.md` (+6 -0)
+> - Wrote `./native_harness/로컬물리_훈련시작.bat` (+4 -4)
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> import sys
+> sys.path.insert(0,str(Path('native_harness').resolve()))
+> from shared_physics_model import build_data
+> _,meta=build_data(Path('native_harness/evidence/shared_guide_native'),Path('native_harness/evidence/shared_mixed_dataset'))
+> assert meta['planned_samples']==8,meta
+> print('MIXED LEGACY/PLANNED DATA PASS')
+> for name in ['로컬물리_훈련시작.bat','공유두뇌_학습시작.bat']:
+>  p=Path('native_harness')/name;p.write_bytes(p.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))
+> '@ | python -
+> Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and ($_.CommandLine -like '*local_physics_train.py*' -or $_.CommandLine -like '*run_shared_learning.py*') } | Select-Object ProcessId,CommandLine`
+>
+> </details>
+</details>
+
+확인했어. **빨리 끝난 건 ‘2순회 동안 최단 기록 개선 없음’ 조건 때문**이야. 더 큰 문제는 기존 학습표의 **93.7%가 한 번만 관측된 항목**이라, 비슷한 경험끼리 거의 공유하지 못했다는 거야.
+
+그래서 **실제로 공통 가중치를 학습하는 구조로 바꿨어.**
+
+> 9×9 지형·캐릭터 상태·기술 입력 순서
+> → 공유 모델이 도착 위치·복귀 위험 예측
+> → 원본 물리로 후보 시험
+> → 성공·실패를 모아 다시 학습
+
+- 기존 약 **3만 건의 경험을 재사용**하고 백업했어.
+- 기술 이름뿐 아니라 **입력 순서와 타이밍**도 학습해.
+- 용암 접촉·피격 자체는 금지하지 않아.
+- 최단 기록이 그대로여도 **경험 수집과 모델 학습을 계속 반복**해.
+
+짧게 실제 학습한 결과, 별도 검증 상황의 위치 예측 오차가 **56→44px**로 줄었어. 아직 오차가 크므로 안전 판정은 계속 원본 물리가 맡아. **예측 학습을 확인한 것이고, 실시간 헬퍼 완성이나 주행 성능 향상까지 입증한 건 아니야.**
+
+**이제 [공유두뇌 학습 시작](<./native_harness/공유두뇌_학습시작.bat>)을 켜면 돼. 최대 4시간 반복해.** 기존 시작 버튼도 같은 새 실행기로 연결했어.
+
+[설계와 사용법](<./native_harness/SHARED_LEARNING_DESIGN_2026-09-18.md>)
+
+> 다했네 구조 잘 짜진거면 또 계속 돌리게 해주고 문제있으면 설계해서 다시 돌리게해줘
+> 너의 판단에 맡길게 내가 굳이 왈가왈부하는것보단 내가 원하는거 지금깢 ㅣ충분히말했으니까
+
+<details><summary>6 previous messages</summary>
+
+> 이번 실행 결과와 실제 모델 성능을 확인해서, 계속 학습할 가치가 있는지 판단할게. 구조상 문제가 있으면 먼저 고치고, 검증까지 마친 뒤 이어서 돌릴게.
+>
+> <details><summary>Ran 3 commands</summary>
+>
+> - Ran `Get-Content native_harness/checkpoints/shared_physics_v1/learning_status.json; Get-Content native_harness/checkpoints/shared_physics_v1/model_report.json; Get-Content native_harness/checkpoints/local_physics_v1/curriculum.json; Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and ($_.CommandLine -like '*local_physics_train.py*' -or $_.CommandLine -like '*run_shared_learning.py*') } | Select-Object ProcessId,CommandLine`
+> - Ran `Get-Content native_harness/shared_physics_model.py | Select-Object -Skip 240 -First 115; Get-Content native_harness/run_shared_learning.py | Select-Object -Last 105; Get-Content native_harness/checkpoints/shared_physics_v1/dataset.json -TotalCount 25; Get-Content native_harness/checkpoints/shared_physics_v1/MODEL_SUMMARY.md`
+> - Ran `$env:PYTHONUTF8='1'; @'
+> import sys,json,sqlite3,collections,numpy as np
+> from pathlib import Path
+> sys.path.insert(0,str(Path('native_harness').resolve()))
+> from shared_physics_model import CandidateGuide,HOLDOUT_MAPS
+> root=Path('native_harness'); guide=CandidateGuide(root/'checkpoints/shared_physics_v1/active.pt')
+> stats=[]
+> for name in sorted(HOLDOUT_MAPS):
+>  c=sqlite3.connect((root/'checkpoints/local_physics_v1'/f'{name}.sqlite3').resolve().as_uri()+'?mode=ro',uri=True)
+>  contexts=dict(c.execute('select key,value from contexts'));groups=collections.defaultdict(list)
+>  for raw, in c.execute("select result from trials where mode='search'"):
+>   r=json.loads(raw)
+>   if not r.get('planned_phases') or r.get('plan_budget',10000)>64:continue
+>   if r['reason'] not in ('horizon','stalled','goal_region','reset_suspected','out_of_bounds'):continue
+>   key=(r['context'],json.dumps(r['prefix']))
+>   groups[key].append(r)
+>  count=0;values=[]
+>  for (ctx,_),rs in groups.items():
+>   if len(rs)<4:continue
+>   rs=rs[:8]; context=json.loads(contexts[ctx]); budget=min(r['plan_budget'] for r in rs)
+>   if any(r['plan_budget']!=budget for r in rs):continue
+>   scores=guide.scores(context,[(r['family'],r['planned_phases']) for r in rs],budget)
+>   if any(s is None for s in scores):continue
+>   d=np.asarray(context['goal_delta'],float);d/=max(np.linalg.norm(d),1)
+>   risk=np.asarray([r['reason'] in ('reset_suspected','out_of_bounds') for r in rs],float)
+>   utility=np.asarray([np.clip(np.dot([(r['after']['x']-r['before']['x'])/128,(r['after']['y']-r['before']['y'])/128],d),-2,2)-3*risk[i]-.05*min(1,sum(n for a,n in r['actions'])/64) for i,r in enumerate(rs)])
+>   chosen=int(np.argmax(scores));values.append([utility[chosen],utility.mean(),risk[chosen],risk.mean(),utility.max()]);count+=1
+>   if count>=100:break
+>  if values:
+>   mean=np.mean(values,axis=0).tolist();stats.extend(values);print(name,'groups',len(values),'model/random utility and risk/oracle',mean)
+>  c.close()
+> print('ALL',len(stats),np.mean(stats,axis=0).tolist())
+> '@ | python -`
+>
+> </details>
+>
+> 4시간은 정상적으로 끝났고, 학습 예제가 약 3만 건에서 **5만 5천 건**으로 늘었어. 모델이 고른 후보도, 학습에서 제외한 맵의 기록으로 비교했을 때 무작위 선택보다 전진 점수는 좋았어.
+>
+> 다만 확인한 400개 상황에서는 시작 지역 복귀·맵 이탈 비율이 **4.0%로 무작위의 3.47%보다 조금 높았어.** 지금은 원본 물리로 후보를 시험하므로 곧바로 위험한 입력을 실행하는 건 아니지만, 이대로 성능이 좋아졌다고만 판단하면 안 돼. 위험 평가와 모델 교체 기준을 보강하고 다시 비교한 뒤 재개할게.
+>
+> <details><summary>Created 2 files, edited 2 files, ran 2 commands</summary>
+>
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> from datetime import datetime
+> import shutil
+> root=Path('native_harness');out=root/'checkpoints/shared_physics_v1';b=out/('review_backup_'+datetime.now().strftime('%Y%m%d_%H%M%S'));b.mkdir()
+> for name in ('active.pt','latest.pt','model_report.json','learning_status.json'):
+>  shutil.copy2(out/name,b/name)
+> for name in ('shared_physics_model.py','run_shared_learning.py'):
+>  shutil.copy2(root/name,b/name)
+> print(b)
+> '@ | python -`
+> - Wrote `./native_harness/shared_physics_model.py` (+6 -2)
+> - Wrote `./native_harness/candidate_benchmark.py` (+93 -0)
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> import sys,json
+> sys.path.insert(0,str(Path('native_harness').resolve()))
+> from shared_physics_model import CandidateGuide
+> from candidate_benchmark import create_benchmark,evaluate
+> root=Path('native_harness');out=root/'checkpoints/shared_physics_v1'
+> b=create_benchmark(root/'checkpoints/local_physics_v1',out/'candidate_benchmark.json')
+> g=CandidateGuide(out/'active.pt')
+> rows={str(w):evaluate(g.model,b,w) for w in (3,6)}
+> (out/'candidate_audit.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+> print(json.dumps(rows,ensure_ascii=False))
+> '@ | python -`
+> - Wrote `./native_harness/shared_physics_model.py` (+23 -2)
+> - Wrote `./native_harness/candidate_benchmark.py` (+3 -2)
+> - Wrote `./native_harness/shared_physics_model.py` (+1 -1)
+> - Wrote `./native_harness/tests/test_candidate_benchmark.py` (+33 -0)
+>
+> </details>
+>
+> 고정한 500개 상황으로 다시 비교했어. 위험을 더 무겁게 반영하니 복귀·이탈 선택률이 **3.6%→3.4%**로 조금 줄었고, 전진 점수는 유지됐어. 큰 차이라고 보긴 어렵지만, 다음 학습을 판단할 공통 기준은 마련됐어.
+>
+> 앞으로는 평균 예측 오차만 좋아졌다고 모델을 교체하지 않고, 이 고정 상황에서의 후보 선택 결과와 복귀 위험도 함께 검사해. 기존 가중치는 백업했고, 마지막 이어 학습 검사가 끝나면 4시간 더 실행할게.
+>
+> <details><summary>Created a file, edited a file, ran 3 commands</summary>
+>
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p test_candidate_benchmark.py -q; python -m unittest discover -s native_harness/tests -p test_shared_physics_model.py -q; python -m unittest discover -s native_harness/tests -p test_local_physics_train.py -q; python native_harness/run_shared_learning.py --fit-only --epochs 1 --hours 0.05`
+> - Wrote `./native_harness/SHARED_LEARNING_DESIGN_2026-09-18.md` (+5 -0)
+> - Wrote `./native_harness/SHARED_LEARNING_REVIEW_2026-09-18.md` (+22 -0)
+> - Ran `$taskRoot = (Resolve-Path -LiteralPath 'native_harness').Path
+> $taskPython = (Get-Command python).Source
+> $taskLogDir = Join-Path $taskRoot 'checkpoints\shared_physics_v1\run_logs'
+> New-Item -ItemType Directory -Path $taskLogDir -Force | Out-Null
+> $taskStamp = Get-Date -Format 'yyyyMMdd_HHmmss'
+> $taskStdout = Join-Path $taskLogDir ($taskStamp + '.log')
+> $taskStderr = Join-Path $taskLogDir ($taskStamp + '.err.log')
+> $env:PYTHONUTF8='1'
+> $taskScript = Join-Path $taskRoot 'run_shared_learning.py'
+> $taskProcess = Start-Process -FilePath $taskPython -ArgumentList @('-u', ('"' + $taskScript + '"'), '--hours', '4') -WorkingDirectory $taskRoot -WindowStyle Hidden -RedirectStandardOutput $taskStdout -RedirectStandardError $taskStderr -PassThru
+> [pscustomobject]@{PID=$taskProcess.Id;Log=$taskStdout;Errors=$taskStderr} | ConvertTo-Json`
+> - Ran `Get-Process -Id 6480 | Select-Object Id,ProcessName,CPU
+> Get-Content native_harness/checkpoints/shared_physics_v1/learning_status.json -TotalCount 12
+> Get-Content native_harness/checkpoints/shared_physics_v1/run_logs/20260918_200826.log -Tail 3
+> Get-Content native_harness/checkpoints/shared_physics_v1/run_logs/20260918_200826.err.log -Tail 5`
+>
+> </details>
+</details>
+
+**보강한 뒤, 지금 4시간 더 학습하도록 시작했어.**
+
+기존 구조에선 예측 오차가 좋아져도 위험한 후보를 더 고르는 모델이 채택될 수 있었어. 이제 **고정된 500개 상황의 후보 선택 결과와 복귀 위험까지 비교**해 교체하도록 고쳤어.
+
+실제 검사에서도 복귀·이탈 선택률이 **3.4%→5.2%로 나빠진 새 모델을 거부하고 기존 모델을 유지**했어. 관련 검사 22개도 통과했어.
+
+현재 백그라운드에서 정상 학습 중이고, 기존 기록과 모델은 보존돼 있어. **추가로 실행할 필요 없어.**
+
+[진행 로그](<./native_harness/checkpoints/shared_physics_v1/run_logs/20260918_200826.log>) · [중지](<./native_harness/로컬물리_훈련중지.bat>)
+
+> 다 한듯한데 지금 5퍼남아서 담주까지 기다려야하거든
+> 내가 수시로 계속 돌려도 문제안될만한거있음 좋겠다&#x20;
+> 1주일후에 너가봐서 뭐 알게
+>
+> 근데 차피 구조 잘못설계되어잇으면 (지금까지 계속 그랬음)
+> 다시해야하긴하는데
+>
+> 난 맵을 다 꺠라는건 솔직히 불가능할거같고
+> 학습시키면 좋을거같거든 내가 꺠는거 대충 보고 이렇ㄱ ㅔ꺠는구나 이걸 학습할만한 뇌가 나오면 좋겠어
+>
+> 빅데이터가 쌓이면 새로운맵도 대충 해보진안을까싶긴해
+> 이런 게임방식은 유즈맵이 원래그렇잖아
+>
+> 지금 깃발로만가는 움직임도 만들기어려운데
+>
+> 여튼 구조 잘짜봐
+>
+> 대충 너가 이게임 맵 엄청많은건봣을거아냐 별 방식이다있거든
+>
+> 여튼 지금문제있나 한번봐줘
+
+<details><summary>8 previous messages</summary>
+
+> 토큰을 아끼도록 이번 결과와 구조의 핵심만 확인할게. 일주일 동안 반복 실행해도 의미 있는 자료가 쌓이는지, 네 플레이를 보고 배우려면 무엇이 더 필요한지 구분해서 정리하겠어.
+>
+> <details><summary>Ran 4 commands</summary>
+>
+> - Ran `Get-Content native_harness/checkpoints/shared_physics_v1/learning_status.json; Get-Content native_harness/checkpoints/shared_physics_v1/model_report.json -TotalCount 85; Get-Content native_harness/human_play_recorder.py -TotalCount 190; Get-ChildItem native_harness -Filter '*녹*'; Get-ChildItem native_harness -Filter '*record*'; Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -match 'run_shared_learning|local_physics_train' } | Select-Object ProcessId`
+> - Ran `Get-Content native_harness/human_play_recorder.py | Select-Object -Skip 185 -First 90; Get-Content native_harness/live_state.py -TotalCount 125; $env:PYTHONUTF8='1'; @'
+> import json
+> from pathlib import Path
+> p=Path('native_harness/checkpoints/shared_physics_v1/learning_history.jsonl');r=[json.loads(x) for x in p.read_text(encoding='utf-8').splitlines()]
+> print('recent',len(r[-15:]),'promotions',sum(x.get('promoted',False) for x in r[-15:]))
+> print('total log MB',round(sum(x.stat().st_size for x in Path('native_harness/checkpoints').rglob('*') if x.is_file())/1e6))
+> '@ | python -`
+> - Ran `Get-Content native_harness/live_route_helper.py | Select-Object -First 118; Get-Content native_harness/run_shared_learning.py -TotalCount 45; Get-Content native_harness/공유두뇌_학습시작.bat`
+> - Ran `rg -n 'GRID_POINTERS' native_harness/oracle.py native_harness/lmf_injector.py native_harness/captured_oracle.py; Get-Content native_harness/identify_live_map.py -TotalCount 65; rg -n 'capture|native|physics' 'C:\Users\microsoft\.codex\memories\MEMORY.md' | Select-Object -First 3`
+>
+> </details>
+>
+> 지금은 **같은 자동 학습을 일주일 더 반복하는 건 권하지 않아.** 자료는 7만 5천 건으로 늘었지만 최근 15번 학습에서 새 모델이 한 번도 채택되지 않았어. 제외한 맵의 위험 예측도 평균값만 내는 기준보다 나빠졌어.
+>
+> 구조상 중요한 한계가 있어. 지금 모델은 한 번 본 9×9로 최대 64결정 뒤를 예측해서, 시야 밖 지형에 따라 달라지는 결과까지 배워야 해. 네 플레이를 보고 기술 선택을 배우는 기능도 아직 연결돼 있지 않아.
+>
+> 이번 주는 자동 수집에 총량 제한을 두고, **네 플레이의 위치·상태·키·주변 지형을 함께 기록**할 수 있게 준비할게. 다음 주에는 그 자료로 짧은 행동 단위를 배우고, 매번 다시 관측하며 선택하는 구조로 넘어가는 게 맞아.
+>
+> <details><summary>Edited a file</summary>
+>
+> - Wrote `./native_harness/human_play_recorder.py` (+58 -0)
+>
+> </details>
+>
+> Context compaction
+>
+> Source: automatic
+> Status: completed
+>
+> <details><summary>Ran 3 commands</summary>
+>
+> - Ran `Get-Content native_harness\human_play_recorder.py -Tail 180; Get-Content native_harness\local_physics_train.py -Tail 95`
+> - Ran `Get-Content native_harness\human_play_recorder.py -Head 85; rg -n 'add_argument|def maps_for' native_harness/local_physics_train.py; Get-Content 공유두뇌_학습시작.bat; Get-Content native_harness\live_state.py -Head 110`
+> - Ran `rg --files -g '*.bat' -g '*learning_status*' -g '*MEMORY*' | Select-Object -First 45; Get-Content native_harness\local_physics_train.py -Head 40; Get-Content native_harness\identify_live_map.py -Head 65`
+>
+> </details>
+>
+> 이번 주 실행은 ‘짧은 행동 자료 수집’과 ‘네 플레이 기록’으로 나누고, 시간·누적량 제한을 넣고 있어. 기존 학습 자료는 보존하고, 새 자료와 종료 이유를 다음 주에 한 파일에서 확인할 수 있게 만들겠어. 플레이 기록이 실제 학습으로 연결되는 단계는 아직 남아 있어.
+>
+> <details><summary>Created 3 files, edited 2 files, ran 3 commands</summary>
+>
+> - Wrote `./native_harness/human_play_recorder.py` (+2 -2)
+> - Wrote `./native_harness/live_state.py` (+6 -2)
+> - Wrote `./native_harness/week_mode.py` (+111 -0)
+> - Ran `$env:PYTHONUTF8='1'; @'
+> from pathlib import Path
+> p=Path('native_harness')
+> for name, mode in [('이번주_자료수집','collect'),('내플레이_기록시작','record'),('이번주_중지','stop'),('이번주_결과정리','report')]:
+>     (p/(name+'.bat')).write_bytes(('@echo off\r\nchcp 65001 >nul\r\nset PYTHONUTF8=1\r\ncd /d "%~dp0"\r\npython week_mode.py '+mode+'\r\npause\r\n').encode('utf-8'))
+> '@ | python -
+> python -m py_compile native_harness/week_mode.py native_harness/human_play_recorder.py native_harness/live_state.py
+> python native_harness/week_mode.py report
+> python -m unittest discover -s native_harness/tests -p 'test_*physics*.py'`
+> - Wrote `./native_harness/WEEK_HANDOFF_2026-09-19.md` (+36 -0)
+> - Wrote `./native_harness/human_play_recorder.py` (+1 -1)
+> - Wrote `./native_harness/tests/test_human_terrain.py` (+37 -0)
+> - Ran `$env:PYTHONUTF8='1'; python -m unittest discover -s native_harness/tests -p 'test_human_terrain.py'; python -m unittest discover -s native_harness/tests -p 'test_candidate_benchmark.py'; python native_harness/human_play_recorder.py --help`
+> - Ran `Get-Content C:\Users\microsoft\.codex\memories\MEMORY.md -TotalCount 7; rg -n 'horizon|while.*trials|target_trials' native_harness/local_physics_train.py | Select-Object -First 24; Get-Content native_harness\checkpoints\shared_physics_v1\learning_status.json -Head 16`
+> - Wrote `./native_harness/human_play_recorder.py` (+2 -1)
+>
+> </details>
+</details>
+
+**지금 장시간 학습을 그대로 반복하는 건 비추천이야.** 자료는 75,333건인데 최근 15번 학습에서 새 모델이 한 번도 채택되지 않았어. 9×9 한 장으로 먼 미래까지 예측하는 구조가 한계로 보여.
+
+이번 주 쓸 파일을 만들어뒀어. **네 플레이 기록을 우선 추천해.**
+
+- [내플레이 기록 시작](<./native_harness/내플레이_기록시작.bat>): 실행 후 게임 창 선택. 위치·상태·키·주변 지형을 최대 30분 저장. F6 좋은 구간, F7 실수, F9 일시정지.
+- [자동 자료 수집](<./native_harness/이번주_자료수집.bat>): 짧은 행동 실험만 최대 1시간. 반복 실행 가능하고 누적량 제한도 넣었어.
+- [중지](<./native_harness/이번주_중지.bat>) / [결과 정리](<./native_harness/이번주_결과정리.bat>)
+
+둘 다 로컬 실행이라 API 토큰은 쓰지 않아. 다음 주에는 자동 저장된 요약과 기록을 보면 돼.
+
+설계 방향은 **사람 시범 → 짧은 기술 학습 → 다시 관측해서 행동 수정 → 방문 지형 기억**이야. 시범을 학습에 연결하는 단계는 아직 남았어. 관련 테스트 24개는 통과했지만, 새 기록 기능의 실제 게임 동작은 첫 사용에서 확인해야 해.
+
+[다음 주 인계 문서](<./native_harness/WEEK_HANDOFF_2026-09-19.md>)에 문제와 다음 설계까지 남겼어.

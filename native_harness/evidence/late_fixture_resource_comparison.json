@@ -1,0 +1,173 @@
+{
+  "scope": "resource-base comparison for late fixture maps; no normal-Client parity claim",
+  "results": {
+    "훈18.LMF": {
+      "hun1_full.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 712.0,
+          "y": 478.0,
+          "motion58": -1600.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "hun7_live.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 712.0,
+          "y": 478.0,
+          "motion58": -1600.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "hun12_live.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 92.0,
+          "y": 188.20000000000002,
+          "motion58": 1080.0,
+          "38": 9,
+          "3c": 0,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      }
+    },
+    "훈19.LMF": {
+      "hun1_full.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 712.0,
+          "y": 192.0,
+          "motion58": -480.0,
+          "38": 8,
+          "3c": 4,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "hun7_live.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 712.0,
+          "y": 192.0,
+          "motion58": -480.0,
+          "38": 8,
+          "3c": 4,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "hun12_live.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 556.0,
+          "y": 271.2,
+          "motion58": 680.0,
+          "38": 9,
+          "3c": 3,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      }
+    },
+    "훈20.LMF": {
+      "hun1_full.zip": {
+        "ticks": 56,
+        "error": "UcError:Invalid instruction (UC_ERR_INSN_INVALID)",
+        "final": {
+          "x": 436.0,
+          "y": 402.4,
+          "motion58": -1080.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "hun7_live.zip": {
+        "ticks": 56,
+        "error": "UcError:Invalid instruction (UC_ERR_INSN_INVALID)",
+        "final": {
+          "x": 436.0,
+          "y": 402.4,
+          "motion58": -1080.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "hun12_live.zip": {
+        "ticks": 70,
+        "error": null,
+        "final": {
+          "x": 484.0,
+          "y": 304.0,
+          "motion58": 560.0,
+          "38": 9,
+          "3c": 3,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      }
+    }
+  }
+}

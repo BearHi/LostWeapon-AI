@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "scope": "맵테스트2 dense raw51 spatial activation; same original-x86 input schedule",
+  "player_states_exact": true,
+  "baseline": {
+    "ticks": 200,
+    "seconds": 3.182,
+    "tick_rate": 62.855,
+    "initial_counts": [
+      549,
+      20
+    ],
+    "final_counts": [
+      549,
+      20
+    ]
+  },
+  "optimized": {
+    "ticks": 200,
+    "seconds": 1.87,
+    "tick_rate": 106.96,
+    "initial_counts": [
+      159,
+      20
+    ],
+    "final_counts": [
+      159,
+      20
+    ]
+  }
+}

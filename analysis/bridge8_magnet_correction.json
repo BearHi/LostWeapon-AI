@@ -1,0 +1,85 @@
+{
+  "file": "다리건너기8_자력회랑.LMF",
+  "groups": [
+    {
+      "id": 54,
+      "x": 20
+    },
+    {
+      "id": 54,
+      "x": 38
+    },
+    {
+      "id": 54,
+      "x": 59
+    },
+    {
+      "id": 54,
+      "x": 83
+    },
+    {
+      "id": 55,
+      "x": 134
+    },
+    {
+      "id": 55,
+      "x": 155
+    },
+    {
+      "id": 55,
+      "x": 176
+    },
+    {
+      "id": 54,
+      "x": 185
+    },
+    {
+      "id": 54,
+      "x": 234
+    },
+    {
+      "id": 55,
+      "x": 256
+    },
+    {
+      "id": 54,
+      "x": 277
+    },
+    {
+      "id": 54,
+      "x": 321
+    },
+    {
+      "id": 54,
+      "x": 348
+    },
+    {
+      "id": 54,
+      "x": 372
+    },
+    {
+      "id": 54,
+      "x": 421
+    },
+    {
+      "id": 55,
+      "x": 439
+    },
+    {
+      "id": 54,
+      "x": 460
+    },
+    {
+      "id": 55,
+      "x": 478
+    }
+  ],
+  "reference": "Three vertically stacked sideways magnets directly over the supporting tile, matching user screenshot. Intersecting downward magnet removed.",
+  "checks": [
+    "binary roundtrip",
+    "unique coordinates",
+    "bounds",
+    "each stack immediately above a fixed platform"
+  ],
+  "limitation": "In-game force and route traversal not tested."
+}

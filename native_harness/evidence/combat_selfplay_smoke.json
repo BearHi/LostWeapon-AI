@@ -1,0 +1,8 @@
+{
+  "verdict": "PASS",
+  "episode": 1,
+  "observation_size": 392,
+  "action_size": 21,
+  "checkpoint_bytes": 2044219,
+  "scope": "4-tick local shared-policy DQN smoke on captured original-x86 two-player combat; not inactivity-timeout parity"
+}

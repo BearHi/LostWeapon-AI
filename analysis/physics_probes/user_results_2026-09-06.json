@@ -1,0 +1,25 @@
+{
+  "source": "user_report",
+  "correction": "Latest report supersedes the interrupted report: only height08 succeeded.",
+  "protocol_given": "Face left; from the start perform right+up once. No preceding jump was instructed.",
+  "actual_action_sequence": "jump_then_airborne_backroll",
+  "action_confirmation": "User explicitly confirmed jump followed by airborne backroll for these results.",
+  "horizontal_input": "Direction key used to trigger the roll, then released during airborne travel; explicitly confirmed by user.",
+  "height_failure_reason": "User reported insufficient height for height10, height12 and height14, not collision with the underside of a platform.",
+  "attempt_count": null,
+  "results": [
+    {"file": "물리측정_뒷굴_높이08.LMF", "result": "success", "floor_y": 79, "target_y": 71, "target_x": [18, 19]},
+    {"file": "물리측정_뒷굴_높이10.LMF", "result": "failure", "floor_y": 79, "target_y": 69, "target_x": [18, 19]},
+    {"file": "물리측정_뒷굴_높이12.LMF", "result": "failure", "floor_y": 79, "target_y": 67, "target_x": [18, 19]},
+    {"file": "물리측정_뒷굴_높이14.LMF", "result": "failure", "floor_y": 79, "target_y": 65, "target_x": [18, 19]},
+    {"file": "물리측정_뒷굴_거리08.LMF", "result": "failure", "floor_y": 79, "target_y": 71, "target_x": [23, 24]},
+    {"file": "물리측정_뒷굴_거리10.LMF", "result": "failure", "floor_y": 79, "target_y": 71, "target_x": [25, 26]}
+  ],
+  "interpretation": {
+    "height08": "User-confirmed landing in this specific layout and trial.",
+    "failures": "Reported failed attempts; not proof of global impossibility or maximum height.",
+    "distance_probes": "Both targets are also 8 cells above the floor. Failures occurred with direction released after roll activation; they do not establish range with held input.",
+    "jump_then_backroll": "Confirmed by the user. Height08 succeeded; all other listed layouts failed in the reported trials. Roll timing and trajectories were not measured.",
+    "legacy_model": "Uncalibrated. Values 13, 11, 9, 20 and percentage sensitivity are not measured physics or clearability evidence."
+  }
+}

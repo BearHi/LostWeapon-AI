@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "engine": "original Client x86 via Unicorn",
+  "fixture": "훈1.LMF",
+  "ticks": 12,
+  "initial": {
+    "x": 112.0,
+    "y": 448.0,
+    "motion58": -120.0,
+    "38": 7,
+    "3c": 1,
+    "68": 0,
+    "74": -1,
+    "b0": 0,
+    "c0": 0,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0
+  },
+  "final": {
+    "x": 160.0,
+    "y": 448.0,
+    "motion58": -120.0,
+    "38": 8,
+    "3c": 4,
+    "68": 0,
+    "74": 5,
+    "b0": 0,
+    "c0": 0,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0
+  },
+  "deterministic_replay": true,
+  "elapsed_seconds": 4.159
+}

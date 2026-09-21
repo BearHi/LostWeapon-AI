@@ -1,0 +1,209 @@
+{
+  "scope": "fast-boundary read-only normal Client snapshot and ordinary LEFT trace",
+  "snapshot": "native_harness\\private_snapshots\\hun85_moveleft2_live.zip",
+  "target_distance": 168.0,
+  "settle_after_release": false,
+  "input_events": [],
+  "samples": [
+    {
+      "boundary": true,
+      "phase": "held",
+      "perf_ns": 497832678269100,
+      "time_ms": 497831140,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ],
+        "pos": [
+          476.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": -1,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497832683346700,
+      "time_ms": 497831145,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ],
+        "pos": [
+          476.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": 2,
+          "0xb0": 1,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497832683810800,
+      "time_ms": 497831145,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          57,
+          0
+        ],
+        "pos": [
+          432.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 2,
+          "0xb0": 1,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497832684442200,
+      "time_ms": 497831146,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          61,
+          0
+        ],
+        "pos": [
+          352.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 7,
+          "0x68": 0,
+          "0x74": 2,
+          "0xb0": 1,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497832685179700,
+      "time_ms": 497831147,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          292.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 2,
+          "0xb0": 1,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    }
+  ]
+}

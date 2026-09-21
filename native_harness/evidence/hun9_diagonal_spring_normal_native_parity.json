@@ -1,0 +1,820 @@
+{
+  "scope": "normal Client/native original-x86 parity for 훈9 right-launch diagonal spring; selected gameplay fields and asynchronously sampled states",
+  "normal_trace": "evidence/hun9_diagonal_spring_normal_microtest.json",
+  "native_sequence": "LEFT 8 ticks; RIGHT 1 tick; RIGHT+DOWN held",
+  "compared_fields": [
+    "x",
+    "y",
+    "motion58",
+    "38",
+    "68",
+    "74",
+    "b0",
+    "c0",
+    "c4",
+    "d0",
+    "dc"
+  ],
+  "unique_normal_states": 57,
+  "exact_matched_states": 40,
+  "trigger_normal": {
+    "image_base": "0xde0000",
+    "roster": 3,
+    "room": 1,
+    "slot": 0,
+    "map_size": [
+      30,
+      22
+    ],
+    "player_header": [
+      8,
+      60,
+      15,
+      0
+    ],
+    "pos": [
+      414.0,
+      549.0
+    ],
+    "motion58": 1200.0,
+    "hp": 100.0,
+    "state": {
+      "0x38": 2,
+      "0x3c": 0,
+      "0x68": 0,
+      "0x74": 5,
+      "0xb0": 1,
+      "0xc0": 4,
+      "0xc4": 0,
+      "0xd0": 1,
+      "0xdc": 0
+    },
+    "grid": "0x168ceeb0"
+  },
+  "rows": [
+    {
+      "phase": "start",
+      "pos": [
+        208.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 7,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        208.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 7,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        204.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        200.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        196.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        192.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        188.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        184.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        180.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "position_left",
+      "pos": [
+        176.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "boundary",
+      "pos": [
+        176.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 7,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "face_right",
+      "pos": [
+        180.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 0,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        180.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 8,
+      "c0": 3,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        180.0,
+        448.0
+      ],
+      "motion58": 500.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        186.0,
+        443.0
+      ],
+      "motion58": 460.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        10
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        192.0,
+        438.4
+      ],
+      "motion58": 420.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        11
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        198.0,
+        434.2
+      ],
+      "motion58": 380.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        12
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        204.0,
+        430.4
+      ],
+      "motion58": 340.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        13
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        210.0,
+        427.0
+      ],
+      "motion58": 300.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        14
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        216.0,
+        424.0
+      ],
+      "motion58": 260.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        15
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        222.0,
+        421.4
+      ],
+      "motion58": 220.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        16
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        228.0,
+        419.2
+      ],
+      "motion58": 180.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        17
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        234.0,
+        417.4
+      ],
+      "motion58": 140.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        18
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        240.0,
+        416.0
+      ],
+      "motion58": 100.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        19
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        246.0,
+        415.0
+      ],
+      "motion58": 60.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        20
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        252.0,
+        414.4
+      ],
+      "motion58": 20.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        21
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        252.0,
+        414.4
+      ],
+      "motion58": -20.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        258.0,
+        414.2
+      ],
+      "motion58": -20.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        22
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        264.0,
+        414.4
+      ],
+      "motion58": -60.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        23
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        264.0,
+        414.4
+      ],
+      "motion58": -100.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        270.0,
+        415.0
+      ],
+      "motion58": -100.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        24
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        276.0,
+        416.0
+      ],
+      "motion58": -140.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        25
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        282.0,
+        417.4
+      ],
+      "motion58": -180.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        26
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        288.0,
+        419.2
+      ],
+      "motion58": -220.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        27
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        294.0,
+        421.4
+      ],
+      "motion58": -260.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        28
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        300.0,
+        424.0
+      ],
+      "motion58": -300.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        29
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        306.0,
+        427.0
+      ],
+      "motion58": -340.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        30
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        312.0,
+        430.4
+      ],
+      "motion58": -380.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        31
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        318.0,
+        434.2
+      ],
+      "motion58": -420.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        32
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        324.0,
+        438.4
+      ],
+      "motion58": -460.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        33
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        330.0,
+        443.0
+      ],
+      "motion58": -500.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        34
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        336.0,
+        448.0
+      ],
+      "motion58": -540.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        35
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        342.0,
+        453.4
+      ],
+      "motion58": -580.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        36
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        348.0,
+        459.2
+      ],
+      "motion58": -620.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        37
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        354.0,
+        465.4
+      ],
+      "motion58": -660.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        38
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        360.0,
+        472.0
+      ],
+      "motion58": -700.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        39
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        366.0,
+        479.0
+      ],
+      "motion58": -740.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        40
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        372.0,
+        486.4
+      ],
+      "motion58": -780.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        41
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        378.0,
+        494.2
+      ],
+      "motion58": -820.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        42
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        384.0,
+        502.4
+      ],
+      "motion58": -860.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        43
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        390.0,
+        511.0
+      ],
+      "motion58": -900.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        44
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        396.0,
+        520.0
+      ],
+      "motion58": -940.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        45
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        402.0,
+        529.4
+      ],
+      "motion58": -980.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        46
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        408.0,
+        539.1999999999999
+      ],
+      "motion58": -1020.0,
+      "state38": 1,
+      "c0": 3,
+      "matching_native_ticks": [
+        47
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        408.0,
+        539.1999999999999
+      ],
+      "motion58": -1060.0,
+      "state38": 1,
+      "c0": 4,
+      "matching_native_ticks": [],
+      "exact_selected_field_match": false
+    },
+    {
+      "phase": "right_down",
+      "pos": [
+        414.0,
+        549.0
+      ],
+      "motion58": 1200.0,
+      "state38": 2,
+      "c0": 4,
+      "matching_native_ticks": [
+        48
+      ],
+      "exact_selected_field_match": true
+    },
+    {
+      "phase": "final",
+      "pos": [
+        456.0,
+        473.3999999999999
+      ],
+      "motion58": 920.0,
+      "state38": 2,
+      "c0": 4,
+      "matching_native_ticks": [
+        55
+      ],
+      "exact_selected_field_match": true
+    }
+  ]
+}

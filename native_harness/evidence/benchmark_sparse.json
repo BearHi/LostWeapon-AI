@@ -1,0 +1,13 @@
+{
+  "scope": "sparse 112-page captured closure; initialization excluded",
+  "selected_pages": 112,
+  "selected_bytes": 458752,
+  "original_bytes": 550215680,
+  "trials_seconds": [
+    0.26749989995732903,
+    0.27001500001642853,
+    0.3014780000085011
+  ],
+  "median_ticks_per_second": 444.4197544310458,
+  "nominal_60Hz_multiplier": 7.406995907184097
+}

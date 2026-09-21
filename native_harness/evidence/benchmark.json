@@ -1,0 +1,13 @@
+{
+  "scope": "hun1 captured player input + physics dispatcher; includes Python state reads and dirty-page tracking; excludes initial snapshot loading",
+  "dispatch_steps_per_trial": 1200,
+  "trials_seconds": [
+    26.266615199972875,
+    26.24921350000659,
+    31.709950799995568
+  ],
+  "median_steps_per_second": 45.68536870335844,
+  "nominal_60Hz_multiplier": 0.7614228117226407,
+  "median_branch_restore_ms": 0.4115000192541629,
+  "full_game_tick_parity": "not yet established"
+}

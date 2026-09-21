@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "phase": "running",
+  "fixture": "훈9",
+  "lmf_path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈9.LMF",
+  "map_size": [
+    30,
+    22
+  ],
+  "record_count": 48,
+  "snapshot": "hun12_live.zip",
+  "tick": 1921,
+  "actual_tick_rate": 62.39,
+  "average_native_step_ms": 0.0,
+  "average_draw_ms": 5.981,
+  "input": [],
+  "player": {
+    "x": 208.0,
+    "y": 448.0,
+    "motion58": -560.0,
+    "38": 7,
+    "3c": 1,
+    "68": 0,
+    "74": -1,
+    "7c": 0,
+    "80": 0,
+    "b0": 0,
+    "b8": 0,
+    "c0": 0,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0
+  },
+  "weapon": "무기 1",
+  "action": "보통",
+  "ice_acceleration": 0,
+  "engine": "original Client x86 via Unicorn",
+  "updated_unix": 1789611118.2650611
+}

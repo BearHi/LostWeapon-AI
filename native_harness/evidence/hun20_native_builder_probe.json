@@ -1,0 +1,29 @@
+{
+  "scope": "original x86 0x41e510 LMF-record materializer probe",
+  "map": "훈련용맵\\훈20.LMF",
+  "records": 32,
+  "calls_completed": 32,
+  "first_failure": null,
+  "object_count": 32,
+  "objects_exact": false,
+  "object_hash_expected": "4b497992ed7f57681bd1c66d2a1d55b39458364e88c49d11fdea64481d7f423b",
+  "object_hash_actual": "3d30ed4921a24c18f247a3524e8dcbafa4858c99faa014624fcc699addcd905c",
+  "grids_exact": [
+    true,
+    false,
+    true,
+    true
+  ],
+  "grid_hash_expected": [
+    "fe2f74a1e0b16a66452888eb4d734bc455cf1304481bb495d59afa8cf9cae93b",
+    "c040288b564b85668d3ed86cfd99d7fbb0cf97b3320f2d8260cf13862917a701",
+    "94d015fb99d13cc9786111f513b9db55c0b42218f8f32bf626dcdc995294046b",
+    "c7cb2daf2491b13bc4e1340b99b7750d6e75e766e2639c4737880e0186cc295a"
+  ],
+  "grid_hash_actual": [
+    "fe2f74a1e0b16a66452888eb4d734bc455cf1304481bb495d59afa8cf9cae93b",
+    "c428427c2f80d867f8bcddb869e58dfb21201c9226371bfce62b075f5ee8a6ae",
+    "94d015fb99d13cc9786111f513b9db55c0b42218f8f32bf626dcdc995294046b",
+    "c7cb2daf2491b13bc4e1340b99b7750d6e75e766e2639c4737880e0186cc295a"
+  ]
+}

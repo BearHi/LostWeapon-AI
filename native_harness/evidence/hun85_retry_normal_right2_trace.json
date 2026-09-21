@@ -1,0 +1,249 @@
+{
+  "scope": "fast-boundary read-only normal Client snapshot and ordinary RIGHT trace",
+  "snapshot": "native_harness\\private_snapshots\\hun85_moveright2_live.zip",
+  "target_distance": 80.0,
+  "settle_after_release": false,
+  "input_events": [],
+  "samples": [
+    {
+      "boundary": true,
+      "phase": "held",
+      "perf_ns": 497885206270800,
+      "time_ms": 497883656,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ],
+        "pos": [
+          48.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": -1,
+          "0xb0": 1,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497885210327800,
+      "time_ms": 497883660,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ],
+        "pos": [
+          48.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 1,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497885211265000,
+      "time_ms": 497883660,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ],
+        "pos": [
+          48.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 6,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497885212049500,
+      "time_ms": 497883661,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          63,
+          0
+        ],
+        "pos": [
+          52.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 6,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497885212913600,
+      "time_ms": 497883662,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          59,
+          0
+        ],
+        "pos": [
+          124.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 4,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "phase": "held",
+      "perf_ns": 497885213670000,
+      "time_ms": 497883663,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          57,
+          0
+        ],
+        "pos": [
+          220.0,
+          576.0
+        ],
+        "motion58": -1240.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    }
+  ]
+}

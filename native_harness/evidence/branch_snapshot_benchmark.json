@@ -1,0 +1,28 @@
+{
+  "scope": "NativeTrainingAPI process-local dirty branch snapshot benchmark",
+  "snapshot": "native_harness\\private_snapshots\\hun1_full.zip",
+  "lmf": "훈련용맵\\훈2.LMF",
+  "repetitions": 3,
+  "save_seconds": [
+    0.00038709997897967696,
+    0.0004975000047124922,
+    0.0003375000087544322
+  ],
+  "restore_seconds": [
+    0.0035380999906919897,
+    0.002602499967906624,
+    0.003732499957550317
+  ],
+  "dirty_pages": [
+    41,
+    41,
+    41
+  ],
+  "saved_bytes": [
+    167936,
+    167936,
+    167936
+  ],
+  "replay_exact": true,
+  "full_capture_bytes": 550215680
+}

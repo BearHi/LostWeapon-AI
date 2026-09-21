@@ -1,0 +1,52 @@
+{
+  "scope": "captured 훈14 world versus original-0x41e510-built 훈14 raw54 schedule parity",
+  "snapshot": "native_harness\\private_snapshots\\hun14_live.zip",
+  "lmf": "훈련용맵\\훈14.LMF",
+  "builder_info": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈14.LMF",
+    "size": [
+      34,
+      20
+    ],
+    "records": 108,
+    "runtime_object_counts": [
+      108,
+      0
+    ],
+    "spawn": [
+      6,
+      15
+    ],
+    "builder": "0x41e510"
+  },
+  "schedule": {
+    "RIGHT_ticks": 20,
+    "NOOP_ticks": 100
+  },
+  "fields": [
+    "x",
+    "y",
+    "motion58",
+    "38",
+    "3c",
+    "68",
+    "74",
+    "b0",
+    "c0",
+    "c4",
+    "d0",
+    "dc",
+    "acc",
+    "dir"
+  ],
+  "state_boundaries": 121,
+  "state_differences": 0,
+  "state_parity": true,
+  "differences": [],
+  "object_count": {
+    "captured": 108,
+    "built": 108
+  },
+  "byte_exact_object_records_before_step": true,
+  "object_record_differences": []
+}

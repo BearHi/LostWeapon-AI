@@ -1,0 +1,1432 @@
+{
+  "0": {
+    "lmf_decimal": 0,
+    "editor_hex": "00",
+    "bitmap_resource_id": 100,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "1": {
+    "lmf_decimal": 1,
+    "editor_hex": "01",
+    "bitmap_resource_id": 101,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "2": {
+    "lmf_decimal": 2,
+    "editor_hex": "02",
+    "bitmap_resource_id": 102,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "3": {
+    "lmf_decimal": 3,
+    "editor_hex": "03",
+    "bitmap_resource_id": 103,
+    "name": "사다리",
+    "family": "ladder",
+    "identity_evidence": "사용자 설명: 방향키로 오르내림",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "4": {
+    "lmf_decimal": 4,
+    "editor_hex": "04",
+    "bitmap_resource_id": 104,
+    "name": "스프링",
+    "family": "spring",
+    "identity_evidence": "사용자 설명: 접촉 즉시 튐; 위가 막히면 무시",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "5": {
+    "lmf_decimal": 5,
+    "editor_hex": "05",
+    "bitmap_resource_id": 105,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "6": {
+    "lmf_decimal": 6,
+    "editor_hex": "06",
+    "bitmap_resource_id": 106,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "7": {
+    "lmf_decimal": 7,
+    "editor_hex": "07",
+    "bitmap_resource_id": 121,
+    "name": "밝은 사각 암반",
+    "family": "square_solid",
+    "identity_evidence": "사용자 확인 및 에디터 스프라이트",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "8": {
+    "lmf_decimal": 8,
+    "editor_hex": "08",
+    "bitmap_resource_id": 120,
+    "name": "갈색 사각 암반",
+    "family": "square_solid",
+    "identity_evidence": "사용자 확인 및 에디터 스프라이트",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "9": {
+    "lmf_decimal": 9,
+    "editor_hex": "09",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "10": {
+    "lmf_decimal": 10,
+    "editor_hex": "0A",
+    "bitmap_resource_id": 112,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "11": {
+    "lmf_decimal": 11,
+    "editor_hex": "0B",
+    "bitmap_resource_id": 113,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "12": {
+    "lmf_decimal": 12,
+    "editor_hex": "0C",
+    "bitmap_resource_id": 114,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "13": {
+    "lmf_decimal": 13,
+    "editor_hex": "0D",
+    "bitmap_resource_id": 115,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "14": {
+    "lmf_decimal": 14,
+    "editor_hex": "0E",
+    "bitmap_resource_id": 111,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "15": {
+    "lmf_decimal": 15,
+    "editor_hex": "0F",
+    "bitmap_resource_id": 123,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "16": {
+    "lmf_decimal": 16,
+    "editor_hex": "10",
+    "bitmap_resource_id": 117,
+    "name": "상자 그림",
+    "family": "unknown",
+    "identity_evidence": "스프라이트 식별만; 에디터 16번 삼각형과 다름",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "17": {
+    "lmf_decimal": 17,
+    "editor_hex": "11",
+    "bitmap_resource_id": 116,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "18": {
+    "lmf_decimal": 18,
+    "editor_hex": "12",
+    "bitmap_resource_id": 118,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "19": {
+    "lmf_decimal": 19,
+    "editor_hex": "13",
+    "bitmap_resource_id": 124,
+    "name": "사각 얼음",
+    "family": "ice_square",
+    "identity_evidence": "에디터 13; 경사 얼음과 분리",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "20": {
+    "lmf_decimal": 20,
+    "editor_hex": "14",
+    "bitmap_resource_id": 167,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "21": {
+    "lmf_decimal": 21,
+    "editor_hex": "15",
+    "bitmap_resource_id": 168,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "22": {
+    "lmf_decimal": 22,
+    "editor_hex": "16",
+    "bitmap_resource_id": 169,
+    "name": "벽돌 경사",
+    "family": "slope",
+    "identity_evidence": "에디터 16; 보행 경사라는 사용자 설명",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "23": {
+    "lmf_decimal": 23,
+    "editor_hex": "17",
+    "bitmap_resource_id": 170,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "24": {
+    "lmf_decimal": 24,
+    "editor_hex": "18",
+    "bitmap_resource_id": 171,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "25": {
+    "lmf_decimal": 25,
+    "editor_hex": "19",
+    "bitmap_resource_id": 172,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "26": {
+    "lmf_decimal": 26,
+    "editor_hex": "1A",
+    "bitmap_resource_id": 173,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "27": {
+    "lmf_decimal": 27,
+    "editor_hex": "1B",
+    "bitmap_resource_id": 135,
+    "name": "오른쪽으로 올라가는 삼각 얼음",
+    "family": "ice_slope",
+    "identity_evidence": "에디터 1B; 이미지와 영상 대조",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "28": {
+    "lmf_decimal": 28,
+    "editor_hex": "1C",
+    "bitmap_resource_id": 174,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "29": {
+    "lmf_decimal": 29,
+    "editor_hex": "1D",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "30": {
+    "lmf_decimal": 30,
+    "editor_hex": "1E",
+    "bitmap_resource_id": 181,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "31": {
+    "lmf_decimal": 31,
+    "editor_hex": "1F",
+    "bitmap_resource_id": 182,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "32": {
+    "lmf_decimal": 32,
+    "editor_hex": "20",
+    "bitmap_resource_id": 183,
+    "name": "오른쪽으로 내려가는 벽돌 경사",
+    "family": "slope",
+    "identity_evidence": "에디터 20; 이미지 식별",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "33": {
+    "lmf_decimal": 33,
+    "editor_hex": "21",
+    "bitmap_resource_id": 184,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "34": {
+    "lmf_decimal": 34,
+    "editor_hex": "22",
+    "bitmap_resource_id": 185,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "35": {
+    "lmf_decimal": 35,
+    "editor_hex": "23",
+    "bitmap_resource_id": 186,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "36": {
+    "lmf_decimal": 36,
+    "editor_hex": "24",
+    "bitmap_resource_id": 187,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "37": {
+    "lmf_decimal": 37,
+    "editor_hex": "25",
+    "bitmap_resource_id": 136,
+    "name": "오른쪽으로 내려가는 삼각 얼음",
+    "family": "ice_slope",
+    "identity_evidence": "에디터 25; 이미지와 영상 대조",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "38": {
+    "lmf_decimal": 38,
+    "editor_hex": "26",
+    "bitmap_resource_id": 189,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "39": {
+    "lmf_decimal": 39,
+    "editor_hex": "27",
+    "bitmap_resource_id": 0,
+    "name": "빈 스프라이트",
+    "family": "unknown",
+    "identity_evidence": "에디터 27; 그림이 없다는 사실은 무효과의 증거가 아님",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "40": {
+    "lmf_decimal": 40,
+    "editor_hex": "28",
+    "bitmap_resource_id": 128,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "41": {
+    "lmf_decimal": 41,
+    "editor_hex": "29",
+    "bitmap_resource_id": 154,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "42": {
+    "lmf_decimal": 42,
+    "editor_hex": "2A",
+    "bitmap_resource_id": 155,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "43": {
+    "lmf_decimal": 43,
+    "editor_hex": "2B",
+    "bitmap_resource_id": 166,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "44": {
+    "lmf_decimal": 44,
+    "editor_hex": "2C",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "45": {
+    "lmf_decimal": 45,
+    "editor_hex": "2D",
+    "bitmap_resource_id": 129,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "46": {
+    "lmf_decimal": 46,
+    "editor_hex": "2E",
+    "bitmap_resource_id": 233,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "47": {
+    "lmf_decimal": 47,
+    "editor_hex": "2F",
+    "bitmap_resource_id": 234,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "48": {
+    "lmf_decimal": 48,
+    "editor_hex": "30",
+    "bitmap_resource_id": 235,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "49": {
+    "lmf_decimal": 49,
+    "editor_hex": "31",
+    "bitmap_resource_id": 127,
+    "name": "용암",
+    "family": "instant_reset",
+    "identity_evidence": "사용자 설명: 시작점 복귀; 구르기 통과 조건 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "50": {
+    "lmf_decimal": 50,
+    "editor_hex": "32",
+    "bitmap_resource_id": 216,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "51": {
+    "lmf_decimal": 51,
+    "editor_hex": "33",
+    "bitmap_resource_id": 217,
+    "name": "선풍기",
+    "family": "fan",
+    "identity_evidence": "사용자 설명: 낙하산을 펼쳐야 상승; 자석과 상호작용",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "52": {
+    "lmf_decimal": 52,
+    "editor_hex": "34",
+    "bitmap_resource_id": 160,
+    "name": "자석 34",
+    "family": "magnet",
+    "identity_evidence": "에디터 34; 거리별 힘 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "53": {
+    "lmf_decimal": 53,
+    "editor_hex": "35",
+    "bitmap_resource_id": 161,
+    "name": "자석 35",
+    "family": "magnet",
+    "identity_evidence": "에디터 35; 거리별 힘 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "54": {
+    "lmf_decimal": 54,
+    "editor_hex": "36",
+    "bitmap_resource_id": 162,
+    "name": "자석 36",
+    "family": "magnet",
+    "identity_evidence": "에디터 36; 거리별 힘 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "55": {
+    "lmf_decimal": 55,
+    "editor_hex": "37",
+    "bitmap_resource_id": 163,
+    "name": "자석 37",
+    "family": "magnet",
+    "identity_evidence": "에디터 37; 이번 측정맵에 사용",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "56": {
+    "lmf_decimal": 56,
+    "editor_hex": "38",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "57": {
+    "lmf_decimal": 57,
+    "editor_hex": "39",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "58": {
+    "lmf_decimal": 58,
+    "editor_hex": "3A",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "59": {
+    "lmf_decimal": 59,
+    "editor_hex": "3B",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "60": {
+    "lmf_decimal": 60,
+    "editor_hex": "3C",
+    "bitmap_resource_id": 214,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "61": {
+    "lmf_decimal": 61,
+    "editor_hex": "3D",
+    "bitmap_resource_id": 133,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "62": {
+    "lmf_decimal": 62,
+    "editor_hex": "3E",
+    "bitmap_resource_id": 119,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "63": {
+    "lmf_decimal": 63,
+    "editor_hex": "3F",
+    "bitmap_resource_id": 122,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "64": {
+    "lmf_decimal": 64,
+    "editor_hex": "40",
+    "bitmap_resource_id": 148,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "65": {
+    "lmf_decimal": 65,
+    "editor_hex": "41",
+    "bitmap_resource_id": 151,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "66": {
+    "lmf_decimal": 66,
+    "editor_hex": "42",
+    "bitmap_resource_id": 150,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "67": {
+    "lmf_decimal": 67,
+    "editor_hex": "43",
+    "bitmap_resource_id": 149,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "68": {
+    "lmf_decimal": 68,
+    "editor_hex": "44",
+    "bitmap_resource_id": 232,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "69": {
+    "lmf_decimal": 69,
+    "editor_hex": "45",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "70": {
+    "lmf_decimal": 70,
+    "editor_hex": "46",
+    "bitmap_resource_id": 215,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "71": {
+    "lmf_decimal": 71,
+    "editor_hex": "47",
+    "bitmap_resource_id": 157,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "72": {
+    "lmf_decimal": 72,
+    "editor_hex": "48",
+    "bitmap_resource_id": 158,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "73": {
+    "lmf_decimal": 73,
+    "editor_hex": "49",
+    "bitmap_resource_id": 137,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "74": {
+    "lmf_decimal": 74,
+    "editor_hex": "4A",
+    "bitmap_resource_id": 159,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "75": {
+    "lmf_decimal": 75,
+    "editor_hex": "4B",
+    "bitmap_resource_id": 139,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "76": {
+    "lmf_decimal": 76,
+    "editor_hex": "4C",
+    "bitmap_resource_id": 230,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "77": {
+    "lmf_decimal": 77,
+    "editor_hex": "4D",
+    "bitmap_resource_id": 231,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "78": {
+    "lmf_decimal": 78,
+    "editor_hex": "4E",
+    "bitmap_resource_id": 138,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "79": {
+    "lmf_decimal": 79,
+    "editor_hex": "4F",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "80": {
+    "lmf_decimal": 80,
+    "editor_hex": "50",
+    "bitmap_resource_id": 165,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "81": {
+    "lmf_decimal": 81,
+    "editor_hex": "51",
+    "bitmap_resource_id": 164,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "82": {
+    "lmf_decimal": 82,
+    "editor_hex": "52",
+    "bitmap_resource_id": 222,
+    "name": "물 모양 장식",
+    "family": "decoration",
+    "identity_evidence": "종합04의 실제 배치를 본 사용자 정정: 수영블록 아님; 진짜 수영 타일 ID는 미확인",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "83": {
+    "lmf_decimal": 83,
+    "editor_hex": "53",
+    "bitmap_resource_id": 134,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "84": {
+    "lmf_decimal": 84,
+    "editor_hex": "54",
+    "bitmap_resource_id": 132,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "85": {
+    "lmf_decimal": 85,
+    "editor_hex": "55",
+    "bitmap_resource_id": 156,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "86": {
+    "lmf_decimal": 86,
+    "editor_hex": "56",
+    "bitmap_resource_id": 195,
+    "name": "가시",
+    "family": "damage",
+    "identity_evidence": "사용자 설명: 무적시간 무시",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "87": {
+    "lmf_decimal": 87,
+    "editor_hex": "57",
+    "bitmap_resource_id": 145,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "88": {
+    "lmf_decimal": 88,
+    "editor_hex": "58",
+    "bitmap_resource_id": 140,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "89": {
+    "lmf_decimal": 89,
+    "editor_hex": "59",
+    "bitmap_resource_id": 144,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "90": {
+    "lmf_decimal": 90,
+    "editor_hex": "5A",
+    "bitmap_resource_id": 130,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "91": {
+    "lmf_decimal": 91,
+    "editor_hex": "5B",
+    "bitmap_resource_id": 176,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "92": {
+    "lmf_decimal": 92,
+    "editor_hex": "5C",
+    "bitmap_resource_id": 188,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "93": {
+    "lmf_decimal": 93,
+    "editor_hex": "5D",
+    "bitmap_resource_id": 229,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "94": {
+    "lmf_decimal": 94,
+    "editor_hex": "5E",
+    "bitmap_resource_id": 131,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "95": {
+    "lmf_decimal": 95,
+    "editor_hex": "5F",
+    "bitmap_resource_id": 141,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "96": {
+    "lmf_decimal": 96,
+    "editor_hex": "60",
+    "bitmap_resource_id": 143,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "97": {
+    "lmf_decimal": 97,
+    "editor_hex": "61",
+    "bitmap_resource_id": 142,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "98": {
+    "lmf_decimal": 98,
+    "editor_hex": "62",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "99": {
+    "lmf_decimal": 99,
+    "editor_hex": "63",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "100": {
+    "lmf_decimal": 100,
+    "editor_hex": "64",
+    "bitmap_resource_id": 240,
+    "name": "리스폰 표시 1",
+    "family": "respawn",
+    "identity_evidence": "사용자 설명 및 기준맵",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "101": {
+    "lmf_decimal": 101,
+    "editor_hex": "65",
+    "bitmap_resource_id": 241,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "102": {
+    "lmf_decimal": 102,
+    "editor_hex": "66",
+    "bitmap_resource_id": 243,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "103": {
+    "lmf_decimal": 103,
+    "editor_hex": "67",
+    "bitmap_resource_id": 244,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "104": {
+    "lmf_decimal": 104,
+    "editor_hex": "68",
+    "bitmap_resource_id": 245,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "105": {
+    "lmf_decimal": 105,
+    "editor_hex": "69",
+    "bitmap_resource_id": 246,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "106": {
+    "lmf_decimal": 106,
+    "editor_hex": "6A",
+    "bitmap_resource_id": 247,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "107": {
+    "lmf_decimal": 107,
+    "editor_hex": "6B",
+    "bitmap_resource_id": 248,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "108": {
+    "lmf_decimal": 108,
+    "editor_hex": "6C",
+    "bitmap_resource_id": 249,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "109": {
+    "lmf_decimal": 109,
+    "editor_hex": "6D",
+    "bitmap_resource_id": 250,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "110": {
+    "lmf_decimal": 110,
+    "editor_hex": "6E",
+    "bitmap_resource_id": 177,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "111": {
+    "lmf_decimal": 111,
+    "editor_hex": "6F",
+    "bitmap_resource_id": 178,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "112": {
+    "lmf_decimal": 112,
+    "editor_hex": "70",
+    "bitmap_resource_id": 179,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "113": {
+    "lmf_decimal": 113,
+    "editor_hex": "71",
+    "bitmap_resource_id": 180,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "114": {
+    "lmf_decimal": 114,
+    "editor_hex": "72",
+    "bitmap_resource_id": 190,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "115": {
+    "lmf_decimal": 115,
+    "editor_hex": "73",
+    "bitmap_resource_id": 191,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "116": {
+    "lmf_decimal": 116,
+    "editor_hex": "74",
+    "bitmap_resource_id": 192,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "117": {
+    "lmf_decimal": 117,
+    "editor_hex": "75",
+    "bitmap_resource_id": 193,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "118": {
+    "lmf_decimal": 118,
+    "editor_hex": "76",
+    "bitmap_resource_id": 236,
+    "name": "용암발사",
+    "family": "projectile_hazard",
+    "identity_evidence": "기존 타일 식별; 발사/충돌 시간 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "119": {
+    "lmf_decimal": 119,
+    "editor_hex": "77",
+    "bitmap_resource_id": 194,
+    "name": "들락가시",
+    "family": "periodic_hazard",
+    "identity_evidence": "사용자 설명: 같은 주기; 위상/피격 경계 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "120": {
+    "lmf_decimal": 120,
+    "editor_hex": "78",
+    "bitmap_resource_id": 147,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "121": {
+    "lmf_decimal": 121,
+    "editor_hex": "79",
+    "bitmap_resource_id": 237,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "122": {
+    "lmf_decimal": 122,
+    "editor_hex": "7A",
+    "bitmap_resource_id": 238,
+    "name": "대전용 기지",
+    "family": "competitive_base",
+    "identity_evidence": "종합04의 실제 배치를 본 사용자 정정: 칼전 기지, 사라지는 블록 아님; 유즈맵 기능과 충돌은 미측정",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "123": {
+    "lmf_decimal": 123,
+    "editor_hex": "7B",
+    "bitmap_resource_id": 223,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "124": {
+    "lmf_decimal": 124,
+    "editor_hex": "7C",
+    "bitmap_resource_id": 228,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "125": {
+    "lmf_decimal": 125,
+    "editor_hex": "7D",
+    "bitmap_resource_id": 224,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "126": {
+    "lmf_decimal": 126,
+    "editor_hex": "7E",
+    "bitmap_resource_id": 225,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "127": {
+    "lmf_decimal": 127,
+    "editor_hex": "7F",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "128": {
+    "lmf_decimal": 128,
+    "editor_hex": "80",
+    "bitmap_resource_id": 0,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "129": {
+    "lmf_decimal": 129,
+    "editor_hex": "81",
+    "bitmap_resource_id": 207,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "130": {
+    "lmf_decimal": 130,
+    "editor_hex": "82",
+    "bitmap_resource_id": 208,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "131": {
+    "lmf_decimal": 131,
+    "editor_hex": "83",
+    "bitmap_resource_id": 209,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "132": {
+    "lmf_decimal": 132,
+    "editor_hex": "84",
+    "bitmap_resource_id": 210,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "133": {
+    "lmf_decimal": 133,
+    "editor_hex": "85",
+    "bitmap_resource_id": 211,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "134": {
+    "lmf_decimal": 134,
+    "editor_hex": "86",
+    "bitmap_resource_id": 212,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "135": {
+    "lmf_decimal": 135,
+    "editor_hex": "87",
+    "bitmap_resource_id": 213,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "136": {
+    "lmf_decimal": 136,
+    "editor_hex": "88",
+    "bitmap_resource_id": 218,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "137": {
+    "lmf_decimal": 137,
+    "editor_hex": "89",
+    "bitmap_resource_id": 219,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "138": {
+    "lmf_decimal": 138,
+    "editor_hex": "8A",
+    "bitmap_resource_id": 220,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "139": {
+    "lmf_decimal": 139,
+    "editor_hex": "8B",
+    "bitmap_resource_id": 221,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "140": {
+    "lmf_decimal": 140,
+    "editor_hex": "8C",
+    "bitmap_resource_id": 239,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "141": {
+    "lmf_decimal": 141,
+    "editor_hex": "8D",
+    "bitmap_resource_id": 226,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  },
+  "142": {
+    "lmf_decimal": 142,
+    "editor_hex": "8E",
+    "bitmap_resource_id": 227,
+    "name": "미확인",
+    "family": "unknown",
+    "identity_evidence": "이미지 번호만 추출됨",
+    "engine_behavior_calibrated": false,
+    "unknown_is_passable": false
+  }
+}

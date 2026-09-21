@@ -1,0 +1,15 @@
+{
+  "verdict": "PASS",
+  "results": [
+    {
+      "attacker": 0,
+      "damage": 21.0,
+      "target_state": 5
+    },
+    {
+      "attacker": 1,
+      "damage": 28.0,
+      "target_state": 5
+    }
+  ]
+}

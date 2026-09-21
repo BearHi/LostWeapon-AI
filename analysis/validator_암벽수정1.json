@@ -1,0 +1,1340 @@
+{
+  "file": "C:\\Users\\microsoft\\Downloads\\NewLostweapon\\Map\\암벽수정1.LMF",
+  "width": 31,
+  "height": 240,
+  "record_count": 2530,
+  "tile_counts": {
+    "8": 2526,
+    "100": 1,
+    "119": 3
+  },
+  "parameters": {
+    "solid_ids": [
+      7,
+      8
+    ],
+    "slope_ids": [
+      16
+    ],
+    "minimum_walkable_clearance": 2,
+    "minimum_surface_width": 2,
+    "jump_backroll_max_up": 13,
+    "jump_backroll_max_horizontal": 11,
+    "parachute_max_up": 9,
+    "parachute_max_horizontal": 20,
+    "body_width": 0.8,
+    "body_height": 1.8,
+    "clearance_margin": 0.25,
+    "enforce_corridor_clearance": false
+  },
+  "surface_count": 53,
+  "surfaces": [
+    {
+      "index": 0,
+      "x1": 22,
+      "x2": 23,
+      "y": 13,
+      "width": 2,
+      "center": 23.0
+    },
+    {
+      "index": 1,
+      "x1": 18,
+      "x2": 21,
+      "y": 14,
+      "width": 4,
+      "center": 20.0
+    },
+    {
+      "index": 2,
+      "x1": 6,
+      "x2": 7,
+      "y": 17,
+      "width": 2,
+      "center": 7.0
+    },
+    {
+      "index": 3,
+      "x1": 8,
+      "x2": 9,
+      "y": 18,
+      "width": 2,
+      "center": 9.0
+    },
+    {
+      "index": 4,
+      "x1": 25,
+      "x2": 27,
+      "y": 25,
+      "width": 3,
+      "center": 26.5
+    },
+    {
+      "index": 5,
+      "x1": 3,
+      "x2": 4,
+      "y": 27,
+      "width": 2,
+      "center": 4.0
+    },
+    {
+      "index": 6,
+      "x1": 5,
+      "x2": 6,
+      "y": 35,
+      "width": 2,
+      "center": 6.0
+    },
+    {
+      "index": 7,
+      "x1": 7,
+      "x2": 8,
+      "y": 36,
+      "width": 2,
+      "center": 8.0
+    },
+    {
+      "index": 8,
+      "x1": 9,
+      "x2": 10,
+      "y": 37,
+      "width": 2,
+      "center": 10.0
+    },
+    {
+      "index": 9,
+      "x1": 23,
+      "x2": 24,
+      "y": 47,
+      "width": 2,
+      "center": 24.0
+    },
+    {
+      "index": 10,
+      "x1": 18,
+      "x2": 22,
+      "y": 48,
+      "width": 5,
+      "center": 20.5
+    },
+    {
+      "index": 11,
+      "x1": 5,
+      "x2": 6,
+      "y": 50,
+      "width": 2,
+      "center": 6.0
+    },
+    {
+      "index": 12,
+      "x1": 3,
+      "x2": 4,
+      "y": 60,
+      "width": 2,
+      "center": 4.0
+    },
+    {
+      "index": 13,
+      "x1": 6,
+      "x2": 9,
+      "y": 69,
+      "width": 4,
+      "center": 8.0
+    },
+    {
+      "index": 14,
+      "x1": 25,
+      "x2": 26,
+      "y": 74,
+      "width": 2,
+      "center": 26.0
+    },
+    {
+      "index": 15,
+      "x1": 21,
+      "x2": 22,
+      "y": 83,
+      "width": 2,
+      "center": 22.0
+    },
+    {
+      "index": 16,
+      "x1": 18,
+      "x2": 19,
+      "y": 85,
+      "width": 2,
+      "center": 19.0
+    },
+    {
+      "index": 17,
+      "x1": 4,
+      "x2": 6,
+      "y": 88,
+      "width": 3,
+      "center": 5.5
+    },
+    {
+      "index": 18,
+      "x1": 23,
+      "x2": 24,
+      "y": 101,
+      "width": 2,
+      "center": 24.0
+    },
+    {
+      "index": 19,
+      "x1": 21,
+      "x2": 22,
+      "y": 102,
+      "width": 2,
+      "center": 22.0
+    },
+    {
+      "index": 20,
+      "x1": 5,
+      "x2": 7,
+      "y": 106,
+      "width": 3,
+      "center": 6.5
+    },
+    {
+      "index": 21,
+      "x1": 8,
+      "x2": 9,
+      "y": 107,
+      "width": 2,
+      "center": 9.0
+    },
+    {
+      "index": 22,
+      "x1": 26,
+      "x2": 27,
+      "y": 110,
+      "width": 2,
+      "center": 27.0
+    },
+    {
+      "index": 23,
+      "x1": 24,
+      "x2": 25,
+      "y": 117,
+      "width": 2,
+      "center": 25.0
+    },
+    {
+      "index": 24,
+      "x1": 20,
+      "x2": 23,
+      "y": 118,
+      "width": 4,
+      "center": 22.0
+    },
+    {
+      "index": 25,
+      "x1": 4,
+      "x2": 5,
+      "y": 125,
+      "width": 2,
+      "center": 5.0
+    },
+    {
+      "index": 26,
+      "x1": 6,
+      "x2": 7,
+      "y": 126,
+      "width": 2,
+      "center": 7.0
+    },
+    {
+      "index": 27,
+      "x1": 10,
+      "x2": 11,
+      "y": 130,
+      "width": 2,
+      "center": 11.0
+    },
+    {
+      "index": 28,
+      "x1": 5,
+      "x2": 7,
+      "y": 143,
+      "width": 3,
+      "center": 6.5
+    },
+    {
+      "index": 29,
+      "x1": 23,
+      "x2": 24,
+      "y": 150,
+      "width": 2,
+      "center": 24.0
+    },
+    {
+      "index": 30,
+      "x1": 20,
+      "x2": 22,
+      "y": 151,
+      "width": 3,
+      "center": 21.5
+    },
+    {
+      "index": 31,
+      "x1": 3,
+      "x2": 4,
+      "y": 152,
+      "width": 2,
+      "center": 4.0
+    },
+    {
+      "index": 32,
+      "x1": 17,
+      "x2": 18,
+      "y": 153,
+      "width": 2,
+      "center": 18.0
+    },
+    {
+      "index": 33,
+      "x1": 25,
+      "x2": 26,
+      "y": 160,
+      "width": 2,
+      "center": 26.0
+    },
+    {
+      "index": 34,
+      "x1": 6,
+      "x2": 9,
+      "y": 161,
+      "width": 4,
+      "center": 8.0
+    },
+    {
+      "index": 35,
+      "x1": 23,
+      "x2": 24,
+      "y": 171,
+      "width": 2,
+      "center": 24.0
+    },
+    {
+      "index": 36,
+      "x1": 2,
+      "x2": 4,
+      "y": 175,
+      "width": 3,
+      "center": 3.5
+    },
+    {
+      "index": 37,
+      "x1": 25,
+      "x2": 28,
+      "y": 178,
+      "width": 4,
+      "center": 27.0
+    },
+    {
+      "index": 38,
+      "x1": 5,
+      "x2": 8,
+      "y": 184,
+      "width": 4,
+      "center": 7.0
+    },
+    {
+      "index": 39,
+      "x1": 23,
+      "x2": 24,
+      "y": 187,
+      "width": 2,
+      "center": 24.0
+    },
+    {
+      "index": 40,
+      "x1": 21,
+      "x2": 22,
+      "y": 188,
+      "width": 2,
+      "center": 22.0
+    },
+    {
+      "index": 41,
+      "x1": 15,
+      "x2": 17,
+      "y": 193,
+      "width": 3,
+      "center": 16.5
+    },
+    {
+      "index": 42,
+      "x1": 5,
+      "x2": 6,
+      "y": 203,
+      "width": 2,
+      "center": 6.0
+    },
+    {
+      "index": 43,
+      "x1": 7,
+      "x2": 8,
+      "y": 204,
+      "width": 2,
+      "center": 8.0
+    },
+    {
+      "index": 44,
+      "x1": 9,
+      "x2": 11,
+      "y": 205,
+      "width": 3,
+      "center": 10.5
+    },
+    {
+      "index": 45,
+      "x1": 21,
+      "x2": 23,
+      "y": 210,
+      "width": 3,
+      "center": 22.5
+    },
+    {
+      "index": 46,
+      "x1": 19,
+      "x2": 21,
+      "y": 214,
+      "width": 3,
+      "center": 20.5
+    },
+    {
+      "index": 47,
+      "x1": 23,
+      "x2": 24,
+      "y": 219,
+      "width": 2,
+      "center": 24.0
+    },
+    {
+      "index": 48,
+      "x1": 20,
+      "x2": 22,
+      "y": 220,
+      "width": 3,
+      "center": 21.5
+    },
+    {
+      "index": 49,
+      "x1": 4,
+      "x2": 5,
+      "y": 221,
+      "width": 2,
+      "center": 5.0
+    },
+    {
+      "index": 50,
+      "x1": 7,
+      "x2": 8,
+      "y": 223,
+      "width": 2,
+      "center": 8.0
+    },
+    {
+      "index": 51,
+      "x1": 19,
+      "x2": 23,
+      "y": 226,
+      "width": 5,
+      "center": 21.5
+    },
+    {
+      "index": 52,
+      "x1": 1,
+      "x2": 27,
+      "y": 239,
+      "width": 27,
+      "center": 14.5
+    }
+  ],
+  "edge_count": 108,
+  "edges": [
+    {
+      "from": 1,
+      "to": 0,
+      "action": "jump_backroll",
+      "dx": 3.0,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 2,
+      "to": 0,
+      "action": "parachute",
+      "dx": 16.0,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 2,
+      "to": 1,
+      "action": "parachute",
+      "dx": 13.0,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 3,
+      "to": 0,
+      "action": "parachute",
+      "dx": 14.0,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 3,
+      "to": 1,
+      "action": "jump_backroll",
+      "dx": 11.0,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 3,
+      "to": 2,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 1,
+      "geometry_clear": true
+    },
+    {
+      "from": 4,
+      "to": 0,
+      "action": "jump_backroll",
+      "dx": -3.5,
+      "dy": 12,
+      "geometry_clear": false
+    },
+    {
+      "from": 4,
+      "to": 1,
+      "action": "jump_backroll",
+      "dx": -6.5,
+      "dy": 11,
+      "geometry_clear": false
+    },
+    {
+      "from": 4,
+      "to": 2,
+      "action": "parachute",
+      "dx": -19.5,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 4,
+      "to": 3,
+      "action": "parachute",
+      "dx": -17.5,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 5,
+      "to": 2,
+      "action": "jump_backroll",
+      "dx": 3.0,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 5,
+      "to": 3,
+      "action": "jump_backroll",
+      "dx": 5.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 6,
+      "to": 5,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 7,
+      "to": 5,
+      "action": "jump_backroll",
+      "dx": -4.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 7,
+      "to": 6,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 1,
+      "geometry_clear": true
+    },
+    {
+      "from": 8,
+      "to": 5,
+      "action": "jump_backroll",
+      "dx": -6.0,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 8,
+      "to": 6,
+      "action": "jump_backroll",
+      "dx": -4.0,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 8,
+      "to": 7,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 1,
+      "geometry_clear": true
+    },
+    {
+      "from": 10,
+      "to": 8,
+      "action": "jump_backroll",
+      "dx": -10.5,
+      "dy": 11,
+      "geometry_clear": false
+    },
+    {
+      "from": 10,
+      "to": 9,
+      "action": "jump_backroll",
+      "dx": 3.5,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 11,
+      "to": 8,
+      "action": "jump_backroll",
+      "dx": 4.0,
+      "dy": 13,
+      "geometry_clear": false
+    },
+    {
+      "from": 11,
+      "to": 9,
+      "action": "parachute",
+      "dx": 18.0,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 11,
+      "to": 10,
+      "action": "parachute",
+      "dx": 14.5,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 12,
+      "to": 11,
+      "action": "jump_backroll",
+      "dx": 2.0,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 13,
+      "to": 12,
+      "action": "jump_backroll",
+      "dx": -4.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 14,
+      "to": 13,
+      "action": "parachute",
+      "dx": -18.0,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 15,
+      "to": 14,
+      "action": "jump_backroll",
+      "dx": 4.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 16,
+      "to": 14,
+      "action": "jump_backroll",
+      "dx": 7.0,
+      "dy": 11,
+      "geometry_clear": false
+    },
+    {
+      "from": 16,
+      "to": 15,
+      "action": "jump_backroll",
+      "dx": 3.0,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 17,
+      "to": 15,
+      "action": "parachute",
+      "dx": 16.5,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 17,
+      "to": 16,
+      "action": "parachute",
+      "dx": 13.5,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 19,
+      "to": 18,
+      "action": "jump_backroll",
+      "dx": 2.0,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 20,
+      "to": 18,
+      "action": "parachute",
+      "dx": 17.5,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 20,
+      "to": 19,
+      "action": "parachute",
+      "dx": 15.5,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 21,
+      "to": 18,
+      "action": "parachute",
+      "dx": 15.0,
+      "dy": 6,
+      "geometry_clear": false
+    },
+    {
+      "from": 21,
+      "to": 19,
+      "action": "parachute",
+      "dx": 13.0,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 21,
+      "to": 20,
+      "action": "jump_backroll",
+      "dx": -2.5,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 22,
+      "to": 18,
+      "action": "jump_backroll",
+      "dx": -3.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 22,
+      "to": 19,
+      "action": "jump_backroll",
+      "dx": -5.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 22,
+      "to": 21,
+      "action": "parachute",
+      "dx": -18.0,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 23,
+      "to": 22,
+      "action": "jump_backroll",
+      "dx": 2.0,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 24,
+      "to": 22,
+      "action": "jump_backroll",
+      "dx": 5.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 24,
+      "to": 23,
+      "action": "jump_backroll",
+      "dx": 3.0,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 25,
+      "to": 23,
+      "action": "parachute",
+      "dx": 20.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 25,
+      "to": 24,
+      "action": "parachute",
+      "dx": 17.0,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 26,
+      "to": 23,
+      "action": "parachute",
+      "dx": 18.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 26,
+      "to": 24,
+      "action": "parachute",
+      "dx": 15.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 26,
+      "to": 25,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 1,
+      "geometry_clear": true
+    },
+    {
+      "from": 27,
+      "to": 24,
+      "action": "jump_backroll",
+      "dx": 11.0,
+      "dy": 12,
+      "geometry_clear": false
+    },
+    {
+      "from": 27,
+      "to": 25,
+      "action": "jump_backroll",
+      "dx": -6.0,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 27,
+      "to": 26,
+      "action": "jump_backroll",
+      "dx": -4.0,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 28,
+      "to": 27,
+      "action": "jump_backroll",
+      "dx": 4.5,
+      "dy": 13,
+      "geometry_clear": false
+    },
+    {
+      "from": 29,
+      "to": 28,
+      "action": "parachute",
+      "dx": -17.5,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 30,
+      "to": 28,
+      "action": "parachute",
+      "dx": -15.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 30,
+      "to": 29,
+      "action": "jump_backroll",
+      "dx": 2.5,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 31,
+      "to": 28,
+      "action": "jump_backroll",
+      "dx": 2.5,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 31,
+      "to": 29,
+      "action": "parachute",
+      "dx": 20.0,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 31,
+      "to": 30,
+      "action": "parachute",
+      "dx": 17.5,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 32,
+      "to": 29,
+      "action": "jump_backroll",
+      "dx": 6.0,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 32,
+      "to": 30,
+      "action": "jump_backroll",
+      "dx": 3.5,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 32,
+      "to": 31,
+      "action": "parachute",
+      "dx": -14.0,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 33,
+      "to": 29,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 33,
+      "to": 30,
+      "action": "jump_backroll",
+      "dx": -4.5,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 33,
+      "to": 32,
+      "action": "jump_backroll",
+      "dx": -8.0,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 34,
+      "to": 31,
+      "action": "jump_backroll",
+      "dx": -4.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 34,
+      "to": 32,
+      "action": "jump_backroll",
+      "dx": 10.0,
+      "dy": 8,
+      "geometry_clear": false
+    },
+    {
+      "from": 34,
+      "to": 33,
+      "action": "parachute",
+      "dx": 18.0,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 35,
+      "to": 33,
+      "action": "jump_backroll",
+      "dx": 2.0,
+      "dy": 11,
+      "geometry_clear": false
+    },
+    {
+      "from": 37,
+      "to": 35,
+      "action": "jump_backroll",
+      "dx": -3.0,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 38,
+      "to": 36,
+      "action": "jump_backroll",
+      "dx": -3.5,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 38,
+      "to": 37,
+      "action": "parachute",
+      "dx": 20.0,
+      "dy": 6,
+      "geometry_clear": false
+    },
+    {
+      "from": 39,
+      "to": 37,
+      "action": "jump_backroll",
+      "dx": 3.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 39,
+      "to": 38,
+      "action": "parachute",
+      "dx": -17.0,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 40,
+      "to": 37,
+      "action": "jump_backroll",
+      "dx": 5.0,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 40,
+      "to": 38,
+      "action": "parachute",
+      "dx": -15.0,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 40,
+      "to": 39,
+      "action": "jump_backroll",
+      "dx": 2.0,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 41,
+      "to": 38,
+      "action": "jump_backroll",
+      "dx": -9.5,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 41,
+      "to": 39,
+      "action": "jump_backroll",
+      "dx": 7.5,
+      "dy": 6,
+      "geometry_clear": false
+    },
+    {
+      "from": 41,
+      "to": 40,
+      "action": "jump_backroll",
+      "dx": 5.5,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 42,
+      "to": 41,
+      "action": "jump_backroll",
+      "dx": 10.5,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 43,
+      "to": 41,
+      "action": "jump_backroll",
+      "dx": 8.5,
+      "dy": 11,
+      "geometry_clear": false
+    },
+    {
+      "from": 43,
+      "to": 42,
+      "action": "jump_backroll",
+      "dx": -2.0,
+      "dy": 1,
+      "geometry_clear": true
+    },
+    {
+      "from": 44,
+      "to": 41,
+      "action": "jump_backroll",
+      "dx": 6.0,
+      "dy": 12,
+      "geometry_clear": false
+    },
+    {
+      "from": 44,
+      "to": 42,
+      "action": "jump_backroll",
+      "dx": -4.5,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 44,
+      "to": 43,
+      "action": "jump_backroll",
+      "dx": -2.5,
+      "dy": 1,
+      "geometry_clear": true
+    },
+    {
+      "from": 45,
+      "to": 42,
+      "action": "parachute",
+      "dx": -16.5,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 45,
+      "to": 43,
+      "action": "parachute",
+      "dx": -14.5,
+      "dy": 6,
+      "geometry_clear": false
+    },
+    {
+      "from": 45,
+      "to": 44,
+      "action": "parachute",
+      "dx": -12.0,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 46,
+      "to": 44,
+      "action": "jump_backroll",
+      "dx": -10.0,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 46,
+      "to": 45,
+      "action": "jump_backroll",
+      "dx": 2.0,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 47,
+      "to": 45,
+      "action": "jump_backroll",
+      "dx": -1.5,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 47,
+      "to": 46,
+      "action": "jump_backroll",
+      "dx": -3.5,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 48,
+      "to": 45,
+      "action": "jump_backroll",
+      "dx": 1.0,
+      "dy": 10,
+      "geometry_clear": false
+    },
+    {
+      "from": 48,
+      "to": 46,
+      "action": "jump_backroll",
+      "dx": -1.0,
+      "dy": 6,
+      "geometry_clear": false
+    },
+    {
+      "from": 48,
+      "to": 47,
+      "action": "jump_backroll",
+      "dx": 2.5,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 49,
+      "to": 46,
+      "action": "parachute",
+      "dx": 15.5,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 49,
+      "to": 47,
+      "action": "parachute",
+      "dx": 19.0,
+      "dy": 2,
+      "geometry_clear": false
+    },
+    {
+      "from": 49,
+      "to": 48,
+      "action": "parachute",
+      "dx": 16.5,
+      "dy": 1,
+      "geometry_clear": false
+    },
+    {
+      "from": 50,
+      "to": 46,
+      "action": "parachute",
+      "dx": 12.5,
+      "dy": 9,
+      "geometry_clear": false
+    },
+    {
+      "from": 50,
+      "to": 47,
+      "action": "parachute",
+      "dx": 16.0,
+      "dy": 4,
+      "geometry_clear": false
+    },
+    {
+      "from": 50,
+      "to": 48,
+      "action": "parachute",
+      "dx": 13.5,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 50,
+      "to": 49,
+      "action": "jump_backroll",
+      "dx": -3.0,
+      "dy": 2,
+      "geometry_clear": true
+    },
+    {
+      "from": 51,
+      "to": 46,
+      "action": "jump_backroll",
+      "dx": -1.0,
+      "dy": 12,
+      "geometry_clear": false
+    },
+    {
+      "from": 51,
+      "to": 47,
+      "action": "jump_backroll",
+      "dx": 2.5,
+      "dy": 7,
+      "geometry_clear": false
+    },
+    {
+      "from": 51,
+      "to": 48,
+      "action": "jump_backroll",
+      "dx": 0.0,
+      "dy": 6,
+      "geometry_clear": false
+    },
+    {
+      "from": 51,
+      "to": 49,
+      "action": "parachute",
+      "dx": -16.5,
+      "dy": 5,
+      "geometry_clear": false
+    },
+    {
+      "from": 51,
+      "to": 50,
+      "action": "parachute",
+      "dx": -13.5,
+      "dy": 3,
+      "geometry_clear": false
+    },
+    {
+      "from": 52,
+      "to": 51,
+      "action": "jump_backroll",
+      "dx": 7.0,
+      "dy": 13,
+      "geometry_clear": false
+    }
+  ],
+  "graph": {
+    "start_candidates": [
+      52
+    ],
+    "goal_candidates": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "paths": [],
+    "shortcut_count": 0
+  },
+  "issues": [
+    "no_conservative_path_from_start_to_top"
+  ]
+}

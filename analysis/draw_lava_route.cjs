@@ -1,0 +1,8 @@
+const fs=require('fs');const d=fs.readFileSync('영상/용암.LMF'),W=d.readUInt16LE(16),H=d.readUInt16LE(18),S=8;const a=new Map();
+for(let o=32;o<d.length;o+=8){const id=d.readUInt32LE(o),x=d.readInt16LE(o+4),y=d.readInt16LE(o+6);a.set(x+','+y,id)}
+const floor=id=>id===7||(id>=110&&id<=117);let svg='<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" shape-rendering="crispEdges"><rect width="800" height="800" fill="#151a25"/>';
+for(let y=0;y<H;y++)for(let x=0;x<W;x++){const id=a.get(x+','+y);if(id===undefined)continue;const col=id===49?'#f04a22':floor(id)?'#d8c487':id===86?'#f2f2ed':'#744720';svg+='<rect x="'+x*S+'" y="'+y*S+'" width="'+S+'" height="'+S+'" fill="'+col+'"/>'}
+// candidate route follows actual floor/slope clusters; dashed sections are jumps/rolls between clusters
+const p=[[13,87],[20,93],[27,94],[31,74],[36,69],[47,90],[53,84],[58,88],[63,87],[69,83],[76,79],[82,79],[92,79],[97,73],[87,66],[79,66],[61,25],[52,22],[42,17],[38,18],[31,33],[14,58]];
+for(let i=0;i<p.length-1;i++){const [x,y]=p[i],[u,v]=p[i+1];const style=i===2||i===5||i===9||i===13||i===15?'stroke-dasharray="5 4"':'';svg+='<line x1="'+(x*S+4)+'" y1="'+(y*S+4)+'" x2="'+(u*S+4)+'" y2="'+(v*S+4)+'" stroke="#35e6ff" stroke-width="2" '+style+'/>'}
+p.forEach((q,i)=>{svg+='<circle cx="'+(q[0]*S+4)+'" cy="'+(q[1]*S+4)+'" r="4" fill="#142238" stroke="#fff"/><text x="'+(q[0]*S+1)+'" y="'+(q[1]*S+2)+'" fill="#fff" font-size="7">'+(i+1)+'</text>'});svg+='<text x="10" y="792" fill="#fff" font-size="11">solid = floor following / dashed = jump or roll candidate</text></svg>';fs.writeFileSync('analysis/용암_네비게이션_후보2.svg',svg);

@@ -1,0 +1,20 @@
+[
+  {
+    "map": "Map\\문어\\칼전틀.LMF",
+    "verdict": "PASS",
+    "size": [
+      25,
+      19
+    ],
+    "records": 95
+  },
+  {
+    "map": "Map\\문어\\칼4.lmf",
+    "verdict": "PASS",
+    "size": [
+      25,
+      19
+    ],
+    "records": 304
+  }
+]

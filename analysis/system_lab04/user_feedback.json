@@ -1,0 +1,28 @@
+{
+  "source": "user_pretest_briefing_after_lab04_delivery",
+  "evidence_type": "user_report_not_frame_measured",
+  "applies_to_map_sha256": "8ced87b7e4efc5cedc8a5c182c03bd56e77bf895e5e7a92a05af0381c7e5f48c",
+  "overrides_original_test_instructions": true,
+  "engine_parameters_fitted_from_this_feedback": false,
+  "stations": [
+    {"number":1,"status":"boundary_explained","report":"9칸 기둥은 점프+뒷굴로도 올라갈 수 없음. 밑이 빈 한 줄 발판이면 아래에서 올라설 수 있으나 넘어가지는 못함.","action":"기둥과 얇은 발판을 구분. 일반 최대 점프를 9칸으로 상향하지 않음.","unknown":"정확한 입력·몸 판정·올라섬 조건; 단순 일방통행 플랫폼으로 확정하지 않음"},
+    {"number":2,"status":"invalid_fixture","report":"일반 경사는 좁은 틈 진입 실험에 의미 없음. 얼음에 미끄러져 들어가야 함.","action":"기존 2번 실험 요청 취소"},
+    {"number":3,"status":"far_target_user_reports_unreachable","report":"가장 먼 발판은 아슬하게 못 밟음.","action":"현재 배치의 실패 사례로 기록. 가까운 발판 성공 여부나 보편적 수평 한계는 추정하지 않음"},
+    {"number":4,"status":"deferred","report":"얼음 이동거리 실험은 나중에","action":"성공·실패 미기록"},
+    {"number":5,"status":"invalid_effect_placement","report":"현재 배치는 자석 영향이 닿지 않음","action":"앉기/점프 비교 요청 취소; 자석 효과 없음의 일반 증거로 사용 금지"},
+    {"number":6,"status":"invalid_effect_placement","report":"5번과 동일하게 자석 영향이 닿지 않음","action":"앉기/점프 비교 요청 취소"},
+    {"number":7,"status":"deferred","report":"나중에","action":"성공·실패 미기록"},
+    {"number":8,"status":"deferred","report":"나중에","action":"성공·실패 미기록"},
+    {"number":9,"status":"left_target_user_reports_marginal_success","report":"선풍기에서 구르기 없이 바로 왼쪽 발판에 아슬하게 도달 가능","action":"현재 배치의 성공 경계 사례로 보존. 오른쪽 발판 결과는 미확인"},
+    {"number":10,"status":"activation_access_report","report":"왼쪽 스프링은 못 밟고 오른쪽은 밟힘","action":"왼쪽에서 밟은 뒤 발동이 억제됐다고 바꾸어 해석하지 않음. 높이·힘 수치 미측정"},
+    {"number":11,"status":"wrong_tile_identity","report":"물블록이 아니라 장식","action":"LMF82/에디터52를 장식으로 정정. 진짜 수영블록 ID 미확인. 수영 실험 취소"},
+    {"number":12,"status":"wrong_tile_identity_and_low_information","report":"사라지는 블록이 아니라 칼전 기지. 가시 통과는 의미 적고, 용암 3칸은 그냥 통과 가능","action":"LMF122/에디터7A를 대전 기지로 정정. 사라지는 블록 ID 미확인. 반복 실험 요청 취소. 용암 통과 입력/자세는 이 발언에서 확정하지 않음"}
+  ],
+  "tile_corrections": {
+    "82": {"editor_hex":"52","family":"decoration","not":"swimming"},
+    "122": {"editor_hex":"7A","family":"competitive_base","not":"temporary_solid"}
+  },
+  "next_measurement_priority": ["one_row_platform_mount_from_below_vs_pillar", "ice_state_narrow_gap_entry", "magnet_near_field_before_dwell_comparison", "fan_left_target_marginal_success"],
+  "do_not_request_repeats": [2,5,6,11,12],
+  "deferred_by_user": [4,7,8]
+}

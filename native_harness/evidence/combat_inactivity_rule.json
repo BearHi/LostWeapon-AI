@@ -1,0 +1,17 @@
+{
+  "status": "USER_RULE_CONFIRMED_NATIVE_BOUNDARY_PENDING",
+  "rule": {
+    "trigger": "about 15 seconds without either dealing or receiving an attack",
+    "result": ["explosion", "knockdown"],
+    "reset_candidates": ["successful dealt hit", "received hit"],
+    "map_interaction": "the explosion can destroy raw90 breakable ice"
+  },
+  "implementation_constraints": [
+    "do not remove the event from combat simulation",
+    "do not reward the opponent as if self-inflicted inactivity damage were an opponent hit",
+    "align the captured timer phase at episode reset",
+    "verify exact tick, reset boundary, damage and raw90 destruction with the normal Client"
+  ],
+  "training_policy": "basic sword self-play may use episodes shorter than the timeout; strategic use of the explosion is deferred",
+  "current_limit": "the available P2P capture does not yet expose a clean start-to-timeout boundary"
+}

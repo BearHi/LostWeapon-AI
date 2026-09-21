@@ -1,0 +1,62 @@
+{
+  "name": "물리측정_간단03",
+  "dimensions": [
+    72,
+    56
+  ],
+  "tile_counts_decimal": {
+    "8": 603,
+    "7": 33,
+    "100": 1,
+    "55": 1,
+    "37": 8,
+    "3": 9
+  },
+  "magnet": {
+    "editor_label": "37",
+    "lmf_id": 55,
+    "position": [
+      20,
+      43
+    ],
+    "empty_cells_below": 4
+  },
+  "tests": [
+    {
+      "number": 1,
+      "x": 12,
+      "instruction": "3초 앉았다가 점프+뒷굴 2회"
+    },
+    {
+      "number": 2,
+      "x": 20,
+      "instruction": "1번과 같은 방향/입력으로 3초 앉았다 점프+뒷굴 2회"
+    },
+    {
+      "number": 3,
+      "x": 48,
+      "instruction": "사다리로 올라가 얼음 경사를 오른쪽으로 미끄러지다 점프+뒷굴 2회"
+    }
+  ],
+  "user_observations": [
+    "magnet position and distance change effective gravity/jump",
+    "floor-level upward magnet only slightly increases jump",
+    "multiple magnets combine forces; excluded this pass"
+  ],
+  "analysis_limits": [
+    "position trials use the same dwell time and action",
+    "ice trial is observational: influence from the lone magnet is not ruled out",
+    "object contact or map-edge clipped flights must be flagged",
+    "do not fit a certified physics model from these six trials alone"
+  ],
+  "checks": {
+    "in_bounds": true,
+    "magnet_count_one": true,
+    "magnet_not_buried": true,
+    "continuous_floor": true,
+    "ice_ladder_present": true,
+    "game_tested": false,
+    "binary_roundtrip": true
+  },
+  "sha256": "784352f4938c72abcdfc45cc01788cbe0b0de200a150cff84ff574a272247ca6"
+}

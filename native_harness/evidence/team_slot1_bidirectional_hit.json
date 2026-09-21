@@ -1,0 +1,14 @@
+[
+  {
+    "attacker": 0,
+    "target": 1,
+    "target_hp": 79.0,
+    "target_state": 5
+  },
+  {
+    "attacker": 1,
+    "target": 0,
+    "target_hp": 100.0,
+    "target_state": 7
+  }
+]

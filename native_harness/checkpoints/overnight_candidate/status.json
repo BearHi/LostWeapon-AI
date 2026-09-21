@@ -1,0 +1,13 @@
+{
+  "state": "complete",
+  "playable": 46,
+  "skipped": [
+    {
+      "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\금지블록.LMF",
+      "reason": "no_spawn_or_goal"
+    }
+  ],
+  "failed": {},
+  "elapsed_seconds": 3890,
+  "updated_at": 1789607212.4337704
+}

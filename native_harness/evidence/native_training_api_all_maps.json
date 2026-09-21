@@ -1,0 +1,143 @@
+{
+  "scope": "NativeTrainingAPI load, save/restore, 8-tick replay across supplied LMFs; no normal-Client parity claim",
+  "maps": {
+    "훈1.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 144.0,
+      "y": 448.0
+    },
+    "훈2.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 144.0,
+      "y": 448.0
+    },
+    "훈3.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 144.0,
+      "y": 512.0
+    },
+    "훈4.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 880.0,
+      "y": 448.0
+    },
+    "훈5.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 176.0,
+      "y": 192.0
+    },
+    "훈6.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 112.0,
+      "y": 448.0
+    },
+    "훈6.5.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 112.0,
+      "y": 448.0
+    },
+    "훈7.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 112.0,
+      "y": 576.0
+    },
+    "훈7.5.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 112.0,
+      "y": 576.0
+    },
+    "훈8.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 176.0,
+      "y": 576.0
+    },
+    "훈8.5.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 176.0,
+      "y": 576.0
+    },
+    "훈9.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 240.0,
+      "y": 448.0
+    },
+    "훈10.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 816.0,
+      "y": 448.4
+    },
+    "훈11.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 176.0,
+      "y": 512.0
+    },
+    "훈12.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 85.60000000000001,
+      "y": 224.0
+    },
+    "훈13.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 112.0,
+      "y": 608.0
+    },
+    "훈14.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 240.0,
+      "y": 512.0
+    },
+    "훈15.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 940.0,
+      "y": 512.0
+    },
+    "훈16.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 240.0,
+      "y": 576.0
+    },
+    "훈17.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 208.0,
+      "y": 576.0
+    },
+    "훈18.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 464.0,
+      "y": 360.4
+    },
+    "훈19.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 464.0,
+      "y": 360.4
+    },
+    "훈20.LMF": {
+      "status": "PASS",
+      "replay_exact": true,
+      "x": 240.0,
+      "y": 448.4
+    }
+  }
+}

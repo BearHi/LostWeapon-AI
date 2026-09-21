@@ -1,0 +1,131 @@
+{
+  "scope": "original x86 exploratory, long parachute after parity-confirmed ice entry; normal long-route comparison still required",
+  "rows": [
+    {
+      "tick_after_slide": 1,
+      "x": 558.0,
+      "y": 398.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 0,
+      "dir": -1
+    },
+    {
+      "tick_after_slide": 2,
+      "x": 558.0,
+      "y": 398.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 0,
+      "dir": -1
+    },
+    {
+      "tick_after_slide": 3,
+      "x": 558.0,
+      "y": 398.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 0,
+      "dir": -1
+    },
+    {
+      "tick_after_slide": 4,
+      "x": 558.0,
+      "y": 398.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 0,
+      "dir": -1
+    },
+    {
+      "tick_after_slide": 5,
+      "x": 558.0,
+      "y": 398.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 40,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 6,
+      "x": 558.0,
+      "y": 398.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 80,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 7,
+      "x": 559.0,
+      "y": 399.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 120,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 8,
+      "x": 560.0,
+      "y": 400.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 160,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 9,
+      "x": 562.0,
+      "y": 402.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 200,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 10,
+      "x": 564.0,
+      "y": 404.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 240,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 15,
+      "x": 579.0,
+      "y": 416.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 390,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 30,
+      "x": 618.0,
+      "y": 416.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 240,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 45,
+      "x": 636.0,
+      "y": 416.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 90,
+      "dir": 5
+    },
+    {
+      "tick_after_slide": 54,
+      "x": 636.0,
+      "y": 416.0,
+      "motion58": -220.0,
+      "dc": 0,
+      "acc": 0,
+      "dir": 5
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "verdict": "PASS",
+  "results": [
+    {
+      "attacker": 0,
+      "target": 1,
+      "target_hp": 79.0,
+      "damage": 21.0,
+      "target_state": 5
+    },
+    {
+      "attacker": 1,
+      "target": 0,
+      "target_hp": 72.0,
+      "damage": 28.0,
+      "target_state": 5
+    }
+  ]
+}

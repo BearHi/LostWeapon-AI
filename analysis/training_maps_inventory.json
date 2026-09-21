@@ -1,0 +1,7031 @@
+{
+  "scope": "static LMF binary/structure inspection; no game execution or clearability claim",
+  "map_count": 23,
+  "maps": [
+    {
+      "name": "훈1.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈1.LMF",
+      "valid": true,
+      "width": 30,
+      "height": 18,
+      "records": 58,
+      "bytes": 496,
+      "expected_bytes": 496,
+      "trailing_bytes": 0,
+      "sha256": "19c13a8902ad234feaab3f04af5f5a1cabb2abe260af5599f3c112a320a44435",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            3,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 28,
+          "bbox": [
+            1,
+            14,
+            28,
+            14
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            16,
+            28,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            3,
+            13,
+            3,
+            13
+          ],
+          "positions": [
+            [
+              3,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            24,
+            13,
+            24,
+            13
+          ],
+          "positions": [
+            [
+              24,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            16,
+            28,
+            16
+          ],
+          "positions": null
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈2.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈2.LMF",
+      "valid": true,
+      "width": 30,
+      "height": 18,
+      "records": 55,
+      "bytes": 472,
+      "expected_bytes": 472,
+      "trailing_bytes": 0,
+      "sha256": "9312d1e4b50c03dafa45c1654837bdfa4e91956251865e48044da1312dda6553",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            3,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 25,
+          "bbox": [
+            1,
+            14,
+            28,
+            14
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            16,
+            28,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            3,
+            13,
+            3,
+            13
+          ],
+          "positions": [
+            [
+              3,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            24,
+            13,
+            24,
+            13
+          ],
+          "positions": [
+            [
+              24,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            16,
+            28,
+            16
+          ],
+          "positions": null
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈3.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈3.LMF",
+      "valid": true,
+      "width": 32,
+      "height": 20,
+      "records": 62,
+      "bytes": 528,
+      "expected_bytes": 528,
+      "trailing_bytes": 0,
+      "sha256": "3f7fddaf1f084e48c5e4dff55fd43fcc8a2fdf9b32147486dacf681683a85047",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            3,
+            15
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 30,
+          "bbox": [
+            1,
+            12,
+            30,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 30,
+          "bbox": [
+            1,
+            18,
+            30,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            3,
+            15,
+            3,
+            15
+          ],
+          "positions": [
+            [
+              3,
+              15
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            27,
+            15,
+            27,
+            15
+          ],
+          "positions": [
+            [
+              27,
+              15
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 30,
+          "bbox": [
+            1,
+            18,
+            30,
+            18
+          ],
+          "positions": null
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈4.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈4.LMF",
+      "valid": true,
+      "width": 30,
+      "height": 18,
+      "records": 55,
+      "bytes": 472,
+      "expected_bytes": 472,
+      "trailing_bytes": 0,
+      "sha256": "336eb0b1fffc515e3f2c54135596328b0b825f753a9ceb548f1873b1be62d256",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            26,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 25,
+          "bbox": [
+            1,
+            14,
+            28,
+            14
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            16,
+            28,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            26,
+            13,
+            26,
+            13
+          ],
+          "positions": [
+            [
+              26,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            4,
+            13,
+            4,
+            13
+          ],
+          "positions": [
+            [
+              4,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            16,
+            28,
+            16
+          ],
+          "positions": null
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈5.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈5.LMF",
+      "valid": true,
+      "width": 40,
+      "height": 23,
+      "records": 54,
+      "bytes": 464,
+      "expected_bytes": 464,
+      "trailing_bytes": 0,
+      "sha256": "afbdcb64edd315e976f8c76848984667c0389e1b910421d83bc9ec7ee175df09",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            4,
+            5
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 14,
+          "bbox": [
+            2,
+            6,
+            38,
+            18
+          ],
+          "positions": [
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              31,
+              18
+            ],
+            [
+              32,
+              18
+            ],
+            [
+              33,
+              18
+            ],
+            [
+              34,
+              18
+            ],
+            [
+              35,
+              18
+            ],
+            [
+              36,
+              18
+            ],
+            [
+              37,
+              18
+            ],
+            [
+              38,
+              18
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 38,
+          "bbox": [
+            1,
+            21,
+            38,
+            21
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            4,
+            5,
+            4,
+            5
+          ],
+          "positions": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            35,
+            17,
+            35,
+            17
+          ],
+          "positions": [
+            [
+              35,
+              17
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 38,
+          "bbox": [
+            1,
+            21,
+            38,
+            21
+          ],
+          "positions": null
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈6.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈6.LMF",
+      "valid": true,
+      "width": 24,
+      "height": 18,
+      "records": 44,
+      "bytes": 384,
+      "expected_bytes": 384,
+      "trailing_bytes": 0,
+      "sha256": "0591aeed9b32d6d2cc39449eea7a7f43a323c1ea4971623e93f068c9d3960f93",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            2,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 16,
+          "bbox": [
+            1,
+            14,
+            22,
+            14
+          ],
+          "positions": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              16,
+              14
+            ],
+            [
+              17,
+              14
+            ],
+            [
+              18,
+              14
+            ],
+            [
+              19,
+              14
+            ],
+            [
+              20,
+              14
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              22,
+              14
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              9,
+              14
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            16,
+            22,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ],
+            [
+              19,
+              16
+            ],
+            [
+              20,
+              16
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            13,
+            2,
+            13
+          ],
+          "positions": [
+            [
+              2,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 136,
+          "label": "빨간 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 2,
+          "bbox": [
+            5,
+            13,
+            10,
+            13
+          ],
+          "positions": [
+            [
+              10,
+              13
+            ],
+            [
+              5,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 2,
+          "bbox": [
+            6,
+            13,
+            13,
+            13
+          ],
+          "positions": [
+            [
+              6,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            21,
+            13,
+            21,
+            13
+          ],
+          "positions": [
+            [
+              21,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            16,
+            22,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ],
+            [
+              19,
+              16
+            ],
+            [
+              20,
+              16
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 136,
+          "label": "빨간 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 2,
+          "bbox": [
+            5,
+            13,
+            10,
+            13
+          ],
+          "positions": [
+            [
+              10,
+              13
+            ],
+            [
+              5,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 2,
+          "bbox": [
+            6,
+            13,
+            13,
+            13
+          ],
+          "positions": [
+            [
+              6,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈6.5.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈6.5.LMF",
+      "valid": true,
+      "width": 24,
+      "height": 18,
+      "records": 39,
+      "bytes": 344,
+      "expected_bytes": 344,
+      "trailing_bytes": 0,
+      "sha256": "03388232e960c9ea0e7982384cdfc83770f437fea628d827cbe3b16b683cd169",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            2,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 10,
+          "bbox": [
+            1,
+            14,
+            22,
+            14
+          ],
+          "positions": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              18,
+              14
+            ],
+            [
+              19,
+              14
+            ],
+            [
+              20,
+              14
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              22,
+              14
+            ],
+            [
+              11,
+              14
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            16,
+            22,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ],
+            [
+              19,
+              16
+            ],
+            [
+              20,
+              16
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            13,
+            2,
+            13
+          ],
+          "positions": [
+            [
+              2,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 136,
+          "label": "빨간 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 2,
+          "bbox": [
+            4,
+            13,
+            11,
+            13
+          ],
+          "positions": [
+            [
+              4,
+              13
+            ],
+            [
+              11,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 3,
+          "bbox": [
+            5,
+            13,
+            15,
+            13
+          ],
+          "positions": [
+            [
+              5,
+              13
+            ],
+            [
+              15,
+              13
+            ],
+            [
+              8,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            21,
+            13,
+            21,
+            13
+          ],
+          "positions": [
+            [
+              21,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            16,
+            22,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ],
+            [
+              19,
+              16
+            ],
+            [
+              20,
+              16
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 136,
+          "label": "빨간 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 2,
+          "bbox": [
+            4,
+            13,
+            11,
+            13
+          ],
+          "positions": [
+            [
+              4,
+              13
+            ],
+            [
+              11,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 3,
+          "bbox": [
+            5,
+            13,
+            15,
+            13
+          ],
+          "positions": [
+            [
+              5,
+              13
+            ],
+            [
+              15,
+              13
+            ],
+            [
+              8,
+              13
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈7.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈7.LMF",
+      "valid": true,
+      "width": 26,
+      "height": 22,
+      "records": 61,
+      "bytes": 520,
+      "expected_bytes": 520,
+      "trailing_bytes": 0,
+      "sha256": "c5b18756f6cfe0383c38419c9d857f944d71ce5dd7a3bb84dc4610182fbc4af6",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            2,
+            17
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 3,
+          "label": "사다리",
+          "kind": "ladder",
+          "count": 10,
+          "bbox": [
+            10,
+            8,
+            10,
+            17
+          ],
+          "positions": [
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              8
+            ]
+          ]
+        },
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 25,
+          "bbox": [
+            1,
+            8,
+            23,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 24,
+          "bbox": [
+            1,
+            20,
+            24,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              24,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            17,
+            2,
+            17
+          ],
+          "positions": [
+            [
+              2,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            20,
+            7,
+            20,
+            7
+          ],
+          "positions": [
+            [
+              20,
+              7
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 3,
+          "label": "사다리",
+          "kind": "ladder",
+          "count": 10,
+          "bbox": [
+            10,
+            8,
+            10,
+            17
+          ],
+          "positions": [
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              8
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 24,
+          "bbox": [
+            1,
+            20,
+            24,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              24,
+              20
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈7.5.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈7.5.LMF",
+      "valid": true,
+      "width": 26,
+      "height": 22,
+      "records": 62,
+      "bytes": 528,
+      "expected_bytes": 528,
+      "trailing_bytes": 0,
+      "sha256": "4967c2b81b2ab3cb2e26ad3dbbdcb87e65fbde8d581312e2d6143b42e6cf0990",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            2,
+            17
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 3,
+          "label": "사다리",
+          "kind": "ladder",
+          "count": 9,
+          "bbox": [
+            10,
+            9,
+            10,
+            17
+          ],
+          "positions": [
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              10,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 27,
+          "bbox": [
+            1,
+            8,
+            23,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 24,
+          "bbox": [
+            1,
+            20,
+            24,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              24,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            17,
+            2,
+            17
+          ],
+          "positions": [
+            [
+              2,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            20,
+            7,
+            20,
+            7
+          ],
+          "positions": [
+            [
+              20,
+              7
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 3,
+          "label": "사다리",
+          "kind": "ladder",
+          "count": 9,
+          "bbox": [
+            10,
+            9,
+            10,
+            17
+          ],
+          "positions": [
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              10,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 24,
+          "bbox": [
+            1,
+            20,
+            24,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              24,
+              20
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈8.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈8.LMF",
+      "valid": true,
+      "width": 24,
+      "height": 22,
+      "records": 57,
+      "bytes": 488,
+      "expected_bytes": 488,
+      "trailing_bytes": 0,
+      "sha256": "ef3b33871fe9f76c3758fa32ea20a04e768f06c3d22f0b0307a3b72c5c66ee48",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            4,
+            17
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 33,
+          "bbox": [
+            1,
+            9,
+            22,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            20,
+            22,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            4,
+            17,
+            4,
+            17
+          ],
+          "positions": [
+            [
+              4,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            11,
+            8,
+            11,
+            8
+          ],
+          "positions": [
+            [
+              11,
+              8
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            20,
+            22,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈8.5.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈8.5.LMF",
+      "valid": true,
+      "width": 24,
+      "height": 22,
+      "records": 56,
+      "bytes": 480,
+      "expected_bytes": 480,
+      "trailing_bytes": 0,
+      "sha256": "ddc4e83187eb4f08fd7cfa30590e25df2c4349419547e2a9f3d58f0df8e06df7",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            4,
+            17
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 4,
+          "label": "스프링",
+          "kind": "spring",
+          "count": 1,
+          "bbox": [
+            11,
+            17,
+            11,
+            17
+          ],
+          "positions": [
+            [
+              11,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 31,
+          "bbox": [
+            1,
+            7,
+            22,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            20,
+            22,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            4,
+            17,
+            4,
+            17
+          ],
+          "positions": [
+            [
+              4,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            11,
+            6,
+            11,
+            6
+          ],
+          "positions": [
+            [
+              11,
+              6
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 4,
+          "label": "스프링",
+          "kind": "spring",
+          "count": 1,
+          "bbox": [
+            11,
+            17,
+            11,
+            17
+          ],
+          "positions": [
+            [
+              11,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            20,
+            22,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈9.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈9.LMF",
+      "valid": true,
+      "width": 30,
+      "height": 22,
+      "records": 48,
+      "bytes": 416,
+      "expected_bytes": 416,
+      "trailing_bytes": 0,
+      "sha256": "01d6021b9f9e6229cad537c76971b3cdeb83b5ada024f26b3d067df13598094a",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            6,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 5,
+          "label": "오른쪽 발사대 그림",
+          "kind": "launcher_candidate",
+          "count": 1,
+          "bbox": [
+            12,
+            17,
+            12,
+            17
+          ],
+          "positions": [
+            [
+              12,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 14,
+          "bbox": [
+            5,
+            14,
+            28,
+            14
+          ],
+          "positions": [
+            [
+              18,
+              14
+            ],
+            [
+              19,
+              14
+            ],
+            [
+              20,
+              14
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              22,
+              14
+            ],
+            [
+              23,
+              14
+            ],
+            [
+              24,
+              14
+            ],
+            [
+              25,
+              14
+            ],
+            [
+              26,
+              14
+            ],
+            [
+              27,
+              14
+            ],
+            [
+              28,
+              14
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              7,
+              14
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            20,
+            28,
+            20
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            6,
+            13,
+            6,
+            13
+          ],
+          "positions": [
+            [
+              6,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 3,
+          "bbox": [
+            9,
+            10,
+            18,
+            10
+          ],
+          "positions": [
+            [
+              9,
+              10
+            ],
+            [
+              13,
+              10
+            ],
+            [
+              18,
+              10
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            23,
+            13,
+            23,
+            13
+          ],
+          "positions": [
+            [
+              23,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 5,
+          "label": "오른쪽 발사대 그림",
+          "kind": "launcher_candidate",
+          "count": 1,
+          "bbox": [
+            12,
+            17,
+            12,
+            17
+          ],
+          "positions": [
+            [
+              12,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            20,
+            28,
+            20
+          ],
+          "positions": null
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 3,
+          "bbox": [
+            9,
+            10,
+            18,
+            10
+          ],
+          "positions": [
+            [
+              9,
+              10
+            ],
+            [
+              13,
+              10
+            ],
+            [
+              18,
+              10
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈10.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈10.LMF",
+      "valid": true,
+      "width": 30,
+      "height": 22,
+      "records": 49,
+      "bytes": 424,
+      "expected_bytes": 424,
+      "trailing_bytes": 0,
+      "sha256": "f8db78eb0891f49648cc709c4a4ed1c96cab7e785f8b1469a4f137e8b750b54d",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            24,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 6,
+          "label": "왼쪽 발사대 그림",
+          "kind": "launcher_candidate",
+          "count": 1,
+          "bbox": [
+            17,
+            17,
+            17,
+            17
+          ],
+          "positions": [
+            [
+              17,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 14,
+          "bbox": [
+            1,
+            14,
+            24,
+            14
+          ],
+          "positions": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              22,
+              14
+            ],
+            [
+              23,
+              14
+            ],
+            [
+              24,
+              14
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            20,
+            28,
+            20
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            24,
+            13,
+            24,
+            13
+          ],
+          "positions": [
+            [
+              24,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 4,
+          "bbox": [
+            11,
+            9,
+            21,
+            12
+          ],
+          "positions": [
+            [
+              21,
+              10
+            ],
+            [
+              16,
+              9
+            ],
+            [
+              11,
+              10
+            ],
+            [
+              16,
+              12
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            6,
+            13,
+            6,
+            13
+          ],
+          "positions": [
+            [
+              6,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 6,
+          "label": "왼쪽 발사대 그림",
+          "kind": "launcher_candidate",
+          "count": 1,
+          "bbox": [
+            17,
+            17,
+            17,
+            17
+          ],
+          "positions": [
+            [
+              17,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 28,
+          "bbox": [
+            1,
+            20,
+            28,
+            20
+          ],
+          "positions": null
+        },
+        {
+          "id": 138,
+          "label": "PARA 그림 타일",
+          "kind": "parachute_marker_candidate",
+          "count": 4,
+          "bbox": [
+            11,
+            9,
+            21,
+            12
+          ],
+          "positions": [
+            [
+              21,
+              10
+            ],
+            [
+              16,
+              9
+            ],
+            [
+              11,
+              10
+            ],
+            [
+              16,
+              12
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈11.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈11.LMF",
+      "valid": true,
+      "width": 26,
+      "height": 20,
+      "records": 87,
+      "bytes": 728,
+      "expected_bytes": 728,
+      "trailing_bytes": 0,
+      "sha256": "0a4804f344f4c310b80e03f69561874db83b51a7dcdc2d077e3132f49f83012a",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            4,
+            15
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 23,
+          "bbox": [
+            1,
+            16,
+            24,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ],
+            [
+              19,
+              16
+            ],
+            [
+              20,
+              16
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              16
+            ],
+            [
+              23,
+              16
+            ],
+            [
+              24,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 30,
+          "bbox": [
+            1,
+            15,
+            24,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            4,
+            15,
+            4,
+            15
+          ],
+          "positions": [
+            [
+              4,
+              15
+            ]
+          ]
+        },
+        {
+          "id": 125,
+          "label": "파란 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 29,
+          "bbox": [
+            10,
+            9,
+            17,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 136,
+          "label": "빨간 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 3,
+          "bbox": [
+            5,
+            11,
+            13,
+            15
+          ],
+          "positions": [
+            [
+              5,
+              15
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            17,
+            8,
+            17,
+            8
+          ],
+          "positions": [
+            [
+              17,
+              8
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 30,
+          "bbox": [
+            1,
+            15,
+            24,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 125,
+          "label": "파란 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 29,
+          "bbox": [
+            10,
+            9,
+            17,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 136,
+          "label": "빨간 JUMP 그림 타일",
+          "kind": "jump_marker_candidate",
+          "count": 3,
+          "bbox": [
+            5,
+            11,
+            13,
+            15
+          ],
+          "positions": [
+            [
+              5,
+              15
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              13,
+              11
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈12.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈12.LMF",
+      "valid": true,
+      "width": 26,
+      "height": 22,
+      "records": 267,
+      "bytes": 2168,
+      "expected_bytes": 2168,
+      "trailing_bytes": 0,
+      "sha256": "b41873d787dde103d3913ec06bc84f816ec6a58ea8f5aae64f353ab9322dbbd9",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            2,
+            6
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 91,
+          "bbox": [
+            0,
+            4,
+            24,
+            19
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 24,
+          "bbox": [
+            1,
+            20,
+            24,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              24,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            6,
+            2,
+            6
+          ],
+          "positions": [
+            [
+              2,
+              6
+            ]
+          ]
+        },
+        {
+          "id": 123,
+          "label": "물보라 그림 타일",
+          "kind": "water_candidate",
+          "count": 150,
+          "bbox": [
+            2,
+            6,
+            21,
+            19
+          ],
+          "positions": null
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            19,
+            14,
+            19,
+            14
+          ],
+          "positions": [
+            [
+              19,
+              14
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 24,
+          "bbox": [
+            1,
+            20,
+            24,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              24,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 123,
+          "label": "물보라 그림 타일",
+          "kind": "water_candidate",
+          "count": 150,
+          "bbox": [
+            2,
+            6,
+            21,
+            19
+          ],
+          "positions": null
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈13.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈13.LMF",
+      "valid": true,
+      "width": 24,
+      "height": 24,
+      "records": 83,
+      "bytes": 696,
+      "expected_bytes": 696,
+      "trailing_bytes": 0,
+      "sha256": "d44fe706f2fb06819a7beb32d3bcea6b9a2c1f630e70ae2c4fd44b58bc806022",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            2,
+            18
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 45,
+          "bbox": [
+            0,
+            19,
+            23,
+            20
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            22,
+            22,
+            22
+          ],
+          "positions": [
+            [
+              1,
+              22
+            ],
+            [
+              2,
+              22
+            ],
+            [
+              3,
+              22
+            ],
+            [
+              4,
+              22
+            ],
+            [
+              5,
+              22
+            ],
+            [
+              6,
+              22
+            ],
+            [
+              7,
+              22
+            ],
+            [
+              8,
+              22
+            ],
+            [
+              9,
+              22
+            ],
+            [
+              10,
+              22
+            ],
+            [
+              11,
+              22
+            ],
+            [
+              12,
+              22
+            ],
+            [
+              13,
+              22
+            ],
+            [
+              14,
+              22
+            ],
+            [
+              15,
+              22
+            ],
+            [
+              16,
+              22
+            ],
+            [
+              17,
+              22
+            ],
+            [
+              18,
+              22
+            ],
+            [
+              19,
+              22
+            ],
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              22
+            ],
+            [
+              22,
+              22
+            ]
+          ]
+        },
+        {
+          "id": 51,
+          "label": "선풍기",
+          "kind": "fan",
+          "count": 14,
+          "bbox": [
+            12,
+            6,
+            12,
+            19
+          ],
+          "positions": [
+            [
+              12,
+              6
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              12,
+              19
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            18,
+            2,
+            18
+          ],
+          "positions": [
+            [
+              2,
+              18
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            12,
+            5,
+            12,
+            5
+          ],
+          "positions": [
+            [
+              12,
+              5
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            22,
+            22,
+            22
+          ],
+          "positions": [
+            [
+              1,
+              22
+            ],
+            [
+              2,
+              22
+            ],
+            [
+              3,
+              22
+            ],
+            [
+              4,
+              22
+            ],
+            [
+              5,
+              22
+            ],
+            [
+              6,
+              22
+            ],
+            [
+              7,
+              22
+            ],
+            [
+              8,
+              22
+            ],
+            [
+              9,
+              22
+            ],
+            [
+              10,
+              22
+            ],
+            [
+              11,
+              22
+            ],
+            [
+              12,
+              22
+            ],
+            [
+              13,
+              22
+            ],
+            [
+              14,
+              22
+            ],
+            [
+              15,
+              22
+            ],
+            [
+              16,
+              22
+            ],
+            [
+              17,
+              22
+            ],
+            [
+              18,
+              22
+            ],
+            [
+              19,
+              22
+            ],
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              22
+            ],
+            [
+              22,
+              22
+            ]
+          ]
+        },
+        {
+          "id": 51,
+          "label": "선풍기",
+          "kind": "fan",
+          "count": 14,
+          "bbox": [
+            12,
+            6,
+            12,
+            19
+          ],
+          "positions": [
+            [
+              12,
+              6
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              12,
+              19
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈14.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈14.LMF",
+      "valid": true,
+      "width": 34,
+      "height": 20,
+      "records": 108,
+      "bytes": 896,
+      "expected_bytes": 896,
+      "trailing_bytes": 0,
+      "sha256": "ee983439a3e545eade9145da830e13d443ca2b430a559b523d3280ee8a6ac9e9",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            6,
+            15
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 73,
+          "bbox": [
+            1,
+            10,
+            32,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 32,
+          "bbox": [
+            1,
+            18,
+            32,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 54,
+          "label": "자석 36",
+          "kind": "magnet",
+          "count": 1,
+          "bbox": [
+            8,
+            15,
+            8,
+            15
+          ],
+          "positions": [
+            [
+              8,
+              15
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            6,
+            15,
+            6,
+            15
+          ],
+          "positions": [
+            [
+              6,
+              15
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            15,
+            15,
+            15,
+            15
+          ],
+          "positions": [
+            [
+              15,
+              15
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 32,
+          "bbox": [
+            1,
+            18,
+            32,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 54,
+          "label": "자석 36",
+          "kind": "magnet",
+          "count": 1,
+          "bbox": [
+            8,
+            15,
+            8,
+            15
+          ],
+          "positions": [
+            [
+              8,
+              15
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈15.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈15.LMF",
+      "valid": true,
+      "width": 34,
+      "height": 20,
+      "records": 117,
+      "bytes": 968,
+      "expected_bytes": 968,
+      "trailing_bytes": 0,
+      "sha256": "27a95006bb60864a7d669903206940818b97c6e8a302c61f1506a6ae3043ce77",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            28,
+            15
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 82,
+          "bbox": [
+            1,
+            9,
+            32,
+            16
+          ],
+          "positions": null
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 32,
+          "bbox": [
+            1,
+            18,
+            32,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 55,
+          "label": "자석 37",
+          "kind": "magnet",
+          "count": 1,
+          "bbox": [
+            25,
+            15,
+            25,
+            15
+          ],
+          "positions": [
+            [
+              25,
+              15
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            28,
+            15,
+            28,
+            15
+          ],
+          "positions": [
+            [
+              28,
+              15
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            18,
+            15,
+            18,
+            15
+          ],
+          "positions": [
+            [
+              18,
+              15
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 32,
+          "bbox": [
+            1,
+            18,
+            32,
+            18
+          ],
+          "positions": null
+        },
+        {
+          "id": 55,
+          "label": "자석 37",
+          "kind": "magnet",
+          "count": 1,
+          "bbox": [
+            25,
+            15,
+            25,
+            15
+          ],
+          "positions": [
+            [
+              25,
+              15
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈16.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈16.LMF",
+      "valid": true,
+      "width": 22,
+      "height": 22,
+      "records": 34,
+      "bytes": 304,
+      "expected_bytes": 304,
+      "trailing_bytes": 0,
+      "sha256": "33e834ac2c7b6d63a578a5b0cefe96afa1cae363ffd7720cc6141caef00a5f2e",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            6,
+            17
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 11,
+          "bbox": [
+            5,
+            18,
+            15,
+            18
+          ],
+          "positions": [
+            [
+              5,
+              18
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              7,
+              18
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              9,
+              18
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              11,
+              18
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              13,
+              18
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              15,
+              18
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 20,
+          "bbox": [
+            1,
+            20,
+            20,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 53,
+          "label": "자석 35",
+          "kind": "magnet",
+          "count": 1,
+          "bbox": [
+            10,
+            10,
+            10,
+            10
+          ],
+          "positions": [
+            [
+              10,
+              10
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            6,
+            17,
+            6,
+            17
+          ],
+          "positions": [
+            [
+              6,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            10,
+            6,
+            10,
+            6
+          ],
+          "positions": [
+            [
+              10,
+              6
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 20,
+          "bbox": [
+            1,
+            20,
+            20,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 53,
+          "label": "자석 35",
+          "kind": "magnet",
+          "count": 1,
+          "bbox": [
+            10,
+            10,
+            10,
+            10
+          ],
+          "positions": [
+            [
+              10,
+              10
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈17.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈17.LMF",
+      "valid": true,
+      "width": 22,
+      "height": 22,
+      "records": 33,
+      "bytes": 296,
+      "expected_bytes": 296,
+      "trailing_bytes": 0,
+      "sha256": "dee0b6f534ac238f19a42a177df26183011b211d3b290fe3b3ff9ee857513f0f",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            5,
+            17
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 7,
+          "bbox": [
+            5,
+            18,
+            17,
+            18
+          ],
+          "positions": [
+            [
+              5,
+              18
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              16,
+              18
+            ],
+            [
+              17,
+              18
+            ],
+            [
+              13,
+              18
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              15,
+              18
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 20,
+          "bbox": [
+            1,
+            20,
+            20,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 52,
+          "label": "자석 34",
+          "kind": "magnet",
+          "count": 4,
+          "bbox": [
+            9,
+            18,
+            10,
+            19
+          ],
+          "positions": [
+            [
+              10,
+              19
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              18
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            5,
+            17,
+            5,
+            17
+          ],
+          "positions": [
+            [
+              5,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            17,
+            17,
+            17,
+            17
+          ],
+          "positions": [
+            [
+              17,
+              17
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 20,
+          "bbox": [
+            1,
+            20,
+            20,
+            20
+          ],
+          "positions": [
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              20
+            ]
+          ]
+        },
+        {
+          "id": 52,
+          "label": "자석 34",
+          "kind": "magnet",
+          "count": 4,
+          "bbox": [
+            9,
+            18,
+            10,
+            19
+          ],
+          "positions": [
+            [
+              10,
+              19
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              18
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈18.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈18.LMF",
+      "valid": true,
+      "width": 25,
+      "height": 19,
+      "records": 62,
+      "bytes": 528,
+      "expected_bytes": 528,
+      "trailing_bytes": 0,
+      "sha256": "11cae3e91d70058edbce4b96481600a92b3171cb0c73adb747a04ad6fa4c20ea",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            13,
+            10
+          ]
+        },
+        {
+          "id": 101,
+          "position": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": 102,
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "id": 103,
+          "position": [
+            4,
+            1
+          ]
+        },
+        {
+          "id": 104,
+          "position": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": 105,
+          "position": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": 106,
+          "position": [
+            7,
+            1
+          ]
+        },
+        {
+          "id": 107,
+          "position": [
+            8,
+            1
+          ]
+        },
+        {
+          "id": 108,
+          "position": [
+            9,
+            1
+          ]
+        },
+        {
+          "id": 109,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 28,
+          "bbox": [
+            3,
+            7,
+            14,
+            13
+          ],
+          "positions": null
+        },
+        {
+          "id": 27,
+          "label": "오르막 삼각 얼음",
+          "kind": "ice_slope",
+          "count": 1,
+          "bbox": [
+            9,
+            12,
+            9,
+            12
+          ],
+          "positions": [
+            [
+              9,
+              12
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            17,
+            22,
+            17
+          ],
+          "positions": [
+            [
+              22,
+              17
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              20,
+              17
+            ],
+            [
+              19,
+              17
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              17,
+              17
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              2,
+              17
+            ],
+            [
+              1,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            13,
+            10,
+            13,
+            10
+          ],
+          "positions": [
+            [
+              13,
+              10
+            ]
+          ]
+        },
+        {
+          "id": 101,
+          "label": "리스폰 표시 2",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "positions": [
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 102,
+          "label": "리스폰 표시 3",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            3,
+            1,
+            3,
+            1
+          ],
+          "positions": [
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 103,
+          "label": "리스폰 표시 4",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            4,
+            1,
+            4,
+            1
+          ],
+          "positions": [
+            [
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 104,
+          "label": "리스폰 표시 5",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            5,
+            1,
+            5,
+            1
+          ],
+          "positions": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 105,
+          "label": "리스폰 표시 6",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            6,
+            1,
+            6,
+            1
+          ],
+          "positions": [
+            [
+              6,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 106,
+          "label": "리스폰 표시 7",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            7,
+            1,
+            7,
+            1
+          ],
+          "positions": [
+            [
+              7,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 107,
+          "label": "리스폰 표시 8",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            8,
+            1,
+            8,
+            1
+          ],
+          "positions": [
+            [
+              8,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 108,
+          "label": "리스폰 표시 9",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            9,
+            1,
+            9,
+            1
+          ],
+          "positions": [
+            [
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 109,
+          "label": "리스폰 표시 10",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            10,
+            1,
+            10,
+            1
+          ],
+          "positions": [
+            [
+              10,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            5,
+            12,
+            5,
+            12
+          ],
+          "positions": [
+            [
+              5,
+              12
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 27,
+          "label": "오르막 삼각 얼음",
+          "kind": "ice_slope",
+          "count": 1,
+          "bbox": [
+            9,
+            12,
+            9,
+            12
+          ],
+          "positions": [
+            [
+              9,
+              12
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 22,
+          "bbox": [
+            1,
+            17,
+            22,
+            17
+          ],
+          "positions": [
+            [
+              22,
+              17
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              20,
+              17
+            ],
+            [
+              19,
+              17
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              17,
+              17
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              2,
+              17
+            ],
+            [
+              1,
+              17
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈19.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈19.LMF",
+      "valid": true,
+      "width": 25,
+      "height": 19,
+      "records": 68,
+      "bytes": 576,
+      "expected_bytes": 576,
+      "trailing_bytes": 0,
+      "sha256": "828990fc702dbfa24094312293eb1bf80d31b7d8a4b6775e8a57fbab6faa68a6",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            13,
+            10
+          ]
+        },
+        {
+          "id": 101,
+          "position": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": 102,
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "id": 103,
+          "position": [
+            4,
+            1
+          ]
+        },
+        {
+          "id": 104,
+          "position": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": 105,
+          "position": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": 106,
+          "position": [
+            7,
+            1
+          ]
+        },
+        {
+          "id": 107,
+          "position": [
+            8,
+            1
+          ]
+        },
+        {
+          "id": 108,
+          "position": [
+            9,
+            1
+          ]
+        },
+        {
+          "id": 109,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 33,
+          "bbox": [
+            9,
+            6,
+            23,
+            13
+          ],
+          "positions": null
+        },
+        {
+          "id": 37,
+          "label": "내리막 삼각 얼음",
+          "kind": "ice_slope",
+          "count": 1,
+          "bbox": [
+            17,
+            12,
+            17,
+            12
+          ],
+          "positions": [
+            [
+              17,
+              12
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 23,
+          "bbox": [
+            1,
+            17,
+            23,
+            17
+          ],
+          "positions": [
+            [
+              1,
+              17
+            ],
+            [
+              2,
+              17
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              17,
+              17
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              19,
+              17
+            ],
+            [
+              20,
+              17
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              22,
+              17
+            ],
+            [
+              23,
+              17
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            13,
+            10,
+            13,
+            10
+          ],
+          "positions": [
+            [
+              13,
+              10
+            ]
+          ]
+        },
+        {
+          "id": 101,
+          "label": "리스폰 표시 2",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "positions": [
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 102,
+          "label": "리스폰 표시 3",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            3,
+            1,
+            3,
+            1
+          ],
+          "positions": [
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 103,
+          "label": "리스폰 표시 4",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            4,
+            1,
+            4,
+            1
+          ],
+          "positions": [
+            [
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 104,
+          "label": "리스폰 표시 5",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            5,
+            1,
+            5,
+            1
+          ],
+          "positions": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 105,
+          "label": "리스폰 표시 6",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            6,
+            1,
+            6,
+            1
+          ],
+          "positions": [
+            [
+              6,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 106,
+          "label": "리스폰 표시 7",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            7,
+            1,
+            7,
+            1
+          ],
+          "positions": [
+            [
+              7,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 107,
+          "label": "리스폰 표시 8",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            8,
+            1,
+            8,
+            1
+          ],
+          "positions": [
+            [
+              8,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 108,
+          "label": "리스폰 표시 9",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            9,
+            1,
+            9,
+            1
+          ],
+          "positions": [
+            [
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 109,
+          "label": "리스폰 표시 10",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            10,
+            1,
+            10,
+            1
+          ],
+          "positions": [
+            [
+              10,
+              1
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            21,
+            12,
+            21,
+            12
+          ],
+          "positions": [
+            [
+              21,
+              12
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 37,
+          "label": "내리막 삼각 얼음",
+          "kind": "ice_slope",
+          "count": 1,
+          "bbox": [
+            17,
+            12,
+            17,
+            12
+          ],
+          "positions": [
+            [
+              17,
+              12
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 23,
+          "bbox": [
+            1,
+            17,
+            23,
+            17
+          ],
+          "positions": [
+            [
+              1,
+              17
+            ],
+            [
+              2,
+              17
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              17,
+              17
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              19,
+              17
+            ],
+            [
+              20,
+              17
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              22,
+              17
+            ],
+            [
+              23,
+              17
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    },
+    {
+      "name": "훈20.LMF",
+      "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈20.LMF",
+      "valid": true,
+      "width": 20,
+      "height": 18,
+      "records": 32,
+      "bytes": 288,
+      "expected_bytes": 288,
+      "trailing_bytes": 0,
+      "sha256": "9eb23e6392eeadaa9d433a746e756437d1c66b063f982582f73b042f1c0d0372",
+      "duplicate_coordinate_records": 0,
+      "out_of_bounds": [],
+      "spawn_markers": [
+        {
+          "id": 100,
+          "position": [
+            6,
+            13
+          ]
+        }
+      ],
+      "ids": [
+        {
+          "id": 7,
+          "label": "밝은 암반",
+          "kind": "solid",
+          "count": 11,
+          "bbox": [
+            8,
+            14,
+            18,
+            14
+          ],
+          "positions": [
+            [
+              8,
+              14
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              14
+            ],
+            [
+              15,
+              14
+            ],
+            [
+              16,
+              14
+            ],
+            [
+              17,
+              14
+            ],
+            [
+              18,
+              14
+            ]
+          ]
+        },
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 18,
+          "bbox": [
+            1,
+            16,
+            18,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 100,
+          "label": "리스폰 표시 1",
+          "kind": "respawn",
+          "count": 1,
+          "bbox": [
+            6,
+            13,
+            6,
+            13
+          ],
+          "positions": [
+            [
+              6,
+              13
+            ]
+          ]
+        },
+        {
+          "id": 124,
+          "label": "아래 화살표 그림 타일",
+          "kind": "down_marker_candidate",
+          "count": 1,
+          "bbox": [
+            6,
+            14,
+            6,
+            14
+          ],
+          "positions": [
+            [
+              6,
+              14
+            ]
+          ]
+        },
+        {
+          "id": 140,
+          "label": "해골 깃발",
+          "kind": "goal_candidate",
+          "count": 1,
+          "bbox": [
+            12,
+            13,
+            12,
+            13
+          ],
+          "positions": [
+            [
+              12,
+              13
+            ]
+          ]
+        }
+      ],
+      "gimmicks": [
+        {
+          "id": 49,
+          "label": "용암",
+          "kind": "instant_reset",
+          "count": 18,
+          "bbox": [
+            1,
+            16,
+            18,
+            16
+          ],
+          "positions": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              17,
+              16
+            ],
+            [
+              18,
+              16
+            ]
+          ]
+        },
+        {
+          "id": 124,
+          "label": "아래 화살표 그림 타일",
+          "kind": "down_marker_candidate",
+          "count": 1,
+          "bbox": [
+            6,
+            14,
+            6,
+            14
+          ],
+          "positions": [
+            [
+              6,
+              14
+            ]
+          ]
+        }
+      ],
+      "unknown_ids": []
+    }
+  ],
+  "tile_usage": {
+    "3": {
+      "label": "사다리",
+      "maps": [
+        "훈7.LMF",
+        "훈7.5.LMF"
+      ]
+    },
+    "4": {
+      "label": "스프링",
+      "maps": [
+        "훈8.5.LMF"
+      ]
+    },
+    "5": {
+      "label": "오른쪽 발사대 그림",
+      "maps": [
+        "훈9.LMF"
+      ]
+    },
+    "6": {
+      "label": "왼쪽 발사대 그림",
+      "maps": [
+        "훈10.LMF"
+      ]
+    },
+    "7": {
+      "label": "밝은 암반",
+      "maps": [
+        "훈1.LMF",
+        "훈2.LMF",
+        "훈3.LMF",
+        "훈4.LMF",
+        "훈5.LMF",
+        "훈6.LMF",
+        "훈6.5.LMF",
+        "훈7.LMF",
+        "훈7.5.LMF",
+        "훈8.LMF",
+        "훈8.5.LMF",
+        "훈9.LMF",
+        "훈10.LMF",
+        "훈11.LMF",
+        "훈12.LMF",
+        "훈13.LMF",
+        "훈14.LMF",
+        "훈15.LMF",
+        "훈16.LMF",
+        "훈17.LMF",
+        "훈18.LMF",
+        "훈19.LMF",
+        "훈20.LMF"
+      ]
+    },
+    "27": {
+      "label": "오르막 삼각 얼음",
+      "maps": [
+        "훈18.LMF"
+      ]
+    },
+    "37": {
+      "label": "내리막 삼각 얼음",
+      "maps": [
+        "훈19.LMF"
+      ]
+    },
+    "49": {
+      "label": "용암",
+      "maps": [
+        "훈1.LMF",
+        "훈2.LMF",
+        "훈3.LMF",
+        "훈4.LMF",
+        "훈5.LMF",
+        "훈6.LMF",
+        "훈6.5.LMF",
+        "훈7.LMF",
+        "훈7.5.LMF",
+        "훈8.LMF",
+        "훈8.5.LMF",
+        "훈9.LMF",
+        "훈10.LMF",
+        "훈11.LMF",
+        "훈12.LMF",
+        "훈13.LMF",
+        "훈14.LMF",
+        "훈15.LMF",
+        "훈16.LMF",
+        "훈17.LMF",
+        "훈18.LMF",
+        "훈19.LMF",
+        "훈20.LMF"
+      ]
+    },
+    "51": {
+      "label": "선풍기",
+      "maps": [
+        "훈13.LMF"
+      ]
+    },
+    "52": {
+      "label": "자석 34",
+      "maps": [
+        "훈17.LMF"
+      ]
+    },
+    "53": {
+      "label": "자석 35",
+      "maps": [
+        "훈16.LMF"
+      ]
+    },
+    "54": {
+      "label": "자석 36",
+      "maps": [
+        "훈14.LMF"
+      ]
+    },
+    "55": {
+      "label": "자석 37",
+      "maps": [
+        "훈15.LMF"
+      ]
+    },
+    "100": {
+      "label": "리스폰 표시 1",
+      "maps": [
+        "훈1.LMF",
+        "훈2.LMF",
+        "훈3.LMF",
+        "훈4.LMF",
+        "훈5.LMF",
+        "훈6.LMF",
+        "훈6.5.LMF",
+        "훈7.LMF",
+        "훈7.5.LMF",
+        "훈8.LMF",
+        "훈8.5.LMF",
+        "훈9.LMF",
+        "훈10.LMF",
+        "훈11.LMF",
+        "훈12.LMF",
+        "훈13.LMF",
+        "훈14.LMF",
+        "훈15.LMF",
+        "훈16.LMF",
+        "훈17.LMF",
+        "훈18.LMF",
+        "훈19.LMF",
+        "훈20.LMF"
+      ]
+    },
+    "101": {
+      "label": "리스폰 표시 2",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "102": {
+      "label": "리스폰 표시 3",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "103": {
+      "label": "리스폰 표시 4",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "104": {
+      "label": "리스폰 표시 5",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "105": {
+      "label": "리스폰 표시 6",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "106": {
+      "label": "리스폰 표시 7",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "107": {
+      "label": "리스폰 표시 8",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "108": {
+      "label": "리스폰 표시 9",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "109": {
+      "label": "리스폰 표시 10",
+      "maps": [
+        "훈18.LMF",
+        "훈19.LMF"
+      ]
+    },
+    "123": {
+      "label": "물보라 그림 타일",
+      "maps": [
+        "훈12.LMF"
+      ]
+    },
+    "124": {
+      "label": "아래 화살표 그림 타일",
+      "maps": [
+        "훈20.LMF"
+      ]
+    },
+    "125": {
+      "label": "파란 JUMP 그림 타일",
+      "maps": [
+        "훈11.LMF"
+      ]
+    },
+    "136": {
+      "label": "빨간 JUMP 그림 타일",
+      "maps": [
+        "훈6.LMF",
+        "훈6.5.LMF",
+        "훈11.LMF"
+      ]
+    },
+    "138": {
+      "label": "PARA 그림 타일",
+      "maps": [
+        "훈6.LMF",
+        "훈6.5.LMF",
+        "훈9.LMF",
+        "훈10.LMF"
+      ]
+    },
+    "140": {
+      "label": "해골 깃발",
+      "maps": [
+        "훈1.LMF",
+        "훈2.LMF",
+        "훈3.LMF",
+        "훈4.LMF",
+        "훈5.LMF",
+        "훈6.LMF",
+        "훈6.5.LMF",
+        "훈7.LMF",
+        "훈7.5.LMF",
+        "훈8.LMF",
+        "훈8.5.LMF",
+        "훈9.LMF",
+        "훈10.LMF",
+        "훈11.LMF",
+        "훈12.LMF",
+        "훈13.LMF",
+        "훈14.LMF",
+        "훈15.LMF",
+        "훈16.LMF",
+        "훈17.LMF",
+        "훈18.LMF",
+        "훈19.LMF",
+        "훈20.LMF"
+      ]
+    }
+  }
+}

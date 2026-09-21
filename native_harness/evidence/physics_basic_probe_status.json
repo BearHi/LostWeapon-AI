@@ -1,0 +1,1 @@
+{"state": "complete", "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈6.LMF", "scope": "offline original-x86 native simulation", "goal": [[21, 13]], "surfaces": 3, "solved": true, "mode": "special_transport", "trials": [{"hypothesis": "remembered_route", "clean_replay": {"verified": true, "steps": 65}}], "route_steps": 65}

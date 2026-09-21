@@ -1,0 +1,206 @@
+{
+  "scope": "simple LMF runtime-state injection; original x86 world-chain execution",
+  "supported_tile_ids": [
+    7,
+    49,
+    100,
+    140
+  ],
+  "hun1_exact_7_scenario_replay": true,
+  "hun1_scenario_matches": {
+    "noop": true,
+    "right": true,
+    "jump": true,
+    "front_roll": true,
+    "back_roll": true,
+    "jump_backroll": true,
+    "backroll_chute": true
+  },
+  "hun1": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈1.LMF",
+    "size": [
+      30,
+      18
+    ],
+    "records": 58,
+    "spawn": [
+      3,
+      13
+    ]
+  },
+  "smoke": {
+    "훈2.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈2.LMF",
+        "size": [
+          30,
+          18
+        ],
+        "records": 55,
+        "spawn": [
+          3,
+          13
+        ]
+      },
+      "start": {
+        "x": 116.0,
+        "y": 448.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 160.0,
+        "y": 448.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      }
+    },
+    "훈3.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈3.LMF",
+        "size": [
+          32,
+          20
+        ],
+        "records": 62,
+        "spawn": [
+          3,
+          15
+        ]
+      },
+      "start": {
+        "x": 116.0,
+        "y": 512.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 160.0,
+        "y": 512.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      }
+    },
+    "훈4.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈4.LMF",
+        "size": [
+          30,
+          18
+        ],
+        "records": 55,
+        "spawn": [
+          26,
+          13
+        ]
+      },
+      "start": {
+        "x": 844.0,
+        "y": 448.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 2,
+        "68": 0,
+        "74": 2,
+        "b0": 1,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 800.0,
+        "y": 448.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 4,
+        "68": 0,
+        "74": 2,
+        "b0": 1,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      }
+    },
+    "훈5.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈5.LMF",
+        "size": [
+          40,
+          23
+        ],
+        "records": 54,
+        "spawn": [
+          4,
+          5
+        ]
+      },
+      "start": {
+        "x": 148.0,
+        "y": 192.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 192.0,
+        "y": 192.0,
+        "motion58": -120.0,
+        "38": 8,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      }
+    }
+  },
+  "limitations": [
+    "훈2~5 are offline smoke executions, not normal-Client parity fixtures",
+    "only captured 훈1 object templates 7/49/100/140 are supported",
+    "goal/lava outcome and clearability are not asserted by this test"
+  ]
+}

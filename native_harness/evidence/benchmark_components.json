@@ -1,0 +1,50 @@
+{
+  "scope": "captured hun1 offline oracle; n=120 operations/trial; Python Unicorn overhead included",
+  "trials": {
+    "emulation": {
+      "seconds": [
+        0.19914420001441613,
+        0.20204240002203733,
+        0.1981345000094734
+      ],
+      "median_seconds": 0.19914420001441613,
+      "ops_per_second": 602.5784330716795
+    },
+    "step_with_read": {
+      "seconds": [
+        0.1982049000216648,
+        0.20497889997204766,
+        0.23551970004336908
+      ],
+      "median_seconds": 0.20497889997204766,
+      "ops_per_second": 585.4261097916128
+    },
+    "state_read": {
+      "seconds": [
+        0.008096800011117011,
+        0.0063863000250421464,
+        0.00639170000795275
+      ],
+      "median_seconds": 0.00639170000795275,
+      "ops_per_second": 18774.347959180235
+    },
+    "restore": {
+      "seconds": [
+        0.7798414000426419,
+        0.588320399983786,
+        0.819448399997782
+      ],
+      "median_seconds": 0.7798414000426419,
+      "ops_per_second": 153.8774422509992
+    },
+    "step_tracking": {
+      "seconds": [
+        5.46280520001892,
+        3.80091029999312,
+        3.0646739000221714
+      ],
+      "median_seconds": 3.80091029999312,
+      "ops_per_second": 31.57138436027212
+    }
+  }
+}

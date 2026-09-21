@@ -1,0 +1,29 @@
+{
+  "scope": "original x86 0x41e510 LMF-record materializer probe",
+  "map": "훈련용맵\\훈5.LMF",
+  "records": 54,
+  "calls_completed": 54,
+  "first_failure": null,
+  "object_count": 54,
+  "objects_exact": true,
+  "object_hash_expected": "b5f734275d05ba57b9210fdbe28d2df70ad6d892931eb89461e974206c1f08c8",
+  "object_hash_actual": "b5f734275d05ba57b9210fdbe28d2df70ad6d892931eb89461e974206c1f08c8",
+  "grids_exact": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "grid_hash_expected": [
+    "e830a58c5fb341b0909304355d8035c82c8f09fcb9da49f537bfc4717a9b246d",
+    "54ea2a8cccb8394471b42c507fa0f14b1423c02ab84ce81a4ade05355850b159",
+    "a1d4a4188f5e92a2869404e6bcf0556f7f19cd688614bffcc5765603ce32c12b",
+    "c93ced87694fd2b8f050146fd16f4293958e06470d9052bd6458aa4bb6d174a4"
+  ],
+  "grid_hash_actual": [
+    "e830a58c5fb341b0909304355d8035c82c8f09fcb9da49f537bfc4717a9b246d",
+    "54ea2a8cccb8394471b42c507fa0f14b1423c02ab84ce81a4ade05355850b159",
+    "a1d4a4188f5e92a2869404e6bcf0556f7f19cd688614bffcc5765603ce32c12b",
+    "c93ced87694fd2b8f050146fd16f4293958e06470d9052bd6458aa4bb6d174a4"
+  ]
+}

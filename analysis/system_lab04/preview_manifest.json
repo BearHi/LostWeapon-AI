@@ -1,0 +1,471 @@
+{
+  "name": "물리측정_종합04",
+  "dimensions": [
+    200,
+    160
+  ],
+  "stations": [
+    {
+      "number": 1,
+      "title": "기본 점프 · 5 / 8 / 9칸",
+      "column": 0,
+      "floor_y": 150,
+      "bounds": [
+        8,
+        120,
+        63,
+        151
+      ],
+      "instruction": "바닥에서 5칸은 점프, 8·9칸은 점프+뒷굴로 각각 시도. 발판끼리 이어 뛰지 않기.",
+      "entry": [
+        10,
+        148
+      ],
+      "features": [
+        {
+          "kind": "landing",
+          "x": 26,
+          "y": 145,
+          "rise": 5,
+          "width": 2
+        },
+        {
+          "kind": "landing",
+          "x": 40,
+          "y": 142,
+          "rise": 8,
+          "width": 2
+        },
+        {
+          "kind": "landing",
+          "x": 53,
+          "y": 141,
+          "rise": 9,
+          "width": 2
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "모서리 · 2칸 / 1칸 틈",
+      "column": 1,
+      "floor_y": 150,
+      "bounds": [
+        72,
+        120,
+        127,
+        151
+      ],
+      "instruction": "왼쪽 2칸 틈을 지나고, 오른쪽 경사 끝 1칸 틈은 네가 아는 자세로 비벼보기. 안 되면 패스.",
+      "entry": [
+        74,
+        148
+      ],
+      "features": [
+        {
+          "kind": "clearance_probe",
+          "x": [
+            84,
+            93
+          ],
+          "empty_height": 2
+        },
+        {
+          "kind": "optional_clearance_probe",
+          "x": [
+            108,
+            113
+          ],
+          "empty_height": 1
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "낙하산 · 수평 이동",
+      "column": 2,
+      "floor_y": 150,
+      "bounds": [
+        136,
+        120,
+        191,
+        151
+      ],
+      "instruction": "사다리로 왼쪽 위에 올라가 오른쪽으로 점프+뒷굴+C. 가까운 곳이나 먼 곳에 착지.",
+      "entry": [
+        138,
+        148
+      ],
+      "features": [
+        {
+          "kind": "launch",
+          "x": 149,
+          "y": 140
+        },
+        {
+          "kind": "landing",
+          "x": 164,
+          "y": 144,
+          "horizontal_edge_gap": 14
+        },
+        {
+          "kind": "landing",
+          "x": 178,
+          "y": 144,
+          "horizontal_edge_gap": 28
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "얼음 경사 · 힘의 유지",
+      "column": 0,
+      "floor_y": 112,
+      "bounds": [
+        8,
+        82,
+        63,
+        113
+      ],
+      "instruction": "사다리로 올라가 얼음 중간/끝에서 각각 점프+뒷굴. 내려와 평지에서 한 번 더 점프.",
+      "entry": [
+        10,
+        110
+      ],
+      "features": [
+        {
+          "kind": "ice_descent",
+          "length": 8,
+          "start": [
+            22,
+            104
+          ]
+        },
+        {
+          "kind": "post_ice_rock_runway",
+          "x": [
+            30,
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "가로 자석 36",
+      "column": 1,
+      "floor_y": 112,
+      "bounds": [
+        72,
+        82,
+        127,
+        113
+      ],
+      "instruction": "자석 바로 아래와 옆에서, 바로 점프 / 잠깐 앉았다 점프를 비교. 시간은 편하게.",
+      "entry": [
+        74,
+        110
+      ],
+      "features": [
+        {
+          "kind": "magnet",
+          "id_decimal": 54,
+          "editor_hex": "36",
+          "xy": [
+            100,
+            106
+          ],
+          "empty_cells_below": 5,
+          "force_range_verified": false
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "가로 자석 37",
+      "column": 2,
+      "floor_y": 112,
+      "bounds": [
+        136,
+        82,
+        191,
+        113
+      ],
+      "instruction": "5번처럼 해보고, 가능하면 보는 방향만 바꿔 한 번 더.",
+      "entry": [
+        138,
+        110
+      ],
+      "features": [
+        {
+          "kind": "magnet",
+          "id_decimal": 55,
+          "editor_hex": "37",
+          "xy": [
+            164,
+            106
+          ],
+          "empty_cells_below": 5,
+          "force_range_verified": false
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "세로 자석 34",
+      "column": 0,
+      "floor_y": 74,
+      "bounds": [
+        8,
+        44,
+        63,
+        75
+      ],
+      "instruction": "자석 아래에서 점프+뒷굴. 바로 아래와 옆으로 조금 벗어난 곳을 비교.",
+      "entry": [
+        10,
+        72
+      ],
+      "features": [
+        {
+          "kind": "magnet",
+          "id_decimal": 52,
+          "editor_hex": "34",
+          "xy": [
+            36,
+            66
+          ],
+          "empty_cells_below": 7,
+          "force_range_verified": false
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "세로 자석 35",
+      "column": 1,
+      "floor_y": 74,
+      "bounds": [
+        72,
+        44,
+        127,
+        75
+      ],
+      "instruction": "7번처럼 자석 바로 아래와 옆에서 점프+뒷굴을 비교.",
+      "entry": [
+        74,
+        72
+      ],
+      "features": [
+        {
+          "kind": "magnet",
+          "id_decimal": 53,
+          "editor_hex": "35",
+          "xy": [
+            100,
+            66
+          ],
+          "empty_cells_below": 7,
+          "force_range_verified": false
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "선풍기 + 낙하산",
+      "column": 2,
+      "floor_y": 74,
+      "bounds": [
+        136,
+        44,
+        191,
+        75
+      ],
+      "instruction": "선풍기 바로 위 공중에서 C를 펴 올라간 뒤, 옆 발판으로 빠져나오기.",
+      "entry": [
+        138,
+        72
+      ],
+      "features": [
+        {
+          "kind": "fan",
+          "xy": [
+            160,
+            73
+          ],
+          "clear_column_to_y": 45
+        },
+        {
+          "kind": "side_landing",
+          "xy": [
+            171,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "스프링",
+      "column": 0,
+      "floor_y": 36,
+      "bounds": [
+        8,
+        6,
+        63,
+        37
+      ],
+      "instruction": "왼쪽 낮은 천장 아래 스프링과 오른쪽 열린 스프링을 밟아보기.",
+      "entry": [
+        10,
+        34
+      ],
+      "features": [
+        {
+          "kind": "spring_low_ceiling",
+          "xy": [
+            23,
+            36
+          ]
+        },
+        {
+          "kind": "spring_open",
+          "xy": [
+            46,
+            36
+          ],
+          "map_top_may_clip": true
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "물 + 사다리",
+      "column": 1,
+      "floor_y": 36,
+      "bounds": [
+        72,
+        6,
+        127,
+        37
+      ],
+      "instruction": "물에 들어갔다가 방향키로 나와보기. 옆 사다리에서 점프/구르기도 해보기.",
+      "entry": [
+        74,
+        34
+      ],
+      "features": [
+        {
+          "kind": "water",
+          "id_decimal": 82,
+          "editor_hex": "52",
+          "bounds": [
+            89,
+            31,
+            100,
+            35
+          ]
+        },
+        {
+          "kind": "ladder",
+          "x": 104,
+          "top_y": 26
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "가시 · 사라짐 · 용암",
+      "column": 2,
+      "floor_y": 36,
+      "bounds": [
+        136,
+        6,
+        191,
+        37
+      ],
+      "instruction": "가시/들락가시를 네 방식으로 지나고, 사라지는 블록을 밟았다 다시 타보기. 용암 구르기는 마지막.",
+      "entry": [
+        138,
+        34
+      ],
+      "features": [
+        {
+          "kind": "spike",
+          "xy": [
+            148,
+            35
+          ]
+        },
+        {
+          "kind": "moving_spike",
+          "xy": [
+            157,
+            35
+          ]
+        },
+        {
+          "kind": "disappearing",
+          "bounds": [
+            164,
+            32,
+            167,
+            32
+          ]
+        },
+        {
+          "kind": "lava_optional_last",
+          "bounds": [
+            177,
+            35,
+            179,
+            35
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "bounds": true,
+    "unique_spawn": true,
+    "overlapping_records": false,
+    "four_cell_bypass_corridors_clear": true,
+    "four_continuous_access_ladders": true,
+    "all_12_entries_connected_in_static_1_by_2_pocket_test": true,
+    "topology_test_is_not_movement_simulation": true,
+    "magnet_burial_check": true,
+    "fan_vertical_column_clear": true,
+    "game_tested": false,
+    "magnetic_isolation_verified": false,
+    "engine_clear_certified": false,
+    "tile_counts_decimal": {
+      "8": 3017,
+      "7": 164,
+      "4": 2,
+      "3": 642,
+      "100": 1,
+      "22": 4,
+      "37": 8,
+      "54": 1,
+      "55": 1,
+      "52": 1,
+      "53": 1,
+      "51": 1,
+      "82": 60,
+      "86": 1,
+      "119": 1,
+      "122": 4,
+      "49": 3
+    }
+  },
+  "layout_sha256": "44267ba8bc4d104ae222e7a92bdadcba00e436055464afcaa22590e5d908c415",
+  "source_lmf_sha256": "cf7cae1336ccf53047d28da151c4979cebd40be7533c8e9871cba768f5fe06aa",
+  "limits": [
+    "Magnet fields may cross stations; walls do not establish isolation.",
+    "Ceiling/map-edge clipped flights are not maximum-height/distance evidence.",
+    "Airborne state, ice force history and respawn dynamics are uncalibrated.",
+    "The 9-cell landing and 1-cell pocket are optional boundary probes, not promised clears.",
+    "Mines/hell doors omitted: their IDs are not confidently identified."
+  ],
+  "capture": "One continuous video with character-side coordinates and keyboard overlay; no fixed HUD coordinates."
+}

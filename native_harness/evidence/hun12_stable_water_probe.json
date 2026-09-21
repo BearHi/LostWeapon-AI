@@ -1,0 +1,49 @@
+{
+  "scope": "hun12 stable water-state offline closure probe; start-fall boundary remains separate",
+  "load": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈12.LMF",
+    "size": [
+      26,
+      22
+    ],
+    "records": 267,
+    "runtime_object_counts": [
+      267,
+      0
+    ],
+    "spawn": [
+      2,
+      6
+    ],
+    "builder": "0x41e510"
+  },
+  "start": {
+    "x": 80.0,
+    "y": 304.0,
+    "motion58": 0.0,
+    "38": 21,
+    "3c": 7,
+    "68": 0,
+    "74": -1,
+    "b0": 0,
+    "c0": 21,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0
+  },
+  "end": {
+    "x": 80.0,
+    "y": 304.0,
+    "motion58": 0.0,
+    "38": 21,
+    "3c": 3,
+    "68": 0,
+    "74": -1,
+    "b0": 0,
+    "c0": 21,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0
+  },
+  "all_stable": true
+}

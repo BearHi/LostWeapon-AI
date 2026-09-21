@@ -1,0 +1,29 @@
+{
+  "scope": "original x86 0x41e510 LMF-record materializer probe",
+  "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈1.LMF",
+  "records": 58,
+  "calls_completed": 58,
+  "first_failure": null,
+  "object_count": 58,
+  "objects_exact": true,
+  "object_hash_expected": "2786c23511cad57ad5a3493f378c8a046b5e5be01031e2b79fd2e404de82578d",
+  "object_hash_actual": "2786c23511cad57ad5a3493f378c8a046b5e5be01031e2b79fd2e404de82578d",
+  "grids_exact": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "grid_hash_expected": [
+    "d20d5d685a1fdb28a974551a0c8c0eed3f75410cf9055957b7a3a9790fc2e06a",
+    "e9a91aa2183cf6aef2aebde2bc8c0943b2c5fe415e599c7f2726c4eec062d32a",
+    "b87f9fef0fb6bebb7838f3003fcf2e2b0a063b90fe4dc5627f53d0d0808cedad",
+    "e36b7adeb5c3972447343908ba42fe8d2781d38963a0b44fa76fa1c816064055"
+  ],
+  "grid_hash_actual": [
+    "d20d5d685a1fdb28a974551a0c8c0eed3f75410cf9055957b7a3a9790fc2e06a",
+    "e9a91aa2183cf6aef2aebde2bc8c0943b2c5fe415e599c7f2726c4eec062d32a",
+    "b87f9fef0fb6bebb7838f3003fcf2e2b0a063b90fe4dc5627f53d0d0808cedad",
+    "e36b7adeb5c3972447343908ba42fe8d2781d38963a0b44fa76fa1c816064055"
+  ]
+}

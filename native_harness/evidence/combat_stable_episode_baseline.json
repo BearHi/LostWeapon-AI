@@ -1,0 +1,23 @@
+{
+  "verdict": "FAIL",
+  "settle_ticks": 161,
+  "discarded_queued_damage": {
+    "0": 21.0,
+    "1": 0.0
+  },
+  "ticks": 32,
+  "hp_events": [
+    {
+      "tick": 15,
+      "roster": 0,
+      "hp": [
+        100.0,
+        79.0
+      ]
+    }
+  ],
+  "final_hp": {
+    "0": 79.0,
+    "1": 100.0
+  }
+}

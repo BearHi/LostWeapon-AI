@@ -1,0 +1,12 @@
+[
+  {
+    "map": "Map\\문어\\칼전틀.LMF",
+    "verdict": "FAIL",
+    "error": "ValueError: LMF byte length does not match record count"
+  },
+  {
+    "map": "Map\\문어\\칼4.lmf",
+    "verdict": "FAIL",
+    "error": "ValueError: LMF byte length does not match record count"
+  }
+]

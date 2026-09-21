@@ -1,0 +1,25 @@
+{
+  "schema": "local-outcome-v1",
+  "physics": "cd977431b047d52100bb31e86335d003cc3bb34c8a301825f4372dc4905f533b",
+  "samples": 1282,
+  "planned_samples": 8,
+  "legacy_fixed_sequence_samples": 1274,
+  "splits": {
+    "train": 1045,
+    "validation_contexts": 237,
+    "heldout_maps": 0
+  },
+  "heldout_maps": [
+    "훈13",
+    "훈19",
+    "훈3",
+    "훈7.5"
+  ],
+  "sources": [
+    {
+      "map": "훈1",
+      "samples": 1282
+    }
+  ],
+  "skipped": 6
+}

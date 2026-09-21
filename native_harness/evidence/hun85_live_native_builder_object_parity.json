@@ -1,0 +1,12 @@
+{
+  "scope": "offline runtime object-byte parity: live 훈8.5 capture versus original 0x41e510 LMF materialization; no normal-Client tick parity claim",
+  "capture": "private_snapshots/hun85_live.zip",
+  "lmf": "훈련용맵/훈8.5.LMF",
+  "builder": "0x41e510",
+  "capture_object_count": 56,
+  "native_object_count": 56,
+  "record_count": 56,
+  "exact_object_bytes": true,
+  "different_object_slots": 0,
+  "differences": []
+}

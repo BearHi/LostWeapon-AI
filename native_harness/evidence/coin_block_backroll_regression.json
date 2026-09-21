@@ -1,0 +1,52 @@
+{
+  "fixture": "C:\\Users\\microsoft\\Downloads\\NewLostweapon\\Map\\동전확인.LMF",
+  "engine": "original Client x86",
+  "start": {
+    "x": 592.0,
+    "y": 608.0,
+    "facing": "right"
+  },
+  "normal_client_success_landing": {
+    "x": 388.0,
+    "y": 416.0
+  },
+  "early_native_attempt": {
+    "trigger_tick": 8,
+    "minimum_y": 416.0,
+    "final": {
+      "x": 388.0,
+      "y": 416.0,
+      "38": 7,
+      "c0": 0
+    },
+    "passed": true,
+    "roll_start": {
+      "tick": 8,
+      "x": 586.0,
+      "y": 513.0,
+      "motion58": 760.0,
+      "38": 2,
+      "c0": 4
+    }
+  },
+  "late_native_attempt": {
+    "trigger_tick": 14,
+    "minimum_y": 450.0,
+    "final": {
+      "x": 406.0,
+      "y": 472.0,
+      "38": 2,
+      "c0": 4
+    },
+    "passed": false,
+    "roll_start": {
+      "tick": 14,
+      "x": 586.0,
+      "y": 526.0,
+      "motion58": 760.0,
+      "38": 2,
+      "c0": 4
+    }
+  },
+  "verdict": "PASS"
+}

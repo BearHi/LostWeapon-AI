@@ -1,0 +1,6 @@
+{"episode": 1, "steps": 64, "reward0": -0.064, "reward1": -0.064, "epsilon": 0.999, "spawn_gap": 96, "map": "Map\\문어\\칼4.lmf", "hp": [100.0, 100.0]}
+{"episode": 2, "steps": 64, "reward0": -28.064, "reward1": 27.936, "epsilon": 0.998, "spawn_gap": 96, "map": "flat_baseline", "hp": [72.0, 100.0]}
+{"episode": 3, "steps": 64, "reward0": -0.064, "reward1": -0.064, "epsilon": 0.996, "spawn_gap": 96, "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\Map\\문어\\칼4.lmf", "hp": [100.0, 100.0]}
+{"episode": 4, "steps": 64, "reward0": -0.064, "reward1": -0.064, "epsilon": 0.995, "spawn_gap": 96, "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\Map\\문어\\칼3.lmf", "hp": [100.0, 100.0]}
+{"episode": 5, "steps": 256, "reward0": -0.256, "reward1": -0.256, "epsilon": 0.994, "spawn_gap": 384.0, "spawn_dy": 0.0, "map": "Map\\문어\\칼4.lmf", "hp": [100.0, 100.0]}
+{"episode": 6, "steps": 256, "reward0": -0.256, "reward1": -0.256, "epsilon": 0.993, "spawn_gap": 64.0, "spawn_dy": 0.0, "map": "Map\\문어\\칼4.lmf", "hp": [100.0, 100.0]}

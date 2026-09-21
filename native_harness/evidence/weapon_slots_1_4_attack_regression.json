@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "engine": "original 0x4228c0 selection and attack path",
+  "rows": [
+    {
+      "requested": 1,
+      "selected": 1,
+      "state38": 15,
+      "attack68": 1,
+      "c0": 0
+    },
+    {
+      "requested": 2,
+      "selected": 2,
+      "state38": 16,
+      "attack68": 1,
+      "c0": 0
+    },
+    {
+      "requested": 3,
+      "selected": 3,
+      "state38": 17,
+      "attack68": 1,
+      "c0": 0
+    },
+    {
+      "requested": 4,
+      "selected": 4,
+      "state38": 18,
+      "attack68": 1,
+      "c0": 0
+    }
+  ],
+  "observed_attack_states": "slot 1..4 map to Client states 15..18"
+}

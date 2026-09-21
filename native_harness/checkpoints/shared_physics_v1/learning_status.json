@@ -1,0 +1,76 @@
+{
+  "state": "time_budget_complete",
+  "deadline": 1789744106.9357874,
+  "source": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\native_harness\\checkpoints\\local_physics_v1",
+  "cycle": 15,
+  "last_fit": {
+    "state": "trained",
+    "samples": 75333,
+    "validation": {
+      "samples": 12656,
+      "endpoint_mae_pixels": 40.84495162963867,
+      "constant_endpoint_mae_pixels": 84.68586730957031,
+      "risk_brier": 0.05669276788830757,
+      "constant_risk_brier": 0.09383576363325119,
+      "duration_mae_decisions": 5.084631443023682
+    },
+    "trained_plan_tokens": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "heldout_maps": {
+      "samples": 13135,
+      "endpoint_mae_pixels": 56.83108139038086,
+      "constant_endpoint_mae_pixels": 86.72557830810547,
+      "risk_brier": 0.03736024349927902,
+      "constant_risk_brier": 0.03224695101380348,
+      "duration_mae_decisions": 5.3871026039123535
+    },
+    "qualified_for_candidate_ordering": false,
+    "note": "prediction validation only; not independent navigation/Client clear evidence",
+    "candidate_selection": {
+      "groups": 500,
+      "mean_utility": 0.8970725781444759,
+      "random_mean_utility": 0.3507962435975372,
+      "selected_reset_rate": 0.026,
+      "random_reset_rate": 0.033857142857142856,
+      "oracle_mean_utility": 1.2637369996758634,
+      "risk_weight": 6,
+      "evidence": "fixed_recorded_native_candidate_comparison"
+    },
+    "incumbent_candidate_selection": {
+      "groups": 500,
+      "mean_utility": 0.8560436662620411,
+      "random_mean_utility": 0.3507962435975372,
+      "selected_reset_rate": 0.034,
+      "random_reset_rate": 0.033857142857142856,
+      "oracle_mean_utility": 1.2637369996758634,
+      "risk_weight": 6,
+      "evidence": "fixed_recorded_native_candidate_comparison"
+    },
+    "heldout_regression_guard": false,
+    "candidate_selection_guard": true,
+    "promoted": false
+  }
+}

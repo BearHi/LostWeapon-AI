@@ -1,0 +1,602 @@
+{
+  "name": "물리측정_압축05",
+  "width": 72,
+  "height": 118,
+  "area_ratio_to_lab04": 0.2655,
+  "layout_sha256": "b73fdadc1ae68a2978afac1966873483b08b5d472f96748621b155a55f637112",
+  "stations": [
+    {
+      "number": 1,
+      "floor_y": 110,
+      "column": 0,
+      "editor_hex": "37",
+      "id_decimal": 55,
+      "count": 1,
+      "magnets": [
+        [
+          17,
+          109
+        ]
+      ],
+      "marks": [
+        {
+          "step": 0,
+          "floor_reference": [
+            18,
+            110
+          ],
+          "tile_index_dx_dy_from_primary": [
+            1,
+            1
+          ]
+        },
+        {
+          "step": 1,
+          "floor_reference": [
+            19,
+            110
+          ],
+          "tile_index_dx_dy_from_primary": [
+            2,
+            1
+          ]
+        },
+        {
+          "step": 2,
+          "floor_reference": [
+            20,
+            110
+          ],
+          "tile_index_dx_dy_from_primary": [
+            3,
+            1
+          ]
+        }
+      ],
+      "empty_cells_below_primary": 0,
+      "instruction": "오른쪽을 보고 표시 3곳에서 각각 약 2초 앉았다 일반 점프. 구르기·C 없이.",
+      "distance_note": "표시는 바닥 좌표. 캐릭터 중심/몸 끝까지의 실제 거리는 영상으로 판독.",
+      "count_note": "첫 자석 위치를 유지하고 그 왼쪽에 1개 추가; 두 자석까지의 거리는 같지 않음."
+    },
+    {
+      "number": 2,
+      "floor_y": 110,
+      "column": 1,
+      "editor_hex": "37",
+      "id_decimal": 55,
+      "count": 2,
+      "magnets": [
+        [
+          49,
+          109
+        ],
+        [
+          48,
+          109
+        ]
+      ],
+      "marks": [
+        {
+          "step": 0,
+          "floor_reference": [
+            50,
+            110
+          ],
+          "tile_index_dx_dy_from_primary": [
+            1,
+            1
+          ]
+        },
+        {
+          "step": 1,
+          "floor_reference": [
+            51,
+            110
+          ],
+          "tile_index_dx_dy_from_primary": [
+            2,
+            1
+          ]
+        },
+        {
+          "step": 2,
+          "floor_reference": [
+            52,
+            110
+          ],
+          "tile_index_dx_dy_from_primary": [
+            3,
+            1
+          ]
+        }
+      ],
+      "empty_cells_below_primary": 0,
+      "instruction": "오른쪽을 보고 표시 3곳에서 각각 약 2초 앉았다 일반 점프. 구르기·C 없이.",
+      "distance_note": "표시는 바닥 좌표. 캐릭터 중심/몸 끝까지의 실제 거리는 영상으로 판독.",
+      "count_note": "첫 자석 위치를 유지하고 그 왼쪽에 1개 추가; 두 자석까지의 거리는 같지 않음."
+    },
+    {
+      "number": 3,
+      "floor_y": 84,
+      "column": 0,
+      "editor_hex": "34",
+      "id_decimal": 52,
+      "count": 1,
+      "magnets": [
+        [
+          17,
+          81
+        ]
+      ],
+      "marks": [
+        {
+          "step": 0,
+          "floor_reference": [
+            17,
+            84
+          ],
+          "tile_index_dx_dy_from_primary": [
+            0,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "floor_reference": [
+            18,
+            84
+          ],
+          "tile_index_dx_dy_from_primary": [
+            1,
+            3
+          ]
+        },
+        {
+          "step": 2,
+          "floor_reference": [
+            19,
+            84
+          ],
+          "tile_index_dx_dy_from_primary": [
+            2,
+            3
+          ]
+        }
+      ],
+      "empty_cells_below_primary": 2,
+      "instruction": "오른쪽을 보고 표시 3곳에서 각각 약 2초 앉았다 일반 점프. 구르기·C 없이.",
+      "distance_note": "표시는 바닥 좌표. 캐릭터 중심/몸 끝까지의 실제 거리는 영상으로 판독.",
+      "count_note": "첫 자석 위치를 유지하고 그 왼쪽에 1개 추가; 두 자석까지의 거리는 같지 않음."
+    },
+    {
+      "number": 4,
+      "floor_y": 84,
+      "column": 1,
+      "editor_hex": "34",
+      "id_decimal": 52,
+      "count": 2,
+      "magnets": [
+        [
+          49,
+          81
+        ],
+        [
+          48,
+          81
+        ]
+      ],
+      "marks": [
+        {
+          "step": 0,
+          "floor_reference": [
+            49,
+            84
+          ],
+          "tile_index_dx_dy_from_primary": [
+            0,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "floor_reference": [
+            50,
+            84
+          ],
+          "tile_index_dx_dy_from_primary": [
+            1,
+            3
+          ]
+        },
+        {
+          "step": 2,
+          "floor_reference": [
+            51,
+            84
+          ],
+          "tile_index_dx_dy_from_primary": [
+            2,
+            3
+          ]
+        }
+      ],
+      "empty_cells_below_primary": 2,
+      "instruction": "오른쪽을 보고 표시 3곳에서 각각 약 2초 앉았다 일반 점프. 구르기·C 없이.",
+      "distance_note": "표시는 바닥 좌표. 캐릭터 중심/몸 끝까지의 실제 거리는 영상으로 판독.",
+      "count_note": "첫 자석 위치를 유지하고 그 왼쪽에 1개 추가; 두 자석까지의 거리는 같지 않음."
+    },
+    {
+      "number": 5,
+      "floor_y": 58,
+      "column": 0,
+      "editor_hex": "35",
+      "id_decimal": 53,
+      "count": 1,
+      "magnets": [
+        [
+          17,
+          55
+        ]
+      ],
+      "marks": [
+        {
+          "step": 0,
+          "floor_reference": [
+            17,
+            58
+          ],
+          "tile_index_dx_dy_from_primary": [
+            0,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "floor_reference": [
+            18,
+            58
+          ],
+          "tile_index_dx_dy_from_primary": [
+            1,
+            3
+          ]
+        },
+        {
+          "step": 2,
+          "floor_reference": [
+            19,
+            58
+          ],
+          "tile_index_dx_dy_from_primary": [
+            2,
+            3
+          ]
+        }
+      ],
+      "empty_cells_below_primary": 2,
+      "instruction": "오른쪽을 보고 표시 3곳에서 각각 약 2초 앉았다 일반 점프. 구르기·C 없이.",
+      "distance_note": "표시는 바닥 좌표. 캐릭터 중심/몸 끝까지의 실제 거리는 영상으로 판독.",
+      "count_note": "첫 자석 위치를 유지하고 그 왼쪽에 1개 추가; 두 자석까지의 거리는 같지 않음."
+    },
+    {
+      "number": 6,
+      "floor_y": 58,
+      "column": 1,
+      "editor_hex": "35",
+      "id_decimal": 53,
+      "count": 2,
+      "magnets": [
+        [
+          49,
+          55
+        ],
+        [
+          48,
+          55
+        ]
+      ],
+      "marks": [
+        {
+          "step": 0,
+          "floor_reference": [
+            49,
+            58
+          ],
+          "tile_index_dx_dy_from_primary": [
+            0,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "floor_reference": [
+            50,
+            58
+          ],
+          "tile_index_dx_dy_from_primary": [
+            1,
+            3
+          ]
+        },
+        {
+          "step": 2,
+          "floor_reference": [
+            51,
+            58
+          ],
+          "tile_index_dx_dy_from_primary": [
+            2,
+            3
+          ]
+        }
+      ],
+      "empty_cells_below_primary": 2,
+      "instruction": "오른쪽을 보고 표시 3곳에서 각각 약 2초 앉았다 일반 점프. 구르기·C 없이.",
+      "distance_note": "표시는 바닥 좌표. 캐릭터 중심/몸 끝까지의 실제 거리는 영상으로 판독.",
+      "count_note": "첫 자석 위치를 유지하고 그 왼쪽에 1개 추가; 두 자석까지의 거리는 같지 않음."
+    },
+    {
+      "number": 7,
+      "floor_y": 32,
+      "column": null,
+      "kind": "ice",
+      "slope": {
+        "id_decimal": 37,
+        "length": 8,
+        "start": [
+          18,
+          24
+        ]
+      },
+      "runway_x": [
+        26,
+        65
+      ],
+      "instruction": "사다리로 올라가 얼음 중간/끝에서 점프+뒷굴. 내려와 평지에서 한 번 더 점프."
+    }
+  ],
+  "checks": {
+    "in_bounds": true,
+    "unique_spawn": true,
+    "continuous_outer_ladders": true,
+    "one_vs_two_primary_source_and_marks_match": true,
+    "standing_marks_no_rock_for_16_cells_above": true,
+    "source_not_embedded_in_floor": true,
+    "tile_counts_decimal": {
+      "8": 839,
+      "7": 102,
+      "3": 449,
+      "100": 1,
+      "55": 3,
+      "52": 3,
+      "53": 3,
+      "37": 8
+    },
+    "cross_fixture_distances_cells": [
+      {
+        "station": 1,
+        "step": 0,
+        "nearest_other_fixture_from_floor_reference": 29.017236257093817
+      },
+      {
+        "station": 1,
+        "step": 1,
+        "nearest_other_fixture_from_floor_reference": 29.017236257093817
+      },
+      {
+        "station": 1,
+        "step": 2,
+        "nearest_other_fixture_from_floor_reference": 28.0178514522438
+      },
+      {
+        "station": 2,
+        "step": 0,
+        "nearest_other_fixture_from_floor_reference": 29.017236257093817
+      },
+      {
+        "station": 2,
+        "step": 1,
+        "nearest_other_fixture_from_floor_reference": 29.068883707497267
+      },
+      {
+        "station": 2,
+        "step": 2,
+        "nearest_other_fixture_from_floor_reference": 29.154759474226502
+      },
+      {
+        "station": 3,
+        "step": 0,
+        "nearest_other_fixture_from_floor_reference": 25.0
+      },
+      {
+        "station": 3,
+        "step": 1,
+        "nearest_other_fixture_from_floor_reference": 25.019992006393608
+      },
+      {
+        "station": 3,
+        "step": 2,
+        "nearest_other_fixture_from_floor_reference": 25.079872407968907
+      },
+      {
+        "station": 4,
+        "step": 0,
+        "nearest_other_fixture_from_floor_reference": 25.0
+      },
+      {
+        "station": 4,
+        "step": 1,
+        "nearest_other_fixture_from_floor_reference": 25.019992006393608
+      },
+      {
+        "station": 4,
+        "step": 2,
+        "nearest_other_fixture_from_floor_reference": 25.079872407968907
+      },
+      {
+        "station": 5,
+        "step": 0,
+        "nearest_other_fixture_from_floor_reference": 23.0
+      },
+      {
+        "station": 5,
+        "step": 1,
+        "nearest_other_fixture_from_floor_reference": 23.021728866442675
+      },
+      {
+        "station": 5,
+        "step": 2,
+        "nearest_other_fixture_from_floor_reference": 23.08679276123039
+      },
+      {
+        "station": 6,
+        "step": 0,
+        "nearest_other_fixture_from_floor_reference": 23.0
+      },
+      {
+        "station": 6,
+        "step": 1,
+        "nearest_other_fixture_from_floor_reference": 23.021728866442675
+      },
+      {
+        "station": 6,
+        "step": 2,
+        "nearest_other_fixture_from_floor_reference": 23.08679276123039
+      }
+    ],
+    "cross_fixture_isolation_verified": false,
+    "game_tested": false,
+    "force_law_fitted": false,
+    "engine_clear_certified": false
+  },
+  "comparison_limits": [
+    "Count comparison adds one source at x-1, not an equal-distance abstract force multiplier.",
+    "Direction 36 is deferred; no symmetry with 37 is assumed.",
+    "Other fixtures are distant but their force range is not measured.",
+    "Compare actual pre-jump pose/coordinates, not floor marks alone.",
+    "Two-second crouch is a common input condition, not a proven saturation time.",
+    "Ceiling and map-edge contacts censor flight extrema."
+  ],
+  "export": {
+    "paths": [
+      "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\물리측정_압축05.LMF",
+      "C:\\Users\\microsoft\\Downloads\\NewLostweapon\\Map\\물리측정_압축05.LMF"
+    ],
+    "sha256": "41c292fd5c83a6602d883d47622aed8d2225ea1ec693aeac7e94f54660b7e760",
+    "binary_roundtrip": true,
+    "post_export_checks": {
+      "in_bounds": true,
+      "unique_spawn": true,
+      "continuous_outer_ladders": true,
+      "one_vs_two_primary_source_and_marks_match": true,
+      "standing_marks_no_rock_for_16_cells_above": true,
+      "source_not_embedded_in_floor": true,
+      "tile_counts_decimal": {
+        "8": 839,
+        "3": 449,
+        "7": 102,
+        "37": 8,
+        "53": 3,
+        "52": 3,
+        "100": 1,
+        "55": 3
+      },
+      "cross_fixture_distances_cells": [
+        {
+          "station": 1,
+          "step": 0,
+          "nearest_other_fixture_from_floor_reference": 29.017236257093817
+        },
+        {
+          "station": 1,
+          "step": 1,
+          "nearest_other_fixture_from_floor_reference": 29.017236257093817
+        },
+        {
+          "station": 1,
+          "step": 2,
+          "nearest_other_fixture_from_floor_reference": 28.0178514522438
+        },
+        {
+          "station": 2,
+          "step": 0,
+          "nearest_other_fixture_from_floor_reference": 29.017236257093817
+        },
+        {
+          "station": 2,
+          "step": 1,
+          "nearest_other_fixture_from_floor_reference": 29.068883707497267
+        },
+        {
+          "station": 2,
+          "step": 2,
+          "nearest_other_fixture_from_floor_reference": 29.154759474226502
+        },
+        {
+          "station": 3,
+          "step": 0,
+          "nearest_other_fixture_from_floor_reference": 25.0
+        },
+        {
+          "station": 3,
+          "step": 1,
+          "nearest_other_fixture_from_floor_reference": 25.019992006393608
+        },
+        {
+          "station": 3,
+          "step": 2,
+          "nearest_other_fixture_from_floor_reference": 25.079872407968907
+        },
+        {
+          "station": 4,
+          "step": 0,
+          "nearest_other_fixture_from_floor_reference": 25.0
+        },
+        {
+          "station": 4,
+          "step": 1,
+          "nearest_other_fixture_from_floor_reference": 25.019992006393608
+        },
+        {
+          "station": 4,
+          "step": 2,
+          "nearest_other_fixture_from_floor_reference": 25.079872407968907
+        },
+        {
+          "station": 5,
+          "step": 0,
+          "nearest_other_fixture_from_floor_reference": 23.0
+        },
+        {
+          "station": 5,
+          "step": 1,
+          "nearest_other_fixture_from_floor_reference": 23.021728866442675
+        },
+        {
+          "station": 5,
+          "step": 2,
+          "nearest_other_fixture_from_floor_reference": 23.08679276123039
+        },
+        {
+          "station": 6,
+          "step": 0,
+          "nearest_other_fixture_from_floor_reference": 23.0
+        },
+        {
+          "station": 6,
+          "step": 1,
+          "nearest_other_fixture_from_floor_reference": 23.021728866442675
+        },
+        {
+          "station": 6,
+          "step": 2,
+          "nearest_other_fixture_from_floor_reference": 23.08679276123039
+        }
+      ],
+      "cross_fixture_isolation_verified": false,
+      "game_tested": false,
+      "force_law_fitted": false,
+      "engine_clear_certified": false
+    }
+  }
+}

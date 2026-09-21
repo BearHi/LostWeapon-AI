@@ -1,0 +1,11 @@
+{
+  "binary_roundtrip": true,
+  "continuous_flat_floor": true,
+  "all_starts_clear": true,
+  "all_flight_space_clear": true,
+  "records": 1765,
+  "sha256": "afc0676cc509945e106060fbeaebc12a438a2900aec9d6fe0511ce806c9b90b5",
+  "game_loaded": false,
+  "physics_simulated": false,
+  "physical_maxima_measured": false
+}

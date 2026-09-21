@@ -1,0 +1,14 @@
+{
+  "map": "훈7",
+  "state": "preflight_pass",
+  "search_trials": 0,
+  "archive_states": 1,
+  "learned_context_skills": 0,
+  "best_decisions": null,
+  "failure_counts": {},
+  "goal_evidence": "offline_x86_goal_region_not_client_event",
+  "reset_detection": "position_discontinuity_heuristic",
+  "native_ticks_this_session": 8,
+  "snapshot_cache_hits": 0,
+  "snapshot_cache_bytes": 0
+}

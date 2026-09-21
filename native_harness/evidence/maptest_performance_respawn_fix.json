@@ -1,0 +1,55 @@
+{
+  "engine": "original Client x86 via Unicorn",
+  "scope": "production NativeTrainingAPI after static compaction and local type-229 lava activation",
+  "performance": [
+    {
+      "map": 1,
+      "records": 794,
+      "active_runtime_at_spawn": 181,
+      "ticks_per_second": 113.46
+    },
+    {
+      "map": 2,
+      "records": 3024,
+      "active_runtime_at_spawn": 549,
+      "ticks_per_second": 72.89
+    },
+    {
+      "map": 5,
+      "records": 4278,
+      "active_runtime_at_spawn": 448,
+      "ticks_per_second": 100.65
+    },
+    {
+      "map": 6,
+      "records": 6786,
+      "active_runtime_at_spawn": 209,
+      "ticks_per_second": 213.95
+    }
+  ],
+  "lava_contact_comparison": {
+    "ticks": 40,
+    "full_vs_optimized_player_state_exact": true,
+    "all_four_collision_grids_exact": true,
+    "included_death_and_respawn": true
+  },
+  "branch_replay_exact": true,
+  "respawn": {
+    "map": "맵테스트1.LMF",
+    "id100_record": [
+      16,
+      193
+    ],
+    "expected_client_coordinate": [
+      528,
+      6207
+    ],
+    "observed_tick": 15,
+    "observed_coordinate": [
+      528.0,
+      6207.0
+    ],
+    "ok": true
+  },
+  "limits": "Contact trace and measured maps; not a blanket parity claim for every untested object combination."
+}

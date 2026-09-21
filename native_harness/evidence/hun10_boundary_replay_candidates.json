@@ -1,0 +1,25 @@
+{
+  "scope": "native original-x86 replay candidates from selected normal 훈10 boundary fields; exploratory boundary reconstruction",
+  "boundary": {
+    "x": 816,
+    "y": 456,
+    "motion58": -280,
+    "38": 9,
+    "74": -1,
+    "b0": 0
+  },
+  "rows": [
+    {
+      "face_ticks": 1,
+      "hit": null
+    },
+    {
+      "face_ticks": 2,
+      "hit": null
+    },
+    {
+      "face_ticks": 3,
+      "hit": null
+    }
+  ]
+}

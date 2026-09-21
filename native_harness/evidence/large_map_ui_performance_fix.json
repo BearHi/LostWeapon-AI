@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "map": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\Map\\낙라.LMF",
+    "size": [
+      65,
+      65
+    ],
+    "records": 1784
+  },
+  "engine": "original Client x86 via Unicorn",
+  "before": {
+    "tick_rate": 5.88,
+    "renderer": "thousands of Tk Canvas items repainted",
+    "scheduler": "up to 8 catch-up ticks per callback"
+  },
+  "after": {
+    "tick_rate": 37.75,
+    "average_native_step_ms": 25.525,
+    "average_draw_ms": 6.333,
+    "renderer": "single cached PPM PhotoImage plus live overlays",
+    "scheduler": "one native tick per callback and 1ms dispatch gap for maps with >=512 records"
+  },
+  "speedup": 6.42,
+  "physics_call_order_changed": false,
+  "source_sha256": "66A7646D999CC13632889DB1FB6AE5852707E19F4AAA0CB1D6901D983101EE0B",
+  "measured_unix": 1789363547
+}

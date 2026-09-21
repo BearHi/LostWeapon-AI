@@ -1,0 +1,6 @@
+{
+  "baseline": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\native_harness\\checkpoints\\map_clear_shared_dqn.pt",
+  "baseline_sha256": "26a8d2a10fbe05335569ae519826b2d50fef16dd4f39d140b71f8af08da63e91",
+  "created_at": 1789571547.8592646,
+  "promotion": "manual_policy_only_gate_required"
+}

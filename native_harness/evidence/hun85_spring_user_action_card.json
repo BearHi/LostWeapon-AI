@@ -1,0 +1,12 @@
+{
+  "scope": "next normal-Client spring parity action; derived from native original-x86 schedule search",
+  "map": "훈8.5.LMF",
+  "required_start": "grounded near x=136..152, y=576",
+  "sequence": [
+    "press RIGHT+UP together for the jump edge",
+    "keep RIGHT held through the jump and descent",
+    "release after crossing the spring or when the character lands"
+  ],
+  "expected_native_window": "around tick 58, x=368..384, y=547, motion58=+2000",
+  "status": "normal Client confirmation pending"
+}

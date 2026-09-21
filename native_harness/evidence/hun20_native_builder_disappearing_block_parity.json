@@ -1,0 +1,75 @@
+{
+  "scope": "captured 훈20 world versus original-0x41e510-built raw124 full-cycle parity after phase alignment",
+  "snapshot": "native_harness\\private_snapshots\\hun20_live.zip",
+  "lmf": "훈련용맵\\훈20.LMF",
+  "builder_info": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈20.LMF",
+    "size": [
+      20,
+      18
+    ],
+    "records": 32,
+    "runtime_object_counts": [
+      32,
+      0
+    ],
+    "spawn": [
+      6,
+      13
+    ],
+    "builder": "0x41e510"
+  },
+  "phase_alignment": {
+    "captured_noop_ticks": 65,
+    "built_noop_ticks": 143
+  },
+  "cycle_ticks": 143,
+  "compared_fields": [
+    "x",
+    "y",
+    "motion58",
+    "38",
+    "68",
+    "74",
+    "b0",
+    "c0",
+    "c4",
+    "d0",
+    "dc",
+    "object_c8",
+    "collision_code"
+  ],
+  "state_differences": 0,
+  "state_parity": true,
+  "differences": [],
+  "object_count": 32,
+  "byte_exact_object_records_at_aligned_boundary": true,
+  "object_record_differences": [],
+  "collision_grids": [
+    {
+      "grid": 0,
+      "captured_sha256": "fe2f74a1e0b16a66452888eb4d734bc455cf1304481bb495d59afa8cf9cae93b",
+      "built_sha256": "fe2f74a1e0b16a66452888eb4d734bc455cf1304481bb495d59afa8cf9cae93b",
+      "byte_exact": true
+    },
+    {
+      "grid": 1,
+      "captured_sha256": "c428427c2f80d867f8bcddb869e58dfb21201c9226371bfce62b075f5ee8a6ae",
+      "built_sha256": "c428427c2f80d867f8bcddb869e58dfb21201c9226371bfce62b075f5ee8a6ae",
+      "byte_exact": true
+    },
+    {
+      "grid": 2,
+      "captured_sha256": "94d015fb99d13cc9786111f513b9db55c0b42218f8f32bf626dcdc995294046b",
+      "built_sha256": "94d015fb99d13cc9786111f513b9db55c0b42218f8f32bf626dcdc995294046b",
+      "byte_exact": true
+    },
+    {
+      "grid": 3,
+      "captured_sha256": "c7cb2daf2491b13bc4e1340b99b7750d6e75e766e2639c4737880e0186cc295a",
+      "built_sha256": "c7cb2daf2491b13bc4e1340b99b7750d6e75e766e2639c4737880e0186cc295a",
+      "byte_exact": true
+    }
+  ],
+  "all_collision_grids_byte_exact": true
+}

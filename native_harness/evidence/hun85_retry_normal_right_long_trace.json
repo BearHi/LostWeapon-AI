@@ -1,0 +1,1372 @@
+{
+  "scope": "same-boundary read-only normal Client snapshot and ordinary RIGHT trace",
+  "snapshot": "native_harness\\private_snapshots\\hun85_retry_spring_live.zip",
+  "target_distance": 240.0,
+  "samples": [
+    {
+      "boundary": true,
+      "perf_ns": 497411949743900,
+      "time_ms": 497410406,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          55,
+          0
+        ],
+        "pos": [
+          216.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 4,
+          "0x68": 0,
+          "0x74": -1,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411952906800,
+      "time_ms": 497410409,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          55,
+          0
+        ],
+        "pos": [
+          216.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 7,
+          "0x3c": 4,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411953091400,
+      "time_ms": 497410409,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          62,
+          0
+        ],
+        "pos": [
+          220.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411953269100,
+      "time_ms": 497410409,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          62,
+          0
+        ],
+        "pos": [
+          224.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411953443400,
+      "time_ms": 497410409,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          63,
+          0
+        ],
+        "pos": [
+          244.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 6,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411953632300,
+      "time_ms": 497410410,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          64,
+          0
+        ],
+        "pos": [
+          264.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 0,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411953809200,
+      "time_ms": 497410410,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          284.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411953983800,
+      "time_ms": 497410410,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          59,
+          0
+        ],
+        "pos": [
+          304.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411954159700,
+      "time_ms": 497410410,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          60,
+          0
+        ],
+        "pos": [
+          324.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 3,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411954337000,
+      "time_ms": 497410410,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          61,
+          0
+        ],
+        "pos": [
+          344.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 4,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411954527100,
+      "time_ms": 497410410,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          62,
+          0
+        ],
+        "pos": [
+          348.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 5,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411954708900,
+      "time_ms": 497410411,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          63,
+          0
+        ],
+        "pos": [
+          368.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 6,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411957195600,
+      "time_ms": 497410413,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          63,
+          0
+        ],
+        "pos": [
+          372.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 6,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411973983700,
+      "time_ms": 497410430,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          63,
+          0
+        ],
+        "pos": [
+          376.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 6,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497411992176400,
+      "time_ms": 497410447,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          64,
+          0
+        ],
+        "pos": [
+          380.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 7,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412005364000,
+      "time_ms": 497410461,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          64,
+          0
+        ],
+        "pos": [
+          384.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 7,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412023274500,
+      "time_ms": 497410479,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          64,
+          0
+        ],
+        "pos": [
+          388.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 7,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412037997100,
+      "time_ms": 497410494,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          64,
+          0
+        ],
+        "pos": [
+          392.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 7,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412053139600,
+      "time_ms": 497410509,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          57,
+          0
+        ],
+        "pos": [
+          396.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 0,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412069032800,
+      "time_ms": 497410525,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          57,
+          0
+        ],
+        "pos": [
+          400.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 0,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412085248200,
+      "time_ms": 497410541,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          57,
+          0
+        ],
+        "pos": [
+          404.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 0,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412101505300,
+      "time_ms": 497410557,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          57,
+          0
+        ],
+        "pos": [
+          408.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 0,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412118170300,
+      "time_ms": 497410574,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          412.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412134255100,
+      "time_ms": 497410590,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          416.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412150817900,
+      "time_ms": 497410606,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          420.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412166199900,
+      "time_ms": 497410622,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          424.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 1,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412180927500,
+      "time_ms": 497410637,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          58,
+          0
+        ],
+        "pos": [
+          424.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412181084300,
+      "time_ms": 497410637,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          59,
+          0
+        ],
+        "pos": [
+          428.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412198032300,
+      "time_ms": 497410654,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          59,
+          0
+        ],
+        "pos": [
+          432.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412215008300,
+      "time_ms": 497410671,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          59,
+          0
+        ],
+        "pos": [
+          436.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412230655200,
+      "time_ms": 497410686,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          59,
+          0
+        ],
+        "pos": [
+          440.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 2,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412246876700,
+      "time_ms": 497410703,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          60,
+          0
+        ],
+        "pos": [
+          444.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 3,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412262814000,
+      "time_ms": 497410719,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          60,
+          0
+        ],
+        "pos": [
+          448.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 3,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412278788900,
+      "time_ms": 497410734,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          60,
+          0
+        ],
+        "pos": [
+          452.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 3,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    },
+    {
+      "boundary": false,
+      "perf_ns": 497412293926500,
+      "time_ms": 497410750,
+      "state": {
+        "image_base": "0xde0000",
+        "roster": 3,
+        "room": 1,
+        "slot": 0,
+        "map_size": [
+          24,
+          22
+        ],
+        "player_header": [
+          8,
+          60,
+          60,
+          0
+        ],
+        "pos": [
+          456.0,
+          576.0
+        ],
+        "motion58": -120.0,
+        "hp": 100.0,
+        "state": {
+          "0x38": 8,
+          "0x3c": 3,
+          "0x68": 0,
+          "0x74": 5,
+          "0xb0": 0,
+          "0xc0": 0,
+          "0xc4": 0,
+          "0xd0": 1,
+          "0xdc": 0
+        },
+        "grid": "0x16659d70"
+      }
+    }
+  ]
+}

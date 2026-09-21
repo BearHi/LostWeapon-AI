@@ -1,0 +1,13 @@
+{
+  "state": "running",
+  "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\혼련용\\혼17.LMF",
+  "pass": 2,
+  "target_passes": 3,
+  "pending": 23,
+  "playable": 46,
+  "completed_maps": 23,
+  "success_maps": 23,
+  "skipped": 1,
+  "elapsed_seconds": 19756,
+  "updated_at": 1789631799.7187457
+}

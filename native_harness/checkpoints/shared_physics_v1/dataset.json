@@ -1,0 +1,113 @@
+{
+  "schema": "local-outcome-v1",
+  "physics": "cd977431b047d52100bb31e86335d003cc3bb34c8a301825f4372dc4905f533b",
+  "samples": 75333,
+  "planned_samples": 45400,
+  "legacy_fixed_sequence_samples": 29933,
+  "splits": {
+    "train": 49542,
+    "validation_contexts": 12656,
+    "heldout_maps": 13135
+  },
+  "heldout_maps": [
+    "훈13",
+    "훈19",
+    "훈3",
+    "훈7.5"
+  ],
+  "sources": [
+    {
+      "map": "훈1",
+      "samples": 3254
+    },
+    {
+      "map": "훈10",
+      "samples": 3204
+    },
+    {
+      "map": "훈11",
+      "samples": 3333
+    },
+    {
+      "map": "훈12",
+      "samples": 3341
+    },
+    {
+      "map": "훈13",
+      "samples": 3438
+    },
+    {
+      "map": "훈14",
+      "samples": 3211
+    },
+    {
+      "map": "훈15",
+      "samples": 3401
+    },
+    {
+      "map": "훈16",
+      "samples": 3175
+    },
+    {
+      "map": "훈17",
+      "samples": 3178
+    },
+    {
+      "map": "훈18",
+      "samples": 3485
+    },
+    {
+      "map": "훈19",
+      "samples": 3185
+    },
+    {
+      "map": "훈2",
+      "samples": 3492
+    },
+    {
+      "map": "훈20",
+      "samples": 3156
+    },
+    {
+      "map": "훈3",
+      "samples": 3261
+    },
+    {
+      "map": "훈4",
+      "samples": 3248
+    },
+    {
+      "map": "훈5",
+      "samples": 3196
+    },
+    {
+      "map": "훈6.5",
+      "samples": 3256
+    },
+    {
+      "map": "훈6",
+      "samples": 3284
+    },
+    {
+      "map": "훈7.5",
+      "samples": 3251
+    },
+    {
+      "map": "훈7",
+      "samples": 3232
+    },
+    {
+      "map": "훈8.5",
+      "samples": 3256
+    },
+    {
+      "map": "훈8",
+      "samples": 3244
+    },
+    {
+      "map": "훈9",
+      "samples": 3252
+    }
+  ],
+  "skipped": 483
+}

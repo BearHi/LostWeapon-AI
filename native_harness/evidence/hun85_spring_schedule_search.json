@@ -1,0 +1,631 @@
+{
+  "scope": "native original-x86 narrow search for 훈8.5 vertical spring contact; exploratory, no normal Client parity claim",
+  "sequence": "RIGHT+UP one tick then RIGHT for 69 ticks",
+  "start_x_range": [
+    96,
+    200,
+    4
+  ],
+  "rows": [
+    {
+      "start_x": 96,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 376.0
+    },
+    {
+      "start_x": 100,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 380.0
+    },
+    {
+      "start_x": 104,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 384.0
+    },
+    {
+      "start_x": 108,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 388.0
+    },
+    {
+      "start_x": 112,
+      "hit": true,
+      "first_hit": {
+        "tick": 60,
+        "state": {
+          "x": 352.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 365.0,
+      "max_x": 392.0
+    },
+    {
+      "start_x": 116,
+      "hit": true,
+      "first_hit": {
+        "tick": 59,
+        "state": {
+          "x": 352.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 349.0,
+      "max_x": 396.0
+    },
+    {
+      "start_x": 120,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 352.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 400.0
+    },
+    {
+      "start_x": 124,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 356.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 404.0
+    },
+    {
+      "start_x": 128,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 360.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 408.0
+    },
+    {
+      "start_x": 132,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 364.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 412.0
+    },
+    {
+      "start_x": 136,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 368.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 416.0
+    },
+    {
+      "start_x": 140,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 372.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 420.0
+    },
+    {
+      "start_x": 144,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 376.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 424.0
+    },
+    {
+      "start_x": 148,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 380.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 428.0
+    },
+    {
+      "start_x": 152,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 384.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 432.0
+    },
+    {
+      "start_x": 156,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 436.0
+    },
+    {
+      "start_x": 160,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 440.0
+    },
+    {
+      "start_x": 164,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 444.0
+    },
+    {
+      "start_x": 168,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 448.0
+    },
+    {
+      "start_x": 172,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 452.0
+    },
+    {
+      "start_x": 176,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 456.0
+    },
+    {
+      "start_x": 180,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 460.0
+    },
+    {
+      "start_x": 184,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 464.0
+    },
+    {
+      "start_x": 188,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 468.0
+    },
+    {
+      "start_x": 192,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 472.0
+    },
+    {
+      "start_x": 196,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 476.0
+    },
+    {
+      "start_x": 200,
+      "hit": false,
+      "first_hit": null,
+      "min_y": 390.0,
+      "max_x": 480.0
+    }
+  ],
+  "hits": [
+    {
+      "start_x": 112,
+      "hit": true,
+      "first_hit": {
+        "tick": 60,
+        "state": {
+          "x": 352.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 365.0,
+      "max_x": 392.0
+    },
+    {
+      "start_x": 116,
+      "hit": true,
+      "first_hit": {
+        "tick": 59,
+        "state": {
+          "x": 352.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 349.0,
+      "max_x": 396.0
+    },
+    {
+      "start_x": 120,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 352.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 400.0
+    },
+    {
+      "start_x": 124,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 356.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 404.0
+    },
+    {
+      "start_x": 128,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 360.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 408.0
+    },
+    {
+      "start_x": 132,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 364.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 412.0
+    },
+    {
+      "start_x": 136,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 368.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 416.0
+    },
+    {
+      "start_x": 140,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 372.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 420.0
+    },
+    {
+      "start_x": 144,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 376.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 424.0
+    },
+    {
+      "start_x": 148,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 380.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 428.0
+    },
+    {
+      "start_x": 152,
+      "hit": true,
+      "first_hit": {
+        "tick": 58,
+        "state": {
+          "x": 384.0,
+          "y": 547.0,
+          "motion58": 2000.0,
+          "38": 9,
+          "3c": 5,
+          "68": 0,
+          "74": 5,
+          "b0": 0,
+          "c0": 0,
+          "c4": 0,
+          "d0": 1,
+          "dc": 0
+        }
+      },
+      "min_y": 333.4,
+      "max_x": 432.0
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "훈3 route transfer through current original Client x86 physics",
+  "baseline": {"map": "훈3.LMF", "source_episode": 133, "steps": 474, "native_verified": true},
+  "goal_shift_one_tile": {"fixture": "tests/hun3_goal_shift_one_tile.LMF", "steps": 468, "native_verified": true},
+  "add_one_terrain_tile": {"fixture": "tests/hun3_add_one_terrain_tile.LMF", "steps": 474, "native_verified": true},
+  "claim_limit": "Demonstrates verified route transfer for these two edits. It does not yet prove general object understanding or arbitrary geometry replanning."
+}

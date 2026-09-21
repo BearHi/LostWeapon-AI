@@ -1,0 +1,582 @@
+{
+  "ok": true,
+  "map": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\Map\\낙라.LMF",
+  "map_size": [
+    65,
+    65
+  ],
+  "tile_counts": {
+    "3": 144,
+    "18": 570,
+    "26": 8,
+    "36": 13,
+    "37": 2,
+    "43": 339,
+    "51": 160,
+    "52": 1,
+    "63": 141,
+    "82": 84,
+    "86": 27,
+    "100": 1,
+    "101": 1,
+    "102": 1,
+    "103": 1,
+    "104": 1,
+    "105": 1,
+    "106": 1,
+    "107": 1,
+    "108": 1,
+    "109": 1,
+    "123": 132,
+    "124": 4,
+    "125": 131,
+    "126": 5,
+    "136": 5,
+    "137": 8
+  },
+  "compaction": {
+    "before": 1784,
+    "after": 624,
+    "excluded_ids": [
+      3,
+      18,
+      26,
+      36,
+      37,
+      43,
+      82
+    ],
+    "excluded_records": 1160
+  },
+  "refreshed_static_collision_records": 167,
+  "refreshed_grid2_records": 339,
+  "collision_grids_exact": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "ticks_compared": 560,
+  "input_segments": [
+    {
+      "ticks": 30,
+      "keys": []
+    },
+    {
+      "ticks": 30,
+      "keys": [
+        "RIGHT"
+      ]
+    },
+    {
+      "ticks": 30,
+      "keys": [
+        "RIGHT",
+        "UP"
+      ]
+    },
+    {
+      "ticks": 30,
+      "keys": [
+        "RIGHT",
+        "C"
+      ]
+    },
+    {
+      "ticks": 30,
+      "keys": [
+        "LEFT"
+      ]
+    },
+    {
+      "ticks": 30,
+      "keys": [
+        "LEFT",
+        "UP"
+      ]
+    },
+    {
+      "ticks": 30,
+      "keys": [
+        "LEFT",
+        "C"
+      ]
+    },
+    {
+      "ticks": 30,
+      "keys": []
+    }
+  ],
+  "player_state_mismatches": [],
+  "retained_object_mismatches": [],
+  "metal_contact_cases": [
+    {
+      "tile_id": 3,
+      "tile": [
+        27,
+        51
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 3,
+      "tile": [
+        27,
+        51
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 3,
+      "tile": [
+        27,
+        51
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 3,
+      "tile": [
+        27,
+        51
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 3,
+      "tile": [
+        27,
+        51
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        10,
+        64
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        10,
+        64
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        10,
+        64
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        10,
+        64
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        10,
+        64
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        56,
+        45
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        56,
+        45
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        56,
+        45
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        56,
+        45
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        56,
+        45
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        39,
+        46
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        39,
+        46
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        39,
+        46
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        39,
+        46
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 18,
+      "tile": [
+        39,
+        46
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 26,
+      "tile": [
+        29,
+        52
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 26,
+      "tile": [
+        29,
+        52
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 26,
+      "tile": [
+        29,
+        52
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 26,
+      "tile": [
+        29,
+        52
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 26,
+      "tile": [
+        29,
+        52
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 36,
+      "tile": [
+        19,
+        52
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 36,
+      "tile": [
+        19,
+        52
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 36,
+      "tile": [
+        19,
+        52
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 36,
+      "tile": [
+        19,
+        52
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 36,
+      "tile": [
+        19,
+        52
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 37,
+      "tile": [
+        1,
+        38
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 37,
+      "tile": [
+        1,
+        38
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 37,
+      "tile": [
+        1,
+        38
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 37,
+      "tile": [
+        1,
+        38
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 37,
+      "tile": [
+        1,
+        38
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 43,
+      "tile": [
+        5,
+        42
+      ],
+      "keys": [],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 43,
+      "tile": [
+        5,
+        42
+      ],
+      "keys": [
+        "RIGHT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 43,
+      "tile": [
+        5,
+        42
+      ],
+      "keys": [
+        "LEFT"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 43,
+      "tile": [
+        5,
+        42
+      ],
+      "keys": [
+        "UP"
+      ],
+      "ticks": 8,
+      "exact": true
+    },
+    {
+      "tile_id": 43,
+      "tile": [
+        5,
+        42
+      ],
+      "keys": [
+        "DOWN"
+      ],
+      "ticks": 8,
+      "exact": true
+    }
+  ],
+  "full_tick_rate": 42.99,
+  "compact_tick_rate": 88.78,
+  "speedup": 2.07,
+  "scope": "spawn-area trace; does not prove every interaction on the map"
+}

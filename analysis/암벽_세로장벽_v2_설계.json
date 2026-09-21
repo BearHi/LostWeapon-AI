@@ -1,0 +1,42 @@
+{
+  "name": "암벽 세로장벽 v2",
+  "status": "minimap_draft",
+  "width": 31,
+  "height": 240,
+  "rock_tile": 8,
+  "start": { "x": 15, "y": 236, "tile": 100 },
+  "goal": { "x": 19, "y": 8, "decorative": true },
+  "hazards": [],
+  "design_intent": "연속 계단이 아닌 고립된 착지턱을 점프+뒷굴과 낙하산으로 연결하는 세로 암벽",
+  "route_policy": {
+    "main_route_only": true,
+    "minimum_vertical_clearance": 2,
+    "failure_returns_to_lower_landing": true,
+    "direct_vertical_shortcut_blocked": true,
+    "gimmicks_deferred_until_physics_calibration": true
+  },
+  "landings_bottom_to_top": [
+    { "index": 0, "x": 15, "y": 236, "width": 5, "role": "start" },
+    { "index": 1, "x": 25, "y": 224, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 2, "x": 6, "y": 213, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 3, "x": 16, "y": 201, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 4, "x": 27, "y": 193, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 5, "x": 9, "y": 181, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 6, "x": 20, "y": 169, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 7, "x": 5, "y": 161, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 8, "x": 14, "y": 149, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 9, "x": 26, "y": 138, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 10, "x": 7, "y": 130, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 11, "x": 18, "y": 118, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 12, "x": 4, "y": 109, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 13, "x": 14, "y": 97, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 14, "x": 25, "y": 88, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 15, "x": 8, "y": 76, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 16, "x": 19, "y": 64, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 17, "x": 5, "y": 54, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 18, "x": 15, "y": 42, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 19, "x": 27, "y": 31, "width": 4, "action_from_previous": "jump_back_roll" },
+    { "index": 20, "x": 12, "y": 20, "width": 4, "action_from_previous": "parachute_long_transfer" },
+    { "index": 21, "x": 19, "y": 8, "width": 5, "role": "top", "action_from_previous": "jump_back_roll" }
+  ]
+}

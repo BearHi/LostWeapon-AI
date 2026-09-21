@@ -1,0 +1,80 @@
+{
+  "scope": "captured stable ice world versus original-0x41e510-built and settled ice route parity",
+  "snapshot": "native_harness\\private_snapshots\\hun19_live.zip",
+  "lmf": "훈련용맵\\훈19.LMF",
+  "builder_info": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈19.LMF",
+    "size": [
+      25,
+      19
+    ],
+    "records": 68,
+    "runtime_object_counts": [
+      68,
+      0
+    ],
+    "spawn": [
+      13,
+      10
+    ],
+    "builder": "0x41e510"
+  },
+  "settle_ticks": 35,
+  "schedule": {
+    "RIGHT_DOWN_ticks": 21,
+    "NOOP_ticks": 120
+  },
+  "compared_fields": [
+    "x",
+    "y",
+    "motion58",
+    "38",
+    "68",
+    "74",
+    "b0",
+    "c0",
+    "c4",
+    "d0",
+    "dc",
+    "acc",
+    "dir"
+  ],
+  "animation_phase_excluded": true,
+  "state_boundaries": 142,
+  "state_differences": 0,
+  "state_parity": true,
+  "differences": [],
+  "object_count": {
+    "captured": 68,
+    "built": 68
+  },
+  "byte_exact_object_records_before_step": true,
+  "object_record_differences": [],
+  "all_collision_grids_byte_exact": true,
+  "collision_grids": [
+    {
+      "grid": 0,
+      "captured_sha256": "a4afa958696bd1da6e58af272863623a86c14f7f261e5147adbffe2055b06589",
+      "built_sha256": "a4afa958696bd1da6e58af272863623a86c14f7f261e5147adbffe2055b06589",
+      "differing_cells": []
+    },
+    {
+      "grid": 1,
+      "captured_sha256": "22cd34546d93a1b97015b0d16b071ee64a2e4faf612f44795e3f6b4d61354608",
+      "built_sha256": "22cd34546d93a1b97015b0d16b071ee64a2e4faf612f44795e3f6b4d61354608",
+      "differing_cells": []
+    },
+    {
+      "grid": 2,
+      "captured_sha256": "a475fbdf5aae3722683ee23f77dc8ef1ea4cfbd92573cff84f75b3a6cf679ec6",
+      "built_sha256": "a475fbdf5aae3722683ee23f77dc8ef1ea4cfbd92573cff84f75b3a6cf679ec6",
+      "differing_cells": []
+    },
+    {
+      "grid": 3,
+      "captured_sha256": "b152ef2a20e98be1788b5e45e9410feeb438268bfec02e1706f1cf50fa347035",
+      "built_sha256": "b152ef2a20e98be1788b5e45e9410feeb438268bfec02e1706f1cf50fa347035",
+      "differing_cells": []
+    }
+  ]
+}

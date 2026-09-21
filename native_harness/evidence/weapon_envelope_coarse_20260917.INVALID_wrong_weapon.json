@@ -1,0 +1,2473 @@
+{
+  "scope": "original x86 dual-view; geometric starting distance, not universal weapon reach",
+  "preflight_damage": {
+    "0": 0.0,
+    "1": 0.0
+  },
+  "rows": [
+    {
+      "weapon": 1,
+      "start_dx": 48,
+      "control_hp": 79.0,
+      "attack_hp": 72.0,
+      "attack_first_loss_tick": 1,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        }
+      ]
+    },
+    {
+      "weapon": 1,
+      "start_dx": 64,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 2,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 723.0,
+          "target_x": 772.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 746.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 738.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 734.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 730.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 726.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 722.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 718.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 1,
+      "start_dx": 80,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 3,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 715.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 729.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 1,
+      "start_dx": 112,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 699.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 713.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 726.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 738.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 741.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 733.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 729.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 725.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 721.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 717.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        }
+      ]
+    },
+    {
+      "weapon": 2,
+      "start_dx": 48,
+      "control_hp": 79.0,
+      "attack_hp": 72.0,
+      "attack_first_loss_tick": 1,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        }
+      ]
+    },
+    {
+      "weapon": 2,
+      "start_dx": 64,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 2,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 723.0,
+          "target_x": 772.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 746.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 738.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 734.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 730.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 726.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 722.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 718.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 2,
+      "start_dx": 80,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 3,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 715.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 729.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 2,
+      "start_dx": 112,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 699.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 713.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 726.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 738.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 741.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 733.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 729.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 725.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 721.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 717.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        }
+      ]
+    },
+    {
+      "weapon": 3,
+      "start_dx": 48,
+      "control_hp": 79.0,
+      "attack_hp": 72.0,
+      "attack_first_loss_tick": 1,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        }
+      ]
+    },
+    {
+      "weapon": 3,
+      "start_dx": 64,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 2,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 723.0,
+          "target_x": 772.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 746.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 738.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 734.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 730.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 726.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 722.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 718.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 3,
+      "start_dx": 80,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 3,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 715.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 729.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 3,
+      "start_dx": 112,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 699.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 713.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 726.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 738.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 741.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 733.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 729.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 725.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 721.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 717.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 48,
+      "control_hp": 79.0,
+      "attack_hp": 72.0,
+      "attack_first_loss_tick": 1,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 745.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 764.0,
+          "target_hp": 72.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 64,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 2,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 723.0,
+          "target_x": 772.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 750.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 746.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 738.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 734.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 730.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 726.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 722.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 718.0,
+          "target_x": 772.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 80,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 3,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 715.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 729.0,
+          "target_x": 780.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 742.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 751.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 747.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 743.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 739.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 735.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 731.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 727.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 723.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 719.0,
+          "target_x": 780.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 112,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 699.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 713.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 726.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 738.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 15,
+          "attacker_frame": 1,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 15,
+          "attacker_frame": 2,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 15,
+          "attacker_frame": 0,
+          "attacker_x": 749.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 745.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 741.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 5,
+          "attacker_frame": 0,
+          "attacker_x": 737.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 733.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 729.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 725.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 721.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 5,
+          "attacker_frame": 1,
+          "attacker_x": 717.0,
+          "target_x": 796.0,
+          "target_hp": 100.0
+        }
+      ]
+    }
+  ]
+}

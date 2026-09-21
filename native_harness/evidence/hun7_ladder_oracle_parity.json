@@ -1,0 +1,9 @@
+{
+  "normal_samples": 59,
+  "normal_y_start": 576.0,
+  "normal_y_end": 348.0,
+  "oracle_y_start": 576.0,
+  "oracle_y_at_n": 344.0,
+  "coherent_mismatch": 0,
+  "parity_supported": true
+}

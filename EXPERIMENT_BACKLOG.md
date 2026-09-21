@@ -1,0 +1,88 @@
+# LostWeapon AI: Experiment Backlog & Architecture Master Dashboard
+
+> **Project Goal**: 고전 액션 게임 *로스트웨폰(LostWeapon)*에서 유즈맵 자율주행(깃발 도달) 및 칼전(PvP)이 가능한 자율 학습형 AI 에이전트 구축.  
+> **Baseline Snapshot**: `native_harness/checkpoints/baseline_snapshot_20260922/` (모든 소스코드 및 가중치 원본 영구 동결 보존)  
+> **Last Updated**: 2026-09-22 01:25 KST
+
+---
+
+## 1. System Status & Architecture Overview
+
+```
+[Level 1: Native Game Client & Harness]
+  - Win32 GDI / Memory Injection: lmf_injector.py, native_playground.py (50ms / 20Hz Tick)
+  - 23개 맵 탐색 트라이얼 아카이브: local_physics_v1/*.sqlite3 (총 75,333 샘플)
+
+[Level 2: Shared Physics & Outcome Predictor]
+  - Model: OutcomeModel (shared_physics_model.py, Conv2d 400d + Scalar 92d + Plan 512d = 1,004d)
+  - Status: 15회 연속 승격 실패 (Heldout Risk Brier 악화로 탈락 중단 상태)
+
+[Level 3: Global Planning & Combat Engine (Target)]
+  - 유즈맵: Macro Skill (대시 점프, 2단 점프, 자석 타기) 기반 Platform Graph Search
+  - 칼전 PvP: 자율 대전 및 적 탐지/회피/공격 Self-Play 루프
+```
+
+---
+
+## 2. Completed Milestones (감사 및 실측 완료)
+
+### [DONE] Step 0 & Step 0.5: 데이터 Split & Trajectory Leakage 전수 정량 감사
+* **실측 일시**: 2026-09-22 00:32 KST
+* **환경**: NVIDIA GeForce GTX 1060 6GB (Pascal sm_61, PyTorch 2.5.1+cu121 CUDA 가속 활성화)
+* **대상**: `dataset.npz` (75,333건) 및 23개 SQLite 파일 원본 트라이얼 1:1 매핑
+* **핵심 실측 결과**:
+  1. **Exact Duplicate**: 
+     - Validation 12,656건 중 Train과 100% 동일한 샘플은 단 **10건 (0.0790%)** $\rightarrow$ Context 해싱 분할은 정상 동작함.
+  2. **Trajectory Leakage (핵심 발견)**:
+     - Validation Planned 샘플 7,638건 중 **7,518건 (98.43%)**이 Train 데이터와 동일한 트리 궤적 경로(Direct Lineage) 상에 위치.
+     - **5,238건 (68.58%)**은 Train 노드와 시간차가 **단 $\le \pm 8$ native ticks 이내**.
+     - Validation의 높은 성능은 인접 노드 패턴 암기에 의한 **누설 착시**였음이 실측 입증됨.
+  3. **Legacy vs Planned 대조 분석**:
+     - **Legacy 데이터**: 미지의 Heldout 맵에서도 Model Brier 0.027492 < Const Brier 0.032460으로 **BSS = +0.1531 (승리)**.
+     - **Planned 데이터**: Validation에서는 BSS +0.2311이었으나, Heldout 맵에서는 **BSS = -0.3663으로 폭락**.
+     - 15회 연속 탈락의 주범이 **Planned 데이터의 극단적인 일반화 실패**임을 수치로 규명함.
+  4. **Heldout 맵 불균형**:
+     - Heldout 4개 맵 중 3개(훈13: 0.00%, 훈19: 1.41%, 훈3: 4.51%)가 극단적 저위험률 맵.
+     - 위험 사건이 없는 맵에서 모델의 미세한 예측(0.1~0.2)이 일괄 0.098을 찍는 상수 베이스라인에 패배하는 메커니즘 확인.
+
+---
+
+## 3. Experiment Backlog Queue (실험 파이프라인)
+
+| ID | 실험명 (Experiment) | 목적 및 가설 | 변경 변수 | 통제 변수 | 성공 기준 (Pass) | 우선순위 | 상태 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :---: | :---: |
+| **Exp 1A** | Zero-Weight Temperature / Platt Calibration | 모델 재학습 없이, 저빈도 맵 확률 눈금 보정만으로 Heldout BSS 양수 전환 가능한지 검증 | Validation 기반 Platt 파라미터 $(T, b)$ 적용 | 모델 가중치 100% 불변, 데이터셋 불변 | Heldout BSS $> 0$ (상수 대비 개선) | P0 | **READY** |
+| **Exp 1B** | Leakage-Free Clean Split Evaluation | 궤적 누설(98.43%)이 배제된 독립 Episode/Subtree 단위 검증 셋 구축 및 실성능 측정 | Data Split 로직 (Episode 단위 Group Split) | 모델 가중치 불변, feature 불변 | 누설 없는 진짜 일반화 지표 확립 | P1 | QUEUED |
+| **Exp 1C** | Class-Imbalanced Weighted BCE Retrain | 극단적 저위험률 맵에 대응하기 위해 pos_weight 및 Focal Loss 적용 재학습 | Loss Function (BCE pos_weight) | 아키텍처 불변, 데이터셋 불변 | Heldout 훈13, 훈19 BSS 양수 전환 | P1 | QUEUED |
+| **Exp 2A** | Macro Action & Skill Library 정의 | 1틱 단위 무작위 연타 탈피, 대시점프/칼질/자석타기 등 12~16개 인간 기술 래핑 | Action Tokenization (Skill Abstraction) | 물리 엔진 불변 | 긴 점프 및 장애물 돌파율 대폭 상승 | P1 | QUEUED |
+| **Exp 2B** | Platform Graph Edge Parameterization | 단순 도달 여부(Boolean)가 아닌 속도/체류시간/위험도를 가중치로 갖는 그래프 네비게이션 | Navigation Graph Representation | 지형 파서 불변 | 깃발 경로 탐색 시간 10배 단축 | P2 | QUEUED |
+| **Exp 3A** | Autonomous Multi-Map Curriculum Runner | 사람이 맵을 수동 지정하지 않고, AI가 23개 맵을 스스로 순회하며 데이터 자율 수집/학습 | Training Loop (Auto Map Selector) | 물리 클라이언트 불변 | 사람 개입 없는 무인 자율 학습 달성 | P2 | QUEUED |
+| **Exp 3B** | Combat PvP AI (Self-Play Prototype) | 상대방 봇과의 거리/행동을 인지하고 칼질/회피/카운터를 구사하는 전투 지능 탑재 | Combat Policy Network & Self-Play Loop | 네이티브 물리 엔진 | 사람 수준의 칼전 승률 달성 | P3 | QUEUED |
+
+---
+
+## 4. Operational & Rollback Rules (안전 운영 수칙)
+
+1. **불변 원칙 (Immutability)**:
+   - `native_harness/checkpoints/baseline_snapshot_20260922/`는 절대 수정하거나 삭제하지 않는다.
+   - 새로운 모델 가중치 학습 시 반드시 `checkpoints/exp_XXX/` 하위로 격리 저장한다.
+2. **실험 실행 전 세이브 (Pre-experiment Save)**:
+   - 코드를 수정하는 모든 실험(Exp 1B 이후)은 수정 전 해당 파일의 백업 사본을 생성한다.
+3. **단정적 어조 금지 (Evidence-based Reporting)**:
+   - 모든 보고는 "추정" 대신 실제 텐서 순전파 및 오차 계산 수치(Table)로만 입증한다.
+
+---
+
+## 5. Incident & Failure Log (실패 및 결함 투명 기록)
+
+### [INCIDENT-001] 자율 훈련 루프 가짜 낙사 버그 및 무한 루프 중단
+* **발생 일시**: 2026-09-22 01:40 ~ 02:18 KST
+* **스크립트**: `autonomous_curriculum_trainer.py`
+* **현상**: Stage 1(2칸 점프) 실행 시 6,000회 이상 X=152.0px에서 연속 낙사 처리되며 프로세스가 종료되지 않고 장시간 실행되어 사용자가 수동 취소함.
+* **원인 분석**:
+  1. **임계값 하드코딩 오류**: 로스트웨폰 x86 엔진에서 플레이어가 발판(y=14) 위를 정상 보행할 때의 실제 Y좌표는 `448.0`임. 그러나 스크립트 작성 시 `cur_y > 430.0`을 낙사로 잘못 정의하여, 정상 보행 상태임에도 10틱(0.5초) 만에 강제 낙사 처리 및 에피소드 리셋이 반복됨.
+  2. **무한 루프 제어 부재**: 미해결 상태에서 프로세스가 계속 헛돌며 종료되지 않음.
+* **수정 조치**:
+  1. 진짜 낙사 기준을 발판 하단 추락(`cur_y > 480.0`)으로 정정.
+  2. 에피소드 시도 횟수를 5회 단위(약 2초)로 명시적 제한하고 자동 종료되도록 수정.
+

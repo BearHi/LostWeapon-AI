@@ -1,0 +1,541 @@
+{
+  "schema": 1,
+  "routes": {
+    "7e803c6759442a0aa9b90a18e55f3123c606d3cda24ebd694185e651f4ed0d24": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          11,
+          43
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          5,
+          30
+        ]
+      ],
+      "steps": 122,
+      "action_repeat": 2,
+      "source_map_sha256": "1cca2c9654760dd8af2600eb3989348dcd31b10101baad40f4d5cfccf6345b49",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "9ac06ecd59a09d8dc0b9ec5d673f6873b2e8ce3f29934e8a739c716449b2da5f": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          79
+        ]
+      ],
+      "steps": 86,
+      "action_repeat": 2,
+      "source_map_sha256": "19c13a8902ad234feaab3f04af5f5a1cabb2abe260af5599f3c112a320a44435",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "eb46fed8e3e6090a6c5b10d9081b1e280bbc4a7379c5e85d035bca89c8aa339a": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          11,
+          25
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          5,
+          34
+        ]
+      ],
+      "steps": 140,
+      "action_repeat": 2,
+      "source_map_sha256": "3f7fddaf1f084e48c5e4dff55fd43fcc8a2fdf9b32147486dacf681683a85047",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "586849d5c4e29f79307edbc815148299e190484bbfd4fe7fd38e4d7ca961a059": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          50
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          5,
+          16
+        ]
+      ],
+      "steps": 112,
+      "action_repeat": 2,
+      "source_map_sha256": "336eb0b1fffc515e3f2c54135596328b0b825f753a9ceb548f1873b1be62d256",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "7f642388bcb0f77fb9d2eb673d3ebf14f2d1fdac93268fda92267ecc761a96cf": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          11,
+          96
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "steps": 127,
+      "action_repeat": 2,
+      "source_map_sha256": "afbdcb64edd315e976f8c76848984667c0389e1b910421d83bc9ec7ee175df09",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "c8d1252809e2a3acb7f5c9561d34a40ccfa61a6dac6c47e5bf907f1e4cd76771": {
+      "actions_rle": [
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          40
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          2,
+          35
+        ]
+      ],
+      "steps": 108,
+      "action_repeat": 2,
+      "source_map_sha256": "c5b18756f6cfe0383c38419c9d857f944d71ce5dd7a3bb84dc4610182fbc4af6",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "9b107b054abcd98abf7760aae55969321bfc9e0c6ddb882576e13a14132451b6": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          2,
+          14
+        ]
+      ],
+      "steps": 65,
+      "action_repeat": 2,
+      "source_map_sha256": "0591aeed9b32d6d2cc39449eea7a7f43a323c1ea4971623e93f068c9d3960f93",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "4c571a74dcc4731c26a26ae0133b315be91a31d76ac2dcdf0427b2f8f385607f": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          2,
+          29
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "steps": 46,
+      "action_repeat": 2,
+      "source_map_sha256": "ddc4e83187eb4f08fd7cfa30590e25df2c4349419547e2a9f3d58f0df8e06df7",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "7f3a94a0a7c7ea51a4f54ee0412e1af4970c64228baefff3b61c3afbf461bc30": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          10,
+          39
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "steps": 54,
+      "action_repeat": 2,
+      "source_map_sha256": "f8db78eb0891f49648cc709c4a4ed1c96cab7e785f8b1469a4f137e8b750b54d",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "1fad1512237d78118dc576111a97deec1995de8db6974a24841525ff0c151156": {
+      "actions_rle": [
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          9,
+          39
+        ],
+        [
+          2,
+          50
+        ]
+      ],
+      "steps": 112,
+      "action_repeat": 1,
+      "source_map_sha256": "01d6021b9f9e6229cad537c76971b3cdeb83b5ada024f26b3d067df13598094a",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "939116a54238be2b7a4fadc83402bc5c9c168dad2c580da554e036afa1c4e5ea": {
+      "actions_rle": [
+        [
+          0,
+          14
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          8,
+          39
+        ],
+        [
+          1,
+          60
+        ]
+      ],
+      "steps": 120,
+      "action_repeat": 1,
+      "source_map_sha256": "28c8268bb451e150477b6a37cd2d40181ead087dbcb0eaee9ab90d6532c6f7f1",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "7f3a94a0a7c7ea51a4f54ee0412e1af4970c64228baefff3b61c3afbf461bc30:repeat=1": {
+      "actions_rle": [
+        [
+          0,
+          14
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          8,
+          40
+        ],
+        [
+          1,
+          62
+        ]
+      ],
+      "steps": 125,
+      "action_repeat": 1,
+      "source_map_sha256": "f8db78eb0891f49648cc709c4a4ed1c96cab7e785f8b1469a4f137e8b750b54d",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "5bfc27fd70ad8d28b1eba15d611dcc52d09c7a3b707ad6f333a66fc90c8cb861:repeat=2": {
+      "actions_rle": [
+        [
+          0,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          4,
+          20
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "steps": 122,
+      "action_repeat": 2,
+      "source_map_sha256": "b41873d787dde103d3913ec06bc84f816ec6a58ea8f5aae64f353ab9322dbbd9",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "582dc186bba2076c5f861f56fe4a462e43f40883f729db0abf93bdbccc2245e4:repeat=2": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          22
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          11,
+          14
+        ]
+      ],
+      "steps": 55,
+      "action_repeat": 2,
+      "source_map_sha256": "0a4804f344f4c310b80e03f69561874db83b51a7dcdc2d077e3132f49f83012a",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "9b107b054abcd98abf7760aae55969321bfc9e0c6ddb882576e13a14132451b6:repeat=2": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          2,
+          14
+        ]
+      ],
+      "steps": 65,
+      "action_repeat": 2,
+      "source_map_sha256": "0591aeed9b32d6d2cc39449eea7a7f43a323c1ea4971623e93f068c9d3960f93",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    },
+    "9b107b054abcd98abf7760aae55969321bfc9e0c6ddb882576e13a14132451b6:repeat=2:localban5x4v1": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          2,
+          20
+        ]
+      ],
+      "steps": 65,
+      "action_repeat": 2,
+      "source_map_sha256": "0591aeed9b32d6d2cc39449eea7a7f43a323c1ea4971623e93f068c9d3960f93",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
+    }
+  }
+}

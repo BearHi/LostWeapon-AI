@@ -1,0 +1,64 @@
+{
+  "map": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\Map\\낙라.LMF",
+    "size": [
+      65,
+      65
+    ],
+    "records": 1784,
+    "runtime_object_counts": [
+      1784,
+      0
+    ],
+    "spawn": [
+      1,
+      61
+    ],
+    "builder": "0x41e510"
+  },
+  "ticks": 30,
+  "total_ms_per_tick": 48.321,
+  "native_tick_rate": 20.7,
+  "components": [
+    {
+      "address": "0x4228c0",
+      "ms_per_tick": 0.521,
+      "share_percent": 1.1
+    },
+    {
+      "address": "0x436e30",
+      "ms_per_tick": 45.844,
+      "share_percent": 94.9
+    },
+    {
+      "address": "0x455f00",
+      "ms_per_tick": 0.194,
+      "share_percent": 0.4
+    },
+    {
+      "address": "0x453a50",
+      "ms_per_tick": 0.309,
+      "share_percent": 0.6
+    },
+    {
+      "address": "0x476000",
+      "ms_per_tick": 0.903,
+      "share_percent": 1.9
+    },
+    {
+      "address": "0x461ac0",
+      "ms_per_tick": 0.43,
+      "share_percent": 0.9
+    },
+    {
+      "address": "0x436620",
+      "ms_per_tick": 0.062,
+      "share_percent": 0.1
+    },
+    {
+      "address": "0x415f10",
+      "ms_per_tick": 0.058,
+      "share_percent": 0.1
+    }
+  ]
+}

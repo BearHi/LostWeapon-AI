@@ -1,0 +1,12 @@
+{
+  "scope": "original x86 dual-view, flat ground, face-to-face, one Z press, stationary defender, 24-30 native ticks",
+  "meaning": "start_dx is attacker-to-target x distance when Z begins; this is not universal hitbox reach",
+  "weapons": [
+    {"slot": 1, "name": "기칼", "attack_state": 15, "largest_tested_hit_start_dx": 88, "smallest_tested_miss_start_dx": 96, "first_hit_tick_at_largest_hit": 4, "attack_frame_at_hit": 1, "actual_dx_at_hit": 34, "damage": 7.0},
+    {"slot": 2, "name": "방망이", "attack_state": 16, "largest_tested_hit_start_dx": 88, "smallest_tested_miss_start_dx": 96, "first_hit_tick_at_largest_hit": 18, "attack_frame_at_hit": 9, "actual_dx_at_hit": 88, "damage": 8.8},
+    {"slot": 3, "name": "도끼", "attack_state": 17, "largest_tested_hit_start_dx": 68, "smallest_tested_miss_start_dx": 72, "first_hit_tick_at_largest_hit": 8, "attack_frame_at_hit": 4, "actual_dx_at_hit": 68, "damage": 7.0},
+    {"slot": 4, "name": "장검", "attack_state": 18, "largest_tested_hit_start_dx": 76, "smallest_tested_miss_start_dx": 80, "first_hit_tick_at_largest_hit": 6, "attack_frame_at_hit": 3, "actual_dx_at_hit": 76, "damage": 7.0}
+  ],
+  "controls": "28/28 no-attack controls retained 100 HP; 28/28 attack states matched the selected weapon",
+  "limitations": ["single height and facing", "one attack only", "moving target and roll not covered", "online timing parity not established"]
+}

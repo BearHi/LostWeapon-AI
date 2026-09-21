@@ -1,0 +1,598 @@
+[
+  {
+    "slot_key": 1,
+    "attack_key": "Z",
+    "selected_after_slot": 0,
+    "requested_during_attack": 2,
+    "first_attack_state": {
+      "tick": 2,
+      "keys": [
+        "Z"
+      ],
+      "selected": 0,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 127.0,
+      "y": 416.4,
+      "motion58": -80.0,
+      "38": 15,
+      "3c": 0,
+      "68": 1,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "first_accepted_switch": {
+      "tick": 26,
+      "keys": [
+        "2"
+      ],
+      "selected": 1,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 231.0,
+      "y": 448.0,
+      "motion58": -560.0,
+      "38": 7,
+      "3c": 0,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        0,
+        7,
+        0
+      ],
+      [
+        1,
+        0,
+        9,
+        0
+      ],
+      [
+        2,
+        0,
+        15,
+        0
+      ],
+      [
+        26,
+        1,
+        7,
+        0
+      ]
+    ]
+  },
+  {
+    "slot_key": 1,
+    "attack_key": "X",
+    "selected_after_slot": 0,
+    "requested_during_attack": 2,
+    "first_attack_state": null,
+    "first_accepted_switch": {
+      "tick": 3,
+      "keys": [
+        "2"
+      ],
+      "selected": 1,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 417.2,
+      "motion58": -120.0,
+      "38": 9,
+      "3c": 1,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        0,
+        7,
+        0
+      ],
+      [
+        1,
+        0,
+        9,
+        0
+      ],
+      [
+        3,
+        1,
+        9,
+        1
+      ],
+      [
+        15,
+        1,
+        7,
+        3
+      ]
+    ]
+  },
+  {
+    "slot_key": 2,
+    "attack_key": "Z",
+    "selected_after_slot": 1,
+    "requested_during_attack": 3,
+    "first_attack_state": {
+      "tick": 2,
+      "keys": [
+        "Z"
+      ],
+      "selected": 1,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 416.4,
+      "motion58": -80.0,
+      "38": 16,
+      "3c": 0,
+      "68": 1,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "first_accepted_switch": {
+      "tick": 34,
+      "keys": [
+        "3"
+      ],
+      "selected": 2,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 448.0,
+      "motion58": -560.0,
+      "38": 7,
+      "3c": 0,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        1,
+        7,
+        0
+      ],
+      [
+        1,
+        1,
+        9,
+        0
+      ],
+      [
+        2,
+        1,
+        16,
+        0
+      ],
+      [
+        34,
+        2,
+        7,
+        0
+      ]
+    ]
+  },
+  {
+    "slot_key": 2,
+    "attack_key": "X",
+    "selected_after_slot": 1,
+    "requested_during_attack": 3,
+    "first_attack_state": null,
+    "first_accepted_switch": {
+      "tick": 3,
+      "keys": [
+        "3"
+      ],
+      "selected": 2,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 417.2,
+      "motion58": -120.0,
+      "38": 9,
+      "3c": 1,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        1,
+        7,
+        0
+      ],
+      [
+        1,
+        1,
+        9,
+        0
+      ],
+      [
+        3,
+        2,
+        9,
+        1
+      ],
+      [
+        15,
+        2,
+        7,
+        3
+      ]
+    ]
+  },
+  {
+    "slot_key": 3,
+    "attack_key": "Z",
+    "selected_after_slot": 2,
+    "requested_during_attack": 4,
+    "first_attack_state": {
+      "tick": 2,
+      "keys": [
+        "Z"
+      ],
+      "selected": 2,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 416.4,
+      "motion58": -80.0,
+      "38": 17,
+      "3c": 0,
+      "68": 1,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "first_accepted_switch": {
+      "tick": 34,
+      "keys": [
+        "4"
+      ],
+      "selected": 3,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 448.0,
+      "motion58": -560.0,
+      "38": 7,
+      "3c": 0,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        2,
+        7,
+        0
+      ],
+      [
+        1,
+        2,
+        9,
+        0
+      ],
+      [
+        2,
+        2,
+        17,
+        0
+      ],
+      [
+        34,
+        3,
+        7,
+        0
+      ]
+    ]
+  },
+  {
+    "slot_key": 3,
+    "attack_key": "X",
+    "selected_after_slot": 2,
+    "requested_during_attack": 4,
+    "first_attack_state": null,
+    "first_accepted_switch": {
+      "tick": 3,
+      "keys": [
+        "4"
+      ],
+      "selected": 3,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 417.2,
+      "motion58": -120.0,
+      "38": 9,
+      "3c": 1,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        2,
+        7,
+        0
+      ],
+      [
+        1,
+        2,
+        9,
+        0
+      ],
+      [
+        3,
+        3,
+        9,
+        1
+      ],
+      [
+        15,
+        3,
+        7,
+        3
+      ]
+    ]
+  },
+  {
+    "slot_key": 4,
+    "attack_key": "Z",
+    "selected_after_slot": 3,
+    "requested_during_attack": 1,
+    "first_attack_state": {
+      "tick": 2,
+      "keys": [
+        "Z"
+      ],
+      "selected": 3,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 416.4,
+      "motion58": -80.0,
+      "38": 18,
+      "3c": 0,
+      "68": 1,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "first_accepted_switch": {
+      "tick": 24,
+      "keys": [
+        "1"
+      ],
+      "selected": 0,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 448.0,
+      "motion58": -560.0,
+      "38": 7,
+      "3c": 0,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        3,
+        7,
+        0
+      ],
+      [
+        1,
+        3,
+        9,
+        0
+      ],
+      [
+        2,
+        3,
+        18,
+        0
+      ],
+      [
+        24,
+        0,
+        7,
+        0
+      ]
+    ]
+  },
+  {
+    "slot_key": 4,
+    "attack_key": "X",
+    "selected_after_slot": 3,
+    "requested_during_attack": 1,
+    "first_attack_state": null,
+    "first_accepted_switch": {
+      "tick": 3,
+      "keys": [
+        "1"
+      ],
+      "selected": 0,
+      "attack_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x": 112.0,
+      "y": 417.2,
+      "motion58": -120.0,
+      "38": 9,
+      "3c": 1,
+      "68": 0,
+      "74": -1,
+      "7c": 0,
+      "80": 0,
+      "b0": 0,
+      "b8": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "selected_timeline": [
+      [
+        0,
+        3,
+        7,
+        0
+      ],
+      [
+        1,
+        3,
+        9,
+        0
+      ],
+      [
+        3,
+        0,
+        9,
+        1
+      ],
+      [
+        15,
+        0,
+        7,
+        3
+      ]
+    ]
+  }
+]

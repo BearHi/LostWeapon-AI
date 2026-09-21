@@ -1,0 +1,12 @@
+{
+  "scope": "controlled offline branch from real two-computer P2P team capture",
+  "snapshot": "private_snapshots/team_slot1_live.zip",
+  "attacker_start": {"x": 700.0, "y": 736.0, "facing": "right"},
+  "target_start": {"x": 760.0, "y": 736.0, "hp": 58.0, "facing": "left"},
+  "weapon": 1,
+  "attack_key": "Z",
+  "hit_tick": 3,
+  "target_after": {"hp": 51.0, "state38": 5},
+  "damage": 7.0,
+  "verdict": "ORIGINAL_X86_CONTROLLED_HIT_CONFIRMED"
+}

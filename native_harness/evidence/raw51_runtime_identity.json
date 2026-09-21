@@ -1,0 +1,24 @@
+{
+  "scope": "raw51 original Client builder and handler identity",
+  "lmf": "훈13.LMF",
+  "bitmap_resource_id": 217,
+  "runtime_type": 270,
+  "runtime_type_hex": "0x10e",
+  "handler_range": "0x45215a-0x452249",
+  "behavior": "When a colliding player has parachute state +0xdc == 1, original Client x86 calls its overlap routine and changes +0xdc to 2. The handler does not call the damage routine.",
+  "conclusion": "The grey floor device in the supplied 낙라 screenshot is raw51, the parachute/fan interaction object. It may look like a mine, but it is not a damage mine in Client code. Damage bomb families remain raw87/raw88 per the supplied handoff.",
+  "evidence": {
+    "hun13_raw51_coordinates": "x=12,y=6..19",
+    "builder_object_sample": {
+      "type": 270,
+      "animation": 38,
+      "variant_0x48": 10
+    },
+    "original_instructions": [
+      "0x45215a cmp [object],0x10e",
+      "0x4521fe cmp [player+0xdc],1",
+      "0x452211 call 0x436d60",
+      "0x45222b mov [player+0xdc],2"
+    ]
+  }
+}

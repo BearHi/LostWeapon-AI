@@ -1,0 +1,53 @@
+{
+  "scope": "NativeTrainingAPI deterministic raw124 cycle after an original-x86 warmup",
+  "snapshot": "native_harness\\private_snapshots\\hun20_live.zip",
+  "lmf": "훈련용맵\\훈20.LMF",
+  "warmup_ticks": 143,
+  "cycle_ticks": 143,
+  "saved_dirty_pages": 43,
+  "saved_dirty_bytes": 176128,
+  "restore_ms": 1.0096998885273933,
+  "first_seconds": 1.3270668999757618,
+  "second_seconds": 1.2939105000114068,
+  "first_ticks_per_second": 107.75643639564201,
+  "second_ticks_per_second": 110.51769036478129,
+  "first_hash": "162f01fb2bc8b3da8782a631b3d11080fb1467966e1c8e0782206fbd5de747e9",
+  "second_hash": "162f01fb2bc8b3da8782a631b3d11080fb1467966e1c8e0782206fbd5de747e9",
+  "exact_replay": true,
+  "start": {
+    "player": {
+      "x": 208.0,
+      "y": 461.4,
+      "motion58": -360.0,
+      "38": 9,
+      "3c": 1,
+      "68": 0,
+      "74": -1,
+      "b0": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "object_c8": 0,
+    "collision_code": 1
+  },
+  "end": {
+    "player": {
+      "x": 208.0,
+      "y": 461.4,
+      "motion58": -360.0,
+      "38": 9,
+      "3c": 1,
+      "68": 0,
+      "74": -1,
+      "b0": 0,
+      "c0": 0,
+      "c4": 0,
+      "d0": 1,
+      "dc": 0
+    },
+    "object_c8": 0,
+    "collision_code": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "verdict": "PASS",
+  "safe_lane": [
+    700,
+    780
+  ],
+  "preflight_ticks": 64,
+  "ticks": 256,
+  "hp_events": [],
+  "final_hp": [
+    100.0,
+    100.0
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "engine": "original Client x86 via Unicorn",
+  "steps_each": 3,
+  "results": [
+    {
+      "map": 1,
+      "ok": true,
+      "load_s": 3.65,
+      "runtime_counts": [
+        773,
+        0
+      ],
+      "x": 528.0,
+      "y": 6176.4
+    },
+    {
+      "map": 2,
+      "ok": true,
+      "load_s": 5.59,
+      "runtime_counts": [
+        2108,
+        20
+      ],
+      "x": 368.0,
+      "y": 12672.4
+    },
+    {
+      "map": 3,
+      "ok": true,
+      "load_s": 4.18,
+      "runtime_counts": [
+        1398,
+        0
+      ],
+      "x": 336.0,
+      "y": 5120.4
+    },
+    {
+      "map": 4,
+      "ok": true,
+      "load_s": 4.79,
+      "runtime_counts": [
+        2021,
+        0
+      ],
+      "x": 560.0,
+      "y": 12704.4
+    },
+    {
+      "map": 5,
+      "ok": true,
+      "load_s": 9.18,
+      "runtime_counts": [
+        4118,
+        4
+      ],
+      "x": 304.0,
+      "y": 2912.4
+    },
+    {
+      "map": 6,
+      "ok": true,
+      "load_s": 14.01,
+      "runtime_counts": [
+        6271,
+        0
+      ],
+      "x": 240.0,
+      "y": 2944.4
+    },
+    {
+      "map": 7,
+      "ok": true,
+      "load_s": 6.33,
+      "runtime_counts": [
+        1856,
+        0
+      ],
+      "x": 176.0,
+      "y": 224.4
+    },
+    {
+      "map": 8,
+      "ok": true,
+      "load_s": 6.06,
+      "runtime_counts": [
+        1713,
+        0
+      ],
+      "x": 336.0,
+      "y": 1600.4
+    },
+    {
+      "map": 9,
+      "ok": true,
+      "load_s": 5.84,
+      "runtime_counts": [
+        1393,
+        0
+      ],
+      "x": 336.0,
+      "y": 1216.4
+    },
+    {
+      "map": 10,
+      "ok": true,
+      "load_s": 8.32,
+      "runtime_counts": [
+        4982,
+        0
+      ],
+      "x": 432.0,
+      "y": 2784.4
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" shape-rendering="crispEdges">
+<rect width="1000" height="1000" fill="#171b28"/>
+<!-- main volcanic rock silhouette -->
+<path fill="#71461f" stroke="#2d211c" stroke-width="10" d="M40 110h170v-35h170v45h150V85h190v40h160v170h-35v160h45v175h-55v145H640v45H420v-30H220v35H55V655H25V420h35V260H40z"/>
+<!-- open chambers -->
+<path fill="#171b28" d="M90 150h170v55h80v95H215v60H95zM430 135h145v80h55v105H515v70H410v-80h-40v-95h60zM700 160h175v130h-75v100H670v-90h-45v-75h75zM110 500h180v85h90v95H280v55H105zM500 500h170v90h85v100H660v70H500z"/>
+<!-- lava rivers -->
+<path fill="#e33c1e" d="M285 75h55v150h35v115h-40v130h-55V330h-30V215h35z"/>
+<path fill="#ff6724" d="M295 85h30v130h35v105h-30v130h-35V320h-25V220h25z"/>
+<path fill="#e33c1e" d="M610 95h55v120h30v125h-45v120h-50V340h25V220h-15z"/>
+<path fill="#ff6724" d="M625 110h25v105h30v110h-35v120h-25V330h25V230h-20z"/>
+<path fill="#e33c1e" d="M55 650h150v-35h145v55h170v55h190v-45h210v75H730v55H560v-40H365v45H190v-50H55z"/>
+<path fill="#ff6724" d="M60 670h145v-35h135v55h175v45h185v-35h185v35H720v50H550v-35H350v40H200v-45H60z"/>
+<!-- pale safe ledges -->
+<g fill="#d2bd83">
+<path d="M75 405h180v25h-35v25H75z"/><path d="M355 405h165v25h-30v25H355z"/>
+<path d="M640 420h230v25h-45v25H640z"/><path d="M105 735h170v25h-40v25H105z"/>
+<path d="M455 735h180v25h-35v25H455z"/><path d="M720 690h180v25h-40v25H720z"/>
+</g>
+<!-- spikes -->
+<g fill="#f2f2e9"><path d="M190 390l12-30 12 30zM430 390l12-30 12 30zM760 405l12-30 12 30zM240 720l12-30 12 30zM560 720l12-30 12 30z"/></g>
+<!-- route hint -->
+<path d="M110 415h125v-35h150v35h150v-35h170v35h120" fill="none" stroke="#51d9ed" stroke-width="7" stroke-dasharray="14 10"/>
+<circle cx="110" cy="415" r="12" fill="#fff"/><text x="80" y="390" fill="#fff" font-size="22" font-family="Arial">START</text>
+<circle cx="825" cy="415" r="12" fill="#ffd34d"/><text x="790" y="390" fill="#ffd34d" font-size="22" font-family="Arial">REST / END</text>
+</svg>

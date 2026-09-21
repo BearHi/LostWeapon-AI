@@ -1,0 +1,20 @@
+# Large binary snapshots (>100MB, blocked by GitHub)
+native_harness/private_snapshots/
+*.zip
+
+# Large SQLite trial archives (440MB)
+native_harness/checkpoints/local_physics_v1/*.sqlite3
+
+# Video & Large Binaries
+영상/
+*.mp4
+*.avi
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Scratch & temporary logs
+scratch/
+*.log

@@ -1,0 +1,13 @@
+{
+  "file": "지옥5_간단미로.LMF",
+  "width": 50,
+  "height": 50,
+  "blocks": 2500,
+  "design": "serpentine connected route inside solid wall; ladder connectors; hazards placed as side pressure",
+  "checks": [
+    "binary roundtrip",
+    "bounds",
+    "10 markers"
+  ],
+  "limitation": "Actual collision semantics and route clearability require in-game testing."
+}

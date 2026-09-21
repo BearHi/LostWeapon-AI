@@ -1,0 +1,152 @@
+{
+  "scope": "index of parity evidence files; each row retains its source scope",
+  "files": [
+    {
+      "file": "hun2_normal_oracle_gap_jump_full_parity.json",
+      "scope": "same-boundary normal Client versus offline original-x86 RIGHT_UP, release, and landing parity",
+      "supported": true,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "hun2_normal_oracle_gap_jump_landing_parity.json",
+      "scope": "same-boundary normal Client versus offline original-x86 LEFT_UP, release, and landing parity",
+      "supported": true,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "hun2_normal_oracle_gap_jump_parity.json",
+      "scope": "same-boundary normal Client versus offline original-x86 world-chain RIGHT_UP parity",
+      "supported": true,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "hun2_normal_oracle_right_parity.json",
+      "scope": "same-boundary normal Client versus offline original-x86 world-chain RIGHT parity",
+      "supported": true,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "hun5_normal_oracle_parachute_parity.json",
+      "scope": "same-boundary normal Client versus offline original-x86 walk-off + C parachute parity",
+      "supported": true,
+      "mismatch": null,
+      "compared": 64
+    },
+    {
+      "file": "hun6_normal_oracle_right_up_parity.json",
+      "scope": "same-boundary normal Client versus offline original-x86 world-chain RIGHT_UP parity",
+      "supported": true,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "hun7_ladder_oracle_parity.json",
+      "scope": null,
+      "supported": true,
+      "mismatch": 0,
+      "compared": null
+    },
+    {
+      "file": "normal_hun12_stable_water_trace.json",
+      "scope": "read-only normal Client one-second stable-water core-state sample; animation frame excluded",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 49
+    },
+    {
+      "file": "hun85_spring_normal_native_parity.json",
+      "scope": "same-boundary normal Client versus original-x86 native replay for 훈8.5 vertical spring; 55/58 unique selected-field samples matched",
+      "supported": true,
+      "mismatch": 3,
+      "compared": 58
+    },
+    {
+      "file": "hun9_diagonal_spring_normal_native_parity.json",
+      "scope": "normal Client versus original-x86 native replay for 훈9 right-launch diagonal spring; trigger state and sampled pre-contact path matched",
+      "supported": true,
+      "mismatch": 17,
+      "compared": 57
+    },
+    {
+      "file": "hun13_fan_parachute_normal_native_parity.json",
+      "scope": "normal Client versus captured original-x86 replay for 훈13 fan plus parachute; exact sampled lift state and surrounding path matched",
+      "supported": true,
+      "mismatch": 11,
+      "compared": 95
+    },
+    {
+      "file": "native_lmf_hun1_parity.json",
+      "scope": "captured 훈1 versus original-x86-built 훈1 tick-state parity",
+      "supported": null,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "native_lmf_hun2_capture_parity.json",
+      "scope": "captured 훈1 versus original-x86-built 훈1 tick-state parity",
+      "supported": null,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "oracle_parity_fixtures.json",
+      "scope": null,
+      "supported": null,
+      "mismatch": null,
+      "compared": null
+    },
+    {
+      "file": "hun14_magnet_normal_native_parity.json",
+      "scope": "same-input normal Client versus captured original-x86 훈14 raw54 magnet parity; RIGHT 20 ticks then release",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 106
+    },
+    {
+      "file": "hun15_magnet_normal_native_parity.json",
+      "scope": "same-input normal Client versus original-x86-built 훈15 raw55 mirrored magnet parity",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 113
+    },
+    {
+      "file": "hun16_vertical_magnet_normal_native_parity.json",
+      "scope": "same-input normal Client versus captured original-x86 훈16 raw53 vertical magnet parity",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 143
+    },
+    {
+      "file": "hun17_vertical_magnet_normal_native_parity.json",
+      "scope": "same-input normal Client versus captured original-x86 훈17 raw52 downward vertical magnet parity",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 97
+    },
+    {
+      "file": "hun18_ice_normal_native_parity.json",
+      "scope": "same-input normal Client versus captured original-x86 훈18 raw27 triangular ice momentum parity",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 113
+    },
+    {
+      "file": "hun19_ice_normal_native_parity.json",
+      "scope": "same-input normal Client versus captured original-x86 훈19 raw37 triangular ice momentum parity",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 109
+    },
+    {
+      "file": "hun20_disappearing_block_normal_native_parity.json",
+      "scope": "normal Client versus captured original-x86 훈20 raw124 disappearing-block cycle parity",
+      "supported": true,
+      "mismatch": 0,
+      "compared": 346
+    }
+  ]
+}

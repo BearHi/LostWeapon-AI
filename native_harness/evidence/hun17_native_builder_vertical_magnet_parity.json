@@ -1,0 +1,32 @@
+{
+  "scope": "captured 훈17 world versus original-0x41e510-built 훈17 raw52 route parity",
+  "snapshot": "native_harness\\private_snapshots\\hun17_live.zip",
+  "lmf": "훈련용맵\\훈17.LMF",
+  "builder_info": {
+    "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈17.LMF",
+    "size": [
+      22,
+      22
+    ],
+    "records": 33,
+    "runtime_object_counts": [
+      33,
+      0
+    ],
+    "spawn": [
+      5,
+      17
+    ],
+    "builder": "0x41e510"
+  },
+  "state_boundaries": 154,
+  "state_differences": 0,
+  "state_parity": true,
+  "differences": [],
+  "object_count": {
+    "captured": 33,
+    "built": 33
+  },
+  "byte_exact_object_records_before_step": true,
+  "object_record_differences": []
+}

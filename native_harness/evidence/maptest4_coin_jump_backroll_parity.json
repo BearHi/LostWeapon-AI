@@ -1,0 +1,23 @@
+{
+  "fixture": "맵테스트4 raw63 coin block at tile (22,250)",
+  "normal_start": {"x": 718.0, "y": 8096.0, "facing": "left"},
+  "normal_input": ["UP", "UP+DOWN", "UP+RIGHT+DOWN", "RIGHT+DOWN", "release"],
+  "normal_result": {"max_x": 748.0, "settled_y": 8000.0, "passed_block": false},
+  "native_start": {"x": 718.0, "y": 8096.0, "facing": "left"},
+  "native_result": {"max_x": 748.0, "settled_y": 8000.0, "passed_block": false},
+  "matching_core": {
+    "backroll_motion_sequence": [760, 720, 680, 640, 600, 560, 480, 440, 400, 360, 320, 280, 240, 200, 160, 120, 80, 40, 0],
+    "backroll_state38": 2,
+    "backroll_c0": 4,
+    "final_x": 748.0,
+    "final_y": 8000.0
+  },
+  "observed_subpixel_difference": {
+    "normal_first_jump_y": 8083.7,
+    "native_first_jump_y": 8084.0,
+    "normal_transient_jump_motion": 1230.0,
+    "native_post_tick_motion": 0.0,
+    "note": "The 2 ms normal sampler observes mid-update writes. A persistent 0.3 to 1.0 px vertical phase offset occurs during the arc, but collision outcome and settled state match. Do not patch values from this torn sample."
+  },
+  "verdict": "CLIENT_OUTCOME_PARITY_CONFIRMED_FOR_CAPTURED_ATTEMPT"
+}

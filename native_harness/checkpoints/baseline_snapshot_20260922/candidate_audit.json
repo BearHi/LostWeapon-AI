@@ -1,0 +1,22 @@
+{
+  "3": {
+    "groups": 500,
+    "mean_utility": 0.8507928873561481,
+    "random_mean_utility": 0.3507962435975372,
+    "selected_reset_rate": 0.036,
+    "random_reset_rate": 0.033857142857142856,
+    "oracle_mean_utility": 1.2637369996758634,
+    "risk_weight": 3,
+    "evidence": "fixed_recorded_native_candidate_comparison"
+  },
+  "6": {
+    "groups": 500,
+    "mean_utility": 0.8560436662620411,
+    "random_mean_utility": 0.3507962435975372,
+    "selected_reset_rate": 0.034,
+    "random_reset_rate": 0.033857142857142856,
+    "oracle_mean_utility": 1.2637369996758634,
+    "risk_weight": 6,
+    "evidence": "fixed_recorded_native_candidate_comparison"
+  }
+}

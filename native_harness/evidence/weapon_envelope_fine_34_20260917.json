@@ -1,0 +1,735 @@
+{
+  "scope": "original x86 dual-view; geometric starting distance, not universal weapon reach",
+  "preflight_damage": {
+    "0": 0.0,
+    "1": 0.0
+  },
+  "rows": [
+    {
+      "weapon": 3,
+      "start_dx": 68,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 8,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 17,
+          "attacker_frame": 0,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 17,
+          "attacker_frame": 1,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 17,
+          "attacker_frame": 1,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 17,
+          "attacker_frame": 2,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 17,
+          "attacker_frame": 2,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 17,
+          "attacker_frame": 3,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 17,
+          "attacker_frame": 3,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 17,
+          "attacker_frame": 4,
+          "attacker_weapon": 3,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 3,
+      "start_dx": 72,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 17,
+          "attacker_frame": 0,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 17,
+          "attacker_frame": 1,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 17,
+          "attacker_frame": 1,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 17,
+          "attacker_frame": 2,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 17,
+          "attacker_frame": 2,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 17,
+          "attacker_frame": 3,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 17,
+          "attacker_frame": 3,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 17,
+          "attacker_frame": 4,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 17,
+          "attacker_frame": 4,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 17,
+          "attacker_frame": 5,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 17,
+          "attacker_frame": 5,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 17,
+          "attacker_frame": 6,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 17,
+          "attacker_frame": 6,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 17,
+          "attacker_frame": 7,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 17,
+          "attacker_frame": 7,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 17,
+          "attacker_frame": 8,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 17,
+          "attacker_frame": 8,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 17,
+          "attacker_frame": 9,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 19,
+          "attacker_state": 17,
+          "attacker_frame": 9,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 20,
+          "attacker_state": 17,
+          "attacker_frame": 10,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 21,
+          "attacker_state": 17,
+          "attacker_frame": 10,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 22,
+          "attacker_state": 17,
+          "attacker_frame": 11,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 23,
+          "attacker_state": 17,
+          "attacker_frame": 11,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 24,
+          "attacker_state": 17,
+          "attacker_frame": 12,
+          "attacker_weapon": 3,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        }
+      ]
+    },
+    {
+      "weapon": 3,
+      "start_dx": 76,
+      "control_hp": 100.0,
+      "attack_hp": 100.0,
+      "attack_first_loss_tick": null,
+      "clean_hit": false,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 17,
+          "attacker_frame": 0,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 17,
+          "attacker_frame": 1,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 17,
+          "attacker_frame": 1,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 17,
+          "attacker_frame": 2,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 17,
+          "attacker_frame": 2,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 17,
+          "attacker_frame": 3,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 7,
+          "attacker_state": 17,
+          "attacker_frame": 3,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 8,
+          "attacker_state": 17,
+          "attacker_frame": 4,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 9,
+          "attacker_state": 17,
+          "attacker_frame": 4,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 10,
+          "attacker_state": 17,
+          "attacker_frame": 5,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 11,
+          "attacker_state": 17,
+          "attacker_frame": 5,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 12,
+          "attacker_state": 17,
+          "attacker_frame": 6,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 13,
+          "attacker_state": 17,
+          "attacker_frame": 6,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 14,
+          "attacker_state": 17,
+          "attacker_frame": 7,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 15,
+          "attacker_state": 17,
+          "attacker_frame": 7,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 16,
+          "attacker_state": 17,
+          "attacker_frame": 8,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 17,
+          "attacker_state": 17,
+          "attacker_frame": 8,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 18,
+          "attacker_state": 17,
+          "attacker_frame": 9,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 19,
+          "attacker_state": 17,
+          "attacker_frame": 9,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 20,
+          "attacker_state": 17,
+          "attacker_frame": 10,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 21,
+          "attacker_state": 17,
+          "attacker_frame": 10,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 22,
+          "attacker_state": 17,
+          "attacker_frame": 11,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 23,
+          "attacker_state": 17,
+          "attacker_frame": 11,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 24,
+          "attacker_state": 17,
+          "attacker_frame": 12,
+          "attacker_weapon": 3,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 68,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 6,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 18,
+          "attacker_frame": 0,
+          "attacker_weapon": 4,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 18,
+          "attacker_frame": 1,
+          "attacker_weapon": 4,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 18,
+          "attacker_frame": 1,
+          "attacker_weapon": 4,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 18,
+          "attacker_frame": 2,
+          "attacker_weapon": 4,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 18,
+          "attacker_frame": 2,
+          "attacker_weapon": 4,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 18,
+          "attacker_frame": 3,
+          "attacker_weapon": 4,
+          "attacker_x": 706.0,
+          "target_x": 774.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 72,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 6,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 18,
+          "attacker_frame": 0,
+          "attacker_weapon": 4,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 18,
+          "attacker_frame": 1,
+          "attacker_weapon": 4,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 18,
+          "attacker_frame": 1,
+          "attacker_weapon": 4,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 18,
+          "attacker_frame": 2,
+          "attacker_weapon": 4,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 18,
+          "attacker_frame": 2,
+          "attacker_weapon": 4,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 18,
+          "attacker_frame": 3,
+          "attacker_weapon": 4,
+          "attacker_x": 704.0,
+          "target_x": 776.0,
+          "target_hp": 93.0
+        }
+      ]
+    },
+    {
+      "weapon": 4,
+      "start_dx": 76,
+      "control_hp": 100.0,
+      "attack_hp": 93.0,
+      "attack_first_loss_tick": 6,
+      "clean_hit": true,
+      "attack_trace": [
+        {
+          "tick": 1,
+          "attacker_state": 18,
+          "attacker_frame": 0,
+          "attacker_weapon": 4,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 2,
+          "attacker_state": 18,
+          "attacker_frame": 1,
+          "attacker_weapon": 4,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 3,
+          "attacker_state": 18,
+          "attacker_frame": 1,
+          "attacker_weapon": 4,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 4,
+          "attacker_state": 18,
+          "attacker_frame": 2,
+          "attacker_weapon": 4,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 5,
+          "attacker_state": 18,
+          "attacker_frame": 2,
+          "attacker_weapon": 4,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 100.0
+        },
+        {
+          "tick": 6,
+          "attacker_state": 18,
+          "attacker_frame": 3,
+          "attacker_weapon": 4,
+          "attacker_x": 702.0,
+          "target_x": 778.0,
+          "target_hp": 93.0
+        }
+      ]
+    }
+  ]
+}

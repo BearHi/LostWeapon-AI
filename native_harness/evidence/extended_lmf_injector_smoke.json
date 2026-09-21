@@ -1,0 +1,137 @@
+{
+  "scope": "cross-capture object-template offline smoke; no normal-Client parity claim",
+  "maps": {
+    "훈7.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈7.LMF",
+        "size": [
+          26,
+          22
+        ],
+        "records": 61,
+        "spawn": [
+          2,
+          17
+        ]
+      },
+      "start": {
+        "x": 80.0,
+        "y": 576.0,
+        "motion58": -120.0,
+        "38": 7,
+        "3c": 1,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 80.0,
+        "y": 458.4,
+        "motion58": 720.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "reset_exact": true,
+      "replay_exact": true
+    },
+    "훈7.5.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈7.5.LMF",
+        "size": [
+          26,
+          22
+        ],
+        "records": 62,
+        "spawn": [
+          2,
+          17
+        ]
+      },
+      "start": {
+        "x": 80.0,
+        "y": 576.0,
+        "motion58": -120.0,
+        "38": 7,
+        "3c": 1,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 80.0,
+        "y": 458.4,
+        "motion58": 720.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "reset_exact": true,
+      "replay_exact": true
+    },
+    "훈19.LMF": {
+      "load": {
+        "path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈19.LMF",
+        "size": [
+          25,
+          19
+        ],
+        "records": 68,
+        "spawn": [
+          13,
+          10
+        ]
+      },
+      "start": {
+        "x": 432.0,
+        "y": 352.0,
+        "motion58": -120.0,
+        "38": 7,
+        "3c": 1,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "end": {
+        "x": 384.0,
+        "y": 374.0,
+        "motion58": -440.0,
+        "38": 9,
+        "3c": 2,
+        "68": 0,
+        "74": 2,
+        "b0": 1,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0
+      },
+      "reset_exact": true,
+      "replay_exact": true
+    }
+  }
+}

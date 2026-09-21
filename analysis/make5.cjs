@@ -1,0 +1,1 @@
+const fs=require('fs');const d=fs.readFileSync('용암5_화산동굴.LMF');let blocks=[];for(let o=32;o<d.length;o+=8)blocks.push({id:d.readUInt32LE(o),x:d.readInt16LE(o+4),y:d.readInt16LE(o+6)});let counts={};for(const b of blocks)counts[b.id]=(counts[b.id]||0)+1;fs.writeFileSync('analysis/maps.json',JSON.stringify([{name:'용암5',blocks,counts}]));

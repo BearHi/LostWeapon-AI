@@ -1,0 +1,359 @@
+{
+  "scope": "read-only live Client map identification by runtime object records",
+  "pid": 25080,
+  "client_state": {
+    "image_base": "0xde0000",
+    "roster": 3,
+    "room": 1,
+    "slot": 0,
+    "map_size": [
+      25,
+      19
+    ],
+    "player_header": [
+      10,
+      60,
+      56,
+      0
+    ],
+    "pos": [
+      432.0,
+      416.0
+    ],
+    "motion58": -760.0,
+    "hp": 100.0,
+    "state": {
+      "0x38": 7,
+      "0x3c": 5,
+      "0x68": 0,
+      "0x74": -1,
+      "0xb0": 0,
+      "0xc0": 0,
+      "0xc4": 0,
+      "0xd0": 1,
+      "0xdc": 0
+    },
+    "grid": "0x1689e980"
+  },
+  "runtime_object_count": 68,
+  "runtime_tile_ids": [
+    7,
+    37,
+    49,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    140
+  ],
+  "exact_matches": [
+    "훈19.LMF"
+  ],
+  "candidates": [
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈19.LMF",
+      "name": "훈19.LMF",
+      "size": [
+        25,
+        19
+      ],
+      "records": 68,
+      "common_runtime_records": 68,
+      "missing_records": 0,
+      "extra_records": 0,
+      "exact_runtime_records": true
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈18.LMF",
+      "name": "훈18.LMF",
+      "size": [
+        25,
+        19
+      ],
+      "records": 62,
+      "common_runtime_records": 38,
+      "missing_records": 24,
+      "extra_records": 30,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈15.LMF",
+      "name": "훈15.LMF",
+      "size": [
+        34,
+        20
+      ],
+      "records": 117,
+      "common_runtime_records": 9,
+      "missing_records": 108,
+      "extra_records": 59,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈12.LMF",
+      "name": "훈12.LMF",
+      "size": [
+        26,
+        22
+      ],
+      "records": 267,
+      "common_runtime_records": 5,
+      "missing_records": 262,
+      "extra_records": 63,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈14.LMF",
+      "name": "훈14.LMF",
+      "size": [
+        34,
+        20
+      ],
+      "records": 108,
+      "common_runtime_records": 3,
+      "missing_records": 105,
+      "extra_records": 65,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈7.5.LMF",
+      "name": "훈7.5.LMF",
+      "size": [
+        26,
+        22
+      ],
+      "records": 62,
+      "common_runtime_records": 2,
+      "missing_records": 60,
+      "extra_records": 66,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈7.LMF",
+      "name": "훈7.LMF",
+      "size": [
+        26,
+        22
+      ],
+      "records": 61,
+      "common_runtime_records": 2,
+      "missing_records": 59,
+      "extra_records": 66,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈1.LMF",
+      "name": "훈1.LMF",
+      "size": [
+        30,
+        18
+      ],
+      "records": 58,
+      "common_runtime_records": 0,
+      "missing_records": 58,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈10.LMF",
+      "name": "훈10.LMF",
+      "size": [
+        30,
+        22
+      ],
+      "records": 49,
+      "common_runtime_records": 0,
+      "missing_records": 49,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈11.LMF",
+      "name": "훈11.LMF",
+      "size": [
+        26,
+        20
+      ],
+      "records": 87,
+      "common_runtime_records": 0,
+      "missing_records": 87,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈13.LMF",
+      "name": "훈13.LMF",
+      "size": [
+        24,
+        24
+      ],
+      "records": 83,
+      "common_runtime_records": 0,
+      "missing_records": 83,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈16.LMF",
+      "name": "훈16.LMF",
+      "size": [
+        22,
+        22
+      ],
+      "records": 34,
+      "common_runtime_records": 0,
+      "missing_records": 34,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈17.LMF",
+      "name": "훈17.LMF",
+      "size": [
+        22,
+        22
+      ],
+      "records": 33,
+      "common_runtime_records": 0,
+      "missing_records": 33,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈2.LMF",
+      "name": "훈2.LMF",
+      "size": [
+        30,
+        18
+      ],
+      "records": 55,
+      "common_runtime_records": 0,
+      "missing_records": 55,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈20.LMF",
+      "name": "훈20.LMF",
+      "size": [
+        20,
+        18
+      ],
+      "records": 32,
+      "common_runtime_records": 0,
+      "missing_records": 32,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈3.LMF",
+      "name": "훈3.LMF",
+      "size": [
+        32,
+        20
+      ],
+      "records": 62,
+      "common_runtime_records": 0,
+      "missing_records": 62,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈4.LMF",
+      "name": "훈4.LMF",
+      "size": [
+        30,
+        18
+      ],
+      "records": 55,
+      "common_runtime_records": 0,
+      "missing_records": 55,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈5.LMF",
+      "name": "훈5.LMF",
+      "size": [
+        40,
+        23
+      ],
+      "records": 54,
+      "common_runtime_records": 0,
+      "missing_records": 54,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈6.5.LMF",
+      "name": "훈6.5.LMF",
+      "size": [
+        24,
+        18
+      ],
+      "records": 39,
+      "common_runtime_records": 0,
+      "missing_records": 39,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈6.LMF",
+      "name": "훈6.LMF",
+      "size": [
+        24,
+        18
+      ],
+      "records": 44,
+      "common_runtime_records": 0,
+      "missing_records": 44,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈8.5.LMF",
+      "name": "훈8.5.LMF",
+      "size": [
+        24,
+        22
+      ],
+      "records": 56,
+      "common_runtime_records": 0,
+      "missing_records": 56,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈8.LMF",
+      "name": "훈8.LMF",
+      "size": [
+        24,
+        22
+      ],
+      "records": 57,
+      "common_runtime_records": 0,
+      "missing_records": 57,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    },
+    {
+      "lmf": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈9.LMF",
+      "name": "훈9.LMF",
+      "size": [
+        30,
+        22
+      ],
+      "records": 48,
+      "common_runtime_records": 0,
+      "missing_records": 48,
+      "extra_records": 68,
+      "exact_runtime_records": false
+    }
+  ]
+}

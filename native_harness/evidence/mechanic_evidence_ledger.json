@@ -1,0 +1,244 @@
+{
+  "scope": "LostWeapon native-oracle evidence ledger; claims are scoped and do not replace normal Client traces",
+  "authoritative_client_sha256": "051119bcbd521ce18d1e8636e749dc05eee1958b4cf50d2c13a816ba5898df15",
+  "evidence_tags": [
+    "NATIVE_PARITY_CONFIRMED",
+    "CLIENT_LOG_CONFIRMED",
+    "STATIC_CONFIRMED",
+    "USER_CONFIRMED",
+    "SIM_ONLY",
+    "PARTIAL",
+    "HYPOTHESIS",
+    "DEPRECATED"
+  ],
+  "mechanics": {
+    "basic_movement": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈1/훈2/훈6/훈7 tested closures; selected fields and tick windows",
+      "evidence": [
+        "hun2_normal_oracle_right_parity.json",
+        "hun6_normal_oracle_right_up_parity.json"
+      ]
+    },
+    "gap_jump": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈2 right-up and return/landing fixtures",
+      "evidence": [
+        "hun2_normal_oracle_gap_jump_full_parity.json",
+        "hun2_normal_oracle_gap_jump_landing_parity.json"
+      ]
+    },
+    "parachute": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈5 tested falling/input boundary; coherent mismatch 0",
+      "evidence": [
+        "hun5_normal_oracle_parachute_parity.json"
+      ]
+    },
+    "ladder": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈7 normal Client UP path and native 4px/tick path; sampled movement-path parity",
+      "evidence": [
+        "normal_hun7_ladder_up_trace.json",
+        "hun7_ladder_oracle_parity.json"
+      ]
+    },
+    "water_stable_post_entry": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈12 observed stable water core in normal Client and 30-tick native deterministic replay; animation frame is intentionally excluded",
+      "evidence": [
+        "hun12_stable_water_probe.json",
+        "normal_hun12_stable_water_trace.json"
+      ]
+    },
+    "water_spawn_fall_boundary": {
+      "status": "HYPOTHESIS",
+      "scope": "actual normal Client fall is user-confirmed; native y=192 controlled run reaches the observed y=304 stable state, but the exact normal spawn boundary and initialization order are not captured",
+      "evidence": [
+        "hun12_spawn_y_sweep.json",
+        "hun12_spawn_y192_long.json",
+        "hun12_water_transition_write_trace.json"
+      ],
+      "next": "capture fresh spawn-to-water trace"
+    },
+    "vertical_spring": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈8.5 grounded x=144 boundary; RIGHT+UP jump edge then RIGHT. 55/58 unique normal samples matched original-x86 native replay on selected gameplay fields, including the post-trigger state at native tick 59 (x380,y527,motion58=1960); normal sampling skipped the immediate tick-58 +2000 state and the released final state is outside this fixture",
+      "evidence": [
+        "hun85_vertical_spring_contact_sweep.json",
+        "spring_transition_write_trace.json",
+        "hun85_live_native_builder_object_parity.json",
+        "hun85_user_microtest_normal.json",
+        "hun85_spring_normal_native_parity.json"
+      ]
+    },
+    "diagonal_spring_right": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈9 live normal Client: position to x176, face RIGHT, then RIGHT+DOWN. Pre-contact states and launch state matched native replay, including x414,y549,motion58=1200,state38=2,C0=4",
+      "evidence": [
+        "diagonal_spring_contact_sweep.json",
+        "spring_transition_write_trace.json",
+        "hun9_diagonal_spring_normal_microtest.json",
+        "hun9_diagonal_spring_normal_native_parity.json"
+      ]
+    },
+    "diagonal_spring_left": {
+      "status": "CLIENT_LOG_CONFIRMED",
+      "scope": "훈10 live normal Client triggered the left spring at x558,y540 with motion58=1200,state38=2,C0=4 and continued left. Captured original-x86 oracle independently produces the same launch tuple/direction; exact same-boundary tick alignment remains pending",
+      "evidence": [
+        "diagonal_spring_contact_sweep.json",
+        "spring_transition_write_trace.json",
+        "hun10_diagonal_spring_route_candidate.json",
+        "hun10_diagonal_spring_normal_microtest.json"
+      ]
+    },
+    "fan": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈13 RIGHT+UP then RIGHT+C fixture: 84/95 unique normal samples matched captured original-x86 replay; fan entry changed DC to 2 and lift converged to motion58=395, including an exact matched lift state at x420,y521.1",
+      "evidence": [
+        "hun13_fan_exploratory_probe.json",
+        "hun13_captured_route_probe.json",
+        "hun13_fan_parachute_normal_microtest.json",
+        "hun13_fan_parachute_normal_native_parity.json"
+      ]
+    },
+    "magnet": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈14~17 tested fixtures cover raw54/raw55 horizontal force accumulation and raw53/raw52 vertical fields. All four normal Client traces matched captured/original-built x86 behavior with coherent mismatch 0. Scope is these fixture paths, not every multi-object interaction.",
+      "evidence": [
+        "hun14_magnet_normal_native_parity.json",
+        "hun14_native_builder_magnet_parity.json",
+        "hun15_magnet_normal_native_parity.json",
+        "hun16_vertical_magnet_normal_native_parity.json",
+        "hun16_native_builder_vertical_magnet_parity.json",
+        "hun17_vertical_magnet_normal_native_parity.json",
+        "hun17_native_builder_vertical_magnet_parity.json"
+      ]
+    },
+    "ice": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈18 raw27 and 훈19 raw37 cover both triangular ice orientations. Both normal Client routes match captured original-x86 replay with coherent mismatch 0; original-built worlds match route state, runtime objects, and all four collision grids.",
+      "evidence": [
+        "hun18_ice_normal_microtest.json",
+        "hun18_ice_normal_native_parity.json",
+        "hun18_native_builder_ice_parity.json",
+        "hun19_ice_normal_microtest.json",
+        "hun19_ice_normal_native_parity.json",
+        "hun19_native_builder_ice_parity.json"
+      ]
+    },
+    "bomb": {
+      "status": "HYPOTHESIS",
+      "scope": "The supplied handoff identifies bomb families as raw87/raw88 and raw95/raw96. Those IDs are absent from 훈20, so 훈20 raw124 evidence is not bomb evidence.",
+      "evidence": []
+    },
+    "horizontal_magnet_raw54": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈14: RIGHT 20 ticks then release. Original handler adds +40/tick capped at 3000 to per-player accumulator and sets direction 5; held direction keeps accumulator at 40, release produces growing rightward displacement. 79/106 samples were exact full-core boundaries, 20 were adjacent torn reads, and 7 were identified intra-tick accumulator/direction write windows; coherent mismatch 0. Original 0x41e510-built LMF matched the captured world for all 121 tested boundaries and all 108 initial object records byte-for-byte.",
+      "evidence": [
+        "hun14_raw54_read_trace.json",
+        "hun14_native_magnet_accumulator.json",
+        "hun14_magnet_normal_microtest.json",
+        "hun14_magnet_normal_native_parity.json",
+        "hun14_native_builder_magnet_parity.json"
+      ]
+    },
+    "horizontal_magnet_raw55": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈15 mirrored fixture: LEFT 20 ticks then release. Normal Client and original-x86-built world agree on direction 2, +40 contact accumulation, and leftward release; 78/113 exact boundaries, 31 adjacent torn reads, 4 intra-tick write windows, coherent mismatch 0.",
+      "evidence": [
+        "hun15_native_magnet_route_candidate.json",
+        "hun15_magnet_normal_microtest.json",
+        "hun15_magnet_normal_native_parity.json"
+      ]
+    },
+    "vertical_magnet_raw53": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈16: align at x336 and jump. Field sets player +0xD8=2 and changes vertical acceleration from -40 to -20 per tick while in range. 132/143 live samples were exact selected-field boundaries; remaining samples were torn or known D8/jump/input-edge write windows; coherent mismatch 0. Original 0x41e510-built world matched captured world for 199 boundaries and 34/34 initial object records byte-for-byte.",
+      "evidence": [
+        "hun16_native_vertical_magnet_jump_candidate.json",
+        "hun16_vertical_magnet_normal_microtest.json",
+        "hun16_vertical_magnet_normal_native_parity.json",
+        "hun16_native_builder_vertical_magnet_parity.json"
+      ]
+    },
+    "vertical_magnet_raw52": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈17 RIGHT+UP then RIGHT crossing: field sets player +0xD8=1 and changes vertical acceleration to -100 per tick, leading to the same fall/reset path. 88/97 in-fixture live samples were exact selected-field boundaries; remaining samples were torn or known D8/jump write windows; coherent mismatch 0. Original 0x41e510-built world matched captured world for 154 boundaries and 33/33 initial object records byte-for-byte.",
+      "evidence": [
+        "hun17_native_vertical_magnet_jump_candidate.json",
+        "hun17_vertical_magnet_normal_microtest.json",
+        "hun17_vertical_magnet_normal_native_parity.json",
+        "hun17_native_builder_vertical_magnet_parity.json"
+      ]
+    },
+    "triangular_ice_raw27": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈18 LEFT+DOWN 21 ticks then release: slope contact stores +40/tick in per-player 0x25CA528, direction 2 in 0x25CA078, reaches 400, continues left without input, decays by 10/tick after leaving the slope, and clears on exhaustion/locomotion boundary. 94/113 normal samples were exact selected-field boundaries and 19 adjacent torn reads; coherent mismatch 0. Original-built map after 21 spawn-settle ticks matched 142 route boundaries, 62/62 initial objects, and all four collision grids byte-for-byte.",
+      "evidence": [
+        "hun18_native_roll_release_candidate.json",
+        "hun18_ice_normal_microtest.json",
+        "hun18_ice_normal_native_parity.json",
+        "hun18_native_builder_ice_parity.json"
+      ]
+    },
+    "triangular_ice_raw37": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈19 RIGHT+DOWN 21 ticks then release: mirrored slope contact stores +40/tick in 0x25CA528, direction 5 in 0x25CA078, reaches 400, continues right after release, and decays by 10/tick. 82/109 normal samples were exact selected-field boundaries, 26 were adjacent torn reads, and 1 was the identified input-update window; coherent mismatch 0. The original-built map plus the measured loader collision-mask pass, after 35 spawn-settle ticks, matched 142 route boundaries, 68/68 initial objects, and all four grids byte-for-byte.",
+      "evidence": [
+        "hun19_native_roll_release_candidate.json",
+        "hun19_ice_normal_microtest.json",
+        "hun19_ice_normal_native_parity.json",
+        "hun19_native_builder_ice_parity.json",
+        "hun19_settle_state_probe.json"
+      ]
+    },
+    "disappearing_block_raw124": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "훈20 raw124 proximity disappearing block. When the player is within the original handler's contact window, object +0xC8 rises by 20/tick to 255 and collision grid code 1 clears; away from it, +0xC8 falls by 2/tick to 0 and the block becomes solid again. The full player/block cycle is 143 ticks in this fixture. Normal Client sampling observed all 143 cycle boundaries: 248/346 samples were exact, 97 adjacent torn reads, 1 identified respawn write window, coherent mismatch 0. After phase alignment, the original-built LMF matched all 143 boundaries, all 32 object records, and all four grids byte-for-byte.",
+      "evidence": [
+        "hun20_disappearing_block_normal_trace.json",
+        "hun20_native_disappearing_block_cycle.json",
+        "hun20_disappearing_block_normal_native_parity.json",
+        "hun20_disappearing_block_write_trace.json",
+        "hun20_native_builder_disappearing_block_parity.json",
+        "hun20_training_api_cycle.json"
+      ]
+    },
+    "client_tick_clock": {
+      "status": "NATIVE_PARITY_CONFIRMED",
+      "scope": "Current 훈1 read-only Client trace: 240px held-RIGHT movement covered 59 tick intervals in 944.825ms (62.445Hz). Oracle wall pacing is 62.5Hz and emulated timeGetTime advances 16ms/tick. Existing paired 훈2 RIGHT fixture remains 13/13 exact boundaries.",
+      "evidence": [
+        "hun1_normal_right_long_current.json",
+        "hun2_normal_oracle_right_parity_16ms.json"
+      ]
+    },
+    "fire_then_spike_protection": {
+      "status": "USER_CONFIRMED",
+      "scope": "User says a fire-hit/knocked-down player touching spikes must not be hit again until recovery. Synthetic original-x86 raw48 -> raw86 regression enters state38=5,+0x7c=12 and preserves that code for all 16 spike-contact ticks. Normal Client same-boundary trace remains optional follow-up.",
+      "evidence": [
+        "hazard_chain_regression.json"
+      ]
+    },
+    "raw51_identity": {
+      "status": "STATIC_CONFIRMED",
+      "scope": "The grey floor device in 낙라 is raw51/runtime type 0x10e. Original handler checks parachute +0xdc==1, overlap, then writes +0xdc=2; it has no damage call. Damage bomb raw87/raw88 is a separate family.",
+      "evidence": [
+        "raw51_runtime_identity.json"
+      ]
+    }
+  },
+  "pass_definitions": {
+    "BUILD_PASS": "LMF records accepted and native 0x41e510 materialization completed",
+    "ONE_TICK_EXECUTION_PASS": "candidate world chain completed one tick",
+    "DETERMINISTIC_REPLAY_PASS": "same snapshot/input replay returned identical observed fields",
+    "NORMAL_CLIENT_PARITY_PASS": "same normal-Client boundary/input/tick window matched selected fields"
+  },
+  "deprecated_claims": [
+    "raw82 is the authoritative water trigger",
+    "roll ends immediately at ground contact",
+    "all roll inputs are ignored",
+    "map load always faces right",
+    "canonicalize y to a visually convenient tile value"
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "acceleration_learned_from_M3_only": 46.123876123875725,
+  "source_frames": [
+    822,
+    825,
+    828,
+    831,
+    834,
+    837,
+    840,
+    843,
+    846,
+    849,
+    852,
+    855
+  ],
+  "trials": {
+    "I1": {
+      "reference_time_s": 32.05,
+      "velocity_at_reference": -29.234262612387223,
+      "position_at_reference": 45.35437219030969,
+      "train_frames": [
+        1923,
+        1926,
+        1929,
+        1932,
+        1935
+      ],
+      "test": [
+        {
+          "frame": 1938,
+          "observed_y": 39.28125,
+          "predicted_y": 39.487177666084
+        },
+        {
+          "frame": 1941,
+          "observed_y": 38.1375,
+          "predicted_y": 38.65966783216786
+        },
+        {
+          "frame": 1944,
+          "observed_y": 37.19375,
+          "predicted_y": 37.94746768856153
+        },
+        {
+          "frame": 1947,
+          "observed_y": 36.796875,
+          "predicted_y": 37.3505772352648
+        },
+        {
+          "frame": 1950,
+          "observed_y": 36.2953125,
+          "predicted_y": 36.868996472277836
+        },
+        {
+          "frame": 1953,
+          "observed_y": 35.90625,
+          "predicted_y": 36.50272539960054
+        }
+      ],
+      "rmse_cells": 0.5589630533965788,
+      "max_error_cells": 0.7537176885615295
+    },
+    "I2": {
+      "reference_time_s": 41.2,
+      "velocity_at_reference": -28.037452131202063,
+      "position_at_reference": 41.47337558275053,
+      "train_frames": [
+        2472,
+        2475,
+        2478,
+        2481,
+        2484,
+        2487,
+        2490,
+        2493
+      ],
+      "test": [
+        {
+          "frame": 2496,
+          "observed_y": 34.19375,
+          "predicted_y": 33.94830482017977
+        },
+        {
+          "frame": 2499,
+          "observed_y": 33.79375,
+          "predicted_y": 33.526564581252046
+        },
+        {
+          "frame": 2502,
+          "observed_y": 33.66875,
+          "predicted_y": 33.220134032633965
+        },
+        {
+          "frame": 2505,
+          "observed_y": 33.59375,
+          "predicted_y": 33.029013174325605
+        },
+        {
+          "frame": 2508,
+          "observed_y": 33.625,
+          "predicted_y": 32.95320200632692
+        },
+        {
+          "frame": 2511,
+          "observed_y": 33.79375,
+          "predicted_y": 32.99270052863793
+        },
+        {
+          "frame": 2514,
+          "observed_y": 34.075,
+          "predicted_y": 33.14750874125862
+        },
+        {
+          "frame": 2517,
+          "observed_y": 34.325,
+          "predicted_y": 33.41762664418903
+        }
+      ],
+      "rmse_cells": 0.6546348786238632,
+      "max_error_cells": 0.9274912587413837
+    },
+    "I3": {
+      "reference_time_s": 48.0,
+      "velocity_at_reference": -33.90072427572426,
+      "position_at_reference": 44.7427385114885,
+      "train_frames": [
+        2880,
+        2883,
+        2886,
+        2889,
+        2892,
+        2895,
+        2898
+      ],
+      "test": [
+        {
+          "frame": 2901,
+          "observed_y": 36.1875,
+          "predicted_y": 35.70257242757236
+        },
+        {
+          "frame": 2904,
+          "observed_y": 35.2125,
+          "predicted_y": 34.872358891108874
+        },
+        {
+          "frame": 2907,
+          "observed_y": 34.8,
+          "predicted_y": 34.157455044954965
+        },
+        {
+          "frame": 2910,
+          "observed_y": 34.125,
+          "predicted_y": 33.557860889110835
+        },
+        {
+          "frame": 2913,
+          "observed_y": 33.8625,
+          "predicted_y": 33.073576423576384
+        },
+        {
+          "frame": 2916,
+          "observed_y": 33.4875,
+          "predicted_y": 32.70460164835156
+        },
+        {
+          "frame": 2919,
+          "observed_y": 33.3125,
+          "predicted_y": 32.450936563436485
+        },
+        {
+          "frame": 2922,
+          "observed_y": 33.3375,
+          "predicted_y": 32.312581168831066
+        }
+      ],
+      "rmse_cells": 0.7170636233078367,
+      "max_error_cells": 1.0249188311689323
+    },
+    "I4": {
+      "reference_time_s": 50.95,
+      "velocity_at_reference": -24.91238761238767,
+      "position_at_reference": 46.27780969030963,
+      "train_frames": [
+        3057,
+        3060,
+        3063,
+        3066,
+        3069
+      ],
+      "test": [
+        {
+          "frame": 3072,
+          "observed_y": 41.825,
+          "predicted_y": 41.49108391608383
+        },
+        {
+          "frame": 3075,
+          "observed_y": 41.1,
+          "predicted_y": 40.87966783216777
+        },
+        {
+          "frame": 3078,
+          "observed_y": 40.8125,
+          "predicted_y": 40.38356143856139
+        },
+        {
+          "frame": 3081,
+          "observed_y": 40.3875,
+          "predicted_y": 40.00276473526463
+        },
+        {
+          "frame": 3084,
+          "observed_y": 40.1625,
+          "predicted_y": 39.73727772227762
+        }
+      ],
+      "rmse_cells": 0.36684321287738225,
+      "max_error_cells": 0.4289385614386134
+    }
+  }
+}

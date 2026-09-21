@@ -1,0 +1,27 @@
+{
+  "scope": "offline original x86 world-chain benchmark; initialization excluded",
+  "n_ticks_per_trial": 12,
+  "call_limit": 10000000,
+  "full": {
+    "trials_seconds": [
+      1.749324099975638,
+      1.4816468000062741,
+      1.706282099999953
+    ],
+    "median_ticks_per_second": 7.0328347229337576,
+    "nominal_60Hz_multiplier": 0.11721391204889596
+  },
+  "sparse_world": {
+    "trials_seconds": [
+      1.442682299995795,
+      1.366434199968353,
+      1.4546201000339352
+    ],
+    "median_ticks_per_second": 8.317839624174344,
+    "nominal_60Hz_multiplier": 0.13863066040290573,
+    "selected_pages": 726,
+    "selected_bytes": 2973696,
+    "original_regions": 1822,
+    "original_bytes": 548798464
+  }
+}

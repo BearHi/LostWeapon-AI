@@ -1,0 +1,47 @@
+{
+  "scope": "maptest2 simultaneous-keyboard run, shared perf-counter timestamp alignment",
+  "computer_performance_issue": false,
+  "oracle_tick_rate_before_pause": 62.5,
+  "last_common_boundary": {
+    "oracle_tick": 150,
+    "input": [
+      "LEFT",
+      "RIGHT"
+    ],
+    "x": 204.0,
+    "y": 12554.4,
+    "state38": 9
+  },
+  "first_persistent_divergence": {
+    "oracle_tick": 151,
+    "oracle": {
+      "observed_keys": [
+        "RIGHT"
+      ],
+      "x": 208.0,
+      "y": 12548.8,
+      "state38": 9
+    },
+    "normal_client_nearest_wall_time": {
+      "observed_keys": [
+        "RIGHT"
+      ],
+      "x": 200.0,
+      "y": 12549.2,
+      "state38": 9
+    },
+    "explanation": "global keyboard state changed after the normal Client physics sample but before the passive read, while the independently phased oracle applied it to its next tick"
+  },
+  "later_amplification": "8 px horizontal phase difference changed later roll/collision/vertical-magnet entry boundaries",
+  "raw53_object_bytes_equal": true,
+  "raw53_position": [
+    720.0,
+    11472.0
+  ],
+  "oracle_raw53_field_activation_verified": true,
+  "training_impact": "none for tick-addressed offline actions; human simultaneous keyboard is not an exact parity fixture",
+  "source_files": [
+    "playground_recent_trace.jsonl",
+    "maptest2_live_passive_trace.jsonl"
+  ]
+}

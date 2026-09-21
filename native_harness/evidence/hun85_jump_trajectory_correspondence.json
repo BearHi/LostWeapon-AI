@@ -1,0 +1,307 @@
+{
+  "scope": "normal Client 훈8.5 jump trajectory correspondence to captured original-x86 world-chain replay; asynchronous normal sampling, no spring parity claim",
+  "normal_trace": "evidence/hun85_retry_normal_leftup_trace.json",
+  "capture": "private_snapshots/hun85_leftup_live.zip",
+  "input": "LEFT+UP held",
+  "compared_fields": [
+    "x",
+    "y",
+    "motion58",
+    "38",
+    "68",
+    "74",
+    "b0",
+    "c0",
+    "c4",
+    "d0",
+    "dc"
+  ],
+  "normal_samples": 23,
+  "matched_samples": 4,
+  "rows": [
+    {
+      "normal_sample": 0,
+      "normal_pos": [
+        456.0,
+        576.0
+      ],
+      "normal_motion58": -120.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [
+        0
+      ],
+      "exact_core_match": true
+    },
+    {
+      "normal_sample": 1,
+      "normal_pos": [
+        456.0,
+        576.0
+      ],
+      "normal_motion58": 1200.0,
+      "normal_state38": 9,
+      "normal_state74": 2,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 2,
+      "normal_pos": [
+        380.0,
+        416.4
+      ],
+      "normal_motion58": 400.0,
+      "normal_state38": 9,
+      "normal_state74": 2,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 3,
+      "normal_pos": [
+        316.0,
+        394.0
+      ],
+      "normal_motion58": -200.0,
+      "normal_state38": 9,
+      "normal_state74": 2,
+      "matching_native_ticks": [
+        35
+      ],
+      "exact_core_match": true
+    },
+    {
+      "normal_sample": 4,
+      "normal_pos": [
+        280.0,
+        426.4
+      ],
+      "normal_motion58": -560.0,
+      "normal_state38": 9,
+      "normal_state74": 2,
+      "matching_native_ticks": [
+        44
+      ],
+      "exact_core_match": true
+    },
+    {
+      "normal_sample": 5,
+      "normal_pos": [
+        248.0,
+        482.4
+      ],
+      "normal_motion58": -880.0,
+      "normal_state38": 9,
+      "normal_state74": 2,
+      "matching_native_ticks": [
+        52
+      ],
+      "exact_core_match": true
+    },
+    {
+      "normal_sample": 6,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 7,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 8,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 9,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 10,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 11,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 12,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 13,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 14,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 15,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 16,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 17,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 18,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 19,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 20,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 21,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    },
+    {
+      "normal_sample": 22,
+      "normal_pos": [
+        248.0,
+        576.0
+      ],
+      "normal_motion58": -1280.0,
+      "normal_state38": 7,
+      "normal_state74": -1,
+      "matching_native_ticks": [],
+      "exact_core_match": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "jump_81_tick_branch_replay_exact": true,
+  "left_idle_body_facing_b0": 1,
+  "right_first_tick_body_facing_b0": 0,
+  "backroll_rightward_while_body_stays_left": true,
+  "hun1_native_ticks_per_second": 373.92,
+  "goal_completion_path_runs_without_unsupported_avx": true
+}

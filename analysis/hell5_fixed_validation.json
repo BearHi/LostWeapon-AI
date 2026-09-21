@@ -1,0 +1,13 @@
+{
+  "file": "지옥5_간단미로_수정.LMF",
+  "width": 50,
+  "height": 50,
+  "blocks": 552,
+  "spawn": "ID 100 only at (3,46)",
+  "openSpace": "unrecorded cells remain empty",
+  "checks": [
+    "binary size",
+    "sparse wall layout",
+    "single respawn marker"
+  ]
+}

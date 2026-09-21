@@ -1,0 +1,105 @@
+{
+  "ok": true,
+  "scope": "original x86 LMF builder type-60 special-object positions",
+  "mapped": 30,
+  "expected": 30,
+  "objects_moved_by_native_builder": 30,
+  "examples": [
+    {
+      "record": 2994,
+      "raw": 95,
+      "source": [
+        336.0,
+        255.0
+      ],
+      "native": [
+        336.0,
+        287.0
+      ]
+    },
+    {
+      "record": 2995,
+      "raw": 88,
+      "source": [
+        464.0,
+        287.0
+      ],
+      "native": [
+        464.0,
+        319.0
+      ]
+    },
+    {
+      "record": 2996,
+      "raw": 88,
+      "source": [
+        464.0,
+        255.0
+      ],
+      "native": [
+        464.0,
+        287.0
+      ]
+    },
+    {
+      "record": 2997,
+      "raw": 88,
+      "source": [
+        432.0,
+        287.0
+      ],
+      "native": [
+        432.0,
+        319.0
+      ]
+    },
+    {
+      "record": 2998,
+      "raw": 88,
+      "source": [
+        400.0,
+        287.0
+      ],
+      "native": [
+        400.0,
+        319.0
+      ]
+    },
+    {
+      "record": 2999,
+      "raw": 88,
+      "source": [
+        368.0,
+        287.0
+      ],
+      "native": [
+        368.0,
+        319.0
+      ]
+    },
+    {
+      "record": 3000,
+      "raw": 88,
+      "source": [
+        400.0,
+        255.0
+      ],
+      "native": [
+        400.0,
+        287.0
+      ]
+    },
+    {
+      "record": 3001,
+      "raw": 88,
+      "source": [
+        432.0,
+        255.0
+      ],
+      "native": [
+        432.0,
+        287.0
+      ]
+    }
+  ]
+}

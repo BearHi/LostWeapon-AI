@@ -1,0 +1,1890 @@
+{
+  "scope": "same-boundary normal Client versus offline original-x86 RIGHT_UP, release, and landing parity",
+  "snapshot": "native_harness\\private_snapshots\\hun2_gap_jump_full_boundary.zip",
+  "trace": "native_harness\\evidence\\normal_hun2_gap_jump_full_boundary.json",
+  "held_ticks": 40,
+  "release_ticks_to_ground": 22,
+  "expected_boundaries": 71,
+  "observed_samples": 70,
+  "exact_expected_boundaries_observed": 62,
+  "missed_expected_boundaries": 9,
+  "torn_read_samples": 7,
+  "phase_edge_samples": 0,
+  "mid_tick_samples": 0,
+  "input_release_edge_samples": 1,
+  "coherent_mismatches": 0,
+  "parity_supported": true,
+  "normal_end": {
+    "x": 436.0,
+    "y": 448.0,
+    "motion58": -1240.0,
+    "38": 7,
+    "3c": 0,
+    "68": 0,
+    "74": -1,
+    "b0": 0,
+    "c0": 0,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0,
+    "player_header": [
+      8,
+      60,
+      51,
+      0
+    ]
+  },
+  "oracle_end": {
+    "x": 436.0,
+    "y": 448.0,
+    "motion58": -1240.0,
+    "38": 7,
+    "3c": 0,
+    "68": 0,
+    "74": -1,
+    "b0": 0,
+    "c0": 0,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0,
+    "player_header": [
+      8,
+      60,
+      51,
+      0
+    ]
+  },
+  "missing_expected_ticks": [
+    35,
+    59,
+    62,
+    63,
+    65,
+    66,
+    67,
+    68,
+    70
+  ],
+  "observed_rows": [
+    {
+      "sample": 0,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 0,
+      "state": {
+        "x": 276.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 7,
+        "3c": 3,
+        "68": 0,
+        "74": -1,
+        "b0": 1,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          54,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 1,
+      "phase": "held",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 276.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 7,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 1,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          54,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "phase": "held",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 276.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 7,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          54,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 1,
+      "state": {
+        "x": 280.0,
+        "y": 436.0,
+        "motion58": 1160.0,
+        "38": 9,
+        "3c": 0,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          65,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 4,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 2,
+      "state": {
+        "x": 284.0,
+        "y": 424.4,
+        "motion58": 1120.0,
+        "38": 9,
+        "3c": 0,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          65,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 5,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 3,
+      "state": {
+        "x": 288.0,
+        "y": 413.2,
+        "motion58": 1080.0,
+        "38": 9,
+        "3c": 0,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          65,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 6,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 4,
+      "state": {
+        "x": 292.0,
+        "y": 402.4,
+        "motion58": 1040.0,
+        "38": 9,
+        "3c": 0,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          65,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 7,
+      "phase": "held",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 292.0,
+        "y": 402.4,
+        "motion58": 1040.0,
+        "38": 9,
+        "3c": 1,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          65,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 8,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 5,
+      "state": {
+        "x": 296.0,
+        "y": 392.0,
+        "motion58": 1000.0,
+        "38": 9,
+        "3c": 1,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          66,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 9,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 6,
+      "state": {
+        "x": 300.0,
+        "y": 382.0,
+        "motion58": 960.0,
+        "38": 9,
+        "3c": 1,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          66,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 10,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 7,
+      "state": {
+        "x": 304.0,
+        "y": 372.4,
+        "motion58": 920.0,
+        "38": 9,
+        "3c": 1,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          66,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 11,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 8,
+      "state": {
+        "x": 308.0,
+        "y": 363.2,
+        "motion58": 880.0,
+        "38": 9,
+        "3c": 1,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          66,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 12,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 9,
+      "state": {
+        "x": 312.0,
+        "y": 354.4,
+        "motion58": 840.0,
+        "38": 9,
+        "3c": 1,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          66,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 13,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 10,
+      "state": {
+        "x": 316.0,
+        "y": 346.0,
+        "motion58": 800.0,
+        "38": 9,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 14,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 11,
+      "state": {
+        "x": 320.0,
+        "y": 338.0,
+        "motion58": 760.0,
+        "38": 9,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 15,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 12,
+      "state": {
+        "x": 324.0,
+        "y": 330.4,
+        "motion58": 720.0,
+        "38": 9,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 16,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 13,
+      "state": {
+        "x": 328.0,
+        "y": 323.2,
+        "motion58": 680.0,
+        "38": 9,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 17,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 14,
+      "state": {
+        "x": 332.0,
+        "y": 316.4,
+        "motion58": 640.0,
+        "38": 9,
+        "3c": 2,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 18,
+      "phase": "held",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 336.0,
+        "y": 310.0,
+        "motion58": 600.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 19,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 15,
+      "state": {
+        "x": 336.0,
+        "y": 310.0,
+        "motion58": 600.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 20,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 16,
+      "state": {
+        "x": 340.0,
+        "y": 304.0,
+        "motion58": 560.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 21,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 17,
+      "state": {
+        "x": 344.0,
+        "y": 298.4,
+        "motion58": 520.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 22,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 18,
+      "state": {
+        "x": 348.0,
+        "y": 293.2,
+        "motion58": 480.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 23,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 19,
+      "state": {
+        "x": 352.0,
+        "y": 288.4,
+        "motion58": 440.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 24,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 20,
+      "state": {
+        "x": 356.0,
+        "y": 284.0,
+        "motion58": 400.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 25,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 21,
+      "state": {
+        "x": 360.0,
+        "y": 280.0,
+        "motion58": 360.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 26,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 22,
+      "state": {
+        "x": 364.0,
+        "y": 276.4,
+        "motion58": 320.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 27,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 23,
+      "state": {
+        "x": 368.0,
+        "y": 273.2,
+        "motion58": 280.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 28,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 24,
+      "state": {
+        "x": 372.0,
+        "y": 270.4,
+        "motion58": 240.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 29,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 25,
+      "state": {
+        "x": 376.0,
+        "y": 268.0,
+        "motion58": 200.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 30,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 26,
+      "state": {
+        "x": 380.0,
+        "y": 266.0,
+        "motion58": 160.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 31,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 27,
+      "state": {
+        "x": 384.0,
+        "y": 264.4,
+        "motion58": 120.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 32,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 28,
+      "state": {
+        "x": 388.0,
+        "y": 263.2,
+        "motion58": 80.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 33,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 29,
+      "state": {
+        "x": 392.0,
+        "y": 262.4,
+        "motion58": 40.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 34,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 30,
+      "state": {
+        "x": 396.0,
+        "y": 262.0,
+        "motion58": 0.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 35,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 31,
+      "state": {
+        "x": 400.0,
+        "y": 262.0,
+        "motion58": -40.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 36,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 32,
+      "state": {
+        "x": 404.0,
+        "y": 262.4,
+        "motion58": -80.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 37,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 33,
+      "state": {
+        "x": 408.0,
+        "y": 263.2,
+        "motion58": -120.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 38,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 34,
+      "state": {
+        "x": 412.0,
+        "y": 264.4,
+        "motion58": -160.0,
+        "38": 9,
+        "3c": 3,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          68,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 39,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 36,
+      "state": {
+        "x": 420.0,
+        "y": 268.0,
+        "motion58": -240.0,
+        "38": 9,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          69,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 40,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 37,
+      "state": {
+        "x": 424.0,
+        "y": 270.4,
+        "motion58": -280.0,
+        "38": 9,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          69,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 41,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 38,
+      "state": {
+        "x": 428.0,
+        "y": 273.2,
+        "motion58": -320.0,
+        "38": 9,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          69,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 42,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 39,
+      "state": {
+        "x": 432.0,
+        "y": 276.4,
+        "motion58": -360.0,
+        "38": 9,
+        "3c": 4,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          69,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 43,
+      "phase": "held",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 432.0,
+        "y": 276.4,
+        "motion58": -360.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          69,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 44,
+      "phase": "held",
+      "status": "PASS",
+      "matched_expected_tick": 40,
+      "state": {
+        "x": 436.0,
+        "y": 280.0,
+        "motion58": -400.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": 5,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 45,
+      "phase": "released",
+      "status": "INPUT_RELEASE_EDGE",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 436.0,
+        "y": 280.0,
+        "motion58": -400.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 46,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 41,
+      "state": {
+        "x": 436.0,
+        "y": 284.0,
+        "motion58": -440.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 47,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 42,
+      "state": {
+        "x": 436.0,
+        "y": 288.4,
+        "motion58": -480.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 48,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 43,
+      "state": {
+        "x": 436.0,
+        "y": 293.2,
+        "motion58": -520.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 49,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 44,
+      "state": {
+        "x": 436.0,
+        "y": 298.4,
+        "motion58": -560.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 50,
+      "phase": "released",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 436.0,
+        "y": 298.4,
+        "motion58": -600.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 51,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 45,
+      "state": {
+        "x": 436.0,
+        "y": 304.0,
+        "motion58": -600.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 52,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 46,
+      "state": {
+        "x": 436.0,
+        "y": 310.0,
+        "motion58": -640.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 53,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 47,
+      "state": {
+        "x": 436.0,
+        "y": 316.4,
+        "motion58": -680.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 54,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 48,
+      "state": {
+        "x": 436.0,
+        "y": 323.2,
+        "motion58": -720.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 55,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 49,
+      "state": {
+        "x": 436.0,
+        "y": 330.4,
+        "motion58": -760.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 56,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 50,
+      "state": {
+        "x": 436.0,
+        "y": 338.0,
+        "motion58": -800.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 57,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 51,
+      "state": {
+        "x": 436.0,
+        "y": 346.0,
+        "motion58": -840.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 58,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 52,
+      "state": {
+        "x": 436.0,
+        "y": 354.4,
+        "motion58": -880.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 59,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 53,
+      "state": {
+        "x": 436.0,
+        "y": 363.2,
+        "motion58": -920.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 60,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 54,
+      "state": {
+        "x": 436.0,
+        "y": 372.4,
+        "motion58": -960.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 61,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 55,
+      "state": {
+        "x": 436.0,
+        "y": 382.0,
+        "motion58": -1000.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 62,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 56,
+      "state": {
+        "x": 436.0,
+        "y": 392.0,
+        "motion58": -1040.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 63,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 57,
+      "state": {
+        "x": 436.0,
+        "y": 402.4,
+        "motion58": -1080.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 64,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 58,
+      "state": {
+        "x": 436.0,
+        "y": 413.2,
+        "motion58": -1120.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 65,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 60,
+      "state": {
+        "x": 436.0,
+        "y": 436.0,
+        "motion58": -1200.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 66,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 61,
+      "state": {
+        "x": 436.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 9,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          70,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 67,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 64,
+      "state": {
+        "x": 436.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 7,
+        "3c": 5,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 68,
+      "phase": "released",
+      "status": "TORN_READ",
+      "matched_expected_tick": null,
+      "state": {
+        "x": 436.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 7,
+        "3c": 0,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          56,
+          0
+        ]
+      }
+    },
+    {
+      "sample": 69,
+      "phase": "released",
+      "status": "PASS",
+      "matched_expected_tick": 69,
+      "state": {
+        "x": 436.0,
+        "y": 448.0,
+        "motion58": -1240.0,
+        "38": 7,
+        "3c": 0,
+        "68": 0,
+        "74": -1,
+        "b0": 0,
+        "c0": 0,
+        "c4": 0,
+        "d0": 1,
+        "dc": 0,
+        "player_header": [
+          8,
+          60,
+          51,
+          0
+        ]
+      }
+    }
+  ]
+}

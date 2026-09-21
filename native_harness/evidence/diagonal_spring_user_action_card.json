@@ -1,0 +1,16 @@
+{
+  "scope": "future normal-Client diagonal spring parity action candidates",
+  "status": "native candidate only; normal Client confirmation pending",
+  "fixtures": {
+    "훈9": {
+      "spring_center": [400, 560],
+      "contact_candidate": "grounded at x=400 with player bottom near y=544..568, then allow one NOOP tick",
+      "expected": {"motion58": 1200, "state38": 2, "c0": 4, "direction": "right"}
+    },
+    "훈10": {
+      "spring_center": [560, 560],
+      "contact_candidate": "grounded at x=560 with player bottom near y=544..568, then allow one NOOP tick",
+      "expected": {"motion58": 1200, "state38": 2, "c0": 4, "direction": "left"}
+    }
+  }
+}

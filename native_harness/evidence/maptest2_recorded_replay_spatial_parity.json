@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "scope": "user-recorded 맵테스트2 ticks 1..2000 including two jump/back-roll attempts",
+  "ticks": 2000,
+  "first_mismatch": null,
+  "player_states_exact": true,
+  "baseline": {
+    "spatial_ids": [
+      49
+    ],
+    "seconds": 33.914,
+    "tick_rate": 58.97,
+    "final_runtime_counts": [
+      549,
+      20
+    ],
+    "state_sha256": "181bbe83aaa8dca14bca0e0035f5f714f37f21bf113392a4cf3960f50188b655"
+  },
+  "optimized": {
+    "spatial_ids": [
+      49,
+      51
+    ],
+    "seconds": 19.456,
+    "tick_rate": 102.79,
+    "final_runtime_counts": [
+      159,
+      20
+    ],
+    "state_sha256": "181bbe83aaa8dca14bca0e0035f5f714f37f21bf113392a4cf3960f50188b655"
+  },
+  "final_player": {
+    "x": 50.0,
+    "y": 12434.0,
+    "motion58": -240.0,
+    "38": 7,
+    "3c": 3,
+    "68": 0,
+    "74": -1,
+    "7c": 0,
+    "80": 0,
+    "b0": 0,
+    "b8": 0,
+    "c0": 0,
+    "c4": 0,
+    "d0": 1,
+    "dc": 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "scope": "captured hun1 NOOP input+physics, no write tracking, no restore, not full engine parity",
+  "steps_per_trial": 120,
+  "seconds": [
+    0.4512798000359908,
+    0.4426153000094928,
+    0.4181495000375435
+  ],
+  "steps_per_second": 274.3809166069652,
+  "nominal_60Hz_multiplier": 4.573015276782753
+}

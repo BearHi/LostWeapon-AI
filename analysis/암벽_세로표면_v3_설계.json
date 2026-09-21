@@ -1,0 +1,32 @@
+{
+  "name": "암벽 세로표면 v3",
+  "status": "surface_preview_only",
+  "width": 31,
+  "height": 240,
+  "rock_tile": 8,
+  "start": { "x": 15, "y": 236, "tile": 100 },
+  "goal": { "x": 25, "y": 8, "decorative": true },
+  "hazards": [],
+  "design_intent": "원본 암벽처럼 좌우 암벽 외곽선과 불규칙한 안쪽 턱만 만들고 중앙 계단·지정 발판·연결선을 만들지 않는다.",
+  "route_policy": {
+    "derive_route_from_collision_surfaces": true,
+    "no_center_platforms": true,
+    "no_repeating_stair_sequence": true,
+    "long_vertical_fall_space": true,
+    "far_wall_transfers_reserved_for_parachute": true,
+    "upper_reach_reserved_for_jump_back_roll": true,
+    "failure_must_catch_on_lower_surface": true
+  },
+  "left_surface_patches": [
+    [0,0,2,239],[0,220,13,235],[0,212,8,219],[0,187,7,200],[0,194,11,204],
+    [0,158,5,174],[0,151,10,162],[0,119,8,132],[0,127,12,137],
+    [0,84,6,101],[0,78,10,88],[0,51,4,68],[0,45,9,56],
+    [0,20,7,36],[0,14,11,24]
+  ],
+  "right_surface_patches": [
+    [29,0,30,239],[22,204,30,219],[25,197,30,207],[24,170,30,186],
+    [19,159,30,176],[25,135,30,153],[21,128,30,141],[24,103,30,121],
+    [18,94,30,111],[25,69,30,88],[21,63,30,76],[24,37,30,54],
+    [18,29,30,44],[21,8,30,25],[25,3,30,15]
+  ]
+}

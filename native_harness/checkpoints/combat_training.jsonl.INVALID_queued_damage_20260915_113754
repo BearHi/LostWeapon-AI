@@ -1,0 +1,17 @@
+{"episode": 1, "steps": 256, "reward0": -42.256, "reward1": 20.744, "epsilon": 0.999, "spawn_gap": 96, "hp": [58.0, 100.0]}
+{"episode": 2, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.998, "spawn_gap": 96, "hp": [79.0, 100.0]}
+{"episode": 3, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.996, "spawn_gap": 80, "hp": [79.0, 100.0]}
+{"episode": 4, "steps": 256, "reward0": -42.256, "reward1": 20.744, "epsilon": 0.995, "spawn_gap": 80, "hp": [58.0, 100.0]}
+{"episode": 5, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.994, "spawn_gap": 80, "hp": [79.0, 100.0]}
+{"episode": 6, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.993, "spawn_gap": 64, "hp": [79.0, 100.0]}
+{"episode": 7, "steps": 256, "reward0": -21.256, "reward1": 20.744, "epsilon": 0.991, "spawn_gap": 96, "hp": [79.0, 100.0]}
+{"episode": 8, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.99, "spawn_gap": 96, "hp": [79.0, 100.0]}
+{"episode": 9, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.989, "spawn_gap": 64, "hp": [79.0, 100.0]}
+{"episode": 10, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.988, "spawn_gap": 96, "hp": [79.0, 100.0]}
+{"episode": 11, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.986, "spawn_gap": 96, "hp": [79.0, 100.0]}
+{"episode": 12, "steps": 256, "reward0": -21.256, "reward1": 20.744, "epsilon": 0.985, "spawn_gap": 64, "hp": [79.0, 100.0]}
+{"episode": 13, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.984, "spawn_gap": 64, "hp": [79.0, 100.0]}
+{"episode": 14, "steps": 256, "reward0": -21.256, "reward1": 20.744, "epsilon": 0.983, "spawn_gap": 64, "hp": [79.0, 100.0]}
+{"episode": 15, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.981, "spawn_gap": 80, "hp": [79.0, 100.0]}
+{"episode": 16, "steps": 256, "reward0": -21.256, "reward1": -0.256, "epsilon": 0.98, "spawn_gap": 80, "hp": [79.0, 100.0]}
+{"episode": 17, "steps": 256, "reward0": -21.256, "reward1": 20.744, "epsilon": 0.979, "spawn_gap": 80, "hp": [79.0, 100.0]}

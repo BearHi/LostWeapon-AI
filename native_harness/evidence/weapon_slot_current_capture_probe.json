@@ -1,0 +1,11 @@
+{
+  "slot_keys": "1-4",
+  "non_control_dirty_pages": {
+    "1": 36,
+    "2": 36,
+    "3": 36,
+    "4": 36
+  },
+  "slot_distinguishing_pages": [],
+  "keys_consumed_by_current_capture": false
+}

@@ -1,0 +1,501 @@
+{
+  "objects_before": 585,
+  "objects_after": 585,
+  "writes": [
+    {
+      "address": "0x610efffc",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610effc4",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610effc0",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610effbc",
+      "size": 4,
+      "value": 1
+    },
+    {
+      "address": "0x610effb8",
+      "size": 4,
+      "value": 15197481
+    },
+    {
+      "address": "0x610effb4",
+      "size": 4,
+      "value": 1628372988
+    },
+    {
+      "address": "0x610effbc",
+      "size": 4,
+      "value": 5
+    },
+    {
+      "address": "0x610effb8",
+      "size": 4,
+      "value": 8
+    },
+    {
+      "address": "0x610effb4",
+      "size": 4,
+      "value": 15197495
+    },
+    {
+      "address": "0x610effb0",
+      "size": 4,
+      "value": 1628372988
+    },
+    {
+      "address": "0x610effac",
+      "size": 4,
+      "value": 5
+    },
+    {
+      "address": "0x610effa8",
+      "size": 4,
+      "value": 1611687360
+    },
+    {
+      "address": "0x610effa4",
+      "size": 4,
+      "value": 8
+    },
+    {
+      "address": "0x610effbc",
+      "size": 4,
+      "value": 1611687360
+    },
+    {
+      "address": "0x610efff4",
+      "size": 4,
+      "value": 160
+    },
+    {
+      "address": "0x610efff8",
+      "size": 4,
+      "value": 256
+    },
+    {
+      "address": "0x610efff0",
+      "size": 4,
+      "value": 272
+    },
+    {
+      "address": "0x610efff0",
+      "size": 4,
+      "value": 272
+    },
+    {
+      "address": "0x610effec",
+      "size": 4,
+      "value": 176
+    },
+    {
+      "address": "0x610effd8",
+      "size": 8,
+      "value": 4643492690795692032
+    },
+    {
+      "address": "0x610effd8",
+      "size": 8,
+      "value": 4643492690795692032
+    },
+    {
+      "address": "0x610effe0",
+      "size": 8,
+      "value": 4640396466051874816
+    },
+    {
+      "address": "0x610effe8",
+      "size": 4,
+      "value": 272
+    },
+    {
+      "address": "0x610effe8",
+      "size": 4,
+      "value": 272
+    },
+    {
+      "address": "0x610efff0",
+      "size": 4,
+      "value": 272
+    },
+    {
+      "address": "0x610effd0",
+      "size": 8,
+      "value": 4643492690795692032
+    },
+    {
+      "address": "0x610effe8",
+      "size": 4,
+      "value": 191
+    },
+    {
+      "address": "0x610effc8",
+      "size": 8,
+      "value": 4640924231633207296
+    },
+    {
+      "address": "0x610effc8",
+      "size": 8,
+      "value": 4640924231633207296
+    },
+    {
+      "address": "0x610effe8",
+      "size": 4,
+      "value": 176
+    },
+    {
+      "address": "0x610effe0",
+      "size": 8,
+      "value": 4640396466051874816
+    },
+    {
+      "address": "0x610effb8",
+      "size": 4,
+      "value": 1
+    },
+    {
+      "address": "0x610effb4",
+      "size": 4,
+      "value": 15207355
+    },
+    {
+      "address": "0x610effb0",
+      "size": 4,
+      "value": 1628372988
+    },
+    {
+      "address": "0x610effb8",
+      "size": 4,
+      "value": 179127392
+    },
+    {
+      "address": "0x610effb4",
+      "size": 4,
+      "value": 1
+    },
+    {
+      "address": "0x610effb0",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610effac",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610effa8",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610effa4",
+      "size": 4,
+      "value": 104
+    },
+    {
+      "address": "0x610eff9c",
+      "size": 8,
+      "value": 4640924231633207296
+    },
+    {
+      "address": "0x610eff94",
+      "size": 8,
+      "value": 4643492690795692032
+    },
+    {
+      "address": "0x610eff90",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610eff8c",
+      "size": 4,
+      "value": 700
+    },
+    {
+      "address": "0x610eff88",
+      "size": 4,
+      "value": 15207578
+    },
+    {
+      "address": "0x610eff84",
+      "size": 4,
+      "value": 1628372988
+    },
+    {
+      "address": "0x610eff80",
+      "size": 4,
+      "value": 179127392
+    },
+    {
+      "address": "0xa074460",
+      "size": 4,
+      "value": 700
+    },
+    {
+      "address": "0xa074464",
+      "size": 4,
+      "value": 104
+    },
+    {
+      "address": "0xa0744a8",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074470",
+      "size": 8,
+      "value": 4643492690795692032
+    },
+    {
+      "address": "0xa0744ac",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074478",
+      "size": 8,
+      "value": 4640924231633207296
+    },
+    {
+      "address": "0xa0744e8",
+      "size": 4,
+      "value": 1
+    },
+    {
+      "address": "0xa0744d0",
+      "size": 8,
+      "value": 4636737291354636288
+    },
+    {
+      "address": "0xa074520",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744c0",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa0744c8",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa0744e0",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744b0",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa0744b8",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa0744dc",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744d8",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744e4",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744f0",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744ec",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744f4",
+      "size": 4,
+      "value": 4294967295
+    },
+    {
+      "address": "0xa0744f8",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074510",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074518",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074524",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074500",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074508",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074528",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa07452c",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074498",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa07449c",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744a0",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa0744a4",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074530",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074538",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074540",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074548",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0xa074550",
+      "size": 8,
+      "value": 0
+    },
+    {
+      "address": "0x610eff7c",
+      "size": 4,
+      "value": 15507707
+    },
+    {
+      "address": "0x610eff78",
+      "size": 4,
+      "value": 1628372868
+    },
+    {
+      "address": "0x610eff74",
+      "size": 4,
+      "value": 122
+    },
+    {
+      "address": "0x610eff70",
+      "size": 4,
+      "value": 8
+    },
+    {
+      "address": "0xa074468",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0x610eff6c",
+      "size": 4,
+      "value": 5
+    },
+    {
+      "address": "0x610eff80",
+      "size": 4,
+      "value": 132
+    },
+    {
+      "address": "0xa074488",
+      "size": 4,
+      "value": 209
+    },
+    {
+      "address": "0xa07448c",
+      "size": 4,
+      "value": 63
+    },
+    {
+      "address": "0xa074490",
+      "size": 4,
+      "value": 334
+    },
+    {
+      "address": "0xa074494",
+      "size": 4,
+      "value": 194
+    },
+    {
+      "address": "0xa0744f4",
+      "size": 4,
+      "value": 0
+    },
+    {
+      "address": "0xa074530",
+      "size": 4,
+      "value": 122
+    },
+    {
+      "address": "0xa072aa4",
+      "size": 4,
+      "value": 1
+    },
+    {
+      "address": "0x25a205c",
+      "size": 4,
+      "value": 1
+    }
+  ]
+}

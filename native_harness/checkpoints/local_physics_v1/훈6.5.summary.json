@@ -1,0 +1,19 @@
+{
+  "map": "훈6.5",
+  "state": "budget_complete",
+  "search_trials": 3328,
+  "archive_states": 1996,
+  "learned_context_skills": 3003,
+  "best_decisions": 56,
+  "failure_counts": {
+    "goal_region": 438,
+    "horizon": 1813,
+    "reset_suspected": 1067,
+    "stalled": 10
+  },
+  "goal_evidence": "offline_x86_goal_region_not_client_event",
+  "reset_detection": "position_discontinuity_heuristic",
+  "native_ticks_this_session": 3918,
+  "snapshot_cache_hits": 0,
+  "snapshot_cache_bytes": 9519104
+}
