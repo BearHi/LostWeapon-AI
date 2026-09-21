@@ -1,21 +1,21 @@
 {
   "ok": true,
   "phase": "running",
-  "fixture": "훈9",
-  "lmf_path": "C:\\Users\\microsoft\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈9.LMF",
+  "fixture": "훈1",
+  "lmf_path": "C:\\Users\\sang\\Desktop\\로스트웨폰 맵\\훈련용맵\\훈1.LMF",
   "map_size": [
     30,
-    22
+    18
   ],
-  "record_count": 48,
-  "snapshot": "hun12_live.zip",
-  "tick": 1921,
-  "actual_tick_rate": 62.39,
+  "record_count": 58,
+  "snapshot": "hun1_full.zip",
+  "tick": 960,
+  "actual_tick_rate": 62.55,
   "average_native_step_ms": 0.0,
-  "average_draw_ms": 5.981,
+  "average_draw_ms": 7.156,
   "input": [],
   "player": {
-    "x": 208.0,
+    "x": 112.0,
     "y": 448.0,
     "motion58": -560.0,
     "38": 7,
@@ -35,5 +35,5 @@
   "action": "보통",
   "ice_acceleration": 0,
   "engine": "original Client x86 via Unicorn",
-  "updated_unix": 1789611118.2650611
+  "updated_unix": 1790014781.3138409
 }
