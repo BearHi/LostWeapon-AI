@@ -25,14 +25,19 @@ def main():
         input("Press Enter to exit...")
         sys.exit(1)
         
-    print("=======================================================")
-    print("  LostWeapon Native Physics Playground Launcher")
-    print("=======================================================")
-    print(f"[1/2] Harness location: {harness_dir}")
-    print("[2/2] Opening simulator window. Please wait...")
-    
-    # Run the playground
-    returncode = subprocess.call([sys.executable, str(script)], cwd=str(harness_dir))
+    # Run the target script (watch_ai_play if --watch, else native_playground)
+    if "--watch" in sys.argv:
+        target_script = harness_dir.parent / "watch_ai_play.py"
+        print(f"[1/2] Located AI Play Viewer at: {target_script}")
+        print("[2/2] Opening AI Route Replay Window. Please wait...")
+        returncode = subprocess.call([sys.executable, str(target_script)], cwd=str(harness_dir.parent))
+    else:
+        print("=======================================================")
+        print("  LostWeapon Native Physics Playground Launcher")
+        print("=======================================================")
+        print(f"[1/2] Harness location: {harness_dir}")
+        print("[2/2] Opening simulator window. Please wait...")
+        returncode = subprocess.call([sys.executable, str(script)], cwd=str(harness_dir))
     if returncode != 0:
         print(f"\n[ERROR] Simulator exited with return code {returncode}")
         input("Press Enter to exit...")
