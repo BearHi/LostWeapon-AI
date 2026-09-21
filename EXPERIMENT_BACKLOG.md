@@ -86,3 +86,15 @@
   1. 진짜 낙사 기준을 발판 하단 추락(`cur_y > 480.0`)으로 정정.
   2. 에피소드 시도 횟수를 5회 단위(약 2초)로 명시적 제한하고 자동 종료되도록 수정.
 
+### [INCIDENT-002] 물리 시뮬레이터 실행 시 pythonw.exe 미발견 오류
+* **발생 일시**: 2026-09-22 03:18 KST
+* **현상**: 사용자가 바로가기 실행 시 `필요한 파일을 찾지 못했습니다: pythonw.exe` 팝업 및 `'pythonw'을(를) 찾을 수 없습니다` 윈도우 시스템 경고 발생.
+* **원인 분석**:
+  1. Python 3.11이 `C:\Users\sang\AppData\Local\Programs\Python\Python311`에 정상 설치되어 있으나, 윈도우 사용자 환경 변수 `PATH`에 등록되어 있지 않았음.
+  2. 기존 바로가기(`LostWeapon 네이티브 물리 테스트.lnk`)가 `LostWeapon_Native_Playground.exe`를 호출하고 있었으며, 이 런처는 `shutil.which("pythonw.exe")`로 PATH에서 파이썬을 탐색하므로 PATH 미등록 상태에서 에러 팝업을 띄우고 종료됨.
+* **수정 조치**:
+  1. Windows 사용자 환경 변수 `PATH`에 Python 3.11 및 Scripts 경로 영구 추가 등록 완료.
+  2. 바탕화면 및 프로젝트 폴더 내 바로가기의 대상을 `pythonw.exe` 절대 경로(`C:\Users\sang\AppData\Local\Programs\Python\Python311\pythonw.exe`)로 직접 지정하여 환경 변수 의존성 및 런처 오류 원천 제거.
+  3. 바탕화면 및 프로젝트 폴더에 원클릭 실행 배치 파일([`물리시뮬레이터_실행.bat`](file:///c:/Users/sang/Desktop/로스트웨폰%20맵/물리시뮬레이터_실행.bat)) 추가 배치.
+
+
