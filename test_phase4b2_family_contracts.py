@@ -28,6 +28,7 @@ if str(ROOT) not in sys.path:
 
 from candidate_suite_verifier import CandidateSuiteVerifier
 from family_generators import ParachuteFamily, Weapon1MobilityFamily
+from x86_oracle_verifier import X86OracleVerifier
 from regression_corpus import verify_file_sha256
 
 GOLDEN_DIR = ROOT / "golden_fixtures"
@@ -117,9 +118,8 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertEqual(winner["family"], "weapon1_mobility")
         self.assertEqual(winner["terminal_type"], "SUCCESS")
         self.assertIn("native_weapon1_verified", winner["mechanic_activation_evidence"])
-        self.assertIn("native_weapon1_verified", winner["mechanic_activation_evidence"])
         self.assertIn("state38==15", winner["mechanic_activation_evidence"])
-        self.assertIn("initial_impulse=", winner["mechanic_activation_evidence"])
+        self.assertIn("internal_dash90=", winner["mechanic_activation_evidence"])
         self.assertEqual(len(winner["action_sequence_hash"]), 64)
 
     def test_03_weapon1_negative_control(self):
@@ -148,7 +148,7 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
             self.assertEqual(c["terminal_type"], "DEATH")
             self.assertIn("native_weapon1_verified", c["mechanic_activation_evidence"])
             self.assertIn("state38==15", c["mechanic_activation_evidence"])
-            self.assertIn("initial_impulse=", c["mechanic_activation_evidence"])
+            self.assertIn("internal_dash90=", c["mechanic_activation_evidence"])
 
     def test_04_weapon1_semantic_contract_violation(self):
         """Semantic Contract: Candidate claiming weapon 1 mobility without knife activation is invalidated."""
@@ -330,6 +330,29 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
             self.assertAlmostEqual(dm58, -5.0, delta=1e-3, msg=f"Parachute glide dm58={dm58} (expected -5.0)")
             self.assertAlmostEqual(actual_vy, expected_vy, delta=1e-3, msg=f"vy={actual_vy} != expected {expected_vy}")
             self.assertAlmostEqual(curr_x - prev_x, 4.0, delta=1e-3, msg="Horizontal glide velocity must equal 4.0px/tick")
+
+    def test_11_weapon1_wall_collision_semantics_preserved(self):
+        """Semantic Contract: Weapon 1 dash against wall (0px displacement) preserves valid semantics via internal dash90."""
+        verifier = X86OracleVerifier(SNAP_HUN6, self.w1_neg_lmf)
+        # Dash against left wall: turn left, walk into wall, jump and dash into wall
+        wall_dash_actions = (
+            [("1",)]
+            + [("LEFT",)] * 20
+            + [("LEFT", "UP")] * 10
+            + [("LEFT", "Z")]
+            + [("LEFT",)] * 20
+        )
+        trial = verifier.run_trial(wall_dash_actions, max_ticks=80)
+        cand = {
+            "candidate_name": "wall_dash_candidate",
+            "family": "weapon1_mobility",
+            "action_sequence": wall_dash_actions,
+        }
+        is_valid, evidence = self.w1_family.validate_semantics(cand, trial["state_trace"], trial)
+        self.assertTrue(is_valid, f"Wall dash must be recognized as valid weapon 1 candidate. Evidence: {evidence}")
+        self.assertIn("native_weapon1_verified", evidence)
+        self.assertIn("state38==15", evidence)
+        self.assertIn("internal_dash90=1400.0", evidence)
 
 
 if __name__ == "__main__":

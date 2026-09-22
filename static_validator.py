@@ -29,22 +29,44 @@ class StaticPhysicsValidator:
         self.max_jump_h = float(self.reg["jump"]["measured_max_height_px"]) # 186.0
         self.max_backroll_h = float(self.reg["backroll"]["measured_max_height_px"]) # 270.0
         self.chute_vx = float(self.reg["parachute"]["horizontal_vx_px_per_tick"])
-        self.chute_vy = float(self.reg["parachute"]["vertical_fall_px_per_tick"])
+        self.chute_init_m58 = float(self.reg["parachute"]["initial_motion58"])
+        self.chute_delta_m58 = float(self.reg["parachute"]["motion58_delta_per_tick"])
+        self.chute_terminal_max = float(self.reg["parachute"]["motion58_terminal_max"])
+        self.chute_terminal_reset = float(self.reg["parachute"]["motion58_terminal_reset"])
+        self.chute_open_nudge = float(self.reg["parachute"]["open_y_nudge_px"])
 
     def compute_pure_chute_envelope(self, start_y: float, landing_y: float) -> float:
-        """Computes max horizontal distance achievable by jump + optimal chute release."""
-        apex_h = self.max_jump_h
-        nat_fall_ticks = round(self.chute_vy / (self.g / 100.0)) # ~7 ticks
-        nat_fall_dist = sum((self.g * k / 100.0) for k in range(nat_fall_ticks)) # 8.4 px
-        
-        remaining_descent = (landing_y - start_y) + apex_h - nat_fall_dist
-        if remaining_descent < 0:
-            chute_ticks = 0.0
-        else:
-            chute_ticks = remaining_descent / self.chute_vy
-            
-        total_ticks = (self.v0_jump / self.g) + nat_fall_ticks + chute_ticks
-        return total_ticks * self.chute_vx
+        """Computes max horizontal distance achievable by jump + optimal apex chute release."""
+        x = 0.0
+        y = start_y
+        m58 = self.v0_jump
+        prev_m58 = 0.0
+        # 1. Jump ascent to apex (30 ticks, t=0..29)
+        for t in range(30):
+            dy = -12.0 if t == 0 else -(prev_m58 / 100.0)
+            y += dy
+            x += self.chute_vx
+            prev_m58 = m58
+            m58 -= self.g
+        # 2. Optimal chute open at apex (t=30):
+        # 1 tick opening delay (dx = 0), y nudges up by open_nudge, m58 = initial_motion58
+        y += self.chute_open_nudge
+        m58 = self.chute_init_m58
+        # 3. Chute descent (t=31..)
+        # x86 engine: Euler integration with saw-tooth terminal relaxation cycle
+        for t in range(31, 2000):
+            prev_m = m58
+            if prev_m <= self.chute_terminal_max:
+                dy = 2.00 # reset velocity impulse
+                m58 = self.chute_terminal_reset
+            else:
+                dy = -(prev_m / 100.0) if t > 31 else 0.05
+                m58 = prev_m + self.chute_delta_m58
+            y += dy
+            x += self.chute_vx
+            if y >= landing_y:
+                break
+        return x
 
     def validate_spec(self, spec: Dict[str, Any]) -> Tuple[str, str]:
         """Strictly evaluates MapSpec under the tri-state contract."""

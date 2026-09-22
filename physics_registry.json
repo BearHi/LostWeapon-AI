@@ -25,10 +25,16 @@
   },
   "parachute": {
     "horizontal_vx_px_per_tick": 4.0,
-    "vertical_fall_px_per_tick": 2.9,
+    "open_tick_horizontal_vx_px_per_tick": 0.0,
+    "open_y_nudge_px": -1.0,
+    "initial_motion58": -5.0,
+    "motion58_delta_per_tick": -5.0,
+    "motion58_terminal_max": -400.0,
+    "motion58_terminal_reset": -205.0,
+    "flat_ground_pure_envelope_px": 488.0,
     "can_cancel_ascending": true,
     "can_cancel_descending": false,
-    "verification": "client_measured"
+    "verification": "client_measured_discrete_recurrence"
   },
   "collapse_platform": {
     "raw_tile_id": 124,

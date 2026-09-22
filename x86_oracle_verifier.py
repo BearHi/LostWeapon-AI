@@ -185,6 +185,7 @@ class X86OracleVerifier:
                 "38": st.get("38"),
                 "c0": st.get("c0", 0),
                 "dc": st.get("dc", 0),
+                "dash90": st.get("dash90", 0.0),
                 "action": action,
             })
 

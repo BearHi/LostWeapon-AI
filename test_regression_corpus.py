@@ -40,38 +40,38 @@ class TestHistoricalDefectRegressionCorpus(unittest.TestCase):
         cls.static_validator = StaticPhysicsValidator(cls.registry_path)
 
     def test_00_parachute_envelope_boundary_regression(self):
-        """Boundary Audit: Prove flat ground envelope is 388.97px and test threshold boundary."""
+        """Boundary Audit: Prove flat ground envelope is 488.0px and test threshold boundary."""
         env = self.static_validator.compute_pure_chute_envelope(448.0, 448.0)
-        self.assertAlmostEqual(env, 388.9655, places=3,
-                               msg="Verified flat ground parachute envelope must be ~388.97px.")
+        self.assertAlmostEqual(env, 488.0, places=1,
+                               msg="Verified flat ground parachute envelope must be 488.0px.")
 
-        # Boundary Test 1: Inside envelope (spawn x=2 -> goal x=14: 12 tiles = 384px < 388.97px)
+        # Boundary Test 1: Inside envelope (spawn x=2 -> goal x=17: 15 tiles = 480px <= 488.0px)
         spec_inside = {
             "version": "1.0",
-            "map_id": "boundary_inside_384",
+            "map_id": "boundary_inside_480",
             "training_type": "isolated_skill",
             "metadata": {"required_mechanic": "parachute_glide", "collapse_entry": "none"},
             "allowed_capabilities": ["jump", "parachute"],
             "spawn": {"x": 2, "y": 14},
-            "goal": {"x": 14, "y": 14}, # 384px
-            "tiles": [{"id": 7, "x": 1, "y": 15}, {"id": 7, "x": 2, "y": 15}, {"id": 7, "x": 14, "y": 15}]
+            "goal": {"x": 17, "y": 14}, # 480px
+            "tiles": [{"id": 7, "x": 1, "y": 15}, {"id": 7, "x": 2, "y": 15}, {"id": 7, "x": 17, "y": 15}]
         }
         v_in, r_in = self.static_validator.validate_spec(spec_inside)
-        self.assertEqual(v_in, "STATIC_OK", f"Distance 384px <= {env:.1f}px must NOT be REJECTed. Got: {v_in}")
+        self.assertEqual(v_in, "STATIC_OK", f"Distance 480px <= {env:.1f}px must NOT be REJECTed. Got: {v_in}")
 
-        # Boundary Test 2: Outside envelope (spawn x=2 -> goal x=15: 13 tiles = 416px > 388.97px)
+        # Boundary Test 2: Outside envelope (spawn x=2 -> goal x=18: 16 tiles = 512px > 488.0px)
         spec_outside = {
             "version": "1.0",
-            "map_id": "boundary_outside_416",
+            "map_id": "boundary_outside_512",
             "training_type": "isolated_skill",
             "metadata": {"required_mechanic": "parachute_glide", "collapse_entry": "none"},
             "allowed_capabilities": ["jump", "parachute"],
             "spawn": {"x": 2, "y": 14},
-            "goal": {"x": 15, "y": 14}, # 416px
-            "tiles": [{"id": 7, "x": 1, "y": 15}, {"id": 7, "x": 2, "y": 15}, {"id": 7, "x": 15, "y": 15}]
+            "goal": {"x": 18, "y": 14}, # 512px
+            "tiles": [{"id": 7, "x": 1, "y": 15}, {"id": 7, "x": 2, "y": 15}, {"id": 7, "x": 18, "y": 15}]
         }
         v_out, r_out = self.static_validator.validate_spec(spec_outside)
-        self.assertEqual(v_out, "REJECT", f"Distance 416px > {env:.1f}px must be REJECTed. Got: {v_out}")
+        self.assertEqual(v_out, "REJECT", f"Distance 512px > {env:.1f}px must be REJECTed. Got: {v_out}")
         self.assertIn("exceeds verified pure chute envelope", r_out)
 
     def test_01_golden_fixtures_sha256_integrity(self):
