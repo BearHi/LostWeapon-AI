@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "version": 1,
+    "tick_ms": 16.0,
+    "tick_rate_hz": 62.5,
+    "source": "verified_client_x86"
+  },
+  "movement": {
+    "walk_vx_px_per_tick": 4.0,
+    "run_vx_px_per_tick": 4.0
+  },
+  "jump": {
+    "motion58_initial": 1160.0,
+    "motion58_delta_per_tick": -40.0,
+    "measured_airtime_ticks": 58,
+    "measured_max_height_px": 186.0,
+    "verification": "client_measured"
+  },
+  "backroll": {
+    "motion58_reload": 760.0,
+    "motion58_delta_per_tick": -40.0,
+    "motion_locked_duration_ticks": 20,
+    "measured_max_height_px": 270.0,
+    "verification": "client_measured"
+  },
+  "parachute": {
+    "horizontal_vx_px_per_tick": 4.0,
+    "vertical_fall_px_per_tick": 2.9,
+    "can_cancel_ascending": true,
+    "can_cancel_descending": false,
+    "verification": "client_measured"
+  },
+  "collapse_platform": {
+    "raw_tile_id": 124,
+    "collision_lifetime_ticks_after_contact": 12,
+    "respawn_cycle_ticks": 143,
+    "verification": "client_measured"
+  },
+  "weapon_1": {
+    "slot_index": 0,
+    "motion_duration_ticks": 24,
+    "horizontal_displacement_px": 119.0,
+    "hitbox_reach_px": 22.0,
+    "verification": "client_measured"
+  },
+  "weapon_4": {
+    "slot_index": 3,
+    "horizontal_displacement_px": 0.0,
+    "hitbox_reach_px": 22.0,
+    "verification": "client_measured"
+  },
+  "spring_vertical": {
+    "tile_id": 4,
+    "motion58_on_contact": 2000.0,
+    "measured_max_height_px": 352.0,
+    "verification": "client_measured"
+  },
+  "spring_diagonal": {
+    "tile_id_left": 5,
+    "tile_id_right": 6,
+    "motion58_on_contact": 1200.0,
+    "launch_angle_deg": 45.0,
+    "verification": "client_measured"
+  },
+  "fan": {
+    "tile_id": 63,
+    "equilibrium_motion58": 395.0,
+    "verification": "client_measured"
+  },
+  "magnets": {
+    "id_down": 52,
+    "id_down_gravity": 100.0,
+    "id_up": 53,
+    "id_up_gravity": 20.0,
+    "id_left": 54,
+    "id_left_accel": -40.0,
+    "id_right": 55,
+    "id_right_accel": 40.0,
+    "verification": "client_measured"
+  },
+  "ice": {
+    "tile_ids": [19, 27, 37],
+    "slope_accel_per_tick": 40.0,
+    "slope_max_accel": 400.0,
+    "ground_decel_per_tick": -10.0,
+    "verification": "client_measured"
+  }
+}
