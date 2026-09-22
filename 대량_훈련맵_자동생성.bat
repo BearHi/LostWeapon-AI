@@ -1,5 +1,8 @@
 @echo off
-@chcp 65001 > nul
+setlocal
+cd /d "%~dp0"
+chcp 65001 >nul
+set PYTHONUTF8=1
 title LostWeapon AI 대량 훈련맵 자동 생성기 (Procedural Generator)
 
 echo ===============================================================================
@@ -12,7 +15,7 @@ echo.
 set PYTHON_EXE=C:\Users\sang\AppData\Local\Programs\Python\Python311\python.exe
 
 if not exist "%PYTHON_EXE%" (
-    echo [ERROR] Python 3.11 실행 파일을 찾을 수 없습니다: %PYTHON_EXE%
+    echo [ERROR] Python 실행 파일을 찾을 수 없습니다: %PYTHON_EXE%
     pause
     exit /b 1
 )
@@ -28,7 +31,7 @@ if "%MENU_CHOICE%"=="" set MENU_CHOICE=1
 if "%MENU_CHOICE%"=="1" (
     echo.
     echo [*] 전체 8개 아키타입에 대한 결정론적 그리드 생성 및 전수 검증을 시작합니다...
-    "%PYTHON_EXE%" batch_map_pipeline.py --mode grid
+    "%PYTHON_EXE%" -u batch_map_pipeline.py --mode grid
     goto FINISH
 )
 
@@ -44,7 +47,7 @@ if "%MENU_CHOICE%"=="2" (
     echo 8. ARCH_08_COLLAPSE_BRIDGE (시간차 붕괴 발판 다리)
     echo.
     set /p ARCH_NAME="아키타입 ID를 입력하세요 (예: ARCH_01_BASIC_GAP): "
-    "%PYTHON_EXE%" batch_map_pipeline.py --archetype %ARCH_NAME% --mode grid
+    "%PYTHON_EXE%" -u batch_map_pipeline.py --archetype %ARCH_NAME% --mode grid
     goto FINISH
 )
 
@@ -53,7 +56,7 @@ if "%MENU_CHOICE%"=="3" (
     if "%SAMPLE_COUNT%"=="" set SAMPLE_COUNT=5
     echo.
     echo [*] 아키타입당 %SAMPLE_COUNT%개 랜덤 샘플링 생성 및 검증을 시작합니다...
-    "%PYTHON_EXE%" batch_map_pipeline.py --mode sample --count %SAMPLE_COUNT%
+    "%PYTHON_EXE%" -u batch_map_pipeline.py --mode sample --count %SAMPLE_COUNT%
     goto FINISH
 )
 

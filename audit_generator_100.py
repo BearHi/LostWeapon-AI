@@ -140,6 +140,7 @@ def run_100_audit(
     }
 
     summary_file = output_dir / "audit_100_summary.json"
+    summary_file.parent.mkdir(parents=True, exist_ok=True)
     summary_file.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     # 5. Print Terminal Report

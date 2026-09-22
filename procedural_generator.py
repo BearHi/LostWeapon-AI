@@ -171,10 +171,11 @@ class Arch01BasicGap(BaseArchetype):
         # Reference solution: walk to edge, jump across, walk to goal
         walk_to_edge = max(8, (run - 3) * 8)
         jump_ticks = 14 if gap == 2 else (20 if gap == 3 else 28)
+        walk_to_goal = max(60, (land - 2) * 8 + 24)
         ref_actions: List[Tuple[str, ...]] = (
             [("RIGHT",)] * walk_to_edge
             + [("RIGHT", "UP")] * jump_ticks
-            + [("RIGHT",)] * 80
+            + [("RIGHT",)] * walk_to_goal
         )
 
         return GeneratedCandidate(
@@ -254,10 +255,11 @@ class Arch02StepUp(BaseArchetype):
 
         walk_to_step = max(8, (run - 3) * 8)
         jump_ticks = 20 if step <= 2 else 28
+        walk_to_goal = max(60, (land - 2) * 8 + 24)
         ref_actions: List[Tuple[str, ...]] = (
             [("RIGHT",)] * walk_to_step
             + [("RIGHT", "UP")] * jump_ticks
-            + [("RIGHT",)] * 80
+            + [("RIGHT",)] * walk_to_goal
         )
 
         return GeneratedCandidate(
@@ -570,13 +572,13 @@ class Arch06ParachuteChasm(BaseArchetype):
 
     def parameter_grid(self) -> List[Dict[str, Any]]:
         combos = []
-        for chasm in (18, 20):
+        for chasm in (20, 22):
             combos.append({"chasm_tiles": chasm, "run_tiles": 5, "land_tiles": 8})
         return combos
 
     def sample_parameters(self, rng: random.Random) -> Dict[str, Any]:
         return {
-            "chasm_tiles": rng.choice([18, 20]),
+            "chasm_tiles": rng.choice([20, 22]),
             "run_tiles": 5,
             "land_tiles": 8,
         }
