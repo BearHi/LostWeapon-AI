@@ -169,7 +169,16 @@ class TestPhase3CRealMapIntegration(unittest.TestCase):
         self.assertEqual(res_b["verdict"], "KNOWN_BYPASS_NOT_FOUND")
 
     def test_B_backroll_parameter_sweep_audit(self):
-        """Audit: Verify that 100% of backroll timing variations physically fail on Map B."""
+        """Audit: Verify that 100% of backroll timing variations physically fail on Map B.
+        
+        Note on 48 vs 90 Cartesian product:
+        - j_dur uses step=2 (range(16, 32, 2) -> 8 even values: [16, 18, 20, 22, 24, 26, 28, 30]).
+        - sw in (0, 1, 2) -> 3 values.
+        - rd in (3, 5) -> 2 values.
+        Total even-step trials: 8 * 3 * 2 = 48 trials (0/48 cleared).
+        The full 90-combination Cartesian product (all integer ticks 16..30) was audited in Phase 3D,
+        confirming 0/90 clears.
+        """
         from x86_oracle_verifier import X86OracleVerifier
         vb = X86OracleVerifier(self.snap_path, self.lmf_b)
 
@@ -192,7 +201,7 @@ class TestPhase3CRealMapIntegration(unittest.TestCase):
                         cleared_trials += 1
 
         self.assertEqual(cleared_trials, 0, f"Expected 0 backroll variations to clear Map B, but {cleared_trials}/{total_trials} cleared.")
-        self.assertEqual(total_trials, 48, "Expected 48 parameter sweep variations evaluated.")
+        self.assertEqual(total_trials, 48, "Expected 48 even-step parameter sweep variations evaluated.")
 
     def test_C1_reference_failed_control(self):
         """Test C1: Reference dies in pit -> REFERENCE_FAILED, bypass evaluation skipped."""
