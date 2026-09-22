@@ -121,6 +121,17 @@ class CandidateSuiteVerifier:
                     f"Candidate '{c_name}' snapshot baseline drift: {c_sig} != {self.baseline_signature}"
                 )
 
+            # Family Semantic Contract Validation
+            validator_fn = cand.get("semantic_validator")
+            if validator_fn is not None:
+                is_valid, sem_evidence = validator_fn(cand, trial.get("state_trace", []), trial)
+                if not is_valid:
+                    trial["terminal_type"] = "INVALID_CANDIDATE_SEMANTICS"
+                    trial["evidence_source"] = f"semantic_violation: {sem_evidence}"
+                cand_record_sem = sem_evidence
+            else:
+                cand_record_sem = "unvalidated"
+
             cand_record: dict[str, Any] = {
                 "candidate_name": c_name,
                 "family": c_family,
@@ -129,12 +140,13 @@ class CandidateSuiteVerifier:
                 "terminal_type": trial["terminal_type"],
                 "terminal_tick": trial["terminal_tick"],
                 "evidence_source": trial["evidence_source"],
+                "mechanic_activation_evidence": cand_record_sem,
                 "final_position": trial["final_position"],
                 "initial_snapshot_signature": c_sig,
             }
             evaluated_candidates.append(cand_record)
 
-            if trial["terminal_type"] == "INVALID":
+            if trial["terminal_type"] in ("INVALID", "INVALID_CANDIDATE_SEMANTICS"):
                 has_invalid = True
 
             elif trial["terminal_type"] == "SUCCESS":

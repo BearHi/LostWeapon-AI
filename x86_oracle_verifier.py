@@ -153,6 +153,7 @@ class X86OracleVerifier:
         final_position = (0.0, 0.0)
         final_motion_state = 0.0
         final_st = {}
+        state_trace: list[dict[str, Any]] = []
 
         seq_len = len(action_sequence)
         for t in range(max_ticks):
@@ -170,11 +171,21 @@ class X86OracleVerifier:
                     "final_motion_state": final_motion_state,
                     "initial_snapshot_signature": self.initial_signature,
                     "final_state_signature": hashlib.sha256(f"FAULT_{e}".encode()).hexdigest(),
+                    "state_trace": state_trace,
                 }
 
             final_st = st
             final_position = (float(st["x"]), float(st["y"]))
             final_motion_state = float(st["motion58"])
+            state_trace.append({
+                "tick": t,
+                "x": final_position[0],
+                "y": final_position[1],
+                "motion58": final_motion_state,
+                "38": st.get("38"),
+                "c0": st.get("c0", 0),
+                "action": action,
+            })
 
             # Check both raw events on current tick
             death_hit = (st.get("7c") == -1)
@@ -222,6 +233,7 @@ class X86OracleVerifier:
             "final_motion_state": final_motion_state,
             "initial_snapshot_signature": self.initial_signature,
             "final_state_signature": final_state_signature,
+            "state_trace": state_trace,
         }
 
 
