@@ -117,7 +117,9 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertEqual(winner["family"], "weapon1_mobility")
         self.assertEqual(winner["terminal_type"], "SUCCESS")
         self.assertIn("native_weapon1_verified", winner["mechanic_activation_evidence"])
+        self.assertIn("native_weapon1_verified", winner["mechanic_activation_evidence"])
         self.assertIn("state38==15", winner["mechanic_activation_evidence"])
+        self.assertIn("initial_impulse=", winner["mechanic_activation_evidence"])
         self.assertEqual(len(winner["action_sequence_hash"]), 64)
 
     def test_03_weapon1_negative_control(self):
@@ -146,11 +148,12 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
             self.assertEqual(c["terminal_type"], "DEATH")
             self.assertIn("native_weapon1_verified", c["mechanic_activation_evidence"])
             self.assertIn("state38==15", c["mechanic_activation_evidence"])
+            self.assertIn("initial_impulse=", c["mechanic_activation_evidence"])
 
     def test_04_weapon1_semantic_contract_violation(self):
         """Semantic Contract: Candidate claiming weapon 1 mobility without knife activation is invalidated."""
         verifier = CandidateSuiteVerifier(SNAP_HUN6, self.w1_pos_lmf)
-        # Fake candidate: presses 'Z' in air without equipping weapon 1 ('1') -> produces 38==16, never 15
+        # Fake candidate: presses 'Z' in air without equipping weapon 1 ('1')
         fake_w1 = {
             "candidate_name": "fake_w1_no_equip",
             "family": "weapon1_mobility",
@@ -174,7 +177,7 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertEqual(res["verdict"], "SUITE_INCONCLUSIVE")
         cand_record = res["evaluated_candidates"][0]
         self.assertEqual(cand_record["terminal_type"], "INVALID_CANDIDATE_SEMANTICS")
-        self.assertIn("weapon1_dash_never_activated", cand_record["evidence_source"])
+        self.assertIn("semantic_violation", cand_record["evidence_source"])
 
     def test_05_parachute_positive_control(self):
         """Positive Control: Parachute glide clears 448px gap and proves native state 38==3, dc==1."""
@@ -200,8 +203,7 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertEqual(winner["family"], "parachute")
         self.assertEqual(winner["terminal_type"], "SUCCESS")
         self.assertIn("native_parachute_verified", winner["mechanic_activation_evidence"])
-        self.assertIn("state38==3", winner["mechanic_activation_evidence"])
-        self.assertIn("dc==1", winner["mechanic_activation_evidence"])
+        self.assertIn("state38==3, dc==1 co-occurring", winner["mechanic_activation_evidence"])
         self.assertEqual(len(winner["action_sequence_hash"]), 64)
 
     def test_06_parachute_negative_control(self):
@@ -229,19 +231,18 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         for c in res["evaluated_candidates"]:
             self.assertEqual(c["terminal_type"], "DEATH")
             self.assertIn("native_parachute_verified", c["mechanic_activation_evidence"])
-            self.assertIn("state38==3", c["mechanic_activation_evidence"])
-            self.assertIn("dc==1", c["mechanic_activation_evidence"])
+            self.assertIn("state38==3, dc==1 co-occurring", c["mechanic_activation_evidence"])
 
     def test_07_parachute_semantic_contract_violation(self):
         """Semantic Contract: Candidate claiming parachute that never deploys parachute is invalidated."""
         verifier = CandidateSuiteVerifier(SNAP_HUN5, self.chute_pos_lmf)
-        # Fake candidate: normal jump without 'C' key
+        # Fake candidate: presses 'C' on ground where parachute cannot deploy (stays dc==0)
         fake_chute = {
-            "candidate_name": "fake_chute_no_c_key",
+            "candidate_name": "fake_chute_ground_c",
             "family": "parachute",
             "parameters": {"fake": True},
             "action_sequence": (
-                [("RIGHT",)] * 16
+                [("RIGHT", "C")] * 5
                 + [("RIGHT", "UP")] * 20
                 + [("RIGHT",)] * 100
             ),
@@ -273,6 +274,62 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         hash2 = CandidateSuiteVerifier.compute_action_hash(m_w1[0]["action_sequence"])
         self.assertEqual(hash1, hash2)
         self.assertEqual(len(hash1), 64)
+
+    def test_09_weapon1_free_space_full_physics_profile(self):
+        """Physics Profile Regression: Weapon 1 aerial dash exhibits exact 24-tick velocity profile and +119px displacement."""
+        from api import NativeTrainingAPI
+        api = NativeTrainingAPI(SNAP_HUN6, self.w1_pos_lmf)
+        actions = (
+            [("1",)]
+            + [("RIGHT",)] * 4
+            + [("RIGHT", "UP")] * 14
+            + [("RIGHT", "Z")]
+            + [("RIGHT",)] * 30
+        )
+        prev_x = None
+        dash_steps = []
+        for a in actions:
+            s = api.step(1, a)
+            if prev_x is not None and s.get("38") == 15:
+                dash_steps.append(s["x"] - prev_x)
+            prev_x = s["x"]
+
+        self.assertEqual(len(dash_steps), 24, "Weapon 1 dash must last exactly 24 ticks.")
+        expected_profile = [15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0] + [0.0] * 10
+        self.assertEqual(dash_steps, expected_profile)
+        self.assertEqual(sum(dash_steps), 119.0, "Total weapon 1 dash displacement must equal 119.0px.")
+
+    def test_10_parachute_glide_physics_profile(self):
+        """Physics Profile Regression: Parachute glide deceleration, delta m58 == -5.0/tick, and vy relation."""
+        from api import NativeTrainingAPI
+        api = NativeTrainingAPI(SNAP_HUN5, self.chute_pos_lmf)
+        actions = (
+            [("RIGHT",)] * 16
+            + [("RIGHT", "UP")] * 20
+            + [("RIGHT",)] * 12
+            + [("RIGHT", "C")]
+            + [("RIGHT",)] * 40
+        )
+        glide_states = []
+        prev_y = None
+        for a in actions:
+            s = api.step(1, a)
+            vy = s["y"] - prev_y if prev_y is not None else 0.0
+            prev_y = s["y"]
+            if s.get("38") == 3 and s.get("dc") == 1:
+                glide_states.append((s["motion58"], vy, s["x"]))
+
+        self.assertGreaterEqual(len(glide_states), 30)
+        # Steady glide after settling phase (skip initial 12 ticks of aerodynamic braking)
+        steady = glide_states[12:25]
+        for i in range(1, len(steady)):
+            curr_m58, actual_vy, curr_x = steady[i]
+            prev_m58, _, prev_x = steady[i - 1]
+            dm58 = curr_m58 - prev_m58
+            expected_vy = -prev_m58 / 100.0
+            self.assertAlmostEqual(dm58, -5.0, delta=1e-3, msg=f"Parachute glide dm58={dm58} (expected -5.0)")
+            self.assertAlmostEqual(actual_vy, expected_vy, delta=1e-3, msg=f"vy={actual_vy} != expected {expected_vy}")
+            self.assertAlmostEqual(curr_x - prev_x, 4.0, delta=1e-3, msg="Horizontal glide velocity must equal 4.0px/tick")
 
 
 if __name__ == "__main__":

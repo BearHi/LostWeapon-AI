@@ -244,8 +244,14 @@ class Weapon1MobilityFamily(BaseFamily):
         actions = candidate["action_sequence"]
 
         # 1. Key Invariant: weapon 2..4, roll (DOWN), item (C) forbidden
+        has_w1_key = False
+        has_z_key = False
         for t, keys in enumerate(actions):
             keys_set = set(keys)
+            if "1" in keys_set:
+                has_w1_key = True
+            if "Z" in keys_set:
+                has_z_key = True
             bad_keys = keys_set.intersection(self.FORBIDDEN_KEYS)
             if bad_keys:
                 return (
@@ -253,13 +259,35 @@ class Weapon1MobilityFamily(BaseFamily):
                     f"forbidden_keys_at_tick_{t}: {bad_keys} (only {self.ALLOWED_KEYS} permitted)",
                 )
 
+        if not has_w1_key:
+            return (
+                False,
+                "missing_required_w1_key_in_action_sequence",
+            )
+        if not has_z_key:
+            return (
+                False,
+                "missing_required_z_key_in_action_sequence",
+            )
+
         # 2. Native State Invariant:
         # Must observe state 38 == 15 (Aerial Knife Dash / Slash)
-        dash_ticks = [s["tick"] for s in trace if s.get("38") == 15]
-        if not dash_ticks:
+        dash_indices = [i for i, s in enumerate(trace) if s.get("38") == 15]
+        if not dash_indices:
             return (
                 False,
                 "weapon1_dash_never_activated: state 38 == 15 never observed in trace",
+            )
+
+        # Initial dash impulse check: on activation tick, forward step must exhibit boost >= 8.0px/tick
+        first_dash_idx = dash_indices[0]
+        first_dash_state = trace[first_dash_idx]
+        prev_state = trace[first_dash_idx - 1] if first_dash_idx > 0 else first_dash_state
+        init_step = abs(first_dash_state["x"] - prev_state["x"])
+        if init_step < 8.0:
+            return (
+                False,
+                f"weapon1_dash_impulse_missing: initial step was {init_step:.1f}px (expected >= 8.0px/tick)",
             )
 
         # Must not enter roll (38 == 2) or parachute glide (38 == 3)
@@ -277,11 +305,11 @@ class Weapon1MobilityFamily(BaseFamily):
                 f"forbidden_parachute_state_in_weapon1_at_ticks: {chute_ticks[:5]}",
             )
 
-        first_dash_tick = dash_ticks[0]
+        first_dash_tick = first_dash_state["tick"]
         return (
             True,
             f"native_weapon1_verified: activated_at_tick_{first_dash_tick}, "
-            f"state38==15",
+            f"state38==15, initial_impulse={init_step:.1f}px/tick",
         )
 
 
@@ -333,8 +361,11 @@ class ParachuteFamily(BaseFamily):
         actions = candidate["action_sequence"]
 
         # 1. Key Invariant: weapon attacks, weapon switches, and roll forbidden
+        has_c_key = False
         for t, keys in enumerate(actions):
             keys_set = set(keys)
+            if "C" in keys_set:
+                has_c_key = True
             bad_keys = keys_set.intersection(self.FORBIDDEN_KEYS)
             if bad_keys:
                 return (
@@ -342,13 +373,22 @@ class ParachuteFamily(BaseFamily):
                     f"forbidden_keys_at_tick_{t}: {bad_keys} (only {self.ALLOWED_KEYS} permitted)",
                 )
 
-        # 2. Native State Invariant:
-        # Must observe state 38 == 3 (Parachute Glide) or dc == 1 (Parachute Deployed flag)
-        chute_ticks = [s["tick"] for s in trace if s.get("38") == 3 or s.get("dc") == 1]
-        if not chute_ticks:
+        if not has_c_key:
             return (
                 False,
-                "parachute_never_activated: state 38 == 3 or dc == 1 never observed in trace",
+                "missing_required_c_key_in_action_sequence",
+            )
+
+        # 2. Native State Invariant:
+        # Must observe state 38 == 3 AND dc == 1 co-occurring in the trace
+        co_chute_ticks = [
+            s["tick"] for s in trace
+            if s.get("38") == 3 and s.get("dc") == 1
+        ]
+        if not co_chute_ticks:
+            return (
+                False,
+                "parachute_never_activated: simultaneous state 38 == 3 and dc == 1 never observed in trace",
             )
 
         # Must not enter roll (38 == 2) or knife dash (38 == 15)
@@ -366,10 +406,10 @@ class ParachuteFamily(BaseFamily):
                 f"forbidden_weapon1_state_in_parachute_at_ticks: {dash_ticks[:5]}",
             )
 
-        first_chute_tick = chute_ticks[0]
+        first_chute_tick = co_chute_ticks[0]
         return (
             True,
             f"native_parachute_verified: activated_at_tick_{first_chute_tick}, "
-            f"state38==3, dc==1",
+            f"state38==3, dc==1 co-occurring",
         )
 

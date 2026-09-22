@@ -184,6 +184,7 @@ class X86OracleVerifier:
                 "motion58": final_motion_state,
                 "38": st.get("38"),
                 "c0": st.get("c0", 0),
+                "dc": st.get("dc", 0),
                 "action": action,
             })
 
