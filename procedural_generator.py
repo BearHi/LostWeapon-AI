@@ -169,9 +169,9 @@ class Arch01BasicGap(BaseArchetype):
         )
 
         # Reference solution: walk to edge, jump across, walk to goal
-        walk_to_edge = max(8, (run - 3) * 8)
+        walk_to_edge = max(8, (run - 2) * 8 - 4)
         jump_ticks = 14 if gap == 2 else (20 if gap == 3 else 28)
-        walk_to_goal = max(60, (land - 2) * 8 + 24)
+        walk_to_goal = max(60, (land + 2) * 8)
         ref_actions: List[Tuple[str, ...]] = (
             [("RIGHT",)] * walk_to_edge
             + [("RIGHT", "UP")] * jump_ticks
@@ -253,9 +253,9 @@ class Arch02StepUp(BaseArchetype):
             },
         )
 
-        walk_to_step = max(8, (run - 3) * 8)
+        walk_to_step = max(8, (run - 2) * 8 - 4)
         jump_ticks = 20 if step <= 2 else 28
-        walk_to_goal = max(60, (land - 2) * 8 + 24)
+        walk_to_goal = max(60, (land + 2) * 8)
         ref_actions: List[Tuple[str, ...]] = (
             [("RIGHT",)] * walk_to_step
             + [("RIGHT", "UP")] * jump_ticks
