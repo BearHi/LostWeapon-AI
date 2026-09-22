@@ -18,3 +18,5 @@ __pycache__/
 # Scratch & temporary logs
 scratch/
 *.log
+*.jsonl
+native_harness/evidence/

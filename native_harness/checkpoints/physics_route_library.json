@@ -536,6 +536,35 @@
       "source_map_sha256": "0591aeed9b32d6d2cc39449eea7a7f43a323c1ea4971623e93f068c9d3960f93",
       "source_episode": -1,
       "verification": "must_replay_current_native_world"
+    },
+    "4c571a74dcc4731c26a26ae0133b315be91a31d76ac2dcdf0427b2f8f385607f:repeat=2": {
+      "actions_rle": [
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          2,
+          29
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "steps": 46,
+      "action_repeat": 2,
+      "source_map_sha256": "ddc4e83187eb4f08fd7cfa30590e25df2c4349419547e2a9f3d58f0df8e06df7",
+      "source_episode": -1,
+      "verification": "must_replay_current_native_world"
     }
   }
 }

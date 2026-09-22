@@ -1,9 +1,8 @@
 # LostWeapon 상태별 키 입력 매트릭스 및 입력 검증 규격서 (State-Action Input Matrix)
 
-> **문서 목적**:  
-> 플레이어의 모든 엔진 내부 상태(State)별로 **어떤 키 입력이 물리적으로 허용(Accepted)**되고,  
-> **어떤 키 입력이 엔진에서 무시/차단(Blocked/Masked)**되는지 유저 피드백을 반영하여 전수 명문화합니다.  
-> 모든 AI 자율 에이전트, 경로 플래너 및 훈련 맵 검증기는 이 규격을 $100\%$ 준수해야 합니다.
+> **문서 지위**:  
+> 본 규격서는 **[LOSTWEAPON_PHYSICS_MASTER_RULES.md](file:///c:/Users/sang/Desktop/로스트웨폰%20맵/LOSTWEAPON_PHYSICS_MASTER_RULES.md)** 제2조의 상태별 키 입력 매트릭스 세부 규격입니다.  
+> 모든 AI 에이전트, 경로 플래너 및 학습기는 본 규격을 $100\%$ 준수해야 합니다.
 
 ---
 

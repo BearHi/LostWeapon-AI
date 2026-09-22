@@ -97,16 +97,16 @@ def solve_stage(api, strategy: str, goal_x: float, goal_y: float, ground_y: floa
         ]
     elif strategy in ("disp_single", "disp_double"):
         trial_params = [
-            {"jump_delay": 2},
+            {"jump_delay": 8}, # User-verified optimal delay=8 (X=288 precision edge jump)
+            {"jump_delay": 7},
+            {"jump_delay": 6},
             {"jump_delay": 5},
-            {"jump_delay": 8},
-            {"jump_delay": 10},
         ]
     elif strategy in ("glide_long", "glide_huge"):
         trial_params = [
-            {"trigger_x": 150.0, "chute_air_t": 28, "max_t": 350},
-            {"trigger_x": 160.0, "chute_air_t": 26, "max_t": 380},
-            {"trigger_x": 140.0, "chute_air_t": 24, "max_t": 400},
+            {"trigger_x": 160.0, "chute_air_t": 36, "max_t": 400}, # t=36 user verified optimal chute
+            {"trigger_x": 160.0, "chute_air_t": 32, "max_t": 400},
+            {"trigger_x": 150.0, "chute_air_t": 36, "max_t": 400},
         ]
     elif strategy == "ceiling_drop":
         trial_params = [{"drop_deploy": True}]
@@ -210,19 +210,21 @@ def solve_stage(api, strategy: str, goal_x: float, goal_y: float, ground_y: floa
         elif strategy in ("disp_single", "disp_double"):
             jdelay = params["jump_delay"]
             stepped_t = None
-            jump_done = False
+            jump_t = None
             for t in range(250):
                 st = api.read_state()
                 if success or st["y"] > 470.0: break
-                # Raw124 is at x=8 (256px) or x=9 (288px)
-                if st["x"] >= 240.0 and stepped_t is None:
+                # Raw124 tile begins at x=8 (256.0px)
+                if st["x"] >= 256.0 and stepped_t is None:
                     stepped_t = t
-                if stepped_t is not None and not jump_done:
+                if stepped_t is not None and jump_t is None:
                     if (t - stepped_t) >= jdelay:
+                        jump_t = t
                         act = ("RIGHT", "UP")
-                        jump_done = True
                     else:
                         act = ("RIGHT",)
+                elif jump_t is not None:
+                    act = ("RIGHT", "UP") if (t - jump_t) < 24 else ("RIGHT",)
                 else:
                     act = ("RIGHT",)
                 step_act(act)

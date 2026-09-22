@@ -16,11 +16,20 @@ def snapshot_for_map(root: Path, lmf: Path) -> Path:
     stem = Path(lmf).stem
     name = SNAPSHOTS.get(stem)
     if name is None:
-        # Variant curricula may use another prefix (for example 혼5) while
-        # retaining the numbered mechanic family. Select the captured runtime
-        # resource by that family number, not by a hard-coded filename.
+        try:
+            from lmf_injector import SimpleLmfOracle
+            _w, _h, recs = SimpleLmfOracle.parse_lmf(Path(lmf))
+            if any(tile == 4 for tile, _x, _y in recs):
+                name = "hun85_live.zip"
+            elif any(tile in (5, 6) for tile, _x, _y in recs):
+                name = "hun2_live.zip"
+        except Exception:
+            pass
+    if name is None:
         match = re.search(r"(\d+(?:\.\d+)?)", stem)
         if match:
-            name = SNAPSHOTS.get(f"훈{match.group(1)}")
+            num_str = match.group(1)
+            num = float(num_str) if "." in num_str else int(num_str)
+            name = SNAPSHOTS.get(f"훈{num}")
     name = name or "hun1_full.zip"
     return Path(root) / "private_snapshots" / name
