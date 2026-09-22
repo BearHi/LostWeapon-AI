@@ -169,7 +169,8 @@ class CapturedOracle(Oracle):
     def read_player_state(self):
         # Captured controlled slot is fixed until reset/session identity changes.
         offset=self.meta['state']['slot']*0xf8;p=PLAYER+offset
-        return {'x':self.get(p,'d')[0],'y':self.get(p+8,'d')[0],'motion58':self.get(p+0x58,'d')[0],'dash90':self.get(p+0x90,'d')[0],**{f'{x:02x}':self.get(p+x,'i')[0] for x in [0x38,0x3c,0x68,0x74,0x7c,0x80,0xb0,0xb8,0xc0,0xc4,0xd0,0xdc]}}
+        slot=self.meta['state']['slot'];active_w=self.get(0x25F1AD8+slot*4,'i')[0]
+        return {'x':self.get(p,'d')[0],'y':self.get(p+8,'d')[0],'motion58':self.get(p+0x58,'d')[0],'dash90':self.get(p+0x90,'d')[0],'active_weapon':active_w,**{f'{x:02x}':self.get(p+x,'i')[0] for x in [0x38,0x3c,0x68,0x74,0x7c,0x80,0xb0,0xb8,0xc0,0xc4,0xd0,0xdc]}}
     def begin_branching(self):
         """One full baseline; restore all pages written by x86 OR host input setup."""
         self.baseline=super().save_snapshot();self.dirty=set()

@@ -29,6 +29,7 @@ if str(ROOT) not in sys.path:
 from candidate_suite_verifier import CandidateSuiteVerifier
 from family_generators import ParachuteFamily, Weapon1MobilityFamily
 from x86_oracle_verifier import X86OracleVerifier
+from static_validator import StaticPhysicsValidator
 from regression_corpus import verify_file_sha256
 
 GOLDEN_DIR = ROOT / "golden_fixtures"
@@ -119,6 +120,7 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertEqual(winner["terminal_type"], "SUCCESS")
         self.assertIn("native_weapon1_verified", winner["mechanic_activation_evidence"])
         self.assertIn("state38==15", winner["mechanic_activation_evidence"])
+        self.assertIn("active_weapon==0", winner["mechanic_activation_evidence"])
         self.assertIn("internal_dash90=", winner["mechanic_activation_evidence"])
         self.assertEqual(len(winner["action_sequence_hash"]), 64)
 
@@ -148,6 +150,7 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
             self.assertEqual(c["terminal_type"], "DEATH")
             self.assertIn("native_weapon1_verified", c["mechanic_activation_evidence"])
             self.assertIn("state38==15", c["mechanic_activation_evidence"])
+            self.assertIn("active_weapon==0", c["mechanic_activation_evidence"])
             self.assertIn("internal_dash90=", c["mechanic_activation_evidence"])
 
     def test_04_weapon1_semantic_contract_violation(self):
@@ -331,6 +334,14 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
             self.assertAlmostEqual(actual_vy, expected_vy, delta=1e-3, msg=f"vy={actual_vy} != expected {expected_vy}")
             self.assertAlmostEqual(curr_x - prev_x, 4.0, delta=1e-3, msg="Horizontal glide velocity must equal 4.0px/tick")
 
+        # Multi-elevation discrete model domain parity
+        val = StaticPhysicsValidator(ROOT / "physics_registry.json")
+        self.assertEqual(val.compute_pure_chute_envelope(416.0, 416.0), 488.0, "Same height envelope must equal 488.0px.")
+        self.assertEqual(val.compute_pure_chute_envelope(416.0, 480.0), 572.0, "Lower 64px envelope must equal 572.0px.")
+        self.assertEqual(val.compute_pure_chute_envelope(416.0, 544.0), 660.0, "Lower 128px envelope must equal 660.0px.")
+        self.assertEqual(val.compute_pure_chute_envelope(416.0, 352.0), 400.0, "Higher 64px envelope must equal 400.0px.")
+        self.assertIsNone(val.compute_pure_chute_envelope(416.0, 100.0), "Outside verified elevation domain must return None.")
+
     def test_11_weapon1_wall_collision_semantics_preserved(self):
         """Semantic Contract: Weapon 1 dash against wall (0px displacement) preserves valid semantics via internal dash90."""
         verifier = X86OracleVerifier(SNAP_HUN6, self.w1_neg_lmf)
@@ -352,7 +363,69 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertTrue(is_valid, f"Wall dash must be recognized as valid weapon 1 candidate. Evidence: {evidence}")
         self.assertIn("native_weapon1_verified", evidence)
         self.assertIn("state38==15", evidence)
+        self.assertIn("active_weapon==0", evidence)
         self.assertIn("internal_dash90=1400.0", evidence)
+
+    def test_12_weapon1_negative_controls_other_weapons(self):
+        """Negative Control: Weapon 2 and Weapon 4 aerial attacks are invalidated as Weapon 1 mobility candidates."""
+        verifier = X86OracleVerifier(SNAP_HUN6, self.w1_pos_lmf)
+
+        # 1. Key Invariant: Weapon 2 key ('2') is forbidden
+        actions_w2 = (
+            [("2",)]
+            + [("RIGHT",)] * 4
+            + [("RIGHT", "UP")] * 14
+            + [("RIGHT", "Z")]
+            + [("RIGHT",)] * 30
+        )
+        cand_w2 = {"candidate_name": "cand_w2", "family": "weapon1_mobility", "action_sequence": actions_w2}
+        is_val_w2, ev_w2 = self.w1_family.validate_semantics(cand_w2, [], {})
+        self.assertFalse(is_val_w2, "Weapon 2 key must be rejected by key invariant.")
+        self.assertIn("forbidden_keys_at_tick_0", ev_w2)
+
+        # 2. Key Invariant: Missing '1' key
+        actions_no_w1 = (
+            [("RIGHT",)] * 5
+            + [("RIGHT", "UP")] * 14
+            + [("RIGHT", "Z")]
+            + [("RIGHT",)] * 30
+        )
+        cand_no_w1 = {"candidate_name": "cand_no_w1", "family": "weapon1_mobility", "action_sequence": actions_no_w1}
+        is_val_no_w1, ev_no_w1 = self.w1_family.validate_semantics(cand_no_w1, [], {})
+        self.assertFalse(is_val_no_w1, "Candidate without '1' key must be rejected.")
+        self.assertIn("missing_required_w1_key", ev_no_w1)
+
+        # 3. Native State Invariant: Actual Weapon 4 execution (active_weapon=3, state38=18, dash90=2000.0)
+        # Even if candidate claims valid W1 actions, actual trial trace from W4 fails state 38 == 15
+        actions_w4_trial = (
+            [("4",)]
+            + [("RIGHT",)] * 4
+            + [("RIGHT", "UP")] * 14
+            + [("RIGHT", "Z")]
+            + [("RIGHT",)] * 30
+        )
+        trial_w4 = verifier.run_trial(actions_w4_trial, max_ticks=80)
+        valid_actions_claim = (
+            [("1",)]
+            + [("RIGHT",)] * 4
+            + [("RIGHT", "UP")] * 14
+            + [("RIGHT", "Z")]
+            + [("RIGHT",)] * 30
+        )
+        cand_w4_claimed = {"candidate_name": "cand_w4_claimed", "family": "weapon1_mobility", "action_sequence": valid_actions_claim}
+        is_val_w4, ev_w4 = self.w1_family.validate_semantics(cand_w4_claimed, trial_w4["state_trace"], trial_w4)
+        self.assertFalse(is_val_w4, "Actual Weapon 4 execution must NOT satisfy weapon 1 state invariant.")
+        self.assertIn("weapon1_dash_never_activated", ev_w4)
+
+        # 4. Native Slot Invariant: active_weapon != 0 rejection
+        # If state38==15 and dash90==1400.0 occurred but active_weapon was 3 (Weapon 4), must be rejected
+        synthetic_w4_trace = [
+            {"tick": 20, "x": 100.0, "y": 200.0, "38": 15, "active_weapon": 3, "dash90": 1400.0}
+        ]
+        is_val_slot, ev_slot = self.w1_family.validate_semantics(cand_w4_claimed, synthetic_w4_trace, {})
+        self.assertFalse(is_val_slot, "State 38==15 under active_weapon != 0 must be rejected.")
+        self.assertIn("weapon1_dash_evidence_missing", ev_slot)
+        self.assertIn("active_weapon==0", ev_slot)
 
 
 if __name__ == "__main__":

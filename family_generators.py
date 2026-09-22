@@ -279,14 +279,15 @@ class Weapon1MobilityFamily(BaseFamily):
                 "weapon1_dash_never_activated: state 38 == 15 never observed in trace",
             )
 
-        # Internal dash velocity impulse check: offset +0x90 in player memory block
-        # initializes to 1400.0 on knife dash activation, providing collision-immune proof of dash.
-        max_dash_v90 = max((s.get("dash90", 0.0) for s in trace if s.get("38") == 15), default=0.0)
-        if max_dash_v90 < 1000.0:
+        # Native Weapon & Internal dash velocity check:
+        # Must observe state 38 == 15, active_weapon == 0 (Weapon 1), and dash90 >= 1000.0 (initial 1400.0)
+        w1_dash_states = [s for s in trace if s.get("38") == 15 and s.get("active_weapon", 0) == 0 and s.get("dash90", 0.0) >= 1000.0]
+        if not w1_dash_states:
             return (
                 False,
-                f"weapon1_internal_impulse_missing: max dash90 was {max_dash_v90:.1f} (expected >= 1000.0)",
+                "weapon1_dash_evidence_missing: required state38==15, active_weapon==0, dash90>=1000.0",
             )
+        max_dash_v90 = max(s.get("dash90", 0.0) for s in w1_dash_states)
 
         # Must not enter roll (38 == 2) or parachute glide (38 == 3)
         roll_ticks = [s["tick"] for s in trace if s.get("38") == 2]
@@ -307,7 +308,7 @@ class Weapon1MobilityFamily(BaseFamily):
         return (
             True,
             f"native_weapon1_verified: activated_at_tick_{first_dash_tick}, "
-            f"state38==15, internal_dash90={max_dash_v90:.1f}",
+            f"state38==15, active_weapon==0, internal_dash90={max_dash_v90:.1f}",
         )
 
 

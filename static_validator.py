@@ -7,7 +7,7 @@ Strict Tri-State Contract:
 """
 import json
 from pathlib import Path
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 
 # Tri-state verdict constants
@@ -34,9 +34,15 @@ class StaticPhysicsValidator:
         self.chute_terminal_max = float(self.reg["parachute"]["motion58_terminal_max"])
         self.chute_terminal_reset = float(self.reg["parachute"]["motion58_terminal_reset"])
         self.chute_open_nudge = float(self.reg["parachute"]["open_y_nudge_px"])
+        self.chute_elev_range = tuple(self.reg["parachute"].get("verified_elevation_delta_range_px", [-64.0, 256.0]))
 
-    def compute_pure_chute_envelope(self, start_y: float, landing_y: float) -> float:
-        """Computes max horizontal distance achievable by jump + optimal apex chute release."""
+    def compute_pure_chute_envelope(self, start_y: float, landing_y: float) -> Optional[float]:
+        """Computes max horizontal distance achievable by jump + optimal apex chute release within verified domain."""
+        delta_h = landing_y - start_y
+        min_elev, max_elev = self.chute_elev_range
+        if delta_h < min_elev or delta_h > max_elev:
+            return None # outside verified elevation domain
+
         x = 0.0
         y = start_y
         m58 = self.v0_jump
@@ -92,6 +98,12 @@ class StaticPhysicsValidator:
             
             if training_type == "isolated_skill" and not other_mobility:
                 envelope = self.compute_pure_chute_envelope(spawn_px_y, goal_px_y)
+                if envelope is None:
+                    return VERDICT_UNKNOWN, (
+                        f"Elevation difference {goal_px_y - spawn_px_y:+.1f}px is outside "
+                        f"verified parachute domain [{self.chute_elev_range[0]}px, {self.chute_elev_range[1]}px]. "
+                        f"Delegated to x86 oracle."
+                    )
                 if req_distance > envelope:
                     return VERDICT_REJECT, (
                         f"Isolated parachute requires {req_distance:.1f}px, which exceeds "

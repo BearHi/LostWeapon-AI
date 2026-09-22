@@ -31,7 +31,21 @@
     "motion58_delta_per_tick": -5.0,
     "motion58_terminal_max": -400.0,
     "motion58_terminal_reset": -205.0,
-    "flat_ground_pure_envelope_px": 488.0,
+    "same_height_flat_ground_pure_jump_chute_envelope_px": 488.0,
+    "verified_elevation_envelopes_px": {
+      "same_height_0px": 488.0,
+      "lower_64px": 572.0,
+      "lower_128px": 660.0,
+      "higher_64px": 400.0
+    },
+    "verified_elevation_delta_range_px": [-64.0, 256.0],
+    "saw_tooth_limit_cycle": {
+      "period_ticks": 40,
+      "delta_y_px": 119.0,
+      "trigger_motion58": -400.0,
+      "reset_motion58": -205.0,
+      "average_vy_px_per_tick": 2.975
+    },
     "can_cancel_ascending": true,
     "can_cancel_descending": false,
     "verification": "client_measured_discrete_recurrence"
