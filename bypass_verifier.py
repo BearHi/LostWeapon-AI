@@ -59,6 +59,7 @@ class SingleBypassVerifier:
             "evidence_source": ref_trial["evidence_source"],
             "final_position": ref_trial["final_position"],
             "final_motion_state": ref_trial["final_motion_state"],
+            "initial_snapshot_signature": ref_trial["initial_snapshot_signature"],
         }
 
         # Validate Reference outcome
@@ -93,7 +94,14 @@ class SingleBypassVerifier:
             "evidence_source": bypass_trial["evidence_source"],
             "final_position": bypass_trial["final_position"],
             "final_motion_state": bypass_trial["final_motion_state"],
+            "initial_snapshot_signature": bypass_trial["initial_snapshot_signature"],
         }
+
+        # Assert bit-exact baseline state equivalence between reference and candidate trials
+        assert ref_trial["initial_snapshot_signature"] == bypass_trial["initial_snapshot_signature"], (
+            f"Baseline snapshot drift detected between trials: "
+            f"ref={ref_trial['initial_snapshot_signature'][:16]} != bypass={bypass_trial['initial_snapshot_signature'][:16]}"
+        )
 
         if bypass_trial["terminal_type"] == "INVALID":
             verdict = "INCONCLUSIVE"
