@@ -339,6 +339,8 @@ class TestPhase4B2FamilyContracts(unittest.TestCase):
         self.assertEqual(val.compute_pure_chute_envelope(416.0, 416.0), 488.0, "Same height envelope must equal 488.0px.")
         self.assertEqual(val.compute_pure_chute_envelope(416.0, 480.0), 572.0, "Lower 64px envelope must equal 572.0px.")
         self.assertEqual(val.compute_pure_chute_envelope(416.0, 544.0), 660.0, "Lower 128px envelope must equal 660.0px.")
+        self.assertEqual(val.compute_pure_chute_envelope(416.0, 608.0), 740.0, "Lower 192px envelope must equal 740.0px.")
+        self.assertEqual(val.compute_pure_chute_envelope(416.0, 672.0), 836.0, "Lower 256px envelope must equal 836.0px.")
         self.assertEqual(val.compute_pure_chute_envelope(416.0, 352.0), 400.0, "Higher 64px envelope must equal 400.0px.")
         self.assertIsNone(val.compute_pure_chute_envelope(416.0, 100.0), "Outside verified elevation domain must return None.")
 

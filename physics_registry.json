@@ -36,6 +36,8 @@
       "same_height_0px": 488.0,
       "lower_64px": 572.0,
       "lower_128px": 660.0,
+      "lower_192px": 740.0,
+      "lower_256px": 836.0,
       "higher_64px": 400.0
     },
     "verified_elevation_delta_range_px": [-64.0, 256.0],
