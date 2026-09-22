@@ -1,12 +1,13 @@
-"""Unit & Negative Regression Tests for StaticPhysicsValidator.
+"""Regression Test Suite for StaticPhysicsValidator Tri-State Contract.
 
-Tests:
-1. Rejection of 576px parachute chasm (proves old mistake is permanently caught).
-2. Acceptance of valid 320px parachute chasm.
-3. Rejection of backroll wall that can be bypassed by normal jump (<= 186px).
-4. Rejection of impossible wall (> 270px).
-5. Rejection of spring trajectory that collides into wall.
-6. Rejection of missing bridge before collapse platform (prevents the x=7 hole bug).
+Verifies the 7 mandatory cases:
+1. isolated jump+parachute, required distance > proven envelope -> REJECT
+2. isolated jump+parachute, required distance <= proven envelope -> STATIC_OK
+3. long-distance integration + weapon/magnet allowed -> UNKNOWN
+4. 32px hole + walk-only collapse contact -> REJECT
+5. 32px hole + jump allowed -> UNKNOWN (NOT REJECT!)
+6. low wall where horizontal geometry bypass cannot be statically proven -> UNKNOWN
+7. spring unverified combination -> UNKNOWN (delegated to x86)
 """
 import sys
 from pathlib import Path
@@ -14,73 +15,125 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from static_validator import StaticPhysicsValidator
+from static_validator import (
+    StaticPhysicsValidator,
+    VERDICT_REJECT,
+    VERDICT_STATIC_OK,
+    VERDICT_UNKNOWN,
+)
 
 
-def run_validator_tests():
+def run_tristate_tests():
     reg_path = ROOT / "physics_registry.json"
     validator = StaticPhysicsValidator(reg_path)
 
-    # TEST 1: Old 576px Parachute Chasm (Must REJECT)
-    spec_impossible_chute = {
-        "map_id": "bad_chute_576",
+    # 1. isolated jump+parachute, required distance > envelope -> REJECT
+    case1 = {
+        "map_id": "chute_impossible_isolated",
         "training_type": "isolated_skill",
         "spawn": {"x": 3, "y": 13},
-        "goal": {"x": 24, "y": 13}, # 21 tiles * 32px = 672px (or 576px)
+        "goal": {"x": 24, "y": 13}, # ~672px >> 388px
+        "allowed_capabilities": ["jump", "parachute_glide"],
         "metadata": {"required_mechanic": "parachute_glide"}
     }
-    ok, reason = validator.validate_spec(spec_impossible_chute)
-    assert not ok and "[REJECT: UNREACHABLE]" in reason, f"Test 1 failed: {reason}"
-    print("  [PASS] Test 1: Impossible 576px chute chasm correctly REJECTED.")
+    v1, r1 = validator.validate_spec(case1)
+    assert v1 == VERDICT_REJECT, f"Case 1 failed: expected REJECT, got {v1} ({r1})"
+    print(f"  [PASS] Case 1: Isolated impossible chute -> {v1}")
 
-    # TEST 2: Valid 320px Parachute Chasm (Must ACCEPT)
-    spec_valid_chute = {
-        "map_id": "good_chute_320",
+    # 2. isolated jump+parachute, required distance <= envelope -> STATIC_OK
+    case2 = {
+        "map_id": "chute_valid_envelope",
         "training_type": "isolated_skill",
         "spawn": {"x": 3, "y": 13},
-        "goal": {"x": 12, "y": 13}, # 9 tiles * 32px = 288px <= 388px
+        "goal": {"x": 12, "y": 13}, # 288px <= 388px
+        "allowed_capabilities": ["jump", "parachute_glide"],
         "metadata": {"required_mechanic": "parachute_glide"}
     }
-    ok, reason = validator.validate_spec(spec_valid_chute)
-    assert ok, f"Test 2 failed: {reason}"
-    print("  [PASS] Test 2: Valid 288px chute chasm correctly ACCEPTED.")
+    v2, r2 = validator.validate_spec(case2)
+    assert v2 == VERDICT_STATIC_OK, f"Case 2 failed: expected STATIC_OK, got {v2} ({r2})"
+    assert "ACCEPT" not in v2 and "PASS" not in v2, "Forbidden term in verdict!"
+    print(f"  [PASS] Case 2: Isolated valid envelope -> {v2}")
 
-    # TEST 3: Backroll Bypass Wall (<= 186px) (Must REJECT for isolated_skill)
-    spec_bypass_wall = {
-        "map_id": "bypass_wall_160",
-        "training_type": "isolated_skill",
+    # 3. long-distance integration + weapon/magnet allowed -> UNKNOWN
+    case3 = {
+        "map_id": "long_distance_integration",
+        "training_type": "integration",
         "spawn": {"x": 3, "y": 13},
-        "goal": {"x": 20, "y": 13},
-        "tiles": [{"id": 7, "x": 10, "y": 9}], # 4 tiles high = 128px <= 186px
-        "metadata": {"required_mechanic": "backroll_wall"}
+        "goal": {"x": 25, "y": 13}, # ~700px
+        "allowed_capabilities": ["jump", "parachute_glide", "weapon_1_dash", "magnet_boost"],
+        "metadata": {"required_mechanic": "parachute_glide"}
     }
-    ok, reason = validator.validate_spec(spec_bypass_wall)
-    assert not ok and "[REJECT: BYPASS]" in reason, f"Test 3 failed: {reason}"
-    print("  [PASS] Test 3: Normal jump bypass wall correctly REJECTED.")
+    v3, r3 = validator.validate_spec(case3)
+    assert v3 == VERDICT_UNKNOWN, f"Case 3 failed: expected UNKNOWN, got {v3} ({r3})"
+    print(f"  [PASS] Case 3: Long-distance multi-mechanic integration -> {v3}")
 
-    # TEST 4: Collapse platform with hole before it (Must REJECT)
-    spec_hole_disp = {
-        "map_id": "hole_before_raw124",
+    # 4. 32px hole + walk-only collapse contact -> REJECT
+    case4 = {
+        "map_id": "hole_walk_contact",
         "training_type": "isolated_skill",
         "spawn": {"x": 3, "y": 13},
         "goal": {"x": 20, "y": 13},
         "tiles": [
             {"id": 7, "x": 3, "y": 14},
             {"id": 7, "x": 4, "y": 14},
-            {"id": 7, "x": 5, "y": 14},
-            # x=6 is missing!
-            {"id": 124, "x": 7, "y": 14},
+            # x=5 hole
+            {"id": 124, "x": 6, "y": 14},
         ],
-        "metadata": {"required_mechanic": "collapse_platform"}
+        "metadata": {"required_mechanic": "collapse_platform", "collapse_entry": "walk_contact"}
     }
-    ok, reason = validator.validate_spec(spec_hole_disp)
-    assert not ok and "[REJECT: HOLE]" in reason, f"Test 4 failed: {reason}"
-    print("  [PASS] Test 4: Hole before collapse platform correctly REJECTED.")
+    v4, r4 = validator.validate_spec(case4)
+    assert v4 == VERDICT_REJECT, f"Case 4 failed: expected REJECT, got {v4} ({r4})"
+    print(f"  [PASS] Case 4: 32px hole + walk_contact mandated -> {v4}")
+
+    # 5. 32px hole + jump allowed -> UNKNOWN (NOT REJECT!)
+    case5 = {
+        "map_id": "hole_jump_allowed",
+        "training_type": "isolated_skill",
+        "spawn": {"x": 3, "y": 13},
+        "goal": {"x": 20, "y": 13},
+        "tiles": [
+            {"id": 7, "x": 3, "y": 14},
+            {"id": 7, "x": 4, "y": 14},
+            # x=5 hole
+            {"id": 124, "x": 6, "y": 14},
+        ],
+        "allowed_capabilities": ["jump", "collapse_platform"],
+        "metadata": {"required_mechanic": "collapse_platform"} # No walk_contact mandate!
+    }
+    v5, r5 = validator.validate_spec(case5)
+    assert v5 == VERDICT_UNKNOWN, f"Case 5 failed: expected UNKNOWN, got {v5} ({r5})"
+    print(f"  [PASS] Case 5: 32px hole with jump permitted -> {v5} (not rejected!)")
+
+    # 6. low wall where horizontal geometry bypass cannot be statically proven -> UNKNOWN
+    case6 = {
+        "map_id": "low_wall_unproven_geometry",
+        "training_type": "isolated_skill",
+        "spawn": {"x": 3, "y": 13},
+        "goal": {"x": 20, "y": 13},
+        "tiles": [{"id": 7, "x": 10, "y": 9}], # 128px high (<= 186px), but trajectory unproven
+        "metadata": {"required_mechanic": "backroll_wall"}
+    }
+    v6, r6 = validator.validate_spec(case6)
+    assert v6 == VERDICT_UNKNOWN, f"Case 6 failed: expected UNKNOWN, got {v6} ({r6})"
+    print(f"  [PASS] Case 6: Low wall with unproven landing geometry -> {v6}")
+
+    # 7. spring unverified combination -> UNKNOWN (delegated to x86)
+    case7 = {
+        "map_id": "spring_combination",
+        "training_type": "isolated_skill",
+        "spawn": {"x": 3, "y": 13},
+        "goal": {"x": 20, "y": 13},
+        "tiles": [{"id": 4, "x": 6, "y": 13}],
+        "metadata": {"required_mechanic": "spring_high"}
+    }
+    v7, r7 = validator.validate_spec(case7)
+    assert v7 == VERDICT_UNKNOWN, f"Case 7 failed: expected UNKNOWN, got {v7} ({r7})"
+    print(f"  [PASS] Case 7: Spring kinematics unproven statically -> {v7}")
 
     print("\n======================================================================")
-    print(" [STATIC VALIDATOR ALL PASS] All 4 negative regression checks verified!")
+    print(" [TRI-STATE CONTRACT 100% VERIFIED] All 7 cases strictly passed!")
     print("======================================================================")
 
 
 if __name__ == "__main__":
-    run_validator_tests()
+    run_tristate_tests()
