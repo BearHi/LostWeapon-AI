@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "map_id": "hist003_fixed_glide288",
+  "training_type": "isolated_skill",
+  "metadata": {
+    "required_mechanic": "parachute_glide",
+    "collapse_entry": "none"
+  },
+  "allowed_capabilities": [
+    "jump",
+    "parachute"
+  ],
+  "spawn": {
+    "x": 2,
+    "y": 14
+  },
+  "goal": {
+    "x": 11,
+    "y": 14
+  },
+  "tiles": [
+    {
+      "id": 7,
+      "x": 1,
+      "y": 15
+    },
+    {
+      "id": 7,
+      "x": 2,
+      "y": 15
+    },
+    {
+      "id": 7,
+      "x": 11,
+      "y": 15
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "map_id": "hist004_fixed_collapse_jump_allowed",
+  "training_type": "isolated_skill",
+  "metadata": {
+    "required_mechanic": "collapse_timing",
+    "collapse_entry": "jump_permitted"
+  },
+  "allowed_capabilities": [
+    "walk",
+    "jump"
+  ],
+  "spawn": {
+    "x": 2,
+    "y": 14
+  },
+  "goal": {
+    "x": 15,
+    "y": 14
+  },
+  "tiles": [
+    {
+      "id": 7,
+      "x": 1,
+      "y": 15
+    },
+    {
+      "id": 7,
+      "x": 2,
+      "y": 15
+    },
+    {
+      "id": 124,
+      "x": 4,
+      "y": 15
+    },
+    {
+      "id": 7,
+      "x": 15,
+      "y": 15
+    }
+  ]
+}

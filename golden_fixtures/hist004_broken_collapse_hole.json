@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "map_id": "hist004_broken_collapse_hole",
+  "training_type": "isolated_skill",
+  "metadata": {
+    "required_mechanic": "collapse_timing",
+    "collapse_entry": "walk_contact"
+  },
+  "allowed_capabilities": [
+    "walk"
+  ],
+  "spawn": {
+    "x": 2,
+    "y": 14
+  },
+  "goal": {
+    "x": 15,
+    "y": 14
+  },
+  "tiles": [
+    {
+      "id": 7,
+      "x": 1,
+      "y": 15
+    },
+    {
+      "id": 7,
+      "x": 2,
+      "y": 15
+    },
+    {
+      "id": 124,
+      "x": 4,
+      "y": 15
+    },
+    {
+      "id": 7,
+      "x": 15,
+      "y": 15
+    }
+  ]
+}
