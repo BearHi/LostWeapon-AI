@@ -106,22 +106,26 @@ class LostWeaponEnv:
         # vertical/upward-diagonal movement, X and number keys remain usable.
         ladder = state.get("38") == 0 and state.get("74") == 1
         water = state.get("c0") == 21
+        st38 = state.get("38")
+        c0 = state.get("c0")
+
         if ladder:
             allowed = (0, 3, 4, 6, 7, 14, 15, 16, 17, 18)
-        # Native water state accepts directional movement. C and Z do not;
-        # preserve only the global X timed-bomb switch; number keys do not work.
         elif water:
             allowed = (0, 1, 2, 3, 4, 6, 7, 8, 9, 14)
         elif state.get("dc"):
-            # While open, horizontal steering and C remain meaningful. C may
-            # close the chute while rising in wind; native code decides the
-            # exact timing. Z and vertical directions are ignored.
+            # While open, horizontal steering and C (collapse) remain meaningful.
             allowed = (0, 1, 2, 5, 10, 11, 14, 15, 16, 17, 18)
-        # UP+C has no confirmed gameplay use. Keep horizontal+C available
-        # even at apparent ground contact: the next native tick can leave the
-        # surface via a roll, spring, magnet, or a falling edge. The original
-        # x86 state transition, not a stale pre-action surface label, decides
-        # whether parachute deployment actually occurs.
+        elif c0 in (3, 4) or st38 == 2:
+            # Rolling: UP (3, 6, 7, 12) and single LEFT/RIGHT (1, 2) are completely ignored.
+            # Only neutral, late parachute (5, 10, 11), attack (13), and weapon slots are valid.
+            allowed = (0, 5, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20)
+        elif st38 == 9:
+            # In-air jumping/falling: in-air UP (double jump: 3, 6, 7, 12) is completely blocked.
+            allowed = (0, 1, 2, 4, 5, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18)
+        elif st38 == 6:
+            # Crouch: walking (1, 2) is blocked; roll (8, 9), jump/stand (3, 6, 7), attack (13) allowed.
+            allowed = (0, 3, 4, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20)
         else:
             allowed = tuple(index for index in range(len(ACTIONS)) if index != 12)
         return filter_actions(ACTIONS, allowed, active, up_is_jump=not (ladder or water))
