@@ -1,18 +1,22 @@
 """x86_oracle_verifier.py - Ground-Truth Oracle Verifier for LostWeapon MapSpec/LMF.
 
-Ground-Truth Evidence Contracts:
-- SUCCESS: Native Client flag trigger in OBJECT_BASE:
-           flag_object.offset_0x8c == 1 (and 0xc0 == 1).
-           NEVER relies on Euclidean bounding boxes or coordinate thresholds.
-- DEATH: Native player respawn trigger:
-         player_object.offset_0x7c == -1.
-         At this tick, the engine marks death and resets player coordinates to spawn point.
-- TIMEOUT: Reached max_ticks (or end of action sequence) without SUCCESS or DEATH.
-- INVALID: Illegal keys, missing assets, or emulator execution faults.
-
-Determinism Contract:
-- Uses full snapshot dirty-page tracking + Unicorn CPU context restoration.
-- 100% bit-exact parity across repeated trial executions.
+Phase 3A.1 - Generic Oracle Audit:
+1. Dynamic Flag Resolution:
+   - Identifies all Tile ID 140 objects dynamically from parsed LMF records.
+   - Zero hardcoding of record indices (e.g. rec_31).
+   - Checks native object memory in OBJECT_BASE for flag_object.offset_0x8c == 1.
+2. Verified Terminal Semantics:
+   - SUCCESS: Native flag collision trigger (offset_0x8c == 1). Negative controls proven.
+   - DEATH: Native death respawn sentinel (player.offset_0x7c == -1).
+            Non-lethal damage (7c > 0, state38 == 5) is strictly excluded.
+   - TIMEOUT: Exceeded max_ticks without terminal event. Neutral input () is applied
+              after action sequence exhaustion to permit delayed coasting/landing.
+   - INVALID: Unregistered input keys or emulator execution faults.
+3. Simultaneous Event Handling:
+   - If DEATH (0x7c == -1) and SUCCESS (0x8c == 1) occur on the same tick, both raw
+     signals are logged in evidence_source, resolved to DEATH (engine respawn overrides).
+4. Full Snapshot Signature:
+   - RAM hash (SHA-256 of all mapped regions) + CPU context (x86 registers) + tick counter.
 """
 from __future__ import annotations
 
@@ -31,13 +35,36 @@ if str(HARNESS_DIR) not in sys.path:
 from api import NativeTrainingAPI
 from headless import KEYS
 from snapshot_selector import snapshot_for_map
+from unicorn.x86_const import (
+    UC_X86_REG_EAX, UC_X86_REG_EBX, UC_X86_REG_ECX, UC_X86_REG_EDX,
+    UC_X86_REG_ESI, UC_X86_REG_EDI, UC_X86_REG_EBP, UC_X86_REG_ESP,
+    UC_X86_REG_EIP, UC_X86_REG_EFLAGS
+)
 
 
-def compute_memory_hash(oracle) -> str:
-    """Compute SHA-256 over all mapped memory regions in Unicorn."""
+def compute_full_snapshot_signature(oracle) -> str:
+    """Compute comprehensive SHA-256 over all mapped RAM, CPU registers, and tick counter."""
     hasher = hashlib.sha256()
+
+    # 1. All mapped RAM regions in ascending order
     for start, end, _ in sorted(oracle.u.mem_regions(), key=lambda r: r[0]):
         hasher.update(bytes(oracle.u.mem_read(start, end - start + 1)))
+
+    # 2. Key 32-bit x86 registers
+    regs = [
+        oracle.u.reg_read(reg_id)
+        for reg_id in (
+            UC_X86_REG_EAX, UC_X86_REG_EBX, UC_X86_REG_ECX, UC_X86_REG_EDX,
+            UC_X86_REG_ESI, UC_X86_REG_EDI, UC_X86_REG_EBP, UC_X86_REG_ESP,
+            UC_X86_REG_EIP, UC_X86_REG_EFLAGS
+        )
+    ]
+    hasher.update(struct.pack("<10I", *regs))
+
+    # 3. Emulator tick and clock at CONTROL + 0x800
+    ms, tick = oracle.get(oracle.CONTROL + 0x800, "II")
+    hasher.update(struct.pack("<II", ms, tick))
+
     return hasher.hexdigest()
 
 
@@ -62,7 +89,7 @@ class X86OracleVerifier:
             compact_static=False
         )
 
-        # Parse LMF records to locate goal flags (Tile ID 140)
+        # Parse LMF records to locate goal flags (Tile ID 140) dynamically
         _w, _h, self.records = self.api.oracle.parse_lmf(self.lmf_path)
         self.flag_record_indices = [
             i for i, (tile_id, _x, _y) in enumerate(self.records) if tile_id == 140
@@ -76,26 +103,25 @@ class X86OracleVerifier:
 
         # Save baseline snapshot for fast, bit-exact resets
         self.baseline_state = self.api.save_state()
-        self.initial_signature = compute_memory_hash(self.api.oracle)
+        self.initial_signature = compute_full_snapshot_signature(self.api.oracle)
 
     def reset(self) -> str:
-        """Reset world to settled baseline and verify memory integrity."""
+        """Reset world to settled baseline and verify full state integrity."""
         self.api.restore_state(self.baseline_state)
-        current_hash = compute_memory_hash(self.api.oracle)
-        if current_hash != self.initial_signature:
+        current_sig = compute_full_snapshot_signature(self.api.oracle)
+        if current_sig != self.initial_signature:
             raise RuntimeError(
-                f"Snapshot corruption detected: current hash {current_hash[:16]} "
+                f"Snapshot corruption detected: current signature {current_sig[:16]} "
                 f"!= initial {self.initial_signature[:16]}"
             )
-        return current_hash
+        return current_sig
 
     def check_flag_triggered(self) -> tuple[bool, int | None]:
         """Check if any Tile 140 object triggered the native collision flag (0x8c == 1)."""
         for r_idx in self.flag_record_indices:
             flag_addr = self.api.oracle.OBJECT_BASE + r_idx * self.api.oracle.OBJECT_STRIDE
             f_8c = self.api.oracle.get(flag_addr + 0x8C, "i")[0]
-            f_c0 = self.api.oracle.get(flag_addr + 0xC0, "i")[0]
-            if f_8c == 1 or f_c0 == 1:
+            if f_8c == 1:
                 return True, r_idx
         return False, None
 
@@ -104,15 +130,8 @@ class X86OracleVerifier:
         action_sequence: Sequence[Sequence[str]],
         max_ticks: int = 1000
     ) -> dict[str, Any]:
-        """Execute action sequence and observe ground-truth terminal events."""
+        """Execute action sequence with neutral coasting up to max_ticks."""
         self.reset()
-
-        terminal_type = "TIMEOUT"
-        terminal_tick = len(action_sequence)
-        evidence_source = f"tick_limit_reached (max_ticks={max_ticks}, seq_len={len(action_sequence)})"
-        final_position = (0.0, 0.0)
-        final_motion_state = 0.0
-        final_st = {}
 
         # Validate action sequence upfront
         for t, keys in enumerate(action_sequence):
@@ -128,9 +147,18 @@ class X86OracleVerifier:
                     "final_state_signature": hashlib.sha256(f"INVALID_{unknown_keys}".encode()).hexdigest(),
                 }
 
-        limit = min(max_ticks, len(action_sequence))
-        for t in range(limit):
-            action = tuple(action_sequence[t])
+        terminal_type = "TIMEOUT"
+        terminal_tick = max_ticks
+        evidence_source = f"tick_limit_reached (max_ticks={max_ticks}, action_len={len(action_sequence)})"
+        final_position = (0.0, 0.0)
+        final_motion_state = 0.0
+        final_st = {}
+
+        seq_len = len(action_sequence)
+        for t in range(max_ticks):
+            # Apply scheduled action if available; otherwise apply neutral input () for coasting
+            action = tuple(action_sequence[t]) if t < seq_len else ()
+
             try:
                 st = self.api.step(1, action)
             except Exception as e:
@@ -148,19 +176,35 @@ class X86OracleVerifier:
             final_position = (float(st["x"]), float(st["y"]))
             final_motion_state = float(st["motion58"])
 
-            # 1. Ground-Truth Check: Player Death (0x7c == -1)
-            if st.get("7c") == -1:
+            # Check both raw events on current tick
+            death_hit = (st.get("7c") == -1)
+            flag_hit, flag_r_idx = self.check_flag_triggered()
+
+            # Handle simultaneous events explicitly
+            if death_hit and flag_hit:
                 terminal_type = "DEATH"
                 terminal_tick = t
-                evidence_source = "native_player:offset_0x7c==-1 (respawn_triggered)"
+                evidence_source = (
+                    f"simultaneous_event: death(0x7c==-1) and flag_contact[rec_{flag_r_idx}](0x8c==1) "
+                    f"on tick {t}; engine death respawn overrides clear"
+                )
                 break
 
-            # 2. Ground-Truth Check: Flag Collision (flag.offset_0x8c == 1)
-            flag_hit, flag_r_idx = self.check_flag_triggered()
+            if death_hit:
+                terminal_type = "DEATH"
+                terminal_tick = t
+                coasting_note = f" (coasting tick +{t - seq_len})" if t >= seq_len else ""
+                evidence_source = f"native_player:offset_0x7c==-1 (respawn_triggered){coasting_note}"
+                break
+
             if flag_hit:
                 terminal_type = "SUCCESS"
                 terminal_tick = t
-                evidence_source = f"native_object:flag[rec_{flag_r_idx}].offset_0x8c==1 (client_collision_triggered)"
+                coasting_note = f" (coasting tick +{t - seq_len})" if t >= seq_len else ""
+                evidence_source = (
+                    f"native_object:flag[rec_{flag_r_idx}].offset_0x8c==1 "
+                    f"(client_collision_triggered){coasting_note}"
+                )
                 break
 
         # Final state signature: deterministic hash of key terminal metrics
