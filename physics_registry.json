@@ -106,5 +106,13 @@
     "slope_max_accel": 400.0,
     "ground_decel_per_tick": -10.0,
     "verification": "client_measured"
+  },
+  "weapon_4": {
+    "slot_index": 3,
+    "activation_state38": 18,
+    "observed_dash90": 2000.0,
+    "free_air_brake_duration_ticks": 22,
+    "free_air_dx_px_per_tick": 0.0,
+    "verification": "client_measured_native_x86"
   }
 }

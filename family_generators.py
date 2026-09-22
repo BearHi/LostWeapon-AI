@@ -412,3 +412,118 @@ class ParachuteFamily(BaseFamily):
             f"state38==3, dc==1 co-occurring",
         )
 
+
+class Weapon4BrakeFamily(BaseFamily):
+    name: str = "weapon4_brake"
+    ALLOWED_KEYS = {"LEFT", "RIGHT", "UP", "4", "Z"}
+    FORBIDDEN_KEYS = {"DOWN", "1", "2", "3", "X", "C", "A", "S", "D"}
+
+    def generate_manifest(
+        self,
+        jump_durs: Sequence[int] = (18,),
+        brake_delays: Sequence[int] = (6,),
+        walk_ticks: int = 16,
+        post_brake_ticks: int = 45,
+        direction: str = "RIGHT",
+    ) -> List[Dict[str, Any]]:
+        manifest: List[Dict[str, Any]] = []
+        for j_dur in jump_durs:
+            for b_del in brake_delays:
+                c_name = f"w4_brake_j{j_dur}_del{b_del}"
+                actions: List[Tuple[str, ...]] = (
+                    [("4",)]
+                    + [(direction,)] * walk_ticks
+                    + [(direction, "UP")] * j_dur
+                    + [(direction,)] * b_del
+                    + [("Z",)]
+                    + [()] * post_brake_ticks
+                )
+                manifest.append({
+                    "candidate_name": c_name,
+                    "family": self.name,
+                    "parameters": {
+                        "walk_ticks": walk_ticks,
+                        "jump_duration": j_dur,
+                        "brake_delay": b_del,
+                        "post_brake_ticks": post_brake_ticks,
+                        "direction": direction,
+                    },
+                    "action_sequence": actions,
+                    "semantic_validator": self.validate_semantics,
+                })
+        return manifest
+
+    def validate_semantics(
+        self,
+        candidate: Dict[str, Any],
+        trace: List[Dict[str, Any]],
+        trial: Dict[str, Any],
+    ) -> Tuple[bool, str]:
+        actions = candidate["action_sequence"]
+
+        # 1. Key Invariant: weapon 1..3, roll (DOWN), item (C) forbidden
+        has_w4_key = False
+        has_z_key = False
+        for t, keys in enumerate(actions):
+            keys_set = set(keys)
+            if "4" in keys_set:
+                has_w4_key = True
+            if "Z" in keys_set:
+                has_z_key = True
+            bad_keys = keys_set.intersection(self.FORBIDDEN_KEYS)
+            if bad_keys:
+                return (
+                    False,
+                    f"forbidden_keys_at_tick_{t}: {bad_keys} (only {self.ALLOWED_KEYS} permitted)",
+                )
+
+        if not has_w4_key:
+            return (
+                False,
+                "missing_required_w4_key_in_action_sequence",
+            )
+        if not has_z_key:
+            return (
+                False,
+                "missing_required_z_key_in_action_sequence",
+            )
+
+        # 2. Native State Invariant:
+        # Must observe state 38 == 18 (Aerial Weapon 4 Shot / Brake)
+        brake_indices = [i for i, s in enumerate(trace) if s.get("38") == 18]
+        if not brake_indices:
+            return (
+                False,
+                "weapon4_brake_never_activated: state 38 == 18 never observed in trace",
+            )
+
+        # Native Weapon & Observed dash90 check:
+        # Must observe active_weapon == 3 (Weapon 4 slot) and dash90 >= 1000.0 (observed 2000.0)
+        w4_states = [
+            s for s in trace
+            if s.get("38") == 18 and s.get("active_weapon", 0) == 3 and s.get("dash90", 0.0) >= 1000.0
+        ]
+        if not w4_states:
+            return (
+                False,
+                "weapon4_brake_evidence_missing: required state38==18, active_weapon==3, dash90>=1000.0",
+            )
+
+        # Must not enter roll (38 == 2), parachute (38 == 3), or knife dash (38 == 15)
+        for forbidden_st, name in [(2, "roll"), (3, "parachute"), (15, "weapon1")]:
+            f_ticks = [s["tick"] for s in trace if s.get("38") == forbidden_st]
+            if f_ticks:
+                return (
+                    False,
+                    f"forbidden_{name}_state_in_weapon4_at_ticks: {f_ticks[:5]}",
+                )
+
+        first_brake_tick = trace[brake_indices[0]]["tick"]
+        max_v90 = max(s.get("dash90", 0.0) for s in w4_states)
+        return (
+            True,
+            f"native_weapon4_verified: activated_at_tick_{first_brake_tick}, "
+            f"state38==18, active_weapon==3, observed_dash90={max_v90:.1f}",
+        )
+
+
