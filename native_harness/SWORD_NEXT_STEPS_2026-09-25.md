@@ -100,5 +100,32 @@ Direct input capture is the simpler starting point here.
   during bot control remains a known attribution limitation.
 - Demonstration samples are OS key samples, not exact per-game-tick action
   labels. `expert_action_label` stays null until temporal alignment/review.
-- No imitation trainer, trained model, or learned ladder-front-roll policy was
-  added. The new recorder prepares evidence for that next step.
+- No imitation trainer, generally learned combat policy, or learned
+  ladder-front-roll policy was added. Fight scoring prepares transition data
+  for local policy learning/evaluation but does not yet change fight behavior.
+
+## Automated scored-fight collection (added after commit 0079914)
+
+- With `--act`, the bot appends `fight_transition` records to
+  `logs/sword_fight_learning.jsonl`. The previous observation is paired with
+  the last input sent at that game time and the next fresh observation.
+  Repeated polls at the same `game_ms` update the pending action instead of
+  duplicating the decision; observation gaps over 300 ms are discarded.
+- Initial reward is relative HP balance: `(opponent HP lost - bot HP lost) / 100`,
+  with +1 for observed target HP-zero, -1 for bot HP-zero, and 0 for a
+  simultaneous knockout. A separate `fight_bout_outcome` records the result
+  and cumulative reward.
+- Samples require bot control in an exactly two-player room with one eligible
+  opponent. Pauses break temporal alignment. Multiplayer, target changes,
+  respawns/heals, and long gaps are excluded or start a fresh segment. The
+  selected opponent remains tracked through their HP-zero observation.
+- Relative HP balance is a scoreboard signal; the logger does not claim that a
+  particular Z press caused opponent damage. The record states that causal
+  attribution is unverified. This is scored training data, not an online
+  general-combat policy update. The 0/100/180 ms evade memory remains separate.
+- `SWORD_fight_and_score_10min.bat` runs a bounded 10-minute session. F8
+  starts/pauses bot control and F9 stops. Control still requires the already
+  running, foreground v9 Client on the exact verified stage07 collision map.
+- Eight scorer regressions cover game-time alignment, action sampling, wins,
+  losses, draws, multiplayer/manual exclusions, refills, and target changes.
+  The full `test_sword_*.py` suite passes **83 tests**. No Client was started.

@@ -82,6 +82,8 @@
 * Native Client 실행/실제 이동 검증은 하지 않음. `SWORD_navigation_60s.bat`으로 사용자 실행 후 착지/사다리 진입 및 실패 재선택 로그 확인 필요.
 * 시연 전용 `--record-demonstration` 추가. 실제 키 표본과 v9 상태를 기록하며 학습기는 아직 없음. 기존 혼합 수동/자동 입력 로그의 귀속 오염 가능성은 남아 있음.
 * 세부 인수인계: `native_harness/SWORD_NEXT_STEPS_2026-09-25.md`.
+* 후속: 봇 조작 중 정확히 두 명인 방에 한해 `sword_fight_learning.jsonl`에 이전 관측→해당 시각 마지막 송신 키→다음 게임 관측과 상대 HP 변화−봇 HP 변화를 점수로 추가. HP-zero 승패 event 별도 기록; 300ms 넘는 관측 간격, HP 회복, 다중상대, 타깃 전환, 미조작 구간은 학습 transition에서 제외.
+* `SWORD_fight_and_score_10min.bat` 추가. scorer 회귀 8개를 포함해 전체 `test_sword_*.py` 83 PASS. 아직 reward 기반 전투 정책 갱신은 안 함; 점수의 실제 공격자 귀속도 확정하지 않음.
 
 ### [INCIDENT-001] 자율 훈련 루프 가짜 낙사 버그 및 무한 루프 중단
 * **발생 일시**: 2026-09-22 01:40 ~ 02:18 KST
@@ -117,4 +119,3 @@
   2. 장거리 협곡은 향후 칼질 돌진(+119px) 및 점프뒷굴 복합 연계 기믹으로 개정 계획 수립.
 
 ---
-

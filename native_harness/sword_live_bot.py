@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from contextlib import ExitStack
 import ctypes as C
 from ctypes import wintypes as W
 import json
@@ -26,6 +27,7 @@ from sword_live_navigation import (OpponentBehaviorWindows, choose_target,
                                    parachute_glide_action, player_identity)
 from sword_combat_experience import AdaptiveDodgeMemory
 from sword_demonstration import demonstration_sample
+from sword_fight_learning import SwordFightLearningRecorder
 from sword_navigation_graph import Stage07RouteGraph
 from sword_stage07_world import (OBJECTIVE_WIND_LEAF_COUNT,
                                  load_stage07_static_world)
@@ -133,6 +135,9 @@ def main():
                         help="permit ordinary keyboard events after F8 is armed")
     parser.add_argument("--record-demonstration", action="store_true",
                         help="record human v9 input/state samples; F8 starts/pauses capture, no bot input")
+    parser.add_argument("--fight-learning-output", type=Path,
+                        default=Path("logs/sword_fight_learning.jsonl"),
+                        help="append time-aligned, scored duel transitions while the bot controls")
     args = parser.parse_args()
     if args.record_demonstration and args.act:
         parser.error("record-demonstration and act are mutually exclusive")
@@ -149,7 +154,9 @@ def main():
     output = KeyOutput()
     recorder = SwordPracticeRecorder(session_id=f"sword-live-{pid}-{int(time.time())}")
     args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.fight_learning_output.parent.mkdir(parents=True, exist_ok=True)
     experience_memory = AdaptiveDodgeMemory(args.experience_state)
+    fight_learning = SwordFightLearningRecorder(recorder.session_id)
     deadline = None if args.until_stopped else time.perf_counter() + args.seconds
     started = time.perf_counter()
     tick = 0
@@ -182,18 +189,22 @@ def main():
     try:
         # Session ids delimit runs; append so restarting the always-on bot
         # continues accumulating live evidence instead of erasing earlier runs.
-        with args.output.open("a", encoding="utf-8", buffering=1) as stream:
+        with ExitStack() as streams:
+            stream = streams.enter_context(args.output.open("a", encoding="utf-8", buffering=1))
+            fight_stream = streams.enter_context(
+                args.fight_learning_output.open("a", encoding="utf-8", buffering=1))
             print(json.dumps({"type": "ready", "pid": pid,
                               "controls": "F8 arm/pause, Shift manual override, F9 emergency stop",
                               "act_enabled": args.act,
                               "record_demonstration": args.record_demonstration,
+                              "fight_learning_output": str(args.fight_learning_output),
                               "run_mode": "until_stopped" if args.until_stopped else "timed",
                               "route_graph_nodes": len(route_graph.nodes),
                               "experience_state": str(args.experience_state),
                               "experience_updates_loaded": experience_memory.data["updates"],
                               "experience_trials_loaded": experience_memory.data["trials"],
                               "experience_load_error": experience_memory.load_error,
-                              "note": "Only sends input while this Client is foreground."}), flush=True)
+                              "note": "Only sends input while this Client is foreground; fight scores require a two-player duel."}), flush=True)
             while deadline is None or time.perf_counter() < deadline:
                 t0 = time.perf_counter()
                 pressed = {vk: down(vk) for vk in key_edges}
@@ -271,8 +282,11 @@ def main():
                 target = choose_target(players, local_slot, own,
                                        sticky_target_identity,
                                        preferred_identity=preferred_target_identity)
-                sticky_target_identity = (player_identity(target)
-                                          if target is not None else None)
+                if target is not None:
+                    sticky_target_identity = player_identity(target)
+                elif not any(player_identity(row) == sticky_target_identity
+                             and row.get("present", True) for row in players):
+                    sticky_target_identity = None
                 current_navigation_context = (snapshot["room_index"], local_slot,
                                               player_identity(own) if own else None,
                                               map_verified)
@@ -324,6 +338,15 @@ def main():
                             "observed_weapon_slot": own.get("weapon"),
                         }
                         last_weapon_switch_at = now
+
+                # Keep the selected participant through their HP-zero frame:
+                # choose_target intentionally removes dead opponents from policy.
+                scoring_target = target
+                if scoring_target is None and sticky_target_identity is not None:
+                    scoring_target = next((row for row in players
+                        if row.get("present", True) and
+                        player_identity(row) == sticky_target_identity and
+                        row.get("room_slot") != local_slot), None)
 
                 chute_state = (own.get("state") or {}) if own else {}
                 chute_dc = chute_state.get("0xdc", 0)
@@ -424,6 +447,25 @@ def main():
                     now, own, navigation.get("next_edge"),
                     graph=route_graph, target=target, keys=requested,
                     sent=sent and mode in ("NAVIGATE", "NAV_RECOVERY", "NAV_TRANSITION_WAIT"))
+                eligible_duel_opponents = [row for row in players
+                    if row.get("room_slot") != local_slot and row.get("present", True)
+                    and row.get("policy_targetable") is True]
+                scored_sample = fight_learning.observe(
+                    game_ms=game_ms, room_index=snapshot["room_index"],
+                    local_slot=local_slot, own=own, target=scoring_target,
+                    eligible_opponent_count=len(eligible_duel_opponents),
+                    active_player_count=sum(bool(row.get("present", True))
+                                            for row in players),
+                    controlled=bool(args.act and enabled and focused and
+                                    not manual_override and safe_context),
+                    mode=mode, keys_sent=list(requested) if sent else [])
+                if scored_sample:
+                    if scored_sample.get("transition"):
+                        fight_stream.write(json.dumps(
+                            scored_sample["transition"], separators=(",", ":")) + "\n")
+                    if scored_sample.get("outcome"):
+                        fight_stream.write(json.dumps(
+                            scored_sample["outcome"], separators=(",", ":")) + "\n")
                 control_cycle_ms = (time.perf_counter() - t0) * 1000
 
                 runtime_players = [_runtime_player_row(row) for row in players]
@@ -575,6 +617,12 @@ def main():
                         "load_error": experience_memory.load_error,
                         "persistence_error": experience_memory.persistence_error,
                     },
+                    "fight_learning_sample": ({
+                        "transition_recorded": bool(scored_sample),
+                        "bot_controlled": bool(args.act and enabled and focused and
+                                                not manual_override and safe_context),
+                        "score_counts": dict(fight_learning.counts),
+                    }),
                     "parachute_recovery": chute_recovery,
                     "parachute_glide": parachute_glide,
                     "runtime_events": [_event_json(event) for event in events],
@@ -607,6 +655,8 @@ def main():
                 "combat_adaptation_trials": experience_memory.data["trials"],
                 "combat_adaptation_state_file": str(args.experience_state),
                 "combat_adaptation_persistence_error": experience_memory.persistence_error,
+                "fight_learning_counts": dict(fight_learning.counts),
+                "fight_learning_output": str(args.fight_learning_output),
                 "termination_reason": termination_reason,
                 "final_key_events": final_key_events,
                 "final_keys_held": sorted(output.held),
